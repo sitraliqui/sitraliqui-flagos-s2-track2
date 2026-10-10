@@ -17,5 +17,6 @@
   "model_revision": null,
   "dependency_freeze": null,
   "baseline_status": "not_run",
-  "expected_benchmark_sha256": "b667019b68045080ab15227349961f0872b04357cdb95a13fbab3cb6404fe168"
+  "expected_benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+  "digest_basis": "Git source blob bytes with LF; compare with untouched Linux benchmark file"
 }
