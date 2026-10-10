@@ -1,0 +1,102 @@
+{
+  "snapshot_at_utc": "2026-10-10T17:47:26.082658+00:00",
+  "model": "MiniCPM5-2B",
+  "hardware": {
+    "gpu": "Iluvatar BI-V150",
+    "gpu_count": 1,
+    "vram_mib": 32768,
+    "cpu_cores": 6,
+    "host_memory_limit_bytes": 21474836480,
+    "gpu_driver": "4.5.0",
+    "management_library": "IX-ML 4.4.0",
+    "runtime": "Corex CUDA 10.2"
+  },
+  "python": "3.12.11",
+  "packages": {
+    "torch": "2.10.0+corex.4.5.0",
+    "vllm": "0.24.0+empty",
+    "vllm-plugin-fl": "0.3.0rc0+g13eb9be69",
+    "flag-gems": "5.3.5",
+    "evalscope": "1.11.1",
+    "triton": null,
+    "flagtree": "0.6.2a3+iluvatar3.6"
+  },
+  "source_repositories": {
+    "vllm-plugin-FL": {
+      "exists": true,
+      "commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+      "branch": "main",
+      "dirty": false
+    },
+    "FlagGems": {
+      "exists": true,
+      "commit": "4df52d9168ac55c1c1061cefb4638c570292d896",
+      "branch": "",
+      "dirty": false
+    }
+  },
+  "installed_flaggems_source_comparison": {
+    "package_version": "5.3.5",
+    "comparison": "Python source file bytes only; excludes compiled libraries and generated caches",
+    "installed_python_files": 2558,
+    "repository_python_files": 2558,
+    "matching_common_files": 2558,
+    "different_common_files": [],
+    "wheel_only_files": [],
+    "repository_only_files": [],
+    "all_python_sources_identical": true
+  },
+  "model_config_sha256": "59613157e5357d62bcb121e04cb90f2170b43d789b142380c12c3d4277d95180",
+  "model_tokenizer_config_sha256": "e9b1064649e771d7a8e15637c68b2d2749724877ba3648bd74a4ece31c26303b",
+  "model_upstream_revision": null,
+  "vllm_wheel_commit": null,
+  "benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+  "accuracy": {
+    "dataset": "math_500",
+    "subset": "Level 3",
+    "score": 0.9714,
+    "correct_reviews": 102.0,
+    "review_count": 105,
+    "execution_summary": {
+      "requested": 105,
+      "succeeded": 105,
+      "errored": 0,
+      "incomplete": false,
+      "subsets": {
+        "Level 3": {
+          "requested": 105,
+          "succeeded": 105,
+          "errored": 0
+        }
+      }
+    },
+    "threshold": 0.95,
+    "report_sha256": "67915388a95d800fae9a108a0a8331b861d90c296ae7525d0de3362967572ef5",
+    "start_utc": "2026-10-10T16:30:18Z",
+    "end_utc": "2026-10-10T17:02:38Z",
+    "exit_code": 0,
+    "client_environment": "original"
+  },
+  "throughput": {
+    "status": "running_not_final",
+    "final_summary": null,
+    "repeat_protocol": {
+      "runs": 4,
+      "skip_first": 1,
+      "retained_runs": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "profiling": {
+    "status": "queued_after_successful_benchmark_not_run"
+  },
+  "limitations": [
+    "Model upstream revision and exact vLLM wheel source commit unavailable",
+    "TTFT baseline+1% text is present but mean versus P99 is unspecified",
+    "Accuracy uses official sampling settings and is a single run, not a statistical guarantee",
+    "Preinstalled FlagGems v5.3.5 points to 4df52d9; current public tag points to a7620cc. Original image retained; organizer confirmation needed."
+  ]
+}

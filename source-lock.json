@@ -1,6 +1,6 @@
 {
   "recorded_at_utc_date": "2026-10-10",
-  "scope": "public_source_refs_only_not_deployed_environment",
+  "scope": "public_source_refs_and_measured_original_environment_snapshot",
   "vllm_plugin_fl": {
     "url": "https://github.com/flagos-ai/vllm-plugin-FL.git",
     "branch": "flagos-2026-s2",
@@ -13,10 +13,66 @@
     "commit": "a7620cc191a0b42e040194622c5758b22a7a25dc",
     "license": "Apache-2.0"
   },
-  "deployed_environment": "not_checked",
+  "deployed_environment": {
+    "tianshu": {
+      "repositories": {
+        "vllm-plugin-FL": {
+          "exists": true,
+          "commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+          "branch": "main",
+          "dirty": false
+        },
+        "FlagGems": {
+          "exists": true,
+          "commit": "4df52d9168ac55c1c1061cefb4638c570292d896",
+          "branch": "",
+          "dirty": false
+        }
+      },
+      "packages": {
+        "torch": "2.10.0+corex.4.5.0",
+        "vllm": "0.24.0+empty",
+        "vllm-plugin-fl": "0.3.0rc0+g13eb9be69",
+        "flag-gems": "5.3.5",
+        "evalscope": "1.11.1",
+        "triton": null,
+        "flagtree": "0.6.2a3+iluvatar3.6"
+      },
+      "record": "docs/results-20261010/tianshu-baseline.json"
+    },
+    "metax": {
+      "repositories": {
+        "vllm-plugin-FL": {
+          "exists": true,
+          "commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+          "branch": "main",
+          "dirty": false
+        },
+        "FlagGems": {
+          "exists": true,
+          "commit": "a7620cc191a0b42e040194622c5758b22a7a25dc",
+          "branch": "",
+          "dirty": false
+        }
+      },
+      "packages": {
+        "torch": "2.8.0+metax3.7.0.7",
+        "vllm": "0.24.0+empty",
+        "vllm-plugin-fl": "0.3.0rc1.post1+g13eb9be69",
+        "flag-gems": "5.3.5",
+        "evalscope": "1.11.1",
+        "triton": "3.0.0+metax3.7.0.7",
+        "flagtree": null
+      },
+      "record": "docs/results-20261010/metax-baseline.json"
+    }
+  },
   "model_revision": null,
-  "dependency_freeze": null,
-  "baseline_status": "not_run",
+  "dependency_freeze": {
+    "tianshu": "docs/results-20261010/tianshu-dependency-model-digests.json",
+    "metax": "docs/results-20261010/metax-dependency-model-digests.json"
+  },
+  "baseline_status": "both_accuracy_complete_tianshu_throughput_running_metax_throughput_resource_blocked",
   "expected_benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
   "digest_basis": "Git source blob bytes with LF; compare with untouched Linux benchmark file"
 }

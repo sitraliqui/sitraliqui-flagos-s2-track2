@@ -1,0 +1,103 @@
+{
+  "snapshot_at_utc": "2026-10-10T17:47:26.082658+00:00",
+  "model": "MiniCPM5-2B",
+  "hardware": {
+    "gpu": "MetaX C500",
+    "gpu_count": 1,
+    "vram_mib": 65536,
+    "cpu_cores": 12,
+    "host_memory_limit_bytes": 68719476736,
+    "gpu_driver": "3.8.30",
+    "management_library": "mx-smi 2.3.1",
+    "runtime": "MACA 3.7.0.38",
+    "bios": "1.33.5.0"
+  },
+  "python": "3.12.11",
+  "packages": {
+    "torch": "2.8.0+metax3.7.0.7",
+    "vllm": "0.24.0+empty",
+    "vllm-plugin-fl": "0.3.0rc1.post1+g13eb9be69",
+    "flag-gems": "5.3.5",
+    "evalscope": "1.11.1",
+    "triton": "3.0.0+metax3.7.0.7",
+    "flagtree": null
+  },
+  "source_repositories": {
+    "vllm-plugin-FL": {
+      "exists": true,
+      "commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+      "branch": "main",
+      "dirty": false
+    },
+    "FlagGems": {
+      "exists": true,
+      "commit": "a7620cc191a0b42e040194622c5758b22a7a25dc",
+      "branch": "",
+      "dirty": false
+    }
+  },
+  "installed_flaggems_source_comparison": {
+    "package_version": "5.3.5",
+    "comparison": "Python source file bytes only; excludes compiled libraries and generated caches",
+    "installed_python_files": 2561,
+    "repository_python_files": 2561,
+    "matching_common_files": 2561,
+    "different_common_files": [],
+    "wheel_only_files": [],
+    "repository_only_files": [],
+    "all_python_sources_identical": true
+  },
+  "model_config_sha256": "59613157e5357d62bcb121e04cb90f2170b43d789b142380c12c3d4277d95180",
+  "model_tokenizer_config_sha256": "e9b1064649e771d7a8e15637c68b2d2749724877ba3648bd74a4ece31c26303b",
+  "model_upstream_revision": null,
+  "vllm_wheel_commit": null,
+  "benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+  "accuracy": {
+    "dataset": "math_500",
+    "subset": "Level 3",
+    "score": 0.981,
+    "correct_reviews": 103.0,
+    "review_count": 105,
+    "execution_summary": {
+      "requested": 105,
+      "succeeded": 105,
+      "errored": 0,
+      "incomplete": false,
+      "subsets": {
+        "Level 3": {
+          "requested": 105,
+          "succeeded": 105,
+          "errored": 0
+        }
+      }
+    },
+    "threshold": 0.95,
+    "report_sha256": "ea393e93d4b78149892c358a59d39a3ec377bd3a6beae72276b8ede03ecd79d8",
+    "start_utc": "2026-10-10T16:42:50Z",
+    "end_utc": "2026-10-10T16:56:41Z",
+    "exit_code": 0,
+    "client_environment": "MACA_VISIBLE_DEVICES=-1 CUDA_VISIBLE_DEVICES=-1; HTTP evaluation client only; server unchanged"
+  },
+  "throughput": {
+    "status": "failed_not_a_valid_performance_result",
+    "final_summary": null,
+    "repeat_protocol": {
+      "runs": 4,
+      "skip_first": 1,
+      "retained_runs": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "profiling": {
+    "status": "not_run"
+  },
+  "limitations": [
+    "Model upstream revision and exact vLLM wheel source commit unavailable",
+    "TTFT baseline+1% text is present but mean versus P99 is unspecified",
+    "Accuracy uses official sampling settings and is a single run, not a statistical guarantee",
+    "GPU-visible official benchmark client caused host-memory OOM in this 64 GiB RAM instance; CPU-hidden client failed GPU capability detection. Both attempts excluded."
+  ]
+}
