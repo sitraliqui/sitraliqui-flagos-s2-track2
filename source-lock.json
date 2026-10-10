@@ -1,0 +1,20 @@
+{
+  "recorded_at_utc_date": "2026-10-10",
+  "scope": "public_source_refs_only_not_deployed_environment",
+  "vllm_plugin_fl": {
+    "url": "https://github.com/flagos-ai/vllm-plugin-FL.git",
+    "branch": "flagos-2026-s2",
+    "commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+    "license": "Apache-2.0"
+  },
+  "flaggems": {
+    "url": "https://github.com/flagos-ai/FlagGems.git",
+    "tag": "v5.3.5",
+    "commit": "a7620cc191a0b42e040194622c5758b22a7a25dc",
+    "license": "Apache-2.0"
+  },
+  "deployed_environment": "not_checked",
+  "model_revision": null,
+  "dependency_freeze": null,
+  "baseline_status": "not_run"
+}

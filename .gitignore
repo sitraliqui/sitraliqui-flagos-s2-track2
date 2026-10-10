@@ -14,3 +14,27 @@ coverage.xml
 # Reports
 report*.json
 test-results-*
+
+# Large models and datasets
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
+models/
+datasets/
+# Credentials and local access
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+private/
+# Raw logs and profiler traces (publish reviewed summaries separately)
+results/**
+!results/manifest-template.json
+*.log
+*.nsys-rep
+*.sqlite
+*.trace.json
+__pycache__/

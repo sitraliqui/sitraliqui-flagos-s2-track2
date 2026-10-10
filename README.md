@@ -1,3 +1,18 @@
+# sitraliqui：FlagOS Season 2 Track 2
+
+队伍 sitraliqui（单人），比赛模型 MiniCPM5-2B。此仓库保留官方 vllm-plugin-FL 的 Git 来源与 LICENSE；比赛工作基于 flagos-2026-s2，不合入 main 的更新作为性能方案。
+
+- [复现与实验规范](docs/reproducibility.md)
+- [任务与里程碑](docs/milestones.md)
+- [源代码版本锁定](source-lock.json)
+- 原始命令及准备检查见 scripts/；未实测结果模板见 results/manifest-template.json。
+- 实际部署、Level3正确性、4K/16K吞吐与Profiling均尚未执行；没有本队性能数字。
+- [独立科研仓库](https://github.com/sitraliqui/sitraliqui-kernel-autotuning-research)：非比赛实验需独立环境，禁止混入本赛道。
+
+以下保留上游 README；通用安装示例不替代赛事页面指定版本、模型与运行命令。
+
+---
+
 # vllm-plugin-FL
 
 vllm-plugin-FL is a plugin for the [vLLM](https://github.com/vllm-project/vllm) inference/serving framework, built on FlagOS's unified multi-chip backend — including the unified operator library [FlagGems](https://github.com/flagos-ai/FlagGems) and the unified communication library [FlagCX](https://github.com/flagos-ai/FlagCX). It extends vLLM's capabilities and performance across diverse hardware environments. Without changing vLLM's original interfaces or usage patterns, the same command can run model inference/serving on different chips.
