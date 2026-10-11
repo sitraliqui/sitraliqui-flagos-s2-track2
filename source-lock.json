@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc_date": "2026-10-10",
+  "recorded_at_utc_date": "2026-10-11",
   "scope": "public_source_refs_and_measured_original_environment_snapshot",
   "vllm_plugin_fl": {
     "url": "https://github.com/flagos-ai/vllm-plugin-FL.git",
@@ -72,7 +72,7 @@
     "tianshu": "docs/results-20261010/tianshu-dependency-model-digests.json",
     "metax": "docs/results-20261010/metax-dependency-model-digests.json"
   },
-  "baseline_status": "both_accuracy_complete_tianshu_throughput_running_metax_throughput_resource_blocked",
+  "baseline_status": "both_accuracy_complete_tianshu_throughput_validated_and_initial_profile_reviewed_metax_throughput_resource_blocked",
   "expected_benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
   "digest_basis": "Git source blob bytes with LF; compare with untouched Linux benchmark file"
 }

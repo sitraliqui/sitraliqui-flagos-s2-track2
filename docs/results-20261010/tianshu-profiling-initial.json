@@ -1,0 +1,140 @@
+{
+  "status": "initial_trace_reviewed_graph_internal_kernels_unresolved",
+  "start_utc": "2026-10-10T20:50:53Z",
+  "end_utc": "2026-10-10T20:57:35Z",
+  "profiler": "ixsys from original Corex installation",
+  "profiler_command": "/usr/local/corex/bin/ixsys -t cuda,nvtx --cuda-trace-scope process-tree -d 180 -l 60 --print-gpu-summary --print-api-summary -o /workspace/baseline-results/profile-diagnostic/inference-trace bash /workspace/serve-tianshu.sh",
+  "profiler_exit_code": 0,
+  "client_exit_code": 0,
+  "diagnostic_requests": 576,
+  "diagnostic_successful_requests": 576,
+  "diagnostic_concurrency": 8,
+  "actual_tokens_per_request": {
+    "prompt": 3502,
+    "completion": 128
+  },
+  "diagnostic_workload": "repeated identical prompt; approximately 99.4% prefix cache hits; decode biased",
+  "kernel_record_count": 62204,
+  "graph_record_count": 2736,
+  "graph_duration_sum_seconds": 50.540661952,
+  "visible_kernel_duration_sum_seconds": 5.334290509,
+  "kernel_records_contained_in_graph_intervals": 0,
+  "hotspot_denominator": "sum of visible standalone kernel durations, excludes graph aggregate and copies; not whole model wall time",
+  "visible_kernel_candidates": [
+    {
+      "kernel_name": "linear_kernel",
+      "calls": 2778,
+      "gpu_duration_sum_seconds": 2.357134313,
+      "percent_visible_kernel_duration": 44.188337868420355,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "kernel_unified_attention",
+      "calls": 1764,
+      "gpu_duration_sum_seconds": 2.059622569,
+      "percent_visible_kernel_duration": 38.61099363682969,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "mm_kernel",
+      "calls": 7056,
+      "gpu_duration_sum_seconds": 0.515804982,
+      "percent_visible_kernel_duration": 9.669608003721118,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "argmax_kernel_inner",
+      "calls": 2778,
+      "gpu_duration_sum_seconds": 0.142535278,
+      "percent_visible_kernel_duration": 2.6720569072778257,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "_to_copy_func_kernel_rank_1",
+      "calls": 8335,
+      "gpu_duration_sum_seconds": 0.059875727,
+      "percent_visible_kernel_duration": 1.1224684313495457,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "_copy_kernel_kernel_rank_1",
+      "calls": 8295,
+      "gpu_duration_sum_seconds": 0.030799748,
+      "percent_visible_kernel_duration": 0.5773916502679176,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "_index_linearized_jit_function",
+      "calls": 5578,
+      "gpu_duration_sum_seconds": 0.025513358,
+      "percent_visible_kernel_duration": 0.47828962365199146,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "add_func_kernel_rank_1",
+      "calls": 5558,
+      "gpu_duration_sum_seconds": 0.022247712,
+      "percent_visible_kernel_duration": 0.4170697483098028,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "fill_scalar_func_kernel_rank_1",
+      "calls": 5600,
+      "gpu_duration_sum_seconds": 0.020157347,
+      "percent_visible_kernel_duration": 0.37788243752361406,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "_compute_slot_mapping_kernel",
+      "calls": 2779,
+      "gpu_duration_sum_seconds": 0.019654002,
+      "percent_visible_kernel_duration": 0.3684464122611962,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "triton_red_fused_fused_add_rms_norm_2",
+      "calls": 1764,
+      "gpu_duration_sum_seconds": 0.015743738,
+      "percent_visible_kernel_duration": 0.2951421182149193,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    },
+    {
+      "kernel_name": "reshape_and_cache_kernel_flash",
+      "calls": 1764,
+      "gpu_duration_sum_seconds": 0.014092797,
+      "percent_visible_kernel_duration": 0.2641925290012359,
+      "tensor_shapes": null,
+      "dtype": null,
+      "source_mapping": null
+    }
+  ],
+  "trace_sha256": "3c2472ccb53370016fa61d375196e08c23e4bc3547f0e46d459aa54aaef08252",
+  "limitations": [
+    "Graph internal kernels not recorded, so whole-model kernel ranking is unavailable",
+    "Diagnostic workload differs from official benchmark and cannot establish its prefill/decode hotspots",
+    "Kernel source ownership, tensor shapes and dtypes remain unverified",
+    "Summed GPU durations are not a wall-time fraction; API synchronization time is principally waiting"
+  ]
+}

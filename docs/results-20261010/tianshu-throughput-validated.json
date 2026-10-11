@@ -1,0 +1,236 @@
+{
+  "protocol": {
+    "runs": 4,
+    "skip_first": 1,
+    "retained_runs": [
+      2,
+      3,
+      4
+    ],
+    "run_id_basis": "row order within each case in official raw CSV"
+  },
+  "raw_file": "raw_runs_20261011_010452.csv",
+  "official_summary_file": "summary_20261011_010452.csv",
+  "valid": true,
+  "errors": [],
+  "cases": [
+    {
+      "case": [
+        4096,
+        1024,
+        64,
+        256
+      ],
+      "valid": true,
+      "requests_by_run": [
+        {
+          "run": 1,
+          "successful_requests": "256.0",
+          "status": "SUCCESS",
+          "valid": true
+        },
+        {
+          "run": 2,
+          "successful_requests": "256.0",
+          "status": "SUCCESS",
+          "valid": true
+        },
+        {
+          "run": 3,
+          "successful_requests": "256.0",
+          "status": "SUCCESS",
+          "valid": true
+        },
+        {
+          "run": 4,
+          "successful_requests": "256.0",
+          "status": "SUCCESS",
+          "valid": true
+        }
+      ],
+      "metrics": {
+        "Total tok/s": {
+          "runs_2_to_4": [
+            1687.07,
+            1898.68,
+            1910.14
+          ],
+          "mean": 1831.9633333333334,
+          "sample_stddev": 125.61206722816624,
+          "min": 1687.07,
+          "max": 1910.14,
+          "cv_percent": 6.856691121629048
+        },
+        "Output tok/s": {
+          "runs_2_to_4": [
+            337.41,
+            379.74,
+            382.03
+          ],
+          "mean": 366.3933333333333,
+          "sample_stddev": 25.12640510167207,
+          "min": 337.41,
+          "max": 382.03,
+          "cv_percent": 6.857768091214925
+        },
+        "Mean TTFT (ms)": {
+          "runs_2_to_4": [
+            12836.38,
+            12355.23,
+            12281.17
+          ],
+          "mean": 12490.926666666666,
+          "sample_stddev": 301.4543498331598,
+          "min": 12281.17,
+          "max": 12836.38,
+          "cv_percent": 2.4133865955487677
+        },
+        "P99 TTFT (ms)": {
+          "runs_2_to_4": [
+            74051.04,
+            74089.79,
+            74111.18
+          ],
+          "mean": 74084.00333333333,
+          "sample_stddev": 30.484734431077428,
+          "min": 74051.04,
+          "max": 74111.18,
+          "cv_percent": 0.04114887568091388
+        },
+        "Mean TPOT (ms)": {
+          "runs_2_to_4": [
+            172.36,
+            155.9,
+            154.71
+          ],
+          "mean": 160.99,
+          "sample_stddev": 9.864669279808629,
+          "min": 154.71,
+          "max": 172.36,
+          "cv_percent": 6.127504366611982
+        },
+        "Benchmark Duration (s)": {
+          "runs_2_to_4": [
+            776.92,
+            690.33,
+            686.19
+          ],
+          "mean": 717.8133333333334,
+          "sample_stddev": 51.229712407286925,
+          "min": 686.19,
+          "max": 776.92,
+          "cv_percent": 7.136912903162418
+        }
+      }
+    },
+    {
+      "case": [
+        16384,
+        1024,
+        64,
+        128
+      ],
+      "valid": true,
+      "requests_by_run": [
+        {
+          "run": 1,
+          "successful_requests": "128.0",
+          "status": "SUCCESS",
+          "valid": true
+        },
+        {
+          "run": 2,
+          "successful_requests": "128.0",
+          "status": "SUCCESS",
+          "valid": true
+        },
+        {
+          "run": 3,
+          "successful_requests": "128.0",
+          "status": "SUCCESS",
+          "valid": true
+        },
+        {
+          "run": 4,
+          "successful_requests": "128.0",
+          "status": "SUCCESS",
+          "valid": true
+        }
+      ],
+      "metrics": {
+        "Total tok/s": {
+          "runs_2_to_4": [
+            862.04,
+            861.77,
+            861.86
+          ],
+          "mean": 861.89,
+          "sample_stddev": 0.1374772708486618,
+          "min": 861.77,
+          "max": 862.04,
+          "cv_percent": 0.01595067477852879
+        },
+        "Output tok/s": {
+          "runs_2_to_4": [
+            50.71,
+            50.69,
+            50.7
+          ],
+          "mean": 50.7,
+          "sample_stddev": 0.010000000000001563,
+          "min": 50.69,
+          "max": 50.71,
+          "cv_percent": 0.019723865877715113
+        },
+        "Mean TTFT (ms)": {
+          "runs_2_to_4": [
+            636412.02,
+            636639.21,
+            636573.46
+          ],
+          "mean": 636541.5633333334,
+          "sample_stddev": 116.90539779379776,
+          "min": 636412.02,
+          "max": 636639.21,
+          "cv_percent": 0.018365713180080075
+        },
+        "P99 TTFT (ms)": {
+          "runs_2_to_4": [
+            1233265.3,
+            1233778.17,
+            1233489.19
+          ],
+          "mean": 1233510.8866666667,
+          "sample_stddev": 257.12247710634557,
+          "min": 1233265.3,
+          "max": 1233778.17,
+          "cv_percent": 0.020844767556220858
+        },
+        "Mean TPOT (ms)": {
+          "runs_2_to_4": [
+            517.87,
+            517.96,
+            517.96
+          ],
+          "mean": 517.9300000000001,
+          "sample_stddev": 0.0519615242270847,
+          "min": 517.87,
+          "max": 517.96,
+          "cv_percent": 0.010032538031603633
+        },
+        "Benchmark Duration (s)": {
+          "runs_2_to_4": [
+            2584.83,
+            2585.63,
+            2585.37
+          ],
+          "mean": 2585.2766666666666,
+          "sample_stddev": 0.40808495847481835,
+          "min": 2584.83,
+          "max": 2585.63,
+          "cv_percent": 0.015784962736734236
+        }
+      }
+    }
+  ]
+}
