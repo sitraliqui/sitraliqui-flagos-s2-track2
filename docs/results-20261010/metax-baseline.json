@@ -120,8 +120,9 @@
     "interpretation": "Large RSS already present before checkpoint loading and graph capture; investigate platform runtime and process import/initialization paths. Exact library attribution unavailable.",
     "limitations": [
       "RSS includes shared pages and cannot be summed as private physical memory",
-      "No stage-isolated import/GPU-context measurements yet",
-      "No evidence that 120/128GB is a model minimum or guarantees success"
-    ]
+      "No evidence that 120/128GB is a model minimum or guarantees success",
+      "GPU initialization isolated on 2026-10-11; exact allocator attribution and full low-memory benchmark client remain unverified"
+    ],
+    "staged_followup": "../results-20261011/metax-host-memory-diagnostic.json"
   }
 }

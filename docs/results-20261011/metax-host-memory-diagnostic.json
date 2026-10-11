@@ -1,0 +1,658 @@
+{
+  "purpose": "host_memory_diagnostic_not_official_performance_result",
+  "date_utc": "2026-10-11",
+  "hardware": {
+    "gpu": "MetaX C500",
+    "gpu_count": 1,
+    "vram_gib": 64,
+    "host_memory_limit_gib": 64,
+    "driver_kernel": "3.8.30",
+    "maca": "3.7.0.38",
+    "mx_smi": "2.3.1"
+  },
+  "plugin_commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+  "runs": {
+    "official": {
+      "archive_sha256": "aff797b42b7854f96ed741b43cb2703221f6b9095affe5312ad8ae4844a2f171",
+      "environment": {
+        "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:45:31) [GCC 13.3.0]",
+        "packages": {
+          "torch": "2.8.0+metax3.7.0.7",
+          "vllm": "0.24.0+empty",
+          "vllm-plugin-fl": "0.3.0rc1.post1+g13eb9be69",
+          "flag-gems": "5.3.5",
+          "triton": "3.0.0+metax3.7.0.7"
+        },
+        "runtime_environment": {
+          "MACA_PATH": "/opt/maca",
+          "LD_LIBRARY_PATH": "/opt/maca/lib:/opt/maca/ompi/lib:/opt/maca/ucx/lib:/opt/mxdriver/lib:/opt/maca/mxshmem/lib:/opt/maca/mxshmem/lib:/opt/maca/lib:/opt/maca/mxshmem/lib:/opt/maca/ompi/lib:/opt/maca/ucx/lib:/opt/mxdriver/lib:",
+          "VLLM_PLUGINS": "fl",
+          "CUDA_VISIBLE_DEVICES": null,
+          "MACA_VISIBLE_DEVICES": null
+        }
+      },
+      "finished_utc": "2026-10-11T05:07:32.183996+00:00",
+      "cases": [
+        {
+          "case": "empty",
+          "gpu_hidden": false,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 0.25112601602450013,
+          "sampled_peak_process_kib": {
+            "Rss": 176,
+            "Pss": 30,
+            "Pss_Anon": 28,
+            "Pss_File": 2,
+            "Pss_Shmem": 0
+          },
+          "observed_max_process_kib": {
+            "Rss": 14292,
+            "Pss": 7299,
+            "Pss_Anon": 6912,
+            "Pss_File": 387,
+            "Pss_Shmem": 0
+          },
+          "worker_checkpoints": [
+            {
+              "stage": "python_start",
+              "utc": "2026-10-11T05:01:14.591769+00:00",
+              "memory_kib": {
+                "Rss": 14292,
+                "Pss": 7299,
+                "Pss_Anon": 6912,
+                "Pss_File": 387,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 7380,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 6912
+              }
+            }
+          ],
+          "log_sha256": "142b0109eb481431163aa35e6eb4ca446cffd286a5b427bf542653a7837c6b50"
+        },
+        {
+          "case": "torch_import",
+          "gpu_hidden": true,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 8.147988092154264,
+          "sampled_peak_process_kib": {
+            "Rss": 527636,
+            "Pss": 282661,
+            "Pss_Anon": 205548,
+            "Pss_File": 78544,
+            "Pss_Shmem": 0
+          },
+          "observed_max_process_kib": {
+            "Rss": 527636,
+            "Pss": 282661,
+            "Pss_Anon": 205548,
+            "Pss_File": 78544,
+            "Pss_Shmem": 0
+          },
+          "worker_checkpoints": [
+            {
+              "stage": "python_start",
+              "utc": "2026-10-11T05:01:14.844578+00:00",
+              "memory_kib": {
+                "Rss": 14084,
+                "Pss": 7281,
+                "Pss_Anon": 6912,
+                "Pss_File": 369,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 7172,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 6912
+              }
+            },
+            {
+              "stage": "import_torch_done",
+              "utc": "2026-10-11T05:01:16.328211+00:00",
+              "memory_kib": {
+                "Rss": 527636,
+                "Pss": 282661,
+                "Pss_Anon": 205548,
+                "Pss_File": 77113,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322032,
+                "Shared_Dirty": 0,
+                "Private_Clean": 56,
+                "Private_Dirty": 205548
+              }
+            },
+            {
+              "stage": "worker_end",
+              "utc": "2026-10-11T05:01:16.333864+00:00",
+              "memory_kib": {
+                "Rss": 527636,
+                "Pss": 282661,
+                "Pss_Anon": 205548,
+                "Pss_File": 77113,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322032,
+                "Shared_Dirty": 0,
+                "Private_Clean": 56,
+                "Private_Dirty": 205548
+              }
+            }
+          ],
+          "log_sha256": "4a68f070dcd91b90df4bc1196a1ab5c06b014bfc779a643e2b6c01beae02d092"
+        },
+        {
+          "case": "torch_import",
+          "gpu_hidden": false,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 8.149515374097973,
+          "sampled_peak_process_kib": {
+            "Rss": 527792,
+            "Pss": 282674,
+            "Pss_Anon": 205564,
+            "Pss_File": 78557,
+            "Pss_Shmem": 0
+          },
+          "observed_max_process_kib": {
+            "Rss": 527792,
+            "Pss": 282674,
+            "Pss_Anon": 205564,
+            "Pss_File": 78557,
+            "Pss_Shmem": 0
+          },
+          "worker_checkpoints": [
+            {
+              "stage": "python_start",
+              "utc": "2026-10-11T05:01:22.996190+00:00",
+              "memory_kib": {
+                "Rss": 14308,
+                "Pss": 7304,
+                "Pss_Anon": 6916,
+                "Pss_File": 388,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 7392,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 6916
+              }
+            },
+            {
+              "stage": "import_torch_done",
+              "utc": "2026-10-11T05:01:24.459815+00:00",
+              "memory_kib": {
+                "Rss": 527784,
+                "Pss": 282666,
+                "Pss_Anon": 205556,
+                "Pss_File": 77110,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322228,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 205556
+              }
+            },
+            {
+              "stage": "worker_end",
+              "utc": "2026-10-11T05:01:24.465209+00:00",
+              "memory_kib": {
+                "Rss": 527792,
+                "Pss": 282674,
+                "Pss_Anon": 205564,
+                "Pss_File": 77110,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322228,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 205564
+              }
+            }
+          ],
+          "log_sha256": "128ebaa2c88fcbfe0649085b4f1cd6d26c783def366f3052581499ed4ee95786"
+        },
+        {
+          "case": "torch_init",
+          "gpu_hidden": false,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 39.63450961979106,
+          "sampled_peak_process_kib": {
+            "Rss": 22560000,
+            "Pss": 20446245,
+            "Pss_Anon": 19746004,
+            "Pss_File": 701844,
+            "Pss_Shmem": 4
+          },
+          "observed_max_process_kib": {
+            "Rss": 22560008,
+            "Pss": 20446253,
+            "Pss_Anon": 19746012,
+            "Pss_File": 701844,
+            "Pss_Shmem": 4
+          },
+          "worker_checkpoints": [
+            {
+              "stage": "python_start",
+              "utc": "2026-10-11T05:01:31.148353+00:00",
+              "memory_kib": {
+                "Rss": 14188,
+                "Pss": 7313,
+                "Pss_Anon": 6920,
+                "Pss_File": 393,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 7268,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 6920
+              }
+            },
+            {
+              "stage": "import_torch_done",
+              "utc": "2026-10-11T05:01:32.645634+00:00",
+              "memory_kib": {
+                "Rss": 527720,
+                "Pss": 282658,
+                "Pss_Anon": 205556,
+                "Pss_File": 77102,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322164,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 205556
+              }
+            },
+            {
+              "stage": "cuda_init_done",
+              "utc": "2026-10-11T05:01:59.023524+00:00",
+              "memory_kib": {
+                "Rss": 22558840,
+                "Pss": 20445706,
+                "Pss_Anon": 19745932,
+                "Pss_File": 699770,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2812904,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 19745936
+              }
+            },
+            {
+              "stage": "one_element_gpu_tensor_done",
+              "utc": "2026-10-11T05:01:59.210303+00:00",
+              "memory_kib": {
+                "Rss": 22560000,
+                "Pss": 20446245,
+                "Pss_Anon": 19746004,
+                "Pss_File": 700237,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2813992,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 19746008
+              }
+            },
+            {
+              "stage": "worker_end",
+              "utc": "2026-10-11T05:01:59.395695+00:00",
+              "memory_kib": {
+                "Rss": 22560008,
+                "Pss": 20446253,
+                "Pss_Anon": 19746012,
+                "Pss_File": 700237,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2813992,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 19746016
+              }
+            }
+          ],
+          "log_sha256": "1af57fb57a1d66332cc42a0c93053ea7184da0d3061dafd8617b608afb5c5958"
+        },
+        {
+          "case": "vllm_platform",
+          "gpu_hidden": false,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 87.77826525410637,
+          "sampled_peak_process_kib": {
+            "Rss": 23084252,
+            "Pss": 20925206,
+            "Pss_Anon": 20205680,
+            "Pss_File": 723691,
+            "Pss_Shmem": 4
+          },
+          "observed_max_process_kib": {
+            "Rss": 23084252,
+            "Pss": 20925206,
+            "Pss_Anon": 20205680,
+            "Pss_File": 723691,
+            "Pss_Shmem": 4
+          },
+          "worker_checkpoints": [
+            {
+              "stage": "python_start",
+              "utc": "2026-10-11T05:02:10.786743+00:00",
+              "memory_kib": {
+                "Rss": 14224,
+                "Pss": 7314,
+                "Pss_Anon": 6920,
+                "Pss_File": 394,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 7300,
+                "Shared_Dirty": 0,
+                "Private_Clean": 4,
+                "Private_Dirty": 6920
+              }
+            },
+            {
+              "stage": "import_torch_done",
+              "utc": "2026-10-11T05:02:12.266796+00:00",
+              "memory_kib": {
+                "Rss": 527724,
+                "Pss": 282655,
+                "Pss_Anon": 205548,
+                "Pss_File": 77107,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322172,
+                "Shared_Dirty": 0,
+                "Private_Clean": 4,
+                "Private_Dirty": 205548
+              }
+            },
+            {
+              "stage": "import_vllm_done",
+              "utc": "2026-10-11T05:02:49.448315+00:00",
+              "memory_kib": {
+                "Rss": 23084032,
+                "Pss": 20909653,
+                "Pss_Anon": 20205460,
+                "Pss_File": 704189,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878532,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205464
+              }
+            },
+            {
+              "stage": "resolve_current_platform_done",
+              "utc": "2026-10-11T05:02:49.681628+00:00",
+              "memory_kib": {
+                "Rss": 23084032,
+                "Pss": 20909610,
+                "Pss_Anon": 20205460,
+                "Pss_File": 704146,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878532,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205464
+              }
+            },
+            {
+              "stage": "device_capability_done",
+              "utc": "2026-10-11T05:02:49.914523+00:00",
+              "memory_kib": {
+                "Rss": 23084032,
+                "Pss": 20908820,
+                "Pss_Anon": 20205460,
+                "Pss_File": 703356,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878532,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205464
+              }
+            },
+            {
+              "stage": "worker_end",
+              "utc": "2026-10-11T05:02:50.104224+00:00",
+              "memory_kib": {
+                "Rss": 23084032,
+                "Pss": 20908374,
+                "Pss_Anon": 20205460,
+                "Pss_File": 702910,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878532,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205464
+              }
+            }
+          ],
+          "log_sha256": "81473340f20f70557ea586b156efc741449ddb3a44f1998205f6a2ee8a13e31b"
+        },
+        {
+          "case": "plugin_register",
+          "gpu_hidden": false,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 103.4846342811361,
+          "sampled_peak_process_kib": {
+            "Rss": 23084364,
+            "Pss": 20924688,
+            "Pss_Anon": 20205432,
+            "Pss_File": 722570,
+            "Pss_Shmem": 4
+          },
+          "observed_max_process_kib": {
+            "Rss": 23084364,
+            "Pss": 20924688,
+            "Pss_Anon": 20205432,
+            "Pss_File": 722570,
+            "Pss_Shmem": 4
+          },
+          "worker_checkpoints": [
+            {
+              "stage": "python_start",
+              "utc": "2026-10-11T05:03:38.570341+00:00",
+              "memory_kib": {
+                "Rss": 14240,
+                "Pss": 7305,
+                "Pss_Anon": 6916,
+                "Pss_File": 389,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 7324,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 6916
+              }
+            },
+            {
+              "stage": "import_torch_done",
+              "utc": "2026-10-11T05:03:40.086550+00:00",
+              "memory_kib": {
+                "Rss": 527680,
+                "Pss": 282639,
+                "Pss_Anon": 205548,
+                "Pss_File": 77091,
+                "Pss_Shmem": 0,
+                "Shared_Clean": 322132,
+                "Shared_Dirty": 0,
+                "Private_Clean": 0,
+                "Private_Dirty": 205548
+              }
+            },
+            {
+              "stage": "import_vllm_done",
+              "utc": "2026-10-11T05:04:24.365346+00:00",
+              "memory_kib": {
+                "Rss": 23084164,
+                "Pss": 20909107,
+                "Pss_Anon": 20205232,
+                "Pss_File": 703871,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878892,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205236
+              }
+            },
+            {
+              "stage": "import_plugin_done",
+              "utc": "2026-10-11T05:04:24.657281+00:00",
+              "memory_kib": {
+                "Rss": 23084164,
+                "Pss": 20908104,
+                "Pss_Anon": 20205232,
+                "Pss_File": 702868,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878892,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205236
+              }
+            },
+            {
+              "stage": "plugin_register_done",
+              "utc": "2026-10-11T05:04:24.950681+00:00",
+              "memory_kib": {
+                "Rss": 23084164,
+                "Pss": 20907658,
+                "Pss_Anon": 20205232,
+                "Pss_File": 702422,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878892,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205236
+              }
+            },
+            {
+              "stage": "worker_end",
+              "utc": "2026-10-11T05:04:25.238686+00:00",
+              "memory_kib": {
+                "Rss": 23084164,
+                "Pss": 20907594,
+                "Pss_Anon": 20205232,
+                "Pss_File": 702358,
+                "Pss_Shmem": 4,
+                "Shared_Clean": 2878892,
+                "Shared_Dirty": 0,
+                "Private_Clean": 36,
+                "Private_Dirty": 20205236
+              }
+            }
+          ],
+          "log_sha256": "56cc8de72bbfae68d5050611ac133d38cf71d6f10162b5218b754d7e87272483"
+        },
+        {
+          "case": "cli_help",
+          "gpu_hidden": false,
+          "client_plugins_empty": null,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 103.185465245042,
+          "sampled_peak_process_kib": {
+            "Rss": 23629940,
+            "Pss": 21349993,
+            "Pss_Anon": 20562488,
+            "Pss_File": 794468,
+            "Pss_Shmem": 4
+          },
+          "observed_max_process_kib": {
+            "Rss": 23629940,
+            "Pss": 21349993,
+            "Pss_Anon": 20562488,
+            "Pss_File": 794468,
+            "Pss_Shmem": 4
+          },
+          "worker_checkpoints": [],
+          "log_sha256": "15851ea0e3fa86d25da9d0588c795fd8f759d261469ddf2e9e11e99316bf182b"
+        },
+        {
+          "case": "cli_help",
+          "gpu_hidden": true,
+          "client_plugins_empty": null,
+          "exit_code": 1,
+          "stop_reason": null,
+          "elapsed_s": 26.967939050402492,
+          "sampled_peak_process_kib": {
+            "Rss": 1051908,
+            "Pss": 712362,
+            "Pss_Anon": 587584,
+            "Pss_File": 131980,
+            "Pss_Shmem": 4
+          },
+          "observed_max_process_kib": {
+            "Rss": 1051908,
+            "Pss": 712362,
+            "Pss_Anon": 587584,
+            "Pss_File": 131980,
+            "Pss_Shmem": 4
+          },
+          "worker_checkpoints": [],
+          "log_sha256": "ff0bf778998bb1325c9688aa47bf7a61c298c37102f691df255044fb103d3728"
+        }
+      ]
+    },
+    "client": {
+      "archive_sha256": "6b704d2e9bfde6612da275e3913ce0f87358e5883578c173cafd2b58aa319c59",
+      "environment": {
+        "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:45:31) [GCC 13.3.0]",
+        "packages": {
+          "torch": "2.8.0+metax3.7.0.7",
+          "vllm": "0.24.0+empty",
+          "vllm-plugin-fl": "0.3.0rc1.post1+g13eb9be69",
+          "flag-gems": "5.3.5",
+          "triton": "3.0.0+metax3.7.0.7"
+        },
+        "runtime_environment": {
+          "MACA_PATH": "/opt/maca",
+          "LD_LIBRARY_PATH": "/opt/maca/lib:/opt/maca/ompi/lib:/opt/maca/ucx/lib:/opt/mxdriver/lib:/opt/maca/mxshmem/lib:/opt/maca/mxshmem/lib:/opt/maca/lib:/opt/maca/mxshmem/lib:/opt/maca/ompi/lib:/opt/maca/ucx/lib:/opt/mxdriver/lib:",
+          "VLLM_PLUGINS": "fl",
+          "CUDA_VISIBLE_DEVICES": null,
+          "MACA_VISIBLE_DEVICES": null
+        }
+      },
+      "finished_utc": "2026-10-11T05:05:42.547241+00:00",
+      "cases": [
+        {
+          "case": "cli_help",
+          "gpu_hidden": true,
+          "client_plugins_empty": true,
+          "exit_code": 0,
+          "stop_reason": null,
+          "elapsed_s": 17.53147636912763,
+          "sampled_peak_process_kib": {
+            "Rss": 993888,
+            "Pss": 645874,
+            "Pss_Anon": 536388,
+            "Pss_File": 116200,
+            "Pss_Shmem": 0
+          },
+          "observed_max_process_kib": {
+            "Rss": 993888,
+            "Pss": 645874,
+            "Pss_Anon": 536388,
+            "Pss_File": 116200,
+            "Pss_Shmem": 0
+          },
+          "worker_checkpoints": [],
+          "log_sha256": "2a2c7acf3640a3b79aca7f1a52b04a51a1a8ec698c5f570fe4138a6b98eb9537"
+        }
+      ]
+    }
+  },
+  "executed_script_sha256": null,
+  "interpretation": "GPU initialization alone reproduces the large anonymous host-memory allocation before model weights or graph capture. Exact allocator attribution inside PyTorch/MACA is unknown.",
+  "validation_boundaries": [
+    "No model weights loaded and no model server started in these probes.",
+    "The HTTP benchmark client with hidden GPU and empty VLLM_PLUGINS passed --help only; full tokenization, random dataset, HTTP inference, 4K/16K throughput, and rule compliance are unverified.",
+    "GPU-hidden CLI with FL retained failed with No CUDA GPUs are available; low memory on this failing case is not a successful client result.",
+    "An initial SSH run missing MACA_PATH had three vLLM failures and is retained locally as a confounded run, not used for valid import comparison.",
+    "Client preflight overlapped the later CLI phase of the main suite. Per-process measurements are usable; container totals during overlap are not isolated.",
+    "Periodic samples can miss short peaks. Worker checkpoints supplement samples; RSS contains shared pages and cannot be summed as exclusive physical memory.",
+    "Process exit returned container memory toward baseline; persistent leakage is not demonstrated.",
+    "The archived evidence did not include an executed-source hash. Published probe is the current reproducibility source, not proof of archived source identity."
+  ],
+  "formal_throughput_status": "not_rerun_previous_attempts_invalid",
+  "platform_state_after_test": "shutdown_confirmed_in_browser"
+}
