@@ -99,5 +99,29 @@
     "TTFT baseline+1% text is present but mean versus P99 is unspecified",
     "Accuracy uses official sampling settings and is a single run, not a statistical guarantee",
     "GPU-visible official benchmark client caused host-memory OOM in this 64 GiB RAM instance; CPU-hidden client failed GPU capability detection. Both attempts excluded."
-  ]
+  ],
+  "host_memory_diagnosis": {
+    "status": "initialization_overhead_localized_exact_allocation_source_unknown",
+    "api_process_before_weight_loading": {
+      "sample_utc": "2026-10-10T16:35:32Z",
+      "rss_kib": 23085752
+    },
+    "engine_process_before_weight_loading": {
+      "sample_utc": "2026-10-10T16:36:12Z",
+      "rss_kib": 23756120
+    },
+    "weight_loading_phase_logged_utc": "2026-10-10T16:36:13Z",
+    "graph_capture_phase_after_utc": "2026-10-10T16:36:47Z",
+    "checkpoint_gib": 4.69,
+    "evidence_sha256": {
+      "serve-retry.log": "6d47d8fe52809d2911f29c15a65de6db9697b3e7f7a56b26a81869b5478e115a",
+      "serve-retry-memory.log": "b5431c151549f9450396f2773de985f448e18e14f41ece466a375ee3100d9b48"
+    },
+    "interpretation": "Large RSS already present before checkpoint loading and graph capture; investigate platform runtime and process import/initialization paths. Exact library attribution unavailable.",
+    "limitations": [
+      "RSS includes shared pages and cannot be summed as private physical memory",
+      "No stage-isolated import/GPU-context measurements yet",
+      "No evidence that 120/128GB is a model minimum or guarantees success"
+    ]
+  }
 }
