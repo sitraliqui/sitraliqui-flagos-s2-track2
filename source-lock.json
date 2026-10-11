@@ -72,7 +72,8 @@
     "tianshu": "docs/results-20261010/tianshu-dependency-model-digests.json",
     "metax": "docs/results-20261010/metax-dependency-model-digests.json"
   },
-  "baseline_status": "both_accuracy_complete_tianshu_throughput_validated_and_initial_profile_reviewed_metax_throughput_resource_blocked",
+  "baseline_status": "both_accuracy_complete_both_throughput_validated_metax_cpu_client_environment_formal_acceptance_pending_tianshu_initial_profile_reviewed",
   "expected_benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
-  "digest_basis": "Git source blob bytes with LF; compare with untouched Linux benchmark file"
+  "digest_basis": "Git source blob bytes with LF; compare with untouched Linux benchmark file",
+  "metax_throughput_followup_record": "docs/results-20261011/metax-throughput-retry.json"
 }

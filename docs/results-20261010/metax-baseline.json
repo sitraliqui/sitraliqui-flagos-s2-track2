@@ -89,7 +89,8 @@
         3,
         4
       ]
-    }
+    },
+    "followup_complete_retry": "../results-20261011/metax-throughput-retry.json"
   },
   "profiling": {
     "status": "not_run"

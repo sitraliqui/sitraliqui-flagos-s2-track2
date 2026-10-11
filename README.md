@@ -6,7 +6,7 @@
 - [任务与里程碑](docs/milestones.md)
 - [源代码版本锁定](source-lock.json)
 - 原始命令及准备检查见 scripts/；未实测结果模板见 results/manifest-template.json。
-- 已实测两平台环境与 Level3：天数 0.9714（102/105），沐曦 0.9810（103/105），均无评测错误。天数官方4K/16K总吞吐为1831.96/861.89 tokens/s，初次Profiling已采集并分析（Graph内部待展开）；沐曦吞吐因本实例主机内存不足失败。详见[执行状态](docs/execution-status.md)。
+- 已实测两平台环境与 Level3：天数 0.9714（102/105），沐曦 0.9810（103/105），均无评测错误。天数官方4K/16K总吞吐为1831.96/861.89 tokens/s，初次Profiling已采集并分析（Graph内部待展开）；沐曦在同一64GiB主机内存实例使用独立CPU HTTP客户端后，官方4K/16K四轮负载均已完成，详见最新记录；不是算子优化成果。详见[执行状态](docs/execution-status.md)。
 - [独立科研仓库](https://github.com/sitraliqui/sitraliqui-kernel-autotuning-research)：非比赛实验需独立环境，禁止混入本赛道。
 
 以下保留上游 README；通用安装示例不替代赛事页面指定版本、模型与运行命令。

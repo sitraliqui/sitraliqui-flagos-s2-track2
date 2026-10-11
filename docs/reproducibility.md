@@ -28,6 +28,16 @@
 
 ## 正确性与Profiling
 
-当前没有优化实现。已实测环境与正确性见[执行状态](execution-status.md)；正式吞吐与热点未全部完成。新增算子时先检查官方算子测试，按dtype/Shape/边界情况/容差做数值验证，再跑模型Level3与正式吞吐回归。不能仅凭算子微基准改善认定端到端有收益。
+当前没有优化实现。已实测环境与正确性见[执行状态](execution-status.md)；双平台正式负载吞吐已测量，完整热点仍待展开；沐曦客户端环境正式赛事认可待确认。新增算子时先检查官方算子测试，按dtype/Shape/边界情况/容差做数值验证，再跑模型Level3与正式吞吐回归。不能仅凭算子微基准改善认定端到端有收益。
 
 热点表记录算子名、Shape/dtype、调用次数、总时间与占比、prefill/decode阶段、后端、对应trace。分析搜索空间、搜索时间/编译时间、缓存复用、未见Shape效果和调优回本点；具体热点需测量后填入。
+
+## 沐曦HTTP客户端环境隔离
+
+2026-10-11在64GiB主机内存实例完成原版负载，模型服务仍使用FL、参数不变。先进入官方镜像的MACA/conda环境；SSH默认系统Python可能不是框架Python。另一个终端仅对HTTP客户端隔离GPU与FL初始化：
+
+```sh
+VLLM_PLUGINS= CUDA_VISIBLE_DEVICES=-1 MACA_VISIBLE_DEVICES=-1 bash scripts/benchmark.sh
+```
+
+服务终端运行原始 `bash scripts/serve-metax.sh`。不要把客户端环境覆盖应用到服务端。benchmark文件和4K/16K负载保持原样；公开结果记录同时给出本次实际命令、工作目录和环境覆盖。此配置已通过完整八轮请求验证，不是算子优化成果；正式赛事是否接受客户端环境仍待主办方确认。

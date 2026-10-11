@@ -654,5 +654,6 @@
     "The archived evidence did not include an executed-source hash. Published probe is the current reproducibility source, not proof of archived source identity."
   ],
   "formal_throughput_status": "not_rerun_previous_attempts_invalid",
-  "platform_state_after_test": "shutdown_confirmed_in_browser"
+  "platform_state_after_test": "shutdown_confirmed_in_browser",
+  "followup_complete_throughput_record": "metax-throughput-retry.json"
 }

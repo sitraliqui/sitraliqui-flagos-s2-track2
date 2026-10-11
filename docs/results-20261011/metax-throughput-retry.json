@@ -1,0 +1,382 @@
+{
+  "purpose": "original_server_and_load_baseline_retry_with_cpu_http_client",
+  "platform_shutdown_confirmed_in_browser": true,
+  "hardware": {
+    "gpu": "C500",
+    "vram_gib": 64,
+    "host_memory_limit_gib": 64,
+    "system_disk_gb_advertised": 100,
+    "data_disk_gb_advertised": 100
+  },
+  "validation": {
+    "protocol": {
+      "runs": 4,
+      "skip_first": 1,
+      "retained_runs": [
+        2,
+        3,
+        4
+      ],
+      "run_id_basis": "row order within each case in official raw CSV"
+    },
+    "raw_file": "raw_runs_20261011_140929.csv",
+    "official_summary_file": "summary_20261011_140929.csv",
+    "valid": true,
+    "errors": [],
+    "cases": [
+      {
+        "case": [
+          4096,
+          1024,
+          64,
+          256
+        ],
+        "valid": true,
+        "requests_by_run": [
+          {
+            "run": 1,
+            "successful_requests": "256.0",
+            "status": "SUCCESS",
+            "valid": true
+          },
+          {
+            "run": 2,
+            "successful_requests": "256.0",
+            "status": "SUCCESS",
+            "valid": true
+          },
+          {
+            "run": 3,
+            "successful_requests": "256.0",
+            "status": "SUCCESS",
+            "valid": true
+          },
+          {
+            "run": 4,
+            "successful_requests": "256.0",
+            "status": "SUCCESS",
+            "valid": true
+          }
+        ],
+        "metrics": {
+          "Total tok/s": {
+            "runs_2_to_4": [
+              4706.62,
+              4719.26,
+              4706.77
+            ],
+            "mean": 4710.883333333333,
+            "sample_stddev": 7.254793817424023,
+            "min": 4706.62,
+            "max": 4719.26,
+            "cv_percent": 0.15400071078157365
+          },
+          "Output tok/s": {
+            "runs_2_to_4": [
+              941.32,
+              943.85,
+              941.35
+            ],
+            "mean": 942.1733333333334,
+            "sample_stddev": 1.452113402366809,
+            "min": 941.32,
+            "max": 943.85,
+            "cv_percent": 0.154123806203403
+          },
+          "Mean TTFT (ms)": {
+            "runs_2_to_4": [
+              3327.89,
+              3329.5,
+              3334.91
+            ],
+            "mean": 3330.7666666666664,
+            "sample_stddev": 3.6774221043188797,
+            "min": 3327.89,
+            "max": 3334.91,
+            "cv_percent": 0.11040767704088789
+          },
+          "P99 TTFT (ms)": {
+            "runs_2_to_4": [
+              19305.97,
+              19358.2,
+              20061.71
+            ],
+            "mean": 19575.293333333335,
+            "sample_stddev": 422.0579029390783,
+            "min": 19305.97,
+            "max": 20061.71,
+            "cv_percent": 2.1560744748605467
+          },
+          "Mean TPOT (ms)": {
+            "runs_2_to_4": [
+              64.45,
+              64.26,
+              64.44
+            ],
+            "mean": 64.38333333333334,
+            "sample_stddev": 0.1069267662156336,
+            "min": 64.26,
+            "max": 64.45,
+            "cv_percent": 0.1660783322013465
+          },
+          "Benchmark Duration (s)": {
+            "runs_2_to_4": [
+              278.48,
+              277.74,
+              278.48
+            ],
+            "mean": 278.23333333333335,
+            "sample_stddev": 0.4272391992003283,
+            "min": 277.74,
+            "max": 278.48,
+            "cv_percent": 0.15355428268850904
+          }
+        }
+      },
+      {
+        "case": [
+          16384,
+          1024,
+          64,
+          128
+        ],
+        "valid": true,
+        "requests_by_run": [
+          {
+            "run": 1,
+            "successful_requests": "128.0",
+            "status": "SUCCESS",
+            "valid": true
+          },
+          {
+            "run": 2,
+            "successful_requests": "128.0",
+            "status": "SUCCESS",
+            "valid": true
+          },
+          {
+            "run": 3,
+            "successful_requests": "128.0",
+            "status": "SUCCESS",
+            "valid": true
+          },
+          {
+            "run": 4,
+            "successful_requests": "128.0",
+            "status": "SUCCESS",
+            "valid": true
+          }
+        ],
+        "metrics": {
+          "Total tok/s": {
+            "runs_2_to_4": [
+              7003.54,
+              7002.62,
+              6998.7
+            ],
+            "mean": 7001.62,
+            "sample_stddev": 2.5702918122268437,
+            "min": 6998.7,
+            "max": 7003.54,
+            "cv_percent": 0.03670995872707807
+          },
+          "Output tok/s": {
+            "runs_2_to_4": [
+              411.97,
+              411.92,
+              411.69
+            ],
+            "mean": 411.86,
+            "sample_stddev": 0.14933184523069531,
+            "min": 411.69,
+            "max": 411.97,
+            "cv_percent": 0.0362579141530363
+          },
+          "Mean TTFT (ms)": {
+            "runs_2_to_4": [
+              27347.85,
+              27325.17,
+              27347.73
+            ],
+            "mean": 27340.25,
+            "sample_stddev": 13.059800917319222,
+            "min": 27325.17,
+            "max": 27347.85,
+            "cv_percent": 0.04776767190248525
+          },
+          "P99 TTFT (ms)": {
+            "runs_2_to_4": [
+              102580.45,
+              102541.41,
+              102550.05
+            ],
+            "mean": 102557.30333333333,
+            "sample_stddev": 20.505817060853474,
+            "min": 102541.41,
+            "max": 102580.45,
+            "cv_percent": 0.019994497119532436
+          },
+          "Mean TPOT (ms)": {
+            "runs_2_to_4": [
+              124.86,
+              124.9,
+              124.96
+            ],
+            "mean": 124.90666666666667,
+            "sample_stddev": 0.05033222956846824,
+            "min": 124.86,
+            "max": 124.96,
+            "cv_percent": 0.04029587123863277
+          },
+          "Benchmark Duration (s)": {
+            "runs_2_to_4": [
+              318.16,
+              318.2,
+              318.38
+            ],
+            "mean": 318.24666666666667,
+            "sample_stddev": 0.11718930554163673,
+            "min": 318.16,
+            "max": 318.38,
+            "cv_percent": 0.03682341963517923
+          }
+        }
+      }
+    ],
+    "official_load_token_totals_verified": true
+  },
+  "execution": {
+    "reason": "benchmark_exited_needs_success_count_validation",
+    "client_exit_before_cleanup": 0,
+    "server_exit_before_cleanup": null,
+    "end_utc": "2026-10-11T06:53:16.307140+00:00",
+    "elapsed_seconds": 2756.6011940161698
+  },
+  "configuration": {
+    "start_utc": "2026-10-11T06:07:19.706324+00:00",
+    "purpose": "original_load_throughput_retry_client_environment_isolated",
+    "server_command": [
+      "vllm",
+      "serve",
+      "/workspace/MiniCPM5-2B",
+      "--port",
+      "9031",
+      "--served-model-name",
+      "minicpm",
+      "--gpu-memory-utilization",
+      "0.85",
+      "--max-model-len",
+      "131072"
+    ],
+    "client_command": [
+      "python3",
+      "/workspace/vllm-plugin-FL/benchmarks/benchmark_throughput_serve.py",
+      "--model",
+      "/workspace/MiniCPM5-2B",
+      "--served-model-name",
+      "minicpm",
+      "--port",
+      "9031",
+      "--test-cases",
+      "[[4096,1024,64,256],[16384,1024,64,128]]"
+    ],
+    "benchmark_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+    "runner_sha256": "d9ff6d30febf43d978bff2da2d846c3012a4d837aa3c403697e9d462200c6273",
+    "client_environment_overrides": {
+      "VLLM_PLUGINS": "",
+      "CUDA_VISIBLE_DEVICES": "-1",
+      "MACA_VISIBLE_DEVICES": "-1"
+    },
+    "server_environment": {
+      "VLLM_PLUGINS": "fl",
+      "MACA_PATH": "/opt/maca"
+    },
+    "deadline_utc": "2026-10-11T07:56:00Z",
+    "memory_guard_gib": null,
+    "memory_limit_gib": 64,
+    "compliance": "client_environment_requires_review; original_server_and_benchmark_file_unchanged",
+    "working_directory": "/data/flagos-prep/throughput-retry-actual-limit-20261011"
+  },
+  "provenance": {
+    "recorded_utc": "2026-10-11T06:14:38.297277+00:00",
+    "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:45:31) [GCC 13.3.0]",
+    "packages": {
+      "torch": "2.8.0+metax3.7.0.7",
+      "vllm": "0.24.0+empty",
+      "vllm-plugin-fl": "0.3.0rc1.post1+g13eb9be69",
+      "flag-gems": "5.3.5",
+      "triton": "3.0.0+metax3.7.0.7"
+    },
+    "source_commits": {
+      "vllm-plugin-FL": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+      "FlagGems": "a7620cc191a0b42e040194622c5758b22a7a25dc"
+    },
+    "model_file_digests": {
+      "config.json": "59613157e5357d62bcb121e04cb90f2170b43d789b142380c12c3d4277d95180",
+      "tokenizer.json": "3e065a558a034185fe299917b398685c1facd0169a9eea1e629eb30c171fed81"
+    },
+    "host_memory_limit_bytes": 68719476736,
+    "model_upstream_revision": null,
+    "vllm_wheel_source_commit": null
+  },
+  "complete_model_digests_match_prior_accuracy_run": true,
+  "dependency_model_digest_record": "metax-dependency-model-digests.json",
+  "memory": {
+    "peak_sampled_container_usage_bytes": 68719419392,
+    "peak_sampled_container_usage_gib": 63.99994659423828,
+    "final_container_usage_bytes_after_owned_process_cleanup": 164315136,
+    "oom_counter_changed": false,
+    "peak_sampled_container_swap_bytes": 748609536,
+    "swap_environment": {
+      "scope": "proc views may be virtualized or host-wide; not authoritative per-container physical inventory",
+      "proc_meminfo": {
+        "MemTotal": "67108864 kB",
+        "MemAvailable": "60397977 kB",
+        "SwapTotal": "0 kB",
+        "SwapFree": "0 kB"
+      },
+      "swap_devices_aggregate": {
+        "count": 2,
+        "size_kib": 8388600,
+        "used_kib": 177340
+      },
+      "cgroup_memory_limit_bytes": 68719476736,
+      "cgroup_memory_plus_swap_limit_bytes": 137438953472,
+      "relationship_to_advertised_system_disk": "not_established; swap filenames intentionally omitted"
+    },
+    "note": "Container includes processes and charged cache. RSS/PSS of the full benchmark client were not sampled in this retry; do not reuse CLI-help RSS as full-benchmark peak."
+  },
+  "prior_guarded_start": {
+    "reason": "container_memory_guard_63_GiB",
+    "client_started": false,
+    "actual_oom": false,
+    "peak_sampled_container_gib": 63.99152755737305,
+    "archive_sha256": "7761171adc6f0307004cbe10880db5baf5fd5b334ee1593b097c41f74170aa30"
+  },
+  "evidence_sha256": {
+    "archive": "3833799f696dc30b3e7963be71957d3b6eb5661a6222c603b12a844fd009a958",
+    "raw_csv": "df336f36c95e7b502c9d059dd768946fc36585ec5574d5e81c71dfec5d6b8843",
+    "official_summary_csv": "7d3631495960a96da80efd24b176ed9aa2c2ebd3f68f7d7be882d4e6a01f9b5c",
+    "serve.log": "1d0f87d94d73299230fc03b9cd54d93018842158d3509279b3c7be318ac1d69e",
+    "benchmark.log": "b73a2f55ec1b4c9a94a4416df6f5eed6921b04b06bf19a55977cd4cbac3a0917",
+    "memory.jsonl": "23ded45896f3858be53d137f430ade8f349f3fc56c480f0c51bc7534ee22672a",
+    "runner.py": "d9ff6d30febf43d978bff2da2d846c3012a4d837aa3c403697e9d462200c6273"
+  },
+  "accuracy": {
+    "basis": "prior_measured_original_environment_run",
+    "score": 0.981,
+    "correct": 103,
+    "requests": 105,
+    "rerun_in_this_retry": false,
+    "reference": "../results-20261010/metax-baseline.json"
+  },
+  "limitations": [
+    "Client GPU visibility and FL plugin initialization differ from the GPU-visible failing attempt; server command, model and benchmark source/loads are unchanged. Not an operator optimization or speedup claim.",
+    "The working directory was the dedicated result folder for output isolation; all model/script paths and benchmark arguments are absolute. This is recorded for reproduction.",
+    "Formal competition acceptance of the client environment and unspecified TTFT statistic still require organizer confirmation.",
+    "Model upstream revision and exact vLLM wheel source commit remain unavailable. Complete model/dataset digests were captured after benchmark completion to avoid concurrent I/O interference.",
+    "The earlier 63GiB guard stopped a near-limit loading peak; that run was not an OOM or a completed throughput run. The successful retry uses the actual 64GiB cgroup limit.",
+    "Default platform swap was used. This verifies the existing 64GiB configuration under its default memory/swap settings, not a swap-free 64GiB minimum. Relationship between host swap and advertised system-disk capacity is not established; proc/meminfo and proc/swaps report inconsistent swap availability.",
+    "Per-run P99 averages are not a pooled request-level P99. Only three retained runs per case; do not infer statistical superiority between platforms."
+  ]
+}
