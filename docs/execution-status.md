@@ -1,6 +1,14 @@
 # 起步执行状态
 
-更新：2026-10-11 UTC。这里记录实际测量与验证边界，不是赛事官方成绩。
+更新：2026-10-12 UTC−4。这里记录实际测量与验证边界，不是赛事官方成绩。
+
+## 最新规则答复与天数诊断
+
+10月12日收到用户提供的赛事群截图，评委回复“可以的”，同意提问所述Shape-aware Autotuning/Dispatch：候选具有实际优化内容，保持模型行为、benchmark、serve参数及框架主要算子选择逻辑。此答复不覆盖TTFT口径、FlagGems tag差异或客户端隔离的其他规则问题；截图仅保留私有。
+
+原参数Graph中匹配MLP down尺寸N2048/K6144的实际实现已确认是安装版mm_kernel。4K M64与16K M32的捕获、源码/配置和同图回放已关联；长输出独立诊断64/64及32/32成功。原Graph内部GPU节点时间仍未取得，工具探针已保存失败覆盖和旧时间戳证据。
+
+同输入独立算子测试的M32默认mm约49.381微秒、独立linear约96.148微秒，区间包括分配与launch间隔。此前linear的固定配置提速不能作为当前模型Graph收益。本轮没有优化源码或新增官方成绩；下一步以实际mm作为直接对照。详细数据、自编脚本、成本口径与限制见[科研补采报告](https://github.com/sitraliqui/sitraliqui-kernel-autotuning-research/blob/main/docs/results-20261012/tianshu-graph-gap-report.md)。本轮归档已下载校验，天数已确认关机。
 
 ## 已完成与阻塞
 
