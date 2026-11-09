@@ -117,6 +117,8 @@ class GraphWrapper:
         # the entries for different batch descriptors that we need to capture
         # cudagraphs for.
         self.concrete_graph_entries: dict[BatchDescriptor, GraphEntry] = {}
+        # Native and candidate entries have separate pools and lifetimes.
+        self.kv_decode_variants: dict = {}
 
         GraphWrapper._all_instances.add(self)
 
@@ -140,9 +142,17 @@ class GraphWrapper:
         return self
 
     def clear_graphs(self) -> None:
+        self.kv_decode_variants.clear()
         self.concrete_graph_entries.clear()
 
     def __call__(self, *args, **kwargs):
+        from .kv_decode.runtime import active_controller
+        controller = active_controller()
+        if controller is not None:
+            return controller.call(self, *args, **kwargs)
+        return self._call_native(*args, **kwargs)
+
+    def _call_native(self, *args, **kwargs):
         if not is_forward_context_available():
             # No forward context means we are outside the normal
             # inference path (e.g. a vision encoder forward pass).

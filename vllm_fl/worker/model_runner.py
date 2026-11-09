@@ -475,6 +475,9 @@ class ExecuteModelState(NamedTuple):
     slot_mappings: dict[str, torch.Tensor] | list[dict[str, torch.Tensor]] | None
 
 
+from vllm_fl.compilation.kv_decode.runtime import runner_scope
+
+
 class ModelRunnerFL(
     LoRAModelRunnerMixin, KVConnectorModelRunnerMixin, ECConnectorModelRunnerMixin
 ):
@@ -4122,6 +4125,7 @@ class ModelRunnerFL(
         return bool(self.discard_request_mask.np[:num_reqs].all())
 
     @managed_inference_mode()
+    @runner_scope("execute")
     def execute_model(
         self,
         scheduler_output: "SchedulerOutput",
@@ -5751,6 +5755,7 @@ class ModelRunnerFL(
         )
 
     @managed_inference_mode()
+    @runner_scope("dummy")
     def _dummy_run(
         self,
         num_tokens: int,
@@ -6671,6 +6676,7 @@ class ModelRunnerFL(
         return int(total_estimate)
 
     @instrument(span_name="Capture model")
+    @runner_scope("capture")
     def capture_model(self) -> int:
         if self.compilation_config.cudagraph_mode == CUDAGraphMode.NONE:
             logger.warning(
