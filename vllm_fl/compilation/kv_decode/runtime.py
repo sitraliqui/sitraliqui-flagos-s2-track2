@@ -36,9 +36,14 @@ def controller_for(runner):
         if not target_device():
             runner._fl_kv_decode_controller = None
         else:
-            from .controller import KVDecodeController
+            if os.environ.get("VLLM_FL_KV_DECODE_PROOF_DIR"):
+                from .proof import ProofController
 
-            runner._fl_kv_decode_controller = KVDecodeController()
+                runner._fl_kv_decode_controller = ProofController()
+            else:
+                from .controller import KVDecodeController
+
+                runner._fl_kv_decode_controller = KVDecodeController()
     return runner._fl_kv_decode_controller
 
 

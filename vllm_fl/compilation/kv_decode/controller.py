@@ -12,16 +12,8 @@ from .bindings import (
     view_key,
     views,
 )
-from .contract import (
-    BATCHES,
-    MAX_CONTEXT,
-    MIB,
-    SEGMENTS,
-    TABLE_COLUMNS,
-    has_headroom,
-    metadata_reason,
-    route_reason,
-)
+from .contract import MIB, has_headroom
+from .profiles import FOUR_K, configured_profiles, select_profile
 
 
 @contextmanager
@@ -40,7 +32,16 @@ def graph_entries(wrapper, entries, pool, restore_pool=None):
 
 
 class KVDecodeController:
-    capacities = tuple(BATCHES)
+    policy = FOUR_K
+
+    @property
+    def capacities(self):
+        return tuple(self.policy.BATCHES)
+
+    @property
+    def segments(self):
+        return self.policy.segments
+
     plain = staticmethod(plain)
 
     def __init__(self):
@@ -56,19 +57,25 @@ class KVDecodeController:
             get_forward_context,
             is_forward_context_available,
         )
-        self.segments = SEGMENTS
+        self.profiles = configured_profiles()
         self.step = self.capture_owner = self.capture_runner = None
         self.variant_capture = None
         self.first_hits = set()
 
     def event(self, reason, step=None, descriptor=None):
-        if reason.startswith("fused_active_") and reason not in self.first_hits:
+        if (
+            reason.startswith("fused_active_")
+            and (self.policy.name, reason) not in self.first_hits
+        ):
             from vllm.logger import init_logger
 
             init_logger(__name__).info(
-                "FL KV-decode fusion entered %s, S%d", reason, self.segments
+                "FL KV-decode fusion entered %s %s, S%d",
+                self.policy.name,
+                reason,
+                self.segments,
             )
-            self.first_hits.add(reason)
+            self.first_hits.add((self.policy.name, reason))
 
     def observe_replay(self, bundle, host, step, descriptor):
         pass
@@ -104,7 +111,7 @@ class KVDecodeController:
                 self.plain(layer.impl, meta)
                 if (
                     meta.max_query_len != 1
-                    or meta.num_par_softmax_segments != self.segments
+                    or meta.num_par_softmax_segments != 16
                     or meta.seq_threshold_3D < cap
                     or layer.kv_sharing_target_layer_name is not None
                     or layer.kv_cache.dtype != self.torch.bfloat16
@@ -186,7 +193,7 @@ class KVDecodeController:
         cap = bundle["capacity"]
         inputs = runner.input_batch
         lengths = runner.optimistic_seq_lens_cpu[:cap].tolist()
-        reason = route_reason(
+        reason = self.policy.route_reason(
             cap,
             schedule,
             lengths[:active],
@@ -223,7 +230,7 @@ class KVDecodeController:
             self.plain(layer.impl, meta)
             require(
                 meta.max_query_len == 1
-                and meta.num_par_softmax_segments == self.segments
+                and meta.num_par_softmax_segments == 16
                 and (meta.seq_threshold_3D >= cap),
                 "Matched native S16 decode path changed",
             )
@@ -243,10 +250,10 @@ class KVDecodeController:
         ):
             return "unsupported_block_table"
         raw = table.get_cpu_tensor()
-        if str(raw.device) != "cpu" or raw.shape[1] < TABLE_COLUMNS:
+        if str(raw.device) != "cpu" or raw.shape[1] < self.policy.TABLE_COLUMNS:
             return "unbound_cpu_table"
-        rows = raw[:active, :TABLE_COLUMNS].tolist() + [
-            [0] * TABLE_COLUMNS for _ in range(cap - active)
+        rows = raw[:active, : self.policy.TABLE_COLUMNS].tolist() + [
+            [0] * self.policy.TABLE_COLUMNS for _ in range(cap - active)
         ]
         pages = [(length + 15) // 16 for length in lengths[:active]]
         if any(
@@ -263,12 +270,12 @@ class KVDecodeController:
             table=rows,
             slots=slots + [-1] * (cap - active),
         )
-        reason = metadata_reason(
+        reason = self.policy.metadata_reason(
             host, bundle["layers"][LAYERS[0]]["cache"].shape[0], active
         )
         if reason:
             return reason
-        return ({**live, "table": live["table"][:, :TABLE_COLUMNS]}, host)
+        return ({**live, "table": live["table"][:, : self.policy.TABLE_COLUMNS]}, host)
 
     def launch(self, state, q, k, v, cache, out, scale):
         kc, vc = cache.unbind(1)
@@ -281,7 +288,7 @@ class KVDecodeController:
             cu,
             1,
             lengths,
-            MAX_CONTEXT,
+            self.policy.maximum,
             float(scale),
             True,
             (-1, -1),
@@ -305,7 +312,7 @@ class KVDecodeController:
     def capture_states(self):
         t, ctx = (self.torch, self.context())
         cap = ctx.batch_descriptor.num_tokens
-        if cap not in BATCHES:
+        if cap not in self.policy.BATCHES:
             return None
         runner = self.capture_runner
         binding = shared_binding(runner, ctx, cap)
@@ -324,8 +331,7 @@ class KVDecodeController:
             live = views(meta, ctx.slot_mapping[name])
             self.plain(layer.impl, meta)
             require(
-                meta.num_par_softmax_segments == self.segments
-                and meta.seq_threshold_3D >= cap,
+                meta.num_par_softmax_segments == 16 and meta.seq_threshold_3D >= cap,
                 "Capture no longer matches native S16 3D attention",
             )
             require(
@@ -333,7 +339,7 @@ class KVDecodeController:
                 and tuple(cache.shape[1:]) == (2, 16, 2, 128)
                 and (cache.shape == first.shape)
                 and cache.is_contiguous()
-                and (cache.shape[0] >= cap * TABLE_COLUMNS)
+                and (cache.shape[0] >= cap)
                 and (cache.device == first.device)
                 and (cache.device.type != "cpu")
                 and (cache.dtype == t.bfloat16)
@@ -348,7 +354,7 @@ class KVDecodeController:
                 and (tuple(live["slots"].shape) == (cap,))
                 and (live["table"].ndim == 2)
                 and (live["table"].shape[0] == cap)
-                and (live["table"].shape[1] >= TABLE_COLUMNS)
+                and (live["table"].shape[1] >= self.policy.TABLE_COLUMNS)
                 and all(
                     (
                         x.is_contiguous()
@@ -363,7 +369,7 @@ class KVDecodeController:
                 dummy = (
                     list(range(cap + 1)),
                     [1] * cap,
-                    [[i] + [0] * (TABLE_COLUMNS - 1) for i in range(cap)],
+                    [[i] + [0] * (self.policy.TABLE_COLUMNS - 1) for i in range(cap)],
                     [i * 16 for i in range(cap)],
                 )
                 staged = tuple(
@@ -465,6 +471,32 @@ class KVDecodeController:
         if not self.context_available():
             return wrapper._call_native(*args, **kwargs)
         ctx = self.context()
+        cap = getattr(ctx.batch_descriptor, "num_tokens", None)
+        if self.capture_runner is not None and wrapper is self.capture_runner.model:
+            policies = [p for p in self.profiles if cap in p.BATCHES]
+        elif self.step is not None and wrapper is self.step[0].model:
+            runner = self.step[0]
+            active = runner.input_batch.num_reqs
+            lengths = runner.optimistic_seq_lens_cpu[:active].tolist()
+            selected = select_profile(self.profiles, cap, active, lengths)
+            policies = [selected] if selected is not None else []
+        else:
+            policies = []
+        if not policies:
+            return wrapper._call_native(*args, **kwargs)
+        previous = self.policy
+        try:
+            for policy in policies:
+                self.policy = policy
+                result = self._call_profile(wrapper, *args, **kwargs)
+            return result
+        finally:
+            self.policy = previous
+
+    def _call_profile(self, wrapper, *args, **kwargs):
+        if not self.context_available():
+            return wrapper._call_native(*args, **kwargs)
+        ctx = self.context()
         descriptor = ctx.batch_descriptor
         runner = self.capture_runner
         step = self.step
@@ -477,7 +509,7 @@ class KVDecodeController:
                 self.event("native_graph_mode_or_bucket", step, descriptor)
             return wrapper._call_native(*args, **kwargs)
         native = wrapper.concrete_graph_entries
-        variants = wrapper.kv_decode_variants
+        variants = wrapper.kv_decode_variants.setdefault(self.policy.name, {})
         if (
             runner is not None
             and wrapper is runner.model
@@ -508,7 +540,7 @@ class KVDecodeController:
                     "native and fused graph alias",
                 )
                 self.observe_capture(bundle)
-                wrapper.kv_decode_variants[descriptor] = (entries, pool, bundle, entry)
+                variants[descriptor] = (entries, pool, bundle, entry)
                 self.event(f"captured_{bundle['capacity']}")
             finally:
                 self.variant_capture = None
