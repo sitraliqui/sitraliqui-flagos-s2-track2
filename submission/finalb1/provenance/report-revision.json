@@ -1,0 +1,11 @@
+{
+  "revision": "report-r2",
+  "report_source": "User-provided D:/Desktop/report.pdf",
+  "report_sha256": "29460b95f2e5bd7a27bf55fcfb154021755fd0d8861544242c8803dd8b770115",
+  "report_bytes": 805078,
+  "original_archive_sha256": "623a52ee24677fc9ee2ca0a6d24770d2dea88fc184274017b598613a7e906983",
+  "code_or_wheels_changed": false,
+  "test_results_changed": false,
+  "new_GPU_tests": false,
+  "submitted": false
+}

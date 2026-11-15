@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/data/competition-final-prefixb-20261115-v1-r2/final_run.py", line 159, in <module>
+    main()
+  File "/data/competition-final-prefixb-20261115-v1-r2/final_run.py", line 111, in main
+    raise RuntimeError('Merged Prefix B branch hit not observed')
+RuntimeError: Merged Prefix B branch hit not observed

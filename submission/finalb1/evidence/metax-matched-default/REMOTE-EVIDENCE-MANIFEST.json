@@ -1,0 +1,186 @@
+{
+  "files": {
+    "final_run.py": {
+      "bytes": 6548,
+      "sha256": "754c4251030cb252c7e3eda648fb270d27c48f3841f4988e02210ab36852af85"
+    },
+    "owned_processes.py": {
+      "bytes": 3784,
+      "sha256": "f072eb604b8c145ab92baca130a3477d8fc78b294285e16d15699f071efbf15d"
+    },
+    "official-benchmark.py": {
+      "bytes": 13284,
+      "sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565"
+    },
+    "installed-prefix-source.json": {
+      "bytes": 367,
+      "sha256": "fc1c3c2a1790b5be724edfb4af2478b4d280b508ed0746984ddf0384adc8a189"
+    },
+    "verify_install.py": {
+      "bytes": 1089,
+      "sha256": "ec1a1959fec1bfbc781f10cff481e44fac0d34cb934f39905793bfdb5ac9eb78"
+    },
+    "memory_guard.py": {
+      "bytes": 25654,
+      "sha256": "072d827407f9b9254f70ecc871e2d218ee7b720a248c2c273562648b5513d25a"
+    },
+    "launch.json": {
+      "bytes": 571,
+      "sha256": "7cfa1215c74fb53a4dc4410856ed10755ea541437e432c3ca4b010a272048039"
+    },
+    "accuracy-client.log": {
+      "bytes": 23975,
+      "sha256": "bebde3823d715280d3efd261642907b62039828351278fa458f37b6c18b78e3d"
+    },
+    "manifest.json": {
+      "bytes": 1162,
+      "sha256": "f76134d6cd522aa6ab8a38852182ea3517207c02c6117198f30437c94ba50323"
+    },
+    "venv.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pin.json": {
+      "bytes": 361,
+      "sha256": "48a464ebf13d5ec52764d0527f88d7bb9a40e4f1879ed8353dc28248de54f4bf"
+    },
+    "csv_validator.py": {
+      "bytes": 11889,
+      "sha256": "f0f3ff3c2969455b9d8271df2930f57e50698a7133a8cff90b067c435d9d9982"
+    },
+    "prelaunch-device.txt": {
+      "bytes": 1927,
+      "sha256": "b66175facc55f1b6bdeda5f5174ef7962908e4b6ebeec7e0073db31b146a517b"
+    },
+    "controller.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "hit_observer.py": {
+      "bytes": 1411,
+      "sha256": "0a5f9819439d7ea23b8d478ad1e91aa9b5fe1ffa856b585caa77af9b0d0fa889"
+    },
+    "status.json": {
+      "bytes": 10425,
+      "sha256": "284018f84c98806b71f279523ddd926ad089007684b547c633597a0fc05fac64"
+    },
+    "environment-selected.json": {
+      "bytes": 816,
+      "sha256": "dea3dc4132c6766e492121f0e08df036981ed0556b48dfe6982c8f53c1b7aacd"
+    },
+    "prelaunch-processes.txt": {
+      "bytes": 14370,
+      "sha256": "d0b878eb053746a6164292ccfa2fce5f0d255ee7e81446ef801c3e44b790eef4"
+    },
+    "health.log": {
+      "bytes": 1944,
+      "sha256": "834c847b5b9fbac9b93123c8dc57adf4caab8cda4509979e63c400ecec5fc3ff"
+    },
+    "formal-server.log": {
+      "bytes": 268013,
+      "sha256": "d648ba4381758a3adbe0d733b7f17ca0dbd5971ea5c7b893155af9f31e8d86c3"
+    },
+    "installation-audit.log": {
+      "bytes": 329,
+      "sha256": "49f6d7cf2a759061b1474f50ede68f73fd5b07a6542a417a81b19bcb0d9d8a3b"
+    },
+    "health.py": {
+      "bytes": 1286,
+      "sha256": "72d96902d07c860ef7b5a683a6a1f2e2d3a707d7c09fcae701a348abb89af1bc"
+    },
+    "installation-audit-formal.log": {
+      "bytes": 329,
+      "sha256": "49f6d7cf2a759061b1474f50ede68f73fd5b07a6542a417a81b19bcb0d9d8a3b"
+    },
+    "install.log": {
+      "bytes": 952,
+      "sha256": "65756765408a284c99f4e814daa888d800f4a32ff0546fd3344dd0491084736b"
+    },
+    "installation-audit-after.log": {
+      "bytes": 329,
+      "sha256": "49f6d7cf2a759061b1474f50ede68f73fd5b07a6542a417a81b19bcb0d9d8a3b"
+    },
+    "performance-client.log": {
+      "bytes": 136054,
+      "sha256": "9387014e1c993d83b8a7b49973be16253368e58bb6de7b878b7be83e3f834df7"
+    },
+    "accuracy-audit.json": {
+      "bytes": 491,
+      "sha256": "624cbe95486e386ea0bcf53ad9251d02093241a6b245234e0d2806c406662cbf"
+    },
+    "budget.json": {
+      "bytes": 231,
+      "sha256": "143d3e8330cefbd545ed81af004e9c16ae87e327bcc1ff61b1cca7918069fd15"
+    },
+    "runner.py": {
+      "bytes": 4959,
+      "sha256": "6267f4af616f53d275b13a1ac1015f84c6835b781059a3b78b7e57c9a8c3473f"
+    },
+    "performance-audit.json": {
+      "bytes": 7831,
+      "sha256": "bb24f6111167bfeea4107de3c0f21eba5299b558a672709597d1844a4d35f744"
+    },
+    "accuracy_gate.py": {
+      "bytes": 3185,
+      "sha256": "88ded0d606142ea209be85b7143c7ff3e033c68efbe3c2c91edbd9f71c59f5b8"
+    },
+    "guardian/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guardian/receipt.json": {
+      "bytes": 10948,
+      "sha256": "2721a3f6e240e4f8a7db57dc7b6e2dfe25ef4895b0a2d5b1ba551d4e149e5ff2"
+    },
+    "guardian/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guardian/memory/memory-guard.jsonl": {
+      "bytes": 5011789,
+      "sha256": "748e2ed540b6530dc79908870867395a35f3152bcba7e44cf599b6f614da4b98"
+    },
+    "guardian/memory/memory-guard-receipt.json": {
+      "bytes": 4444,
+      "sha256": "352d97097ddcb1d7e2cf6df8febd871e8ed1283de74d375ec3fa8840b493332a"
+    },
+    "performance/benchmark_results/summary_20261115_131642.csv": {
+      "bytes": 550,
+      "sha256": "5e33929a35f618538b5e185e7871f2903b5d0f9986446e4dc7958107ef6308a1"
+    },
+    "performance/benchmark_results/raw_runs_20261115_131642.csv": {
+      "bytes": 1501,
+      "sha256": "f5054d8b42dee6d2a693463fcdc4e02466561168755215bafb6e3a34bedc8391"
+    },
+    "accuracy/20261115_130255/reports/report.html": {
+      "bytes": 84810,
+      "sha256": "184147aedda05615843dd666f68d76b8ac6f4592678d437730783733d3a3ef4c"
+    },
+    "accuracy/20261115_130255/configs/task_config.yaml": {
+      "bytes": 2265,
+      "sha256": "dacc73ac70b80049a440c01e7623edaee7c225109f5544985ff2dda3ddbe6af3"
+    },
+    "accuracy/20261115_130255/logs/eval_log.log": {
+      "bytes": 8126,
+      "sha256": "00beeea304cea2b31421d5c8926d4ba6500fc5da49256507704d7450cb8ad1a6"
+    },
+    "accuracy/20261115_130255/reports/minicpm/math_500.json": {
+      "bytes": 8931,
+      "sha256": "6d142c57ae1cb0a535b32a169cd5474fda6879cb2d54cd23c1686235cff84d50"
+    },
+    "accuracy/20261115_130255/predictions/minicpm/math_500_Level 3.jsonl": {
+      "bytes": 2442336,
+      "sha256": "f57d50357b57f4b4dc7a046492075a503cecbd3b535648390f60aefce5df04fe"
+    },
+    "accuracy/20261115_130255/reviews/minicpm/math_500_Level 3.jsonl": {
+      "bytes": 1372058,
+      "sha256": "02c493f857afb595ce19ace5eef779a7226fffe126afa0d6b24d84492fa3ee5f"
+    }
+  },
+  "excluded": [
+    "merged-env",
+    "wheels",
+    "__pycache__"
+  ],
+  "created_unix": 1794723150.1752603
+}

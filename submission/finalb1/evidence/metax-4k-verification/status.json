@@ -1,0 +1,186 @@
+{
+  "started_unix": 1794722855.261952,
+  "stage": "completed",
+  "updated_unix": 1794724131.2280204,
+  "diagnostic_observer_removed": true,
+  "variant": "B-independent-4k-verification",
+  "server_pid": 20136,
+  "server_argv": [
+    "/data/competition-final-prefixb-4k-verify-20261115-v1/merged-env/bin/python",
+    "-u",
+    "-B",
+    "-m",
+    "vllm.entrypoints.cli.main",
+    "serve",
+    "/workspace/MiniCPM5-2B",
+    "--port",
+    "9031",
+    "--served-model-name",
+    "minicpm",
+    "--gpu-memory-utilization",
+    "0.85",
+    "--max-model-len",
+    "131072"
+  ],
+  "accuracy_reference": {
+    "source": "/data/competition-final-prefixb-20261115-v1-r3/accuracy-audit.json",
+    "result": {
+      "passed": true,
+      "count": 105,
+      "correct": 102,
+      "accuracy": 0.9714285714285714,
+      "sha256": {
+        "20261115_115619/reports/minicpm/math_500.json": "2f19db7cdd897e420759569ed546e5653179ee3d9959baa07072a2cd908e13b5",
+        "20261115_115619/predictions/minicpm/math_500_Level 3.jsonl": "28834b17868d941bb23ba5806c4e5eddc54f3c412e221c7ef534e06281fb6607",
+        "20261115_115619/reviews/minicpm/math_500_Level 3.jsonl": "4c3d0b9ee93b8432a9bfaa76de76e4daa9f07b572823588fb029a9b301180400"
+      }
+    },
+    "new_accuracy_run": false
+  },
+  "performance_argv": [
+    "/opt/conda/bin/python",
+    "-u",
+    "/data/competition-final-prefixb-4k-verify-20261115-v1/official-benchmark.py",
+    "--model",
+    "/workspace/MiniCPM5-2B",
+    "--served-model-name",
+    "minicpm",
+    "--port",
+    "9031",
+    "--test-cases",
+    "[[4096,1024,64,256]]"
+  ],
+  "performance": {
+    "status": "csv_protocol_passed",
+    "cases": [
+      {
+        "case": "4k",
+        "shape": [
+          4096,
+          1024,
+          64,
+          256
+        ],
+        "raw_rounds": 4,
+        "all_four_successful": true,
+        "successful_requests_per_round": 256,
+        "input_tokens_per_round": 1048576,
+        "output_tokens_per_round": 262144,
+        "retained_rounds": [
+          2,
+          3,
+          4
+        ],
+        "summary": {
+          "Benchmark Duration (s)": 248.19,
+          "Total Input Tokens": 1048576.0,
+          "Total Output Tokens": 262144.0,
+          "Req/s": 1.03,
+          "Output tok/s": 1056.23,
+          "Peak Output tok/s": 1408.0,
+          "Total tok/s": 5281.18,
+          "Mean TTFT (ms)": 3098.2,
+          "Median TTFT (ms)": 884.05,
+          "P99 TTFT (ms)": 17664.45,
+          "Mean TPOT (ms)": 57.26,
+          "Median TPOT (ms)": 59.03,
+          "P99 TPOT (ms)": 59.3,
+          "Mean ITL (ms)": 57.26,
+          "Median ITL (ms)": 47.05,
+          "P99 ITL (ms)": 162.25
+        },
+        "benchmark_duration_sum_seconds": 999.89,
+        "raw_metrics": [
+          {
+            "Benchmark Duration (s)": 255.32,
+            "Total Input Tokens": 1048576.0,
+            "Total Output Tokens": 262144.0,
+            "Req/s": 1.0,
+            "Output tok/s": 1026.73,
+            "Peak Output tok/s": 1408.0,
+            "Total tok/s": 5133.65,
+            "Mean TTFT (ms)": 4271.26,
+            "Median TTFT (ms)": 891.32,
+            "P99 TTFT (ms)": 22992.65,
+            "Mean TPOT (ms)": 57.66,
+            "Median TPOT (ms)": 59.16,
+            "P99 TPOT (ms)": 60.59,
+            "Mean ITL (ms)": 57.66,
+            "Median ITL (ms)": 46.97,
+            "P99 ITL (ms)": 163.09
+          },
+          {
+            "Benchmark Duration (s)": 248.39,
+            "Total Input Tokens": 1048576.0,
+            "Total Output Tokens": 262144.0,
+            "Req/s": 1.03,
+            "Output tok/s": 1055.39,
+            "Peak Output tok/s": 1408.0,
+            "Total tok/s": 5276.96,
+            "Mean TTFT (ms)": 3086.73,
+            "Median TTFT (ms)": 889.17,
+            "P99 TTFT (ms)": 17630.56,
+            "Mean TPOT (ms)": 57.32,
+            "Median TPOT (ms)": 59.11,
+            "P99 TPOT (ms)": 59.42,
+            "Mean ITL (ms)": 57.32,
+            "Median ITL (ms)": 47.04,
+            "P99 ITL (ms)": 162.73
+          },
+          {
+            "Benchmark Duration (s)": 248.07,
+            "Total Input Tokens": 1048576.0,
+            "Total Output Tokens": 262144.0,
+            "Req/s": 1.03,
+            "Output tok/s": 1056.75,
+            "Peak Output tok/s": 1408.0,
+            "Total tok/s": 5283.76,
+            "Mean TTFT (ms)": 3113.82,
+            "Median TTFT (ms)": 881.39,
+            "P99 TTFT (ms)": 17744.73,
+            "Mean TPOT (ms)": 57.22,
+            "Median TPOT (ms)": 58.98,
+            "P99 TPOT (ms)": 59.21,
+            "Mean ITL (ms)": 57.22,
+            "Median ITL (ms)": 47.04,
+            "P99 ITL (ms)": 161.98
+          },
+          {
+            "Benchmark Duration (s)": 248.11,
+            "Total Input Tokens": 1048576.0,
+            "Total Output Tokens": 262144.0,
+            "Req/s": 1.03,
+            "Output tok/s": 1056.56,
+            "Peak Output tok/s": 1408.0,
+            "Total tok/s": 5282.81,
+            "Mean TTFT (ms)": 3094.06,
+            "Median TTFT (ms)": 881.6,
+            "P99 TTFT (ms)": 17618.07,
+            "Mean TPOT (ms)": 57.25,
+            "Median TPOT (ms)": 59.01,
+            "P99 TPOT (ms)": 59.27,
+            "Mean ITL (ms)": 57.25,
+            "Median ITL (ms)": 47.07,
+            "P99 ITL (ms)": 162.04
+          }
+        ]
+      }
+    ],
+    "official_script_SHA256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+    "raw_csv": {
+      "path": "/data/competition-final-prefixb-4k-verify-20261115-v1/performance/benchmark_results/raw_runs_20261115_141011.csv",
+      "sha256": "941215624953f1399ab143f6d1957fe78f30122a48b96ee5f4f8c8f885d811ab"
+    },
+    "summary_csv": {
+      "path": "/data/competition-final-prefixb-4k-verify-20261115-v1/performance/benchmark_results/summary_20261115_141011.csv",
+      "sha256": "e300fc2a7b38afbbae396469aa2c5e2f7146febb99a4ba094a732de17394d8f9"
+    },
+    "limitations": [
+      "CSV protocol validation, not independent per-request trace validation",
+      "Caller must verify variant/source, accuracy, no-overlap, process exits and cleanup",
+      "P99 summary is mean of per-round P99, not pooled-request P99",
+      "A subset is not the complete official 4K+16K benchmark suite"
+    ]
+  },
+  "server_stopped": true
+}

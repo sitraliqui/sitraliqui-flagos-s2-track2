@@ -1,0 +1,44 @@
+{
+  "builds": [
+    {
+      "project": "vllm-plugin-FL",
+      "version": "0.3.0rc0+g13eb9be69.finalb1",
+      "wheel": "wheels/validated/vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1-py3-none-any.whl",
+      "sha256": "7271142a9a1d0fec441a2b7e3d24cc0e44c8f8b2b21b41e865fa3cffbe6da0f6",
+      "build_dependencies": {
+        "setuptools": "77.0.3",
+        "setuptools-scm": "8.3.1",
+        "wheel": "0.45.1",
+        "packaging": "25.0"
+      },
+      "package_members": 213,
+      "source_and_install_match": true,
+      "runtime_or_gpu_verified": true,
+      "runtime_verified_platforms": [
+        "metax"
+      ]
+    },
+    {
+      "project": "FlagGems",
+      "version": "5.3.5+g4df52d916.finalb1",
+      "wheel": "wheels/validated/flag_gems-5.3.5+g4df52d916.finalb1-py3-none-any.whl",
+      "sha256": "307a615dba8a80edcbafa51cf168059b89d25a130b8d9caa3a795d281ed6f8be",
+      "build_dependencies": {
+        "setuptools": "76.1.0",
+        "setuptools-scm": "8.3.1",
+        "wheel": "0.46.2",
+        "packaging": "26.0"
+      },
+      "package_members": 2604,
+      "source_and_install_match": true,
+      "runtime_or_gpu_verified": true,
+      "runtime_verified_platforms": [
+        "metax"
+      ]
+    }
+  ],
+  "gpu_used": false,
+  "submitted": false,
+  "gpu_used_scope": "Local build operation only; GPU runtime acceptance recorded separately",
+  "runtime_acceptance": "evidence/acceptance.json"
+}

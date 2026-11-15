@@ -1,0 +1,7 @@
+{
+  "path": "/data/competition-final-prefixb-20261115-v1-r3/merged-env/lib/python3.12/site-packages/vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py",
+  "sha256": "f96b3a72c52c281ef1983acda6dd14120857334a600dec4366f607aa7b5acf20",
+  "diagnostic_marker_absent": true,
+  "hit_last_modified_unix": 1794714823.7580125,
+  "controller_started_unix": 1794714666.3510313
+}

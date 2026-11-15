@@ -1,0 +1,14 @@
+# Portable source ZIP: preserve tested package data.
+include vllm_fl/configs/moe/E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json
+include vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json
+include vllm_fl/dispatch/README.md
+include vllm_fl/dispatch/config/ascend.yaml
+include vllm_fl/dispatch/config/hygon.yaml
+include vllm_fl/dispatch/config/iluvatar.yaml
+include vllm_fl/dispatch/config/metax.yaml
+include vllm_fl/dispatch/config/musa.yaml
+include vllm_fl/dispatch/config/nvidia.yaml
+include vllm_fl/dispatch/config/nvidia_hopper.yaml
+include vllm_fl/dispatch/config/ptg.yaml
+include vllm_fl/dispatch/config/sunrise.yaml
+include vllm_fl/dispatch/config/thead.yaml

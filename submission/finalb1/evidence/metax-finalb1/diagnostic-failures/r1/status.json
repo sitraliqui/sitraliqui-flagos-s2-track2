@@ -1,0 +1,25 @@
+{
+  "started_unix": 1794713884.4790902,
+  "stage": "failed",
+  "updated_unix": 1794714108.6117437,
+  "server_pid": 1712,
+  "server_argv": [
+    "/data/competition-final-prefixb-20261115-v1/merged-env/bin/python",
+    "-u",
+    "-B",
+    "-m",
+    "vllm.entrypoints.cli.main",
+    "serve",
+    "/workspace/MiniCPM5-2B",
+    "--port",
+    "9031",
+    "--served-model-name",
+    "minicpm",
+    "--gpu-memory-utilization",
+    "0.85",
+    "--max-model-len",
+    "131072"
+  ],
+  "error": "RuntimeError('Merged Prefix B branch hit not observed')",
+  "server_stopped": true
+}

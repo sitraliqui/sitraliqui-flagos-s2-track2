@@ -1,0 +1,85 @@
+{
+  "schema": "two-order4k-and16k-summary-v1",
+  "created_utc": "2026-11-08T23:17:57.591717+00:00",
+  "same_runtime_fingerprint_and_boot": true,
+  "first4k": {
+    "order": [
+      "common-s16",
+      "long-s16",
+      "stock"
+    ],
+    "comparisons": [
+      {
+        "candidate": "long-s16",
+        "reference": "common-s16",
+        "meaning": "Fusion increment over the shared repairs; common is not stock",
+        "total_tokens_s_change_pct": 4.040114922664828,
+        "mean_ttft_change_pct": -0.00226812842142321,
+        "mean_duration_change_pct": -3.883454029559985,
+        "repeated_service_or_reverse_order": false,
+        "stable_gain_established": false
+      },
+      {
+        "candidate": "long-s16",
+        "reference": "stock",
+        "meaning": "Full candidate versus installed stock, first sequential comparison",
+        "total_tokens_s_change_pct": 3.7783823093705537,
+        "mean_ttft_change_pct": -0.5803446309665228,
+        "mean_duration_change_pct": -3.7639043971109953,
+        "repeated_service_or_reverse_order": false,
+        "stable_gain_established": false
+      },
+      {
+        "candidate": "common-s16",
+        "reference": "stock",
+        "meaning": "Shared repairs versus installed stock, first sequential comparison",
+        "total_tokens_s_change_pct": -0.25156893904704214,
+        "mean_ttft_change_pct": -0.5780896143599557,
+        "mean_duration_change_pct": 0.12437986742237506,
+        "repeated_service_or_reverse_order": false,
+        "stable_gain_established": false
+      }
+    ]
+  },
+  "reverse4k": {
+    "order": [
+      "stock",
+      "long-s16",
+      "common-s16"
+    ],
+    "comparisons": [
+      {
+        "candidate": "long-s16",
+        "reference": "stock",
+        "total_tokens_s_change_pct": 4.39227606128707,
+        "mean_ttft_change_pct": 0.7331039597339828
+      },
+      {
+        "candidate": "long-s16",
+        "reference": "common-s16",
+        "total_tokens_s_change_pct": 6.046819739622689,
+        "mean_ttft_change_pct": -0.11669286630470177
+      },
+      {
+        "candidate": "common-s16",
+        "reference": "stock",
+        "total_tokens_s_change_pct": -1.5602011285185347,
+        "mean_ttft_change_pct": 0.850789636852145
+      }
+    ]
+  },
+  "full16k": {
+    "total_tokens_s_change_pct": -0.0011578228299669036,
+    "mean_ttft_change_pct": 0.0037147453501917838
+  },
+  "independent_4k_service_groups": 2,
+  "rounds_pooled_as_independent_services": false,
+  "stable_gain_established": false,
+  "qualified_for_submission": false,
+  "numerical_equivalence_established": false,
+  "audits": {
+    "complete4k-three-arm-audit.json": "ee88407ca4a1cc9f71d3868aefffc6899bf2b73c30ad7d5194f937d137ff8ff3",
+    "reverse4k-three-arm-audit.json": "4b301c0469d9579db41ad4db85877265b785462e06119fd8e85bfe5d10b3d6d6",
+    "complete16k-pair-audit.json": "26113039972ce4b91473b9231c4372aed70ec0bca67d7e5911e22ac3f8c368b5"
+  }
+}

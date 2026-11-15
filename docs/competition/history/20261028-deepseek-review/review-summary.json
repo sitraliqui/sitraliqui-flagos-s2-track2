@@ -1,0 +1,47 @@
+{
+  "review_date_client": "2026-10-28",
+  "scope": "Competition feasibility review, no deployment or GPU use",
+  "DeepInfer_commit": "553741557a57df44a46fb3ab72b6aafeaf945337",
+  "verified_cached_source_files": 12,
+  "confirmed_facts": [
+    {
+      "fact": "DeepInfer current documented model/hardware targets are DeepSeek-V4.1-Flash and NVIDIA SM100/Huawei Ascend950",
+      "source": "https://github.com/deepseek-ai/DeepInfer"
+    },
+    {
+      "fact": "Its batch-invariant test passes generated trajectories as golden_token_ids to single-request replay and compares token/logprob/top-token outputs",
+      "source": "DeepInfer/tests/models/test_batch_invariant.py"
+    },
+    {
+      "fact": "Its CUDA graph runner keeps source/device metadata buffers and copies values for replay",
+      "source": "DeepInfer/deepinfer/worker/cuda_graph_runner.py"
+    },
+    {
+      "fact": "Existing local MetaX adaptation forces top-k/top-p to PyTorch fallback because of Triton compilation errors; both-none returns input directly",
+      "source": "outputs/sitraliqui-flagos-s2-track2/vllm_fl/dispatch/backends/vendor/metax/patches/topk_topp_sampler.py"
+    }
+  ],
+  "competition_priorities": [
+    {
+      "priority": "P0",
+      "task": "Fixed-prefix A/A and A/B numerical comparison; borrow diagnostic design, not unsupported DeepInfer flags",
+      "not_proven": "Our same-batch serial divergence has same root cause as DeepInfer batch-composition invariance"
+    },
+    {
+      "priority": "P1 conditional new performance route",
+      "task": "Attribute official-workload sampler/fallback calls and full cost; inspect DeepSelect algorithm only if branch hits",
+      "not_proven": "sweep/histogram belongs to sampler, or top-k can replace full top-p semantics"
+    },
+    {
+      "priority": "P2",
+      "task": "Audit metadata buffer allocation/reuse and Graph input preparation, preserving value validity and existing dispatch",
+      "not_proven": "Allocations are redundant or storage reuse is safe for changing requests"
+    }
+  ],
+  "direct_framework_or_library_replacement_recommended": false,
+  "no_new_claim_of_speedup": true,
+  "downloaded_code_executed": false,
+  "dependencies_installed": false,
+  "GPU_started": false,
+  "experimental_sources_or_results_modified": false
+}

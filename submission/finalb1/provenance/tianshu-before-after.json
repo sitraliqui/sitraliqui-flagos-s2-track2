@@ -1,0 +1,44 @@
+[
+  {
+    "project": "vllm-plugin-FL",
+    "reference_wheel": "vllm_plugin_fl-0.3.0rc0+g13eb9be69.formal4-py3-none-any.whl",
+    "reference_sha256": "d7861f2e20ba9042c3e5de78af848260b75a5175b0b01ff93348c0877d427192",
+    "final_wheel": "vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1-py3-none-any.whl",
+    "final_sha256": "7271142a9a1d0fec441a2b7e3d24cc0e44c8f8b2b21b41e865fa3cffbe6da0f6",
+    "changed_members": [
+      {
+        "path": "vllm_fl/_version.py",
+        "old_sha256": "8a9f53c9f869081f2f725b75292fa23810b84ae23e6ce8025e6348787426d847",
+        "new_sha256": "01eae470ad1005d42f730d827fe99de2ecc9ba76d6b4d7f7640e595b17bf22c9"
+      },
+      {
+        "path": "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json",
+        "old_sha256": "c978f595e8954c76a7ff515540ae748e21f1e3c1b23d01d2373182f9c020f3f4",
+        "new_sha256": "97ccbad3a1933385e777d0817618edecbb80ff528b412e353c89c728d7d90193"
+      },
+      {
+        "path": "vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py",
+        "old_sha256": "f81fa552667b3ed98d1cf141d2dee33ba10476cda9a997744495bdbc36289ef2",
+        "new_sha256": "f96b3a72c52c281ef1983acda6dd14120857334a600dec4366f607aa7b5acf20"
+      }
+    ],
+    "tianshu_backend_and_kernels_byte_unchanged": true,
+    "meaning": "Offline payload comparison only; not a merged-package TianShu formal retest"
+  },
+  {
+    "project": "FlagGems",
+    "reference_wheel": "flag_gems-5.3.5+g4df52d916.formal4-py3-none-any.whl",
+    "reference_sha256": "31d07f50a3d8ebb9f76c40114f938b343f6b870502ced4286fbfbf83a92347c6",
+    "final_wheel": "flag_gems-5.3.5+g4df52d916.finalb1-py3-none-any.whl",
+    "final_sha256": "307a615dba8a80edcbafa51cf168059b89d25a130b8d9caa3a795d281ed6f8be",
+    "changed_members": [
+      {
+        "path": "flag_gems/_version.py",
+        "old_sha256": "1baaca2289cadc532605eafdf6ff6a06c1c75b5f589494ce051bb48f52faf37b",
+        "new_sha256": "4226e7ccf5b5c5e82a92898afb7d0ea870c958638cbc74e867cae1d1b0405ad2"
+      }
+    ],
+    "tianshu_backend_and_kernels_byte_unchanged": true,
+    "meaning": "Offline payload comparison only; not a merged-package TianShu formal retest"
+  }
+]

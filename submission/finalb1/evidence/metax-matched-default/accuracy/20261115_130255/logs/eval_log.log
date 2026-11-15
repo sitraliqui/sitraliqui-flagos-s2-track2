@@ -1,0 +1,133 @@
+2026-11-15 13:02:55 - evalscope - INFO: Running with native backend
+2026-11-15 13:02:55 - evalscope - INFO: Dump task config to /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255/configs/task_config.yaml
+2026-11-15 13:02:55 - evalscope - INFO: {
+    "model_id": "minicpm",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "math_500"
+    ],
+    "dataset_args": {
+        "math_500": {
+            "dataset_id": "/workspace/evalscope-datasets/math_500",
+            "subset_list": [
+                "Level 3"
+            ]
+        }
+    },
+    "dataset_dir": "/root/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": null,
+    "eval_batch_size": 8,
+    "use_cache": null,
+    "rerun_review": false,
+    "work_dir": "/data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255",
+    "no_timestamp": false,
+    "enable_progress_tracker": false,
+    "ignore_errors": true,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:9031/v1/chat/completions",
+    "api_key": "**********",
+    "timeout": 3600.0,
+    "stream": null,
+    "judge": {
+        "strategy": "auto",
+        "models": [],
+        "contract": {
+            "system_prompt": null,
+            "prompt_template": null,
+            "score_mapping": null,
+            "score_type": "pattern"
+        },
+        "repeats": 1,
+        "position_swap": "auto",
+        "aggregation": "mean",
+        "min_valid_judges": 1
+    },
+    "analysis_report": false,
+    "collect_perf": true,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.11.1",
+    "model": "minicpm",
+    "generation_config": {
+        "timeout": 3600.0,
+        "batch_size": 8,
+        "max_tokens": 32768,
+        "top_p": 0.95,
+        "temperature": 1.0
+    },
+    "sandbox": {
+        "enabled": false,
+        "engine": "docker",
+        "default_config": {},
+        "manager_config": {},
+        "pool_size": null
+    },
+    "agent_config": null
+}
+2026-11-15 13:02:55 - evalscope - INFO: Start loading benchmark dataset: math_500
+2026-11-15 13:02:55 - evalscope - INFO: Loading dataset /workspace/evalscope-datasets/math_500 from local > subset: default > split: test ...
+2026-11-15 13:02:55 - evalscope - INFO: math_500: 105 samples to evaluate (1 subset)
+2026-11-15 13:02:55 - evalscope - INFO: Subsets of math_500: ['Level 3']
+2026-11-15 13:02:55 - evalscope - INFO: Loading model for prediction...
+2026-11-15 13:02:55 - evalscope - INFO: Creating model minicpm with eval_type=openai_api base_url=http://127.0.0.1:9031/v1/chat/completions, config={'timeout': 3600.0, 'retries': 5, 'retry_interval': 10, 'batch_size': 8, 'max_tokens': 32768, 'top_p': 0.95, 'temperature': 1.0, 'anthropic_cache_strategy': 'evaluation'}, model_args={}
+2026-11-15 13:02:55 - evalscope - INFO: Model loaded successfully.
+2026-11-15 13:03:55 - evalscope - INFO: Evaluating[math_500]  14%| 15/105 [Elapsed: 01:00 < Remaining: 06:31,  4.35s/it]
+2026-11-15 13:04:55 - evalscope - INFO: Evaluating[math_500]  25%| 26/105 [Elapsed: 02:00 < Remaining: 07:36,  5.78s/it]
+2026-11-15 13:05:56 - evalscope - INFO: Evaluating[math_500]  32%| 34/105 [Elapsed: 03:00 < Remaining: 09:05,  7.68s/it]
+2026-11-15 13:06:56 - evalscope - INFO: Evaluating[math_500]  40%| 42/105 [Elapsed: 04:00 < Remaining: 07:28,  7.12s/it]
+2026-11-15 13:07:56 - evalscope - INFO: Evaluating[math_500]  56%| 59/105 [Elapsed: 05:00 < Remaining: 02:12,  2.89s/it]
+2026-11-15 13:08:56 - evalscope - INFO: Evaluating[math_500]  70%| 74/105 [Elapsed: 06:00 < Remaining: 02:59,  5.79s/it]
+2026-11-15 13:09:56 - evalscope - INFO: Evaluating[math_500]  80%| 84/105 [Elapsed: 07:00 < Remaining: 02:04,  5.93s/it]
+2026-11-15 13:10:56 - evalscope - INFO: Evaluating[math_500]  90%| 94/105 [Elapsed: 08:00 < Remaining: 00:37,  3.37s/it]
+2026-11-15 13:11:56 - evalscope - INFO: Evaluating[math_500]  94%| 99/105 [Elapsed: 09:00 < Remaining: 00:55,  9.32s/it]
+2026-11-15 13:12:56 - evalscope - INFO: Evaluating[math_500]  98%| 103/105 [Elapsed: 10:00 < Remaining: 00:35, 17.67s/it]
+2026-11-15 13:13:56 - evalscope - INFO: Evaluating[math_500]  98%| 103/105 [Elapsed: 11:00 < Remaining: 00:35, 17.67s/it]
+2026-11-15 13:14:56 - evalscope - INFO: Evaluating[math_500]  99%| 104/105 [Elapsed: 12:00 < Remaining: 00:49, 49.58s/it]
+2026-11-15 13:15:56 - evalscope - INFO: Evaluating[math_500]  99%| 104/105 [Elapsed: 13:00 < Remaining: 00:49, 49.58s/it]
+2026-11-15 13:16:32 - evalscope - INFO: Evaluating[math_500] 100%| 105/105 [Elapsed: 13:37 < Remaining: 00:00, 63.96s/it]
+2026-11-15 13:16:32 - evalscope - INFO: math_500: predictions complete, aggregating scores...
+2026-11-15 13:16:32 - evalscope - INFO: Aggregating scores for subset: Level 3
+2026-11-15 13:16:32 - evalscope - INFO: Generating report...
+2026-11-15 13:16:32 - evalscope - INFO: 
+math_500 report table:
+┌─────────┬───────────┬────────────┬──────────┬───────┬─────────┐
+│ Model   │ Dataset   │ Metric     │ Subset   │   Num │ Score   │
+├─────────┼───────────┼────────────┼──────────┼───────┼─────────┤
+│ minicpm │ MATH-500  │ Accuracy ↑ │ Level 3  │   105 │ 98.1%   │
+└─────────┴───────────┴────────────┴──────────┴───────┴─────────┘ 
+
+2026-11-15 13:16:32 - evalscope - INFO: Skipping report analysis (`analysis_report=False`).
+2026-11-15 13:16:32 - evalscope - INFO: Dump report to: /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255/reports/minicpm/math_500.json 
+
+2026-11-15 13:16:33 - evalscope - INFO: 
+math_500 perf table:
+Model    Dataset      Num  Avg Lat    Avg TTFT    Avg TPOT    Avg Thpt       Avg In    Avg Out
+-------  ---------  -----  ---------  ----------  ----------  -----------  --------  ---------
+minicpm  MATH-500     105  45.476 s   —           —           72.72 tok/s        78       3307
+
+2026-11-15 13:16:33 - evalscope - INFO: Benchmark math_500 evaluation finished.
+2026-11-15 13:16:33 - evalscope - INFO: Running[eval] 100%| 1/1 [Elapsed: 13:37 < Remaining: 00:00, 817.51s/benchmark]
+2026-11-15 13:16:33 - evalscope - INFO: Overall report table: 
+┌─────────┬───────────┬────────────┬──────────┬───────┬─────────┐
+│ Model   │ Dataset   │ Metric     │ Subset   │   Num │ Score   │
+├─────────┼───────────┼────────────┼──────────┼───────┼─────────┤
+│ minicpm │ MATH-500  │ Accuracy ↑ │ Level 3  │   105 │ 98.1%   │
+└─────────┴───────────┴────────────┴──────────┴───────┴─────────┘ 
+
+2026-11-15 13:16:33 - evalscope - INFO: Overall perf table: 
+Model    Dataset      Num  Avg Lat    Avg TTFT    Avg TPOT    Avg Thpt       Avg In    Avg Out
+-------  ---------  -----  ---------  ----------  ----------  -----------  --------  ---------
+minicpm  MATH-500     105  45.476 s   —           —           72.72 tok/s        78       3307 
+
+2026-11-15 13:16:33 - evalscope - INFO: HTML report generated: /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255/reports/report.html
+2026-11-15 13:16:33 - evalscope - INFO: Finished evaluation for minicpm on ['math_500']
+2026-11-15 13:16:33 - evalscope - INFO: Output directory: /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255

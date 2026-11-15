@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-11-15T04:22Z",
+  "source": "https://flagos.io/race-detail-season2?id=539vlt2p&lang=cn",
+  "screenshot": "official-reference-20261115.png",
+  "accuracy_minimum": 0.95,
+  "relative_throughput_lower_reference": 0.99,
+  "relative_TTFT_upper_reference": 1.01,
+  "equality_boundary_interpretation": "Not independently clarified; do not fabricate scoring at equality",
+  "references": {
+    "tianshu": {
+      "4k": {
+        "total_tokens_per_second": 2028.01,
+        "mean_ttft_ms": 11573.53
+      },
+      "16k": {
+        "total_tokens_per_second": 915.15,
+        "mean_ttft_ms": 599262.03
+      }
+    },
+    "metax": {
+      "4k": {
+        "total_tokens_per_second": 5089.645,
+        "mean_ttft_ms": 3199.435
+      },
+      "16k": {
+        "total_tokens_per_second": 7029.675,
+        "mean_ttft_ms": 27197.135
+      }
+    }
+  },
+  "not_a_same_machine_control": true,
+  "final_reproduction_by_organizer": true
+}

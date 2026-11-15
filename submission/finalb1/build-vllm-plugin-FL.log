@@ -1,0 +1,777 @@
+running bdist_wheel
+running build
+running build_py
+creating build\lib\vllm_fl
+copying vllm_fl\envs.py -> build\lib\vllm_fl
+copying vllm_fl\platform.py -> build\lib\vllm_fl
+copying vllm_fl\utils.py -> build\lib\vllm_fl
+copying vllm_fl\version.py -> build\lib\vllm_fl
+copying vllm_fl\_version.py -> build\lib\vllm_fl
+copying vllm_fl\__init__.py -> build\lib\vllm_fl
+creating build\lib\vllm_fl\attention
+copying vllm_fl\attention\utils.py -> build\lib\vllm_fl\attention
+copying vllm_fl\attention\__init__.py -> build\lib\vllm_fl\attention
+creating build\lib\vllm_fl\compilation
+copying vllm_fl\compilation\break_graph.py -> build\lib\vllm_fl\compilation
+copying vllm_fl\compilation\graph.py -> build\lib\vllm_fl\compilation
+copying vllm_fl\compilation\__init__.py -> build\lib\vllm_fl\compilation
+creating build\lib\vllm_fl\configs
+copying vllm_fl\configs\glm_moe_dsa.py -> build\lib\vllm_fl\configs
+copying vllm_fl\configs\__init__.py -> build\lib\vllm_fl\configs
+creating build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\builtin_ops.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\discovery.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\io_common.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\io_dumper.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\logger_manager.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\manager.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\ops.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\policy.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\registry.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\types.py -> build\lib\vllm_fl\dispatch
+copying vllm_fl\dispatch\__init__.py -> build\lib\vllm_fl\dispatch
+creating build\lib\vllm_fl\distributed
+copying vllm_fl\distributed\communicator.py -> build\lib\vllm_fl\distributed
+copying vllm_fl\distributed\__init__.py -> build\lib\vllm_fl\distributed
+creating build\lib\vllm_fl\models
+copying vllm_fl\models\qwen3_5.py -> build\lib\vllm_fl\models
+copying vllm_fl\models\__init__.py -> build\lib\vllm_fl\models
+creating build\lib\vllm_fl\ops
+copying vllm_fl\ops\activation.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\custom_ops.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\iluvatar_linear.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\layernorm.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\rotary_embedding.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\_C_ops_registry.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\_C_ops_schemas.py -> build\lib\vllm_fl\ops
+copying vllm_fl\ops\__init__.py -> build\lib\vllm_fl\ops
+creating build\lib\vllm_fl\patches
+copying vllm_fl\patches\gdn_packed_decode.py -> build\lib\vllm_fl\patches
+copying vllm_fl\patches\glm_moe_dsa.py -> build\lib\vllm_fl\patches
+copying vllm_fl\patches\moe_sum.py -> build\lib\vllm_fl\patches
+copying vllm_fl\patches\qwen3_5_text.py -> build\lib\vllm_fl\patches
+copying vllm_fl\patches\__init__.py -> build\lib\vllm_fl\patches
+creating build\lib\vllm_fl\quantization
+copying vllm_fl\quantization\quant_linear.py -> build\lib\vllm_fl\quantization
+copying vllm_fl\quantization\__init__.py -> build\lib\vllm_fl\quantization
+creating build\lib\vllm_fl\worker
+copying vllm_fl\worker\model_runner.py -> build\lib\vllm_fl\worker
+copying vllm_fl\worker\scheduler_fl.py -> build\lib\vllm_fl\worker
+copying vllm_fl\worker\worker.py -> build\lib\vllm_fl\worker
+copying vllm_fl\worker\__init__.py -> build\lib\vllm_fl\worker
+creating build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\backend.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\bindings.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\contract.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\controller.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\profiles.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\proof.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\runtime.py -> build\lib\vllm_fl\compilation\kv_decode
+copying vllm_fl\compilation\kv_decode\__init__.py -> build\lib\vllm_fl\compilation\kv_decode
+creating build\lib\vllm_fl\dispatch\backends
+copying vllm_fl\dispatch\backends\base.py -> build\lib\vllm_fl\dispatch\backends
+copying vllm_fl\dispatch\backends\__init__.py -> build\lib\vllm_fl\dispatch\backends
+creating build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\utils.py -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\__init__.py -> build\lib\vllm_fl\dispatch\config
+creating build\lib\vllm_fl\dispatch\backends\flaggems
+copying vllm_fl\dispatch\backends\flaggems\flaggems.py -> build\lib\vllm_fl\dispatch\backends\flaggems
+copying vllm_fl\dispatch\backends\flaggems\register_ops.py -> build\lib\vllm_fl\dispatch\backends\flaggems
+copying vllm_fl\dispatch\backends\flaggems\__init__.py -> build\lib\vllm_fl\dispatch\backends\flaggems
+creating build\lib\vllm_fl\dispatch\backends\reference
+copying vllm_fl\dispatch\backends\reference\reference.py -> build\lib\vllm_fl\dispatch\backends\reference
+copying vllm_fl\dispatch\backends\reference\register_ops.py -> build\lib\vllm_fl\dispatch\backends\reference
+copying vllm_fl\dispatch\backends\reference\__init__.py -> build\lib\vllm_fl\dispatch\backends\reference
+creating build\lib\vllm_fl\dispatch\backends\vendor
+copying vllm_fl\dispatch\backends\vendor\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor
+creating build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\attention.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\custom_attention.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\fused_moe.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\mla.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\normalization.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\quantization.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\rotary.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+copying vllm_fl\dispatch\backends\flaggems\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\flaggems\impl
+creating build\lib\vllm_fl\dispatch\backends\reference\impl
+copying vllm_fl\dispatch\backends\reference\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\reference\impl
+copying vllm_fl\dispatch\backends\reference\impl\normalization.py -> build\lib\vllm_fl\dispatch\backends\reference\impl
+copying vllm_fl\dispatch\backends\reference\impl\quantization.py -> build\lib\vllm_fl\dispatch\backends\reference\impl
+copying vllm_fl\dispatch\backends\reference\impl\rotary.py -> build\lib\vllm_fl\dispatch\backends\reference\impl
+copying vllm_fl\dispatch\backends\reference\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\reference\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\ascend
+copying vllm_fl\dispatch\backends\vendor\ascend\ascend.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend
+copying vllm_fl\dispatch\backends\vendor\ascend\patch.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend
+copying vllm_fl\dispatch\backends\vendor\ascend\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend
+copying vllm_fl\dispatch\backends\vendor\ascend\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend
+creating build\lib\vllm_fl\dispatch\backends\vendor\cuda
+copying vllm_fl\dispatch\backends\vendor\cuda\cuda.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda
+copying vllm_fl\dispatch\backends\vendor\cuda\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda
+copying vllm_fl\dispatch\backends\vendor\cuda\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda
+creating build\lib\vllm_fl\dispatch\backends\vendor\iluvatar
+copying vllm_fl\dispatch\backends\vendor\iluvatar\iluvatar.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar
+copying vllm_fl\dispatch\backends\vendor\iluvatar\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar
+copying vllm_fl\dispatch\backends\vendor\iluvatar\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax
+copying vllm_fl\dispatch\backends\vendor\metax\metax.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax
+copying vllm_fl\dispatch\backends\vendor\metax\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax
+copying vllm_fl\dispatch\backends\vendor\metax\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax
+creating build\lib\vllm_fl\dispatch\backends\vendor\musa
+copying vllm_fl\dispatch\backends\vendor\musa\musa.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa
+copying vllm_fl\dispatch\backends\vendor\musa\patch.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa
+copying vllm_fl\dispatch\backends\vendor\musa\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa
+copying vllm_fl\dispatch\backends\vendor\musa\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa
+creating build\lib\vllm_fl\dispatch\backends\vendor\sunrise
+copying vllm_fl\dispatch\backends\vendor\sunrise\patch.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise
+copying vllm_fl\dispatch\backends\vendor\sunrise\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise
+copying vllm_fl\dispatch\backends\vendor\sunrise\sunrise.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise
+copying vllm_fl\dispatch\backends\vendor\sunrise\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise
+creating build\lib\vllm_fl\dispatch\backends\vendor\template
+copying vllm_fl\dispatch\backends\vendor\template\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\template
+copying vllm_fl\dispatch\backends\vendor\template\template.py -> build\lib\vllm_fl\dispatch\backends\vendor\template
+copying vllm_fl\dispatch\backends\vendor\template\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\template
+creating build\lib\vllm_fl\dispatch\backends\vendor\thead
+copying vllm_fl\dispatch\backends\vendor\thead\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\thead
+copying vllm_fl\dispatch\backends\vendor\thead\thead.py -> build\lib\vllm_fl\dispatch\backends\vendor\thead
+copying vllm_fl\dispatch\backends\vendor\thead\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\thead
+creating build\lib\vllm_fl\dispatch\backends\vendor\txda
+copying vllm_fl\dispatch\backends\vendor\txda\register_ops.py -> build\lib\vllm_fl\dispatch\backends\vendor\txda
+copying vllm_fl\dispatch\backends\vendor\txda\txda.py -> build\lib\vllm_fl\dispatch\backends\vendor\txda
+copying vllm_fl\dispatch\backends\vendor\txda\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\txda
+creating build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\attention.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\attention_mask.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\causal_conv1d.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\fused_gdn_gating.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\fused_moe.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\mm_encoder_attention.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\normalization.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\rotary.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\triton_utils.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\vocab_parallel_embedding.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\ascend\patches
+copying vllm_fl\dispatch\backends\vendor\ascend\patches\patch_mamba_config.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\patches
+copying vllm_fl\dispatch\backends\vendor\ascend\patches\patch_multimodal_merge.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\patches
+creating build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\fla\chunk.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\fla\l2norm.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\fla\utils.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying vllm_fl\dispatch\backends\vendor\ascend\impl\fla\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+creating build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying vllm_fl\dispatch\backends\vendor\cuda\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying vllm_fl\dispatch\backends\vendor\cuda\impl\fused_moe.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying vllm_fl\dispatch\backends\vendor\cuda\impl\normalization.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying vllm_fl\dispatch\backends\vendor\cuda\impl\rotary.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying vllm_fl\dispatch\backends\vendor\cuda\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying vllm_fl\dispatch\backends\vendor\iluvatar\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying vllm_fl\dispatch\backends\vendor\iluvatar\impl\normalization.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying vllm_fl\dispatch\backends\vendor\iluvatar\impl\rotary.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying vllm_fl\dispatch\backends\vendor\iluvatar\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax\impl
+copying vllm_fl\dispatch\backends\vendor\metax\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl
+copying vllm_fl\dispatch\backends\vendor\metax\impl\fused_moe.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl
+copying vllm_fl\dispatch\backends\vendor\metax\impl\layernorm.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl
+copying vllm_fl\dispatch\backends\vendor\metax\impl\rotary_embedding.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl
+copying vllm_fl\dispatch\backends\vendor\metax\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\accelerator_compat.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\chunk_delta_h.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\cuda_wrapper.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\fix_standalone_compile.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\functorch_config_patch.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\gdn_linear_attn.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\pynccl_wrapper.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\topk_topp_sampler.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\utils_patch.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+copying vllm_fl\dispatch\backends\vendor\metax\patches\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\patches
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\flash_attn.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla\common.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla\flashmla.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\flashmla.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\merge_attn_states.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\triton_decode_attention.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\triton_unified_attention.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\vit_attn_wrappers.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+creating build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils\fa_utils.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils
+copying vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils
+creating build\lib\vllm_fl\dispatch\backends\vendor\musa\impl
+copying vllm_fl\dispatch\backends\vendor\musa\impl\activation.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa\impl
+copying vllm_fl\dispatch\backends\vendor\musa\impl\normalization.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa\impl
+copying vllm_fl\dispatch\backends\vendor\musa\impl\rotary.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa\impl
+copying vllm_fl\dispatch\backends\vendor\musa\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\musa\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying vllm_fl\dispatch\backends\vendor\sunrise\impl\attention.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying vllm_fl\dispatch\backends\vendor\sunrise\impl\vocab_parallel_embedding.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying vllm_fl\dispatch\backends\vendor\sunrise\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\template\impl
+copying vllm_fl\dispatch\backends\vendor\template\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\template\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\thead\impl
+copying vllm_fl\dispatch\backends\vendor\thead\impl\attention.py -> build\lib\vllm_fl\dispatch\backends\vendor\thead\impl
+copying vllm_fl\dispatch\backends\vendor\thead\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\thead\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\txda\impl
+copying vllm_fl\dispatch\backends\vendor\txda\impl\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\txda\impl
+creating build\lib\vllm_fl\dispatch\backends\vendor\txda\impl\patchs
+copying vllm_fl\dispatch\backends\vendor\txda\impl\patchs\apply_repetition_penalties.py -> build\lib\vllm_fl\dispatch\backends\vendor\txda\impl\patchs
+copying vllm_fl\dispatch\backends\vendor\txda\impl\patchs\__init__.py -> build\lib\vllm_fl\dispatch\backends\vendor\txda\impl\patchs
+creating build\lib\vllm_fl\distributed\device_communicators
+copying vllm_fl\distributed\device_communicators\flagcx.py -> build\lib\vllm_fl\distributed\device_communicators
+copying vllm_fl\distributed\device_communicators\__init__.py -> build\lib\vllm_fl\distributed\device_communicators
+creating build\lib\vllm_fl\distributed\kv_transfer
+copying vllm_fl\distributed\kv_transfer\flagcx_connector.py -> build\lib\vllm_fl\distributed\kv_transfer
+copying vllm_fl\distributed\kv_transfer\flagcx_stats.py -> build\lib\vllm_fl\distributed\kv_transfer
+copying vllm_fl\distributed\kv_transfer\__init__.py -> build\lib\vllm_fl\distributed\kv_transfer
+creating build\lib\vllm_fl\ops\fla
+copying vllm_fl\ops\fla\chunk.py -> build\lib\vllm_fl\ops\fla
+copying vllm_fl\ops\fla\fused_recurrent.py -> build\lib\vllm_fl\ops\fla
+copying vllm_fl\ops\fla\utils.py -> build\lib\vllm_fl\ops\fla
+copying vllm_fl\ops\fla\__init__.py -> build\lib\vllm_fl\ops\fla
+creating build\lib\vllm_fl\ops\fused_moe
+copying vllm_fl\ops\fused_moe\activation.py -> build\lib\vllm_fl\ops\fused_moe
+copying vllm_fl\ops\fused_moe\fused_moe.py -> build\lib\vllm_fl\ops\fused_moe
+copying vllm_fl\ops\fused_moe\fused_moe_utils.py -> build\lib\vllm_fl\ops\fused_moe
+copying vllm_fl\ops\fused_moe\layer.py -> build\lib\vllm_fl\ops\fused_moe
+copying vllm_fl\ops\fused_moe\router.py -> build\lib\vllm_fl\ops\fused_moe
+copying vllm_fl\ops\fused_moe\__init__.py -> build\lib\vllm_fl\ops\fused_moe
+creating build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\int8_mode.py -> build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\linear.py -> build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\moe.py -> build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\moe_experts.py -> build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\packed.py -> build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\reference.py -> build\lib\vllm_fl\quantization\w8a8
+copying vllm_fl\quantization\w8a8\__init__.py -> build\lib\vllm_fl\quantization\w8a8
+running egg_info
+creating vllm_plugin_fl.egg-info
+writing vllm_plugin_fl.egg-info\PKG-INFO
+writing dependency_links to vllm_plugin_fl.egg-info\dependency_links.txt
+writing entry points to vllm_plugin_fl.egg-info\entry_points.txt
+writing requirements to vllm_plugin_fl.egg-info\requires.txt
+writing top-level names to vllm_plugin_fl.egg-info\top_level.txt
+writing manifest file 'vllm_plugin_fl.egg-info\SOURCES.txt'
+ERROR setuptools_scm._file_finders.git listing git files failed - pretending there aren't any
+reading manifest file 'vllm_plugin_fl.egg-info\SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'vllm_plugin_fl.egg-info\SOURCES.txt'
+copying vllm_fl\dispatch\README.md -> build\lib\vllm_fl\dispatch
+creating build\lib\vllm_fl\configs\moe
+copying vllm_fl\configs\moe\E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json -> build\lib\vllm_fl\configs\moe
+copying vllm_fl\configs\moe\E=256,N=512,device_name=nvidia.json -> build\lib\vllm_fl\configs\moe
+copying vllm_fl\dispatch\config\ascend.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\hygon.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\iluvatar.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\metax.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\musa.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\nvidia.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\nvidia_hopper.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\ptg.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\sunrise.yaml -> build\lib\vllm_fl\dispatch\config
+copying vllm_fl\dispatch\config\thead.yaml -> build\lib\vllm_fl\dispatch\config
+warning: build_py: byte-compiling is disabled, skipping.
+
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\vllm_fl
+creating build\bdist.win-amd64\wheel\vllm_fl\attention
+copying build\lib\vllm_fl\attention\utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\attention
+copying build\lib\vllm_fl\attention\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\attention
+creating build\bdist.win-amd64\wheel\vllm_fl\compilation
+copying build\lib\vllm_fl\compilation\break_graph.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation
+copying build\lib\vllm_fl\compilation\graph.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation
+creating build\bdist.win-amd64\wheel\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\backend.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\bindings.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\contract.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\controller.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\profiles.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\proof.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\runtime.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\kv_decode\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation\kv_decode
+copying build\lib\vllm_fl\compilation\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\compilation
+creating build\bdist.win-amd64\wheel\vllm_fl\configs
+copying build\lib\vllm_fl\configs\glm_moe_dsa.py -> build\bdist.win-amd64\wheel\.\vllm_fl\configs
+creating build\bdist.win-amd64\wheel\vllm_fl\configs\moe
+copying build\lib\vllm_fl\configs\moe\E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json -> build\bdist.win-amd64\wheel\.\vllm_fl\configs\moe
+copying build\lib\vllm_fl\configs\moe\E=256,N=512,device_name=nvidia.json -> build\bdist.win-amd64\wheel\.\vllm_fl\configs\moe
+copying build\lib\vllm_fl\configs\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\configs
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends
+copying build\lib\vllm_fl\dispatch\backends\base.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\flaggems
+copying build\lib\vllm_fl\dispatch\backends\flaggems\flaggems.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\custom_attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\fused_moe.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\mla.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\normalization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\quantization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\rotary.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems\impl
+copying build\lib\vllm_fl\dispatch\backends\flaggems\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems
+copying build\lib\vllm_fl\dispatch\backends\flaggems\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\flaggems
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\reference
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\reference\impl
+copying build\lib\vllm_fl\dispatch\backends\reference\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference\impl
+copying build\lib\vllm_fl\dispatch\backends\reference\impl\normalization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference\impl
+copying build\lib\vllm_fl\dispatch\backends\reference\impl\quantization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference\impl
+copying build\lib\vllm_fl\dispatch\backends\reference\impl\rotary.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference\impl
+copying build\lib\vllm_fl\dispatch\backends\reference\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference\impl
+copying build\lib\vllm_fl\dispatch\backends\reference\reference.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference
+copying build\lib\vllm_fl\dispatch\backends\reference\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference
+copying build\lib\vllm_fl\dispatch\backends\reference\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\reference
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\ascend
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\ascend.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\attention_mask.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\causal_conv1d.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla\chunk.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla\l2norm.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla\utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fla\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl\fla
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fused_gdn_gating.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\fused_moe.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\mm_encoder_attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\normalization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\rotary.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\triton_utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\vocab_parallel_embedding.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\patch.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\ascend\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\patches\patch_mamba_config.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\patches\patch_multimodal_merge.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend
+copying build\lib\vllm_fl\dispatch\backends\vendor\ascend\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\ascend
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\cuda
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\cuda.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl\fused_moe.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl\normalization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl\rotary.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda
+copying build\lib\vllm_fl\dispatch\backends\vendor\cuda\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\cuda
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\iluvatar
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\iluvatar.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl\normalization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl\rotary.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar
+copying build\lib\vllm_fl\dispatch\backends\vendor\iluvatar\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\iluvatar
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax\impl\attention
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\flash_attn.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla\common.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla\flashmla.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\mla
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\flashmla.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\merge_attn_states.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\triton_decode_attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\triton_unified_attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\vit_attn_wrappers.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\ops
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils\fa_utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention\utils
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\attention\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl\attention
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\fused_moe.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\layernorm.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\rotary_embedding.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\metax.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\accelerator_compat.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\chunk_delta_h.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\cuda_wrapper.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\fix_standalone_compile.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\functorch_config_patch.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\gdn_linear_attn.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\pynccl_wrapper.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\topk_topp_sampler.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\utils_patch.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\patches\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax\patches
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax
+copying build\lib\vllm_fl\dispatch\backends\vendor\metax\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\metax
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\musa
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\musa\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\impl\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\impl\normalization.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\impl\rotary.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\musa.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\patch.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa
+copying build\lib\vllm_fl\dispatch\backends\vendor\musa\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\musa
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\sunrise
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl\attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl\vocab_parallel_embedding.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\patch.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\sunrise.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise
+copying build\lib\vllm_fl\dispatch\backends\vendor\sunrise\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\sunrise
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\template
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\template\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\template\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\template\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\template\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\template
+copying build\lib\vllm_fl\dispatch\backends\vendor\template\template.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\template
+copying build\lib\vllm_fl\dispatch\backends\vendor\template\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\template
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\thead
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\thead\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\thead\impl\attention.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\thead\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\thead\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\thead\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\thead\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\thead
+copying build\lib\vllm_fl\dispatch\backends\vendor\thead\thead.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\thead
+copying build\lib\vllm_fl\dispatch\backends\vendor\thead\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\thead
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\txda
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\txda\impl
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\backends\vendor\txda\impl\patchs
+copying build\lib\vllm_fl\dispatch\backends\vendor\txda\impl\patchs\apply_repetition_penalties.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\txda\impl\patchs
+copying build\lib\vllm_fl\dispatch\backends\vendor\txda\impl\patchs\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\txda\impl\patchs
+copying build\lib\vllm_fl\dispatch\backends\vendor\txda\impl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\txda\impl
+copying build\lib\vllm_fl\dispatch\backends\vendor\txda\register_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\txda
+copying build\lib\vllm_fl\dispatch\backends\vendor\txda\txda.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\txda
+copying build\lib\vllm_fl\dispatch\backends\vendor\txda\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor\txda
+copying build\lib\vllm_fl\dispatch\backends\vendor\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends\vendor
+copying build\lib\vllm_fl\dispatch\backends\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\backends
+copying build\lib\vllm_fl\dispatch\builtin_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+creating build\bdist.win-amd64\wheel\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\ascend.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\hygon.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\iluvatar.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\metax.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\musa.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\nvidia.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\nvidia_hopper.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\ptg.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\sunrise.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\thead.yaml -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\config\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch\config
+copying build\lib\vllm_fl\dispatch\discovery.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\io_common.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\io_dumper.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\logger_manager.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\manager.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\policy.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\README.md -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\registry.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\types.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+copying build\lib\vllm_fl\dispatch\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\dispatch
+creating build\bdist.win-amd64\wheel\vllm_fl\distributed
+copying build\lib\vllm_fl\distributed\communicator.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed
+creating build\bdist.win-amd64\wheel\vllm_fl\distributed\device_communicators
+copying build\lib\vllm_fl\distributed\device_communicators\flagcx.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed\device_communicators
+copying build\lib\vllm_fl\distributed\device_communicators\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed\device_communicators
+creating build\bdist.win-amd64\wheel\vllm_fl\distributed\kv_transfer
+copying build\lib\vllm_fl\distributed\kv_transfer\flagcx_connector.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed\kv_transfer
+copying build\lib\vllm_fl\distributed\kv_transfer\flagcx_stats.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed\kv_transfer
+copying build\lib\vllm_fl\distributed\kv_transfer\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed\kv_transfer
+copying build\lib\vllm_fl\distributed\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\distributed
+copying build\lib\vllm_fl\envs.py -> build\bdist.win-amd64\wheel\.\vllm_fl
+creating build\bdist.win-amd64\wheel\vllm_fl\models
+copying build\lib\vllm_fl\models\qwen3_5.py -> build\bdist.win-amd64\wheel\.\vllm_fl\models
+copying build\lib\vllm_fl\models\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\models
+creating build\bdist.win-amd64\wheel\vllm_fl\ops
+copying build\lib\vllm_fl\ops\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+copying build\lib\vllm_fl\ops\custom_ops.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+creating build\bdist.win-amd64\wheel\vllm_fl\ops\fla
+copying build\lib\vllm_fl\ops\fla\chunk.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fla
+copying build\lib\vllm_fl\ops\fla\fused_recurrent.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fla
+copying build\lib\vllm_fl\ops\fla\utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fla
+copying build\lib\vllm_fl\ops\fla\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fla
+creating build\bdist.win-amd64\wheel\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\fused_moe\activation.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\fused_moe\fused_moe.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\fused_moe\fused_moe_utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\fused_moe\layer.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\fused_moe\router.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\fused_moe\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops\fused_moe
+copying build\lib\vllm_fl\ops\iluvatar_linear.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+copying build\lib\vllm_fl\ops\layernorm.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+copying build\lib\vllm_fl\ops\rotary_embedding.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+copying build\lib\vllm_fl\ops\_C_ops_registry.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+copying build\lib\vllm_fl\ops\_C_ops_schemas.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+copying build\lib\vllm_fl\ops\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\ops
+creating build\bdist.win-amd64\wheel\vllm_fl\patches
+copying build\lib\vllm_fl\patches\gdn_packed_decode.py -> build\bdist.win-amd64\wheel\.\vllm_fl\patches
+copying build\lib\vllm_fl\patches\glm_moe_dsa.py -> build\bdist.win-amd64\wheel\.\vllm_fl\patches
+copying build\lib\vllm_fl\patches\moe_sum.py -> build\bdist.win-amd64\wheel\.\vllm_fl\patches
+copying build\lib\vllm_fl\patches\qwen3_5_text.py -> build\bdist.win-amd64\wheel\.\vllm_fl\patches
+copying build\lib\vllm_fl\patches\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\patches
+copying build\lib\vllm_fl\platform.py -> build\bdist.win-amd64\wheel\.\vllm_fl
+creating build\bdist.win-amd64\wheel\vllm_fl\quantization
+copying build\lib\vllm_fl\quantization\quant_linear.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization
+creating build\bdist.win-amd64\wheel\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\int8_mode.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\linear.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\moe.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\moe_experts.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\packed.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\reference.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\w8a8\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization\w8a8
+copying build\lib\vllm_fl\quantization\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\quantization
+copying build\lib\vllm_fl\utils.py -> build\bdist.win-amd64\wheel\.\vllm_fl
+copying build\lib\vllm_fl\version.py -> build\bdist.win-amd64\wheel\.\vllm_fl
+creating build\bdist.win-amd64\wheel\vllm_fl\worker
+copying build\lib\vllm_fl\worker\model_runner.py -> build\bdist.win-amd64\wheel\.\vllm_fl\worker
+copying build\lib\vllm_fl\worker\scheduler_fl.py -> build\bdist.win-amd64\wheel\.\vllm_fl\worker
+copying build\lib\vllm_fl\worker\worker.py -> build\bdist.win-amd64\wheel\.\vllm_fl\worker
+copying build\lib\vllm_fl\worker\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl\worker
+copying build\lib\vllm_fl\_version.py -> build\bdist.win-amd64\wheel\.\vllm_fl
+copying build\lib\vllm_fl\__init__.py -> build\bdist.win-amd64\wheel\.\vllm_fl
+warning: install_lib: byte-compiling is disabled, skipping.
+
+running install_egg_info
+Copying vllm_plugin_fl.egg-info to build\bdist.win-amd64\wheel\.\vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1-py3.12.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info\WHEEL
+creating 'E:\data\Documents\AgentWorkspace\Codex\2026-10-10\referenced-chatgpt-conversation-this-is-an\outputs\competition-final-prefixb-20261115-v1\wheels\validated\.tmp-9gdq2am7\vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
+adding 'vllm_fl/__init__.py'
+adding 'vllm_fl/_version.py'
+adding 'vllm_fl/envs.py'
+adding 'vllm_fl/platform.py'
+adding 'vllm_fl/utils.py'
+adding 'vllm_fl/version.py'
+adding 'vllm_fl/attention/__init__.py'
+adding 'vllm_fl/attention/utils.py'
+adding 'vllm_fl/compilation/__init__.py'
+adding 'vllm_fl/compilation/break_graph.py'
+adding 'vllm_fl/compilation/graph.py'
+adding 'vllm_fl/compilation/kv_decode/__init__.py'
+adding 'vllm_fl/compilation/kv_decode/backend.py'
+adding 'vllm_fl/compilation/kv_decode/bindings.py'
+adding 'vllm_fl/compilation/kv_decode/contract.py'
+adding 'vllm_fl/compilation/kv_decode/controller.py'
+adding 'vllm_fl/compilation/kv_decode/profiles.py'
+adding 'vllm_fl/compilation/kv_decode/proof.py'
+adding 'vllm_fl/compilation/kv_decode/runtime.py'
+adding 'vllm_fl/configs/__init__.py'
+adding 'vllm_fl/configs/glm_moe_dsa.py'
+adding 'vllm_fl/configs/moe/E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json'
+adding 'vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json'
+adding 'vllm_fl/dispatch/README.md'
+adding 'vllm_fl/dispatch/__init__.py'
+adding 'vllm_fl/dispatch/builtin_ops.py'
+adding 'vllm_fl/dispatch/discovery.py'
+adding 'vllm_fl/dispatch/io_common.py'
+adding 'vllm_fl/dispatch/io_dumper.py'
+adding 'vllm_fl/dispatch/logger_manager.py'
+adding 'vllm_fl/dispatch/manager.py'
+adding 'vllm_fl/dispatch/ops.py'
+adding 'vllm_fl/dispatch/policy.py'
+adding 'vllm_fl/dispatch/registry.py'
+adding 'vllm_fl/dispatch/types.py'
+adding 'vllm_fl/dispatch/backends/__init__.py'
+adding 'vllm_fl/dispatch/backends/base.py'
+adding 'vllm_fl/dispatch/backends/flaggems/__init__.py'
+adding 'vllm_fl/dispatch/backends/flaggems/flaggems.py'
+adding 'vllm_fl/dispatch/backends/flaggems/register_ops.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/attention.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/custom_attention.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/fused_moe.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/mla.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/normalization.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/quantization.py'
+adding 'vllm_fl/dispatch/backends/flaggems/impl/rotary.py'
+adding 'vllm_fl/dispatch/backends/reference/__init__.py'
+adding 'vllm_fl/dispatch/backends/reference/reference.py'
+adding 'vllm_fl/dispatch/backends/reference/register_ops.py'
+adding 'vllm_fl/dispatch/backends/reference/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/reference/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/reference/impl/normalization.py'
+adding 'vllm_fl/dispatch/backends/reference/impl/quantization.py'
+adding 'vllm_fl/dispatch/backends/reference/impl/rotary.py'
+adding 'vllm_fl/dispatch/backends/vendor/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/ascend.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/patch.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/attention.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/attention_mask.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/causal_conv1d.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/fused_gdn_gating.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/fused_moe.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/mm_encoder_attention.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/normalization.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/rotary.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/triton_utils.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/vocab_parallel_embedding.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/fla/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/fla/chunk.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/fla/l2norm.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/impl/fla/utils.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/patches/patch_mamba_config.py'
+adding 'vllm_fl/dispatch/backends/vendor/ascend/patches/patch_multimodal_merge.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/cuda.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/impl/fused_moe.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/impl/normalization.py'
+adding 'vllm_fl/dispatch/backends/vendor/cuda/impl/rotary.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/iluvatar.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/impl/normalization.py'
+adding 'vllm_fl/dispatch/backends/vendor/iluvatar/impl/rotary.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/metax.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/fused_moe.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/layernorm.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/rotary_embedding.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/mla/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/mla/common.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/mla/flashmla.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/ops/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/ops/flashmla.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/ops/merge_attn_states.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/ops/triton_decode_attention.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/ops/triton_unified_attention.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/ops/vit_attn_wrappers.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/utils/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/impl/attention/utils/fa_utils.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/accelerator_compat.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/chunk_delta_h.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/cuda_wrapper.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/fix_standalone_compile.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/functorch_config_patch.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/gdn_linear_attn.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/pynccl_wrapper.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/topk_topp_sampler.py'
+adding 'vllm_fl/dispatch/backends/vendor/metax/patches/utils_patch.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/musa.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/patch.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/impl/activation.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/impl/normalization.py'
+adding 'vllm_fl/dispatch/backends/vendor/musa/impl/rotary.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/patch.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/sunrise.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/impl/attention.py'
+adding 'vllm_fl/dispatch/backends/vendor/sunrise/impl/vocab_parallel_embedding.py'
+adding 'vllm_fl/dispatch/backends/vendor/template/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/template/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/template/template.py'
+adding 'vllm_fl/dispatch/backends/vendor/template/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/thead/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/thead/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/thead/thead.py'
+adding 'vllm_fl/dispatch/backends/vendor/thead/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/thead/impl/attention.py'
+adding 'vllm_fl/dispatch/backends/vendor/txda/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/txda/register_ops.py'
+adding 'vllm_fl/dispatch/backends/vendor/txda/txda.py'
+adding 'vllm_fl/dispatch/backends/vendor/txda/impl/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/txda/impl/patchs/__init__.py'
+adding 'vllm_fl/dispatch/backends/vendor/txda/impl/patchs/apply_repetition_penalties.py'
+adding 'vllm_fl/dispatch/config/__init__.py'
+adding 'vllm_fl/dispatch/config/ascend.yaml'
+adding 'vllm_fl/dispatch/config/hygon.yaml'
+adding 'vllm_fl/dispatch/config/iluvatar.yaml'
+adding 'vllm_fl/dispatch/config/metax.yaml'
+adding 'vllm_fl/dispatch/config/musa.yaml'
+adding 'vllm_fl/dispatch/config/nvidia.yaml'
+adding 'vllm_fl/dispatch/config/nvidia_hopper.yaml'
+adding 'vllm_fl/dispatch/config/ptg.yaml'
+adding 'vllm_fl/dispatch/config/sunrise.yaml'
+adding 'vllm_fl/dispatch/config/thead.yaml'
+adding 'vllm_fl/dispatch/config/utils.py'
+adding 'vllm_fl/distributed/__init__.py'
+adding 'vllm_fl/distributed/communicator.py'
+adding 'vllm_fl/distributed/device_communicators/__init__.py'
+adding 'vllm_fl/distributed/device_communicators/flagcx.py'
+adding 'vllm_fl/distributed/kv_transfer/__init__.py'
+adding 'vllm_fl/distributed/kv_transfer/flagcx_connector.py'
+adding 'vllm_fl/distributed/kv_transfer/flagcx_stats.py'
+adding 'vllm_fl/models/__init__.py'
+adding 'vllm_fl/models/qwen3_5.py'
+adding 'vllm_fl/ops/_C_ops_registry.py'
+adding 'vllm_fl/ops/_C_ops_schemas.py'
+adding 'vllm_fl/ops/__init__.py'
+adding 'vllm_fl/ops/activation.py'
+adding 'vllm_fl/ops/custom_ops.py'
+adding 'vllm_fl/ops/iluvatar_linear.py'
+adding 'vllm_fl/ops/layernorm.py'
+adding 'vllm_fl/ops/rotary_embedding.py'
+adding 'vllm_fl/ops/fla/__init__.py'
+adding 'vllm_fl/ops/fla/chunk.py'
+adding 'vllm_fl/ops/fla/fused_recurrent.py'
+adding 'vllm_fl/ops/fla/utils.py'
+adding 'vllm_fl/ops/fused_moe/__init__.py'
+adding 'vllm_fl/ops/fused_moe/activation.py'
+adding 'vllm_fl/ops/fused_moe/fused_moe.py'
+adding 'vllm_fl/ops/fused_moe/fused_moe_utils.py'
+adding 'vllm_fl/ops/fused_moe/layer.py'
+adding 'vllm_fl/ops/fused_moe/router.py'
+adding 'vllm_fl/patches/__init__.py'
+adding 'vllm_fl/patches/gdn_packed_decode.py'
+adding 'vllm_fl/patches/glm_moe_dsa.py'
+adding 'vllm_fl/patches/moe_sum.py'
+adding 'vllm_fl/patches/qwen3_5_text.py'
+adding 'vllm_fl/quantization/__init__.py'
+adding 'vllm_fl/quantization/quant_linear.py'
+adding 'vllm_fl/quantization/w8a8/__init__.py'
+adding 'vllm_fl/quantization/w8a8/int8_mode.py'
+adding 'vllm_fl/quantization/w8a8/linear.py'
+adding 'vllm_fl/quantization/w8a8/moe.py'
+adding 'vllm_fl/quantization/w8a8/moe_experts.py'
+adding 'vllm_fl/quantization/w8a8/packed.py'
+adding 'vllm_fl/quantization/w8a8/reference.py'
+adding 'vllm_fl/worker/__init__.py'
+adding 'vllm_fl/worker/model_runner.py'
+adding 'vllm_fl/worker/scheduler_fl.py'
+adding 'vllm_fl/worker/worker.py'
+adding 'vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info/licenses/LICENSE'
+adding 'vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info/METADATA'
+adding 'vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info/WHEEL'
+adding 'vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info/entry_points.txt'
+adding 'vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info/top_level.txt'
+adding 'vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel

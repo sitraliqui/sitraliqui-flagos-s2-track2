@@ -1,0 +1,25 @@
+{
+  "release_tag": "competition-finalb1-20261115-report-r2",
+  "release_url": "https://github.com/sitraliqui/sitraliqui-flagos-s2-track2/releases/tag/competition-finalb1-20261115-report-r2",
+  "archive_sha256": "11da03cf705df2ca98c56bb4ba4362b6a3f1017671df6020da4a8e48e36f0ada",
+  "archive_bytes": 37912890,
+  "snapshot": "submission/finalb1",
+  "code_runtime": "vllm_fl",
+  "historical_reports": [
+    "docs/competition/history/20261025-prefix-cost/README.md",
+    "docs/competition/history/20261025-prefix-cost/analysis.json",
+    "docs/competition/history/20261025-prefix-cost/source-CPU-preflight.json",
+    "docs/competition/history/20261028-deepseek-review/review-summary.json",
+    "docs/competition/history/20261028-deepseek-review/source-manifest.json",
+    "docs/competition/history/20261028-deepseek-review/candidate-source-paths.json",
+    "docs/competition/history/20261108-tianshu-diagnostics/OUTCOME-REPORT.md",
+    "docs/competition/history/20261108-tianshu-diagnostics/VERSION-AND-BASELINE-AUDIT.md",
+    "docs/competition/history/20261108-tianshu-diagnostics/FINAL-ACCEPTANCE-GAPS.md",
+    "docs/competition/history/20261108-tianshu-diagnostics/two-order4k-and16k-summary.json",
+    "docs/competition/history/20261108-tianshu-diagnostics/reverse4k-three-arm-audit.json",
+    "docs/competition/history/20261108-tianshu-diagnostics/stock-long-common-accuracy-audit.json",
+    "docs/competition/history/20261115-prefixbc/AUDIT-HANDOFF.md"
+  ],
+  "competition_submitted": false,
+  "code_identity": "Package files are verified against the frozen wheel; repository Git history records publication, not a new GPU experiment"
+}

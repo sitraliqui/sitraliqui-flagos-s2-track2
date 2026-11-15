@@ -1,0 +1,17 @@
+test_admitted_route_stages_once_then_replays_candidate (__main__.LifecycleTests.test_admitted_route_stages_once_then_replays_candidate) ... ok
+test_clear_releases_both_native_and_candidate_entries (__main__.LifecycleTests.test_clear_releases_both_native_and_candidate_entries) ... ok
+test_nested_runner_exception_restores_all_scopes (__main__.LifecycleTests.test_nested_runner_exception_restores_all_scopes) ... ok
+test_pool_and_entries_restore_on_capture_error (__main__.LifecycleTests.test_pool_and_entries_restore_on_capture_error) ... ok
+test_profile_selection_disjoint_and_mixed_context_falls_back (__main__.LifecycleTests.test_profile_selection_disjoint_and_mixed_context_falls_back) ... ok
+test_rejected_route_never_stages_or_runs_candidate (__main__.LifecycleTests.test_rejected_route_never_stages_or_runs_candidate) ... ok
+test_staging_failure_cannot_fall_back_and_write_twice (__main__.LifecycleTests.test_staging_failure_cannot_fall_back_and_write_twice) ... ok
+test_unified_capture_keeps_profile_scopes_separate_on_exception (__main__.LifecycleTests.test_unified_capture_keeps_profile_scopes_separate_on_exception) ... ok
+test_all_admitted_boundaries (__main__.MetadataTests.test_all_admitted_boundaries) ... ok
+test_inactive_rows_are_never_writable (__main__.MetadataTests.test_inactive_rows_are_never_writable) ... ok
+test_outside_lengths_prefill_and_mixed_fall_back (__main__.MetadataTests.test_outside_lengths_prefill_and_mixed_fall_back) ... ok
+test_page_alias_and_wrong_latest_slot_are_rejected (__main__.MetadataTests.test_page_alias_and_wrong_latest_slot_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.031s
+
+OK

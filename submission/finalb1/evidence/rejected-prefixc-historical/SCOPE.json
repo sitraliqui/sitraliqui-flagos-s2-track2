@@ -1,0 +1,6 @@
+{
+  "purpose": "Historical rejected C raw comparison evidence only",
+  "C_source_or_wheel_in_current_candidate": false,
+  "rerun": false,
+  "scope": "Do not substitute these historical results for finalb1 measurements"
+}

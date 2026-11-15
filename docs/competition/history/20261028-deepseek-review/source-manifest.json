@@ -1,0 +1,71 @@
+{
+  "repository": "https://github.com/deepseek-ai/DeepInfer",
+  "commit": "553741557a57df44a46fb3ab72b6aafeaf945337",
+  "tree_sha": "67d7df235844e4494f179b3d9f0b46523be4b40c",
+  "commit_date": "2026-10-25T11:59:27Z",
+  "files": {
+    "README.md": {
+      "sha256": "b55624158ada4dc21b882d24ded06bf82f65350b44d170877b68395712cd670d",
+      "bytes": 4660,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/README.md"
+    },
+    "LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/LICENSE"
+    },
+    "deepinfer/environ.py": {
+      "sha256": "c63414c101ce21e199f2d7df27ec01ca53e3b0dc7a688f6047469551f6449f47",
+      "bytes": 8935,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/environ.py"
+    },
+    "deepinfer/worker/model_runner.py": {
+      "sha256": "9e2e18d136c9e0c9f23905ff994e9d23afaa94aa7a133d425e7fc1fc069033ef",
+      "bytes": 29533,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/worker/model_runner.py"
+    },
+    "deepinfer/worker/cuda_graph_runner.py": {
+      "sha256": "9f559e88d60d057d23243852616aa9cd7264a59841d580731bec1f8cb8bd57b0",
+      "bytes": 7207,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/worker/cuda_graph_runner.py"
+    },
+    "deepinfer/worker/worker.py": {
+      "sha256": "ad32e595d9ab289dff1a7709136431ac60dae709e9e5123ae42eb0ebf7c30cbb",
+      "bytes": 11604,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/worker/worker.py"
+    },
+    "deepinfer/model_executor/layers/layernorm.py": {
+      "sha256": "9d641bc03f21571c017e3e8873cd66d443a2bbd66efb8d31e554d9391e63b554",
+      "bytes": 2013,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/model_executor/layers/layernorm.py"
+    },
+    "deepinfer/model_executor/layers/linear.py": {
+      "sha256": "a8ca60074a1c868e87662240073c6c3648d66ceae953befa3b08772da2225967",
+      "bytes": 6850,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/model_executor/layers/linear.py"
+    },
+    "deepinfer/model_executor/models/v4_modules/attn.py": {
+      "sha256": "cb228c8fd4c76200e2ec266c51872107cfe7b384fdc88458b3d1c0ff101f3116",
+      "bytes": 46250,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/model_executor/models/v4_modules/attn.py"
+    },
+    "deepinfer/model_executor/models/v4_modules/linear.py": {
+      "sha256": "8ba53ee0cb9ce7bcf0f1c93e7da24abb10c8ad8bada730366147c8b869cf334a",
+      "bytes": 1096,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/model_executor/models/v4_modules/linear.py"
+    },
+    "tests/models/test_batch_invariant.py": {
+      "sha256": "10ceb7fec656188623de450fab4dfffed98bc2ffe9510f8f545dff6f0b5dd887",
+      "bytes": 3993,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/tests/models/test_batch_invariant.py"
+    },
+    "examples/README.md": {
+      "sha256": "fde052a91323c18565148398b47281a2183cfb008cd3c0d0f24ec25956ae62d9",
+      "bytes": 13550,
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/553741557a57df44a46fb3ab72b6aafeaf945337/examples/README.md"
+    }
+  },
+  "executed_downloaded_code": false,
+  "installed_dependencies": false,
+  "note": "Unpinned main tree differed from commit tree; fetch and inspect only this pinned commit"
+}

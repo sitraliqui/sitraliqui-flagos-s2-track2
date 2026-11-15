@@ -1,0 +1,11 @@
+{
+  "platform": "metax",
+  "role": "competition",
+  "instance_id": "LAJNBONXYAKBAYPK",
+  "owner": "competition-primary-single-session",
+  "run_id": "competition-final-defaulta-20261115-v1",
+  "lease_id": "bc35153c-990f-4613-9e54-2371c514f3b6",
+  "hostname": "4bafb752dcc3",
+  "boot_id": "290a3c4a-4eed-44b6-a464-e09f2297dc68",
+  "hard_stop_unix": 1794724823.0
+}

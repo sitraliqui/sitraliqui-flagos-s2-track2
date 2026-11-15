@@ -1,0 +1,27 @@
+{
+  "state": "review_only_not_gpu_validated",
+  "created_utc": "2026-11-09T17:46:25.347306+00:00",
+  "source_freeze_audit_sha256": "b58c299bb0623418274659d88187ca5eefc48441b7e04303c2a7615d8484ee26",
+  "versions": {
+    "vllm-plugin-FL": "0.3.0rc0+g13eb9be69.r1rc1",
+    "FlagGems": "5.3.5+g4df52d916.r1rc1"
+  },
+  "stock_plugin_commit": "13eb9be69ecc5b5ca4f79c44e9ee40081eaa1bf0",
+  "tianshu_source_commit": "6ab6711224fbd433b8e3d0575bbddde6d06a033a",
+  "flaggems_base_commit": "4df52d9168ac55c1c1061cefb4638c570292d896",
+  "packaging_corrections": [
+    {
+      "file": "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json",
+      "target": "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json",
+      "old_sha256": "c978f595e8954c76a7ff515540ae748e21f1e3c1b23d01d2373182f9c020f3f4",
+      "new_sha256": "97ccbad3a1933385e777d0817618edecbb80ff528b412e353c89c728d7d90193",
+      "change": "Materialize exact upstream target JSON for portable Windows/Linux builds"
+    }
+  ],
+  "metax_backend_files_unchanged": 35,
+  "prefix_b_not_included": [
+    "vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py"
+  ],
+  "m64_or_sampler_new_integration": false,
+  "bench_script_unchanged": true
+}

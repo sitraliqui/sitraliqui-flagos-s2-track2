@@ -1,0 +1,12 @@
+{
+  "purpose": "Matched default-prefix control, final merged code with Prefix B change reverted; not current submission wheel",
+  "version": "0.3.0rc0+g13eb9be69.finala1",
+  "wheel": "vllm_plugin_fl-0.3.0rc0+g13eb9be69.finala1-py3-none-any.whl",
+  "sha256": "5913f58e8b08c65affe0237cf7acbc6d4d1f72aae425fdff6b55a9508e799821",
+  "restored_source_sha256": "f81fa552667b3ed98d1cf141d2dee33ba10476cda9a997744495bdbc36289ef2",
+  "tested": false,
+  "package_changes_relative_to_B": [
+    "vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py",
+    "vllm_fl/_version.py"
+  ]
+}

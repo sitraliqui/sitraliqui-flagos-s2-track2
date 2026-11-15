@@ -1,0 +1,268 @@
+2026-11-15 13:02:33 - evalscope - [32mINFO[0m: Args: Task config is provided with CommandLine type.[0m
+2026-11-15 13:02:33 - evalscope - [33mWARNING[0m: Deprecated: The `timeout` parameter is deprecated and will be removed in v2.0.0. Use `generation_config.timeout` instead.[0m
+2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Running with native backend[0m
+2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Dump task config to /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255/configs/task_config.yaml[0m
+2026-11-15 13:02:55 - evalscope - [32mINFO[0m: {
+    "model_id": "minicpm",
+    "model_args": {},
+    "model_task": "text_generation",
+    "chat_template": null,
+    "datasets": [
+        "math_500"
+    ],
+    "dataset_args": {
+        "math_500": {
+            "dataset_id": "/workspace/evalscope-datasets/math_500",
+            "subset_list": [
+                "Level 3"
+            ]
+        }
+    },
+    "dataset_dir": "/root/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "repeats": 1,
+    "eval_type": "openai_api",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "limit": null,
+    "eval_batch_size": 8,
+    "use_cache": null,
+    "rerun_review": false,
+    "work_dir": "/data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255",
+    "no_timestamp": false,
+    "enable_progress_tracker": false,
+    "ignore_errors": true,
+    "debug": false,
+    "seed": 42,
+    "api_url": "http://127.0.0.1:9031/v1/chat/completions",
+    "api_key": "**********",
+    "timeout": 3600.0,
+    "stream": null,
+    "judge": {
+        "strategy": "auto",
+        "models": [],
+        "contract": {
+            "system_prompt": null,
+            "prompt_template": null,
+            "score_mapping": null,
+            "score_type": "pattern"
+        },
+        "repeats": 1,
+        "position_swap": "auto",
+        "aggregation": "mean",
+        "min_valid_judges": 1
+    },
+    "analysis_report": false,
+    "collect_perf": true,
+    "use_sandbox": false,
+    "sandbox_type": "docker",
+    "sandbox_manager_config": {},
+    "evalscope_version": "1.11.1",
+    "model": "minicpm",
+    "generation_config": {
+        "timeout": 3600.0,
+        "batch_size": 8,
+        "max_tokens": 32768,
+        "top_p": 0.95,
+        "temperature": 1.0
+    },
+    "sandbox": {
+        "enabled": false,
+        "engine": "docker",
+        "default_config": {},
+        "manager_config": {},
+        "pool_size": null
+    },
+    "agent_config": null
+}[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]                                                           2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Start loading benchmark dataset: math_500[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]                                                           2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Loading dataset /workspace/evalscope-datasets/math_500 from local > subset: default > split: test ...[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]
+Processing records:   0%|          | 0/500 [00:00<?, ?it/s][AProcessing records: 100%|██████████| 500/500 [00:00<00:00, 191241.29it/s]
+                                                           2026-11-15 13:02:55 - evalscope - [32mINFO[0m: math_500: 105 samples to evaluate (1 subset)[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]                                                           2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Subsets of math_500: ['Level 3'][0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]
+Evaluating[math_500]:   0%|          | 0/105 [00:00<?, ?it/s][A                                                           
+                                                             [A2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Loading model for prediction...[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]
+Evaluating[math_500]:   0%|          | 0/105 [00:00<?, ?it/s][A                                                           
+                                                             [A2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Creating model minicpm with eval_type=openai_api base_url=http://127.0.0.1:9031/v1/chat/completions, config={'timeout': 3600.0, 'retries': 5, 'retry_interval': 10, 'batch_size': 8, 'max_tokens': 32768, 'top_p': 0.95, 'temperature': 1.0, 'anthropic_cache_strategy': 'evaluation'}, model_args={}[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]
+Evaluating[math_500]:   0%|          | 0/105 [00:00<?, ?it/s][A                                                           
+                                                             [A2026-11-15 13:02:55 - evalscope - [32mINFO[0m: Model loaded successfully.[0m
+Running[eval]:   0%|          | 0/1 [00:00<?, ?benchmark/s]
+Evaluating[math_500]:   0%|          | 0/105 [00:00<?, ?it/s][A
+Evaluating[math_500]:   1%|          | 1/105 [00:14<24:18, 14.02s/it][A
+Evaluating[math_500]:   3%|▎         | 3/105 [00:16<07:26,  4.38s/it][A
+Evaluating[math_500]:   5%|▍         | 5/105 [00:26<07:50,  4.70s/it][A
+Evaluating[math_500]:   7%|▋         | 7/105 [00:27<04:46,  2.92s/it][A
+Evaluating[math_500]:   9%|▊         | 9/105 [00:31<04:07,  2.58s/it][A
+Evaluating[math_500]:  10%|█         | 11/105 [00:41<05:22,  3.43s/it][A
+Evaluating[math_500]:  11%|█▏        | 12/105 [00:44<05:10,  3.34s/it][A
+Evaluating[math_500]:  12%|█▏        | 13/105 [00:51<06:22,  4.16s/it][A
+Evaluating[math_500]:  13%|█▎        | 14/105 [00:55<06:14,  4.12s/it][A
+Evaluating[math_500]:  14%|█▍        | 15/105 [01:00<06:31,  4.35s/it][A                                                           
+                                                                      [A2026-11-15 13:03:55 - evalscope - [32mINFO[0m: Evaluating[math_500]  14%| 15/105 [Elapsed: 01:00 < Remaining: 06:31,  4.35s/it][0m
+Running[eval]:   0%|          | 0/1 [01:00<?, ?benchmark/s]
+Evaluating[math_500]:  14%|█▍        | 15/105 [01:00<06:31,  4.35s/it][A
+Evaluating[math_500]:  15%|█▌        | 16/105 [01:04<06:18,  4.26s/it][A
+Evaluating[math_500]:  16%|█▌        | 17/105 [01:07<05:44,  3.91s/it][A
+Evaluating[math_500]:  17%|█▋        | 18/105 [01:09<04:53,  3.37s/it][A
+Evaluating[math_500]:  18%|█▊        | 19/105 [01:14<05:30,  3.84s/it][A
+Evaluating[math_500]:  19%|█▉        | 20/105 [01:20<06:20,  4.47s/it][A
+Evaluating[math_500]:  20%|██        | 21/105 [01:26<06:53,  4.92s/it][A
+Evaluating[math_500]:  21%|██        | 22/105 [01:28<05:37,  4.06s/it][A
+Evaluating[math_500]:  22%|██▏       | 23/105 [01:34<06:20,  4.64s/it][A
+Evaluating[math_500]:  23%|██▎       | 24/105 [01:38<06:00,  4.45s/it][A
+Evaluating[math_500]:  24%|██▍       | 25/105 [01:48<08:08,  6.11s/it][A
+Evaluating[math_500]:  25%|██▍       | 26/105 [01:53<07:36,  5.78s/it][A                                                           
+                                                                      [A2026-11-15 13:04:55 - evalscope - [32mINFO[0m: Evaluating[math_500]  25%| 26/105 [Elapsed: 02:00 < Remaining: 07:36,  5.78s/it][0m
+Running[eval]:   0%|          | 0/1 [02:00<?, ?benchmark/s]
+Evaluating[math_500]:  25%|██▍       | 26/105 [02:00<07:36,  5.78s/it][A
+Evaluating[math_500]:  26%|██▌       | 27/105 [02:11<12:16,  9.44s/it][A
+Evaluating[math_500]:  27%|██▋       | 28/105 [02:14<09:38,  7.51s/it][A
+Evaluating[math_500]:  29%|██▊       | 30/105 [02:19<06:30,  5.20s/it][A
+Evaluating[math_500]:  30%|██▉       | 31/105 [02:28<07:34,  6.14s/it][A
+Evaluating[math_500]:  30%|███       | 32/105 [02:31<06:28,  5.32s/it][A
+Evaluating[math_500]:  31%|███▏      | 33/105 [02:40<07:35,  6.33s/it][A
+Evaluating[math_500]:  32%|███▏      | 34/105 [02:51<09:05,  7.68s/it][A                                                           
+                                                                      [A2026-11-15 13:05:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  32%| 34/105 [Elapsed: 03:00 < Remaining: 09:05,  7.68s/it][0m
+Running[eval]:   0%|          | 0/1 [03:00<?, ?benchmark/s]
+Evaluating[math_500]:  32%|███▏      | 34/105 [03:00<09:05,  7.68s/it][A
+Evaluating[math_500]:  33%|███▎      | 35/105 [03:01<09:44,  8.35s/it][A
+Evaluating[math_500]:  34%|███▍      | 36/105 [03:13<10:49,  9.41s/it][A
+Evaluating[math_500]:  35%|███▌      | 37/105 [03:20<09:51,  8.70s/it][A
+Evaluating[math_500]:  36%|███▌      | 38/105 [03:26<08:49,  7.91s/it][A
+Evaluating[math_500]:  37%|███▋      | 39/105 [03:33<08:24,  7.64s/it][A
+Evaluating[math_500]:  39%|███▉      | 41/105 [03:39<05:52,  5.52s/it][A
+Evaluating[math_500]:  40%|████      | 42/105 [03:51<07:28,  7.12s/it][A                                                           
+                                                                      [A2026-11-15 13:06:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  40%| 42/105 [Elapsed: 04:00 < Remaining: 07:28,  7.12s/it][0m
+Running[eval]:   0%|          | 0/1 [04:00<?, ?benchmark/s]
+Evaluating[math_500]:  40%|████      | 42/105 [04:00<07:28,  7.12s/it][A
+Evaluating[math_500]:  41%|████      | 43/105 [04:02<08:24,  8.13s/it][A
+Evaluating[math_500]:  42%|████▏     | 44/105 [04:03<06:18,  6.20s/it][A
+Evaluating[math_500]:  43%|████▎     | 45/105 [04:08<05:51,  5.86s/it][A
+Evaluating[math_500]:  44%|████▍     | 46/105 [04:09<04:24,  4.48s/it][A
+Evaluating[math_500]:  45%|████▍     | 47/105 [04:18<05:35,  5.79s/it][A
+Evaluating[math_500]:  46%|████▌     | 48/105 [04:19<04:10,  4.39s/it][A
+Evaluating[math_500]:  47%|████▋     | 49/105 [04:21<03:26,  3.69s/it][A
+Evaluating[math_500]:  48%|████▊     | 50/105 [04:24<03:11,  3.48s/it][A
+Evaluating[math_500]:  49%|████▊     | 51/105 [04:29<03:32,  3.93s/it][A
+Evaluating[math_500]:  50%|████▉     | 52/105 [04:34<03:45,  4.25s/it][A
+Evaluating[math_500]:  50%|█████     | 53/105 [04:39<03:52,  4.48s/it][A
+Evaluating[math_500]:  51%|█████▏    | 54/105 [04:49<05:12,  6.13s/it][A
+Evaluating[math_500]:  53%|█████▎    | 56/105 [04:50<02:53,  3.54s/it][A
+Evaluating[math_500]:  54%|█████▍    | 57/105 [04:52<02:31,  3.16s/it][A
+Evaluating[math_500]:  56%|█████▌    | 59/105 [04:57<02:12,  2.89s/it][A                                                           
+                                                                      [A2026-11-15 13:07:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  56%| 59/105 [Elapsed: 05:00 < Remaining: 02:12,  2.89s/it][0m
+Running[eval]:   0%|          | 0/1 [05:00<?, ?benchmark/s]
+Evaluating[math_500]:  56%|█████▌    | 59/105 [05:00<02:12,  2.89s/it][A
+Evaluating[math_500]:  57%|█████▋    | 60/105 [05:01<02:21,  3.14s/it][A
+Evaluating[math_500]:  58%|█████▊    | 61/105 [05:08<03:00,  4.09s/it][A
+Evaluating[math_500]:  60%|██████    | 63/105 [05:14<02:33,  3.64s/it][A
+Evaluating[math_500]:  61%|██████    | 64/105 [05:16<02:14,  3.27s/it][A
+Evaluating[math_500]:  62%|██████▏   | 65/105 [05:19<02:08,  3.20s/it][A
+Evaluating[math_500]:  63%|██████▎   | 66/105 [05:24<02:23,  3.67s/it][A
+Evaluating[math_500]:  64%|██████▍   | 67/105 [05:25<01:52,  2.95s/it][A
+Evaluating[math_500]:  66%|██████▌   | 69/105 [05:32<01:54,  3.19s/it][A
+Evaluating[math_500]:  67%|██████▋   | 70/105 [05:34<01:41,  2.91s/it][A
+Evaluating[math_500]:  68%|██████▊   | 71/105 [05:41<02:14,  3.95s/it][A
+Evaluating[math_500]:  69%|██████▊   | 72/105 [05:43<01:53,  3.43s/it][A
+Evaluating[math_500]:  70%|██████▉   | 73/105 [05:49<02:12,  4.14s/it][A
+Evaluating[math_500]:  70%|███████   | 74/105 [05:59<02:59,  5.79s/it][A                                                           
+                                                                      [A2026-11-15 13:08:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  70%| 74/105 [Elapsed: 06:00 < Remaining: 02:59,  5.79s/it][0m
+Running[eval]:   0%|          | 0/1 [06:00<?, ?benchmark/s]
+Evaluating[math_500]:  70%|███████   | 74/105 [06:00<02:59,  5.79s/it][A
+Evaluating[math_500]:  71%|███████▏  | 75/105 [06:05<02:55,  5.86s/it][A
+Evaluating[math_500]:  72%|███████▏  | 76/105 [06:11<02:51,  5.90s/it][A
+Evaluating[math_500]:  73%|███████▎  | 77/105 [06:18<02:54,  6.22s/it][A
+Evaluating[math_500]:  74%|███████▍  | 78/105 [06:23<02:38,  5.86s/it][A
+Evaluating[math_500]:  75%|███████▌  | 79/105 [06:28<02:25,  5.61s/it][A
+Evaluating[math_500]:  76%|███████▌  | 80/105 [06:34<02:23,  5.73s/it][A
+Evaluating[math_500]:  77%|███████▋  | 81/105 [06:42<02:33,  6.41s/it][A
+Evaluating[math_500]:  78%|███████▊  | 82/105 [06:50<02:38,  6.89s/it][A
+Evaluating[math_500]:  79%|███████▉  | 83/105 [06:55<02:19,  6.32s/it][A
+Evaluating[math_500]:  80%|████████  | 84/105 [07:00<02:04,  5.93s/it][A                                                           
+                                                                      [A2026-11-15 13:09:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  80%| 84/105 [Elapsed: 07:00 < Remaining: 02:04,  5.93s/it][0m
+Running[eval]:   0%|          | 0/1 [07:00<?, ?benchmark/s]
+Evaluating[math_500]:  80%|████████  | 84/105 [07:00<02:04,  5.93s/it][A
+Evaluating[math_500]:  81%|████████  | 85/105 [07:12<02:35,  7.75s/it][A
+Evaluating[math_500]:  82%|████████▏ | 86/105 [07:13<01:48,  5.73s/it][A
+Evaluating[math_500]:  83%|████████▎ | 87/105 [07:19<01:44,  5.81s/it][A
+Evaluating[math_500]:  84%|████████▍ | 88/105 [07:23<01:29,  5.27s/it][A
+Evaluating[math_500]:  85%|████████▍ | 89/105 [07:27<01:18,  4.89s/it][A
+Evaluating[math_500]:  86%|████████▌ | 90/105 [07:40<01:49,  7.33s/it][A
+Evaluating[math_500]:  87%|████████▋ | 91/105 [07:42<01:20,  5.73s/it][A
+Evaluating[math_500]:  88%|████████▊ | 92/105 [07:46<01:07,  5.21s/it][A
+Evaluating[math_500]:  89%|████████▊ | 93/105 [07:47<00:47,  3.95s/it][A
+Evaluating[math_500]:  90%|████████▉ | 94/105 [07:49<00:37,  3.37s/it][A                                                           
+                                                                      [A2026-11-15 13:10:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  90%| 94/105 [Elapsed: 08:00 < Remaining: 00:37,  3.37s/it][0m
+Running[eval]:   0%|          | 0/1 [08:00<?, ?benchmark/s]
+Evaluating[math_500]:  90%|████████▉ | 94/105 [08:00<00:37,  3.37s/it][A
+Evaluating[math_500]:  90%|█████████ | 95/105 [08:18<01:50, 11.06s/it][A
+Evaluating[math_500]:  91%|█████████▏| 96/105 [08:23<01:23,  9.24s/it][A
+Evaluating[math_500]:  92%|█████████▏| 97/105 [08:35<01:20, 10.07s/it][A
+Evaluating[math_500]:  93%|█████████▎| 98/105 [08:43<01:06,  9.45s/it][A
+Evaluating[math_500]:  94%|█████████▍| 99/105 [08:52<00:55,  9.32s/it][A                                                           
+                                                                      [A2026-11-15 13:11:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  94%| 99/105 [Elapsed: 09:00 < Remaining: 00:55,  9.32s/it][0m
+Running[eval]:   0%|          | 0/1 [09:00<?, ?benchmark/s]
+Evaluating[math_500]:  94%|█████████▍| 99/105 [09:00<00:55,  9.32s/it][A
+Evaluating[math_500]:  95%|█████████▌| 100/105 [09:03<00:49,  9.82s/it][A
+Evaluating[math_500]:  96%|█████████▌| 101/105 [09:08<00:33,  8.38s/it][A
+Evaluating[math_500]:  97%|█████████▋| 102/105 [09:14<00:22,  7.67s/it][A
+Evaluating[math_500]:  98%|█████████▊| 103/105 [09:55<00:35, 17.67s/it][A                                                           
+                                                                       [A2026-11-15 13:12:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  98%| 103/105 [Elapsed: 10:00 < Remaining: 00:35, 17.67s/it][0m
+Running[eval]:   0%|          | 0/1 [10:00<?, ?benchmark/s]
+Evaluating[math_500]:  98%|█████████▊| 103/105 [10:00<00:35, 17.67s/it][A                                                           
+                                                                       [A2026-11-15 13:13:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  98%| 103/105 [Elapsed: 11:00 < Remaining: 00:35, 17.67s/it][0m
+Running[eval]:   0%|          | 0/1 [11:00<?, ?benchmark/s]
+Evaluating[math_500]:  98%|█████████▊| 103/105 [11:00<00:35, 17.67s/it][A
+Evaluating[math_500]:  99%|█████████▉| 104/105 [11:59<00:49, 49.58s/it][A                                                           
+                                                                       [A2026-11-15 13:14:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  99%| 104/105 [Elapsed: 12:00 < Remaining: 00:49, 49.58s/it][0m
+Running[eval]:   0%|          | 0/1 [12:00<?, ?benchmark/s]
+Evaluating[math_500]:  99%|█████████▉| 104/105 [12:00<00:49, 49.58s/it][A                                                           
+                                                                       [A2026-11-15 13:15:56 - evalscope - [32mINFO[0m: Evaluating[math_500]  99%| 104/105 [Elapsed: 13:00 < Remaining: 00:49, 49.58s/it][0m
+Running[eval]:   0%|          | 0/1 [13:00<?, ?benchmark/s]
+Evaluating[math_500]:  99%|█████████▉| 104/105 [13:00<00:49, 49.58s/it][A
+Evaluating[math_500]: 100%|██████████| 105/105 [13:37<00:00, 63.96s/it][A                                                           
+                                                                       [A2026-11-15 13:16:32 - evalscope - [32mINFO[0m: Evaluating[math_500] 100%| 105/105 [Elapsed: 13:37 < Remaining: 00:00, 63.96s/it][0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]
+Evaluating[math_500]: 100%|██████████| 105/105 [13:37<00:00, 63.96s/it][AEvaluating[math_500]: 100%|██████████| 105/105 [13:37<00:00,  7.78s/it]
+                                                           2026-11-15 13:16:32 - evalscope - [32mINFO[0m: math_500: predictions complete, aggregating scores...[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:32 - evalscope - [32mINFO[0m: Aggregating scores for subset: Level 3[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:32 - evalscope - [32mINFO[0m: Generating report...[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:32 - evalscope - [32mINFO[0m: 
+math_500 report table:
+┌─────────┬───────────┬────────────┬──────────┬───────┬─────────┐
+│ Model   │ Dataset   │ Metric     │ Subset   │   Num │ Score   │
+├─────────┼───────────┼────────────┼──────────┼───────┼─────────┤
+│ minicpm │ MATH-500  │ Accuracy ↑ │ Level 3  │   105 │ 98.1%   │
+└─────────┴───────────┴────────────┴──────────┴───────┴─────────┘ 
+[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:32 - evalscope - [32mINFO[0m: Skipping report analysis (`analysis_report=False`).[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:32 - evalscope - [32mINFO[0m: Dump report to: /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255/reports/minicpm/math_500.json 
+[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:33 - evalscope - [32mINFO[0m: 
+math_500 perf table:
+Model    Dataset      Num  Avg Lat    Avg TTFT    Avg TPOT    Avg Thpt       Avg In    Avg Out
+-------  ---------  -----  ---------  ----------  ----------  -----------  --------  ---------
+minicpm  MATH-500     105  45.476 s   —           —           72.72 tok/s        78       3307
+[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]                                                           2026-11-15 13:16:33 - evalscope - [32mINFO[0m: Benchmark math_500 evaluation finished.[0m
+Running[eval]:   0%|          | 0/1 [13:37<?, ?benchmark/s]Running[eval]: 100%|██████████| 1/1 [13:37<00:00, 817.51s/benchmark]                                                                    2026-11-15 13:16:33 - evalscope - [32mINFO[0m: Running[eval] 100%| 1/1 [Elapsed: 13:37 < Remaining: 00:00, 817.51s/benchmark][0m
+Running[eval]: 100%|██████████| 1/1 [13:37<00:00, 817.51s/benchmark]Running[eval]: 100%|██████████| 1/1 [13:37<00:00, 817.51s/benchmark]
+2026-11-15 13:16:33 - evalscope - [32mINFO[0m: Overall report table: 
+┌─────────┬───────────┬────────────┬──────────┬───────┬─────────┐
+│ Model   │ Dataset   │ Metric     │ Subset   │   Num │ Score   │
+├─────────┼───────────┼────────────┼──────────┼───────┼─────────┤
+│ minicpm │ MATH-500  │ Accuracy ↑ │ Level 3  │   105 │ 98.1%   │
+└─────────┴───────────┴────────────┴──────────┴───────┴─────────┘ 
+[0m
+2026-11-15 13:16:33 - evalscope - [32mINFO[0m: Overall perf table: 
+Model    Dataset      Num  Avg Lat    Avg TTFT    Avg TPOT    Avg Thpt       Avg In    Avg Out
+-------  ---------  -----  ---------  ----------  ----------  -----------  --------  ---------
+minicpm  MATH-500     105  45.476 s   —           —           72.72 tok/s        78       3307 
+[0m
+2026-11-15 13:16:33 - evalscope - [32mINFO[0m: HTML report generated: /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255/reports/report.html[0m
+2026-11-15 13:16:33 - evalscope - [32mINFO[0m: Finished evaluation for minicpm on ['math_500'][0m
+2026-11-15 13:16:33 - evalscope - [32mINFO[0m: Output directory: /data/competition-final-defaulta-20261115-v1/accuracy/20261115_130255[0m

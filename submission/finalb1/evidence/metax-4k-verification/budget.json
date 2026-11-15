@@ -1,0 +1,8 @@
+{
+  "available_CNY": 29.04,
+  "rate_per_hour_CNY": 8,
+  "power_start_unix_conservative": 1794712655.0,
+  "archive_shutdown_reserve_seconds": 900,
+  "compute_deadline_unix": 1794724823.0,
+  "estimated_spent_now": 22.666672676404318
+}

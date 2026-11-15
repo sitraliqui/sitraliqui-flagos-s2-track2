@@ -1,0 +1,1 @@
+{"pid": 4671, "num_prefills": 1, "num_decode_tokens": 0, "implementation": "FlashAttentionImpl", "source": "/data/competition-final-prefixb-20261115-v1-r3/merged-env/lib/python3.12/site-packages/vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py", "diagnostic_only": true}

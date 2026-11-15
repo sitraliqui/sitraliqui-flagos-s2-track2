@@ -1,0 +1,7 @@
+test_only_exact_dtype_layout_and_enabled_shapes (__main__.PolicyTest.test_only_exact_dtype_layout_and_enabled_shapes) ... ok
+test_reject_pipelined_or_split_reductions (__main__.PolicyTest.test_reject_pipelined_or_split_reductions) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

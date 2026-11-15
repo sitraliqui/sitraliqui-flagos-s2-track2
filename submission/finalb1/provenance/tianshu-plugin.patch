@@ -1,0 +1,1554 @@
+diff --git a/vllm_fl/__init__.py b/vllm_fl/__init__.py
+index 8754e32..f5b6523 100644
+--- a/vllm_fl/__init__.py
++++ b/vllm_fl/__init__.py
+@@ -171,6 +171,11 @@ def register_model():
+     register_quant_linear()
+     register_router()
+ 
++    import os
++    if os.environ.get("VLLM_FL_ILUVATAR_STABLE_LINEAR", "0") == "1":
++        from vllm_fl.ops.iluvatar_linear import register_layers
++        register_layers()
++
+     _register_gdn_packed_decode_patch()
+ 
+     # Register GLM-5 (GlmMoeDsa) — config not yet upstream
+diff --git a/vllm_fl/compilation/graph.py b/vllm_fl/compilation/graph.py
+index 184639b..1ed27ec 100644
+--- a/vllm_fl/compilation/graph.py
++++ b/vllm_fl/compilation/graph.py
+@@ -117,6 +117,8 @@ class GraphWrapper:
+         # the entries for different batch descriptors that we need to capture
+         # cudagraphs for.
+         self.concrete_graph_entries: dict[BatchDescriptor, GraphEntry] = {}
++        # Native and candidate entries have separate pools and lifetimes.
++        self.kv_decode_variants: dict = {}
+ 
+         GraphWrapper._all_instances.add(self)
+ 
+@@ -140,9 +142,17 @@ class GraphWrapper:
+         return self
+ 
+     def clear_graphs(self) -> None:
++        self.kv_decode_variants.clear()
+         self.concrete_graph_entries.clear()
+ 
+     def __call__(self, *args, **kwargs):
++        from .kv_decode.runtime import active_controller
++        controller = active_controller()
++        if controller is not None:
++            return controller.call(self, *args, **kwargs)
++        return self._call_native(*args, **kwargs)
++
++    def _call_native(self, *args, **kwargs):
+         if not is_forward_context_available():
+             # No forward context means we are outside the normal
+             # inference path (e.g. a vision encoder forward pass).
+diff --git a/vllm_fl/compilation/kv_decode/__init__.py b/vllm_fl/compilation/kv_decode/__init__.py
+new file mode 100644
+index 0000000..b8ff4b4
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/__init__.py
+@@ -0,0 +1,2 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Opt-in, bounded KV-write/decode fusion owned by the FL runner and graph."""
+diff --git a/vllm_fl/compilation/kv_decode/backend.py b/vllm_fl/compilation/kv_decode/backend.py
+new file mode 100644
+index 0000000..091a500
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/backend.py
+@@ -0,0 +1,62 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Optional extension of the normally selected Triton attention backend."""
++
++from vllm.v1.attention.backends.triton_attn import (
++    TritonAttentionBackend,
++    TritonAttentionImpl,
++)
++from .runtime import active_controller
++
++
++class TritonKVDecodeBackend(TritonAttentionBackend):
++    @staticmethod
++    def get_impl_cls():
++        return TritonKVDecodeImpl
++
++
++class TritonKVDecodeImpl(TritonAttentionImpl):
++    def do_kv_cache_update(self, layer, key, value, kv_cache, slot_mapping):
++        controller = active_controller()
++        state = controller.layer_state(layer) if controller else None
++        if state is None:
++            return super().do_kv_cache_update(layer, key, value, kv_cache, slot_mapping)
++        controller.capture_write(state, key, value, kv_cache, slot_mapping)
++
++    def forward(
++        self,
++        layer,
++        query,
++        key,
++        value,
++        kv_cache,
++        attn_metadata,
++        output,
++        output_scale=None,
++        output_block_scale=None,
++    ):
++        controller = active_controller()
++        state = controller.layer_state(layer) if controller else None
++        if state is None:
++            return super().forward(
++                layer,
++                query,
++                key,
++                value,
++                kv_cache,
++                attn_metadata,
++                output,
++                output_scale,
++                output_block_scale,
++            )
++        return controller.capture_forward(
++            state,
++            self,
++            query,
++            key,
++            value,
++            kv_cache,
++            attn_metadata,
++            output,
++            output_scale,
++            output_block_scale,
++        )
+diff --git a/vllm_fl/compilation/kv_decode/bindings.py b/vllm_fl/compilation/kv_decode/bindings.py
+new file mode 100644
+index 0000000..c9d1fcb
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/bindings.py
+@@ -0,0 +1,109 @@
++# SPDX-License-Identifier: Apache-2.0
++
++META = ("query_start", "lengths", "table", "slots")
++LAYERS = tuple(f"model.layers.{i}.self_attn.attn" for i in range(42))
++
++
++def require(condition, message):
++    if not condition:
++        raise RuntimeError(message)
++
++
++def view_key(tensor):
++    return (
++        tensor.data_ptr(),
++        tuple(tensor.shape),
++        tuple(tensor.stride()),
++        str(tensor.device),
++        str(tensor.dtype),
++    )
++
++
++def views(metadata, slot):
++    return dict(
++        zip(
++            META,
++            (metadata.query_start_loc, metadata.seq_lens, metadata.block_table, slot),
++        )
++    )
++
++
++def strong_view_key(tensor):
++    return (
++        *view_key(tensor),
++        tensor.untyped_storage().data_ptr(),
++        tensor.storage_offset(),
++    )
++
++
++def shared_binding(runner, ctx, cap):
++    """Read-only identity checks; no GPU content transfer or GPU operations."""
++    groups = runner.kv_cache_config.kv_cache_groups
++    group_ids = []
++    for name in LAYERS:
++        matching = [i for i, g in enumerate(groups) if name in g.layer_names]
++        require(len(matching) == 1, "layer has ambiguous KV group")
++        group_ids.append(matching[0])
++    require(len(set(group_ids)) == 1, "target layers span different KV groups")
++    gid = group_ids[0]
++    table = runner.input_batch.block_table[gid]
++    canonical = (
++        runner.query_start_loc.gpu[: cap + 1],
++        runner.seq_lens[:cap],
++        table.get_device_tensor(cap),
++        table.slot_mapping.gpu[:cap],
++    )
++    signature = tuple(strong_view_key(x) for x in canonical)
++    capacities = set()
++    for name in LAYERS:
++        layer = ctx.no_compile_layers[name]
++        capacities.add(layer.kv_cache.shape[0])
++        live = views(ctx.attn_metadata[name], ctx.slot_mapping[name])
++        require(
++            tuple(strong_view_key(live[k]) for k in META) == signature,
++            "layer metadata is not exact shared live view",
++        )
++    require(len(capacities) == 1, "layer cache capacities differ")
++    objects = (
++        runner,
++        runner.input_batch,
++        table,
++        table.get_cpu_tensor(),
++        table.num_blocks_per_row,
++        runner.query_start_loc.np,
++        runner.optimistic_seq_lens_cpu,
++        runner.num_scheduled_tokens.np,
++        runner.input_batch.num_computed_tokens_cpu,
++        runner.input_batch.num_prompt_tokens,
++    )
++    return dict(group=gid, signature=signature, objects=objects)
++
++
++def validate_independence(states, require_outputs):
++    require(list(states) == list(LAYERS), "incomplete independent layer states")
++    owned = []
++    for state in states.values():
++        items = [state["cache"], *state["scratch"]]
++        if require_outputs:
++            items.append(state["output"])
++        for tensor in items:
++            pointer = tensor.untyped_storage().data_ptr()
++            require(pointer not in owned, "layer cache/scratch/output storage aliases")
++            owned.append(pointer)
++
++
++def plain(impl, metadata):
++    require(
++        impl.kv_cache_dtype in ("auto", "bfloat16")
++        and impl.sliding_window == (-1, -1)
++        and impl.alibi_slopes is None
++        and impl.sinks is None
++        and not impl.logits_soft_cap
++        and not impl.use_td
++        and impl.chunk_lookback in (None, -1)
++        and not metadata.use_cascade
++        and metadata.mm_prefix_range_tensor is None
++        and metadata.causal is True
++        and str(getattr(impl.attn_type, "value", impl.attn_type)).lower() == "decoder",
++        "unsupported attention semantics",
++    )
+diff --git a/vllm_fl/compilation/kv_decode/contract.py b/vllm_fl/compilation/kv_decode/contract.py
+new file mode 100644
+index 0000000..ce26291
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/contract.py
+@@ -0,0 +1,124 @@
++# SPDX-License-Identifier: Apache-2.0
++def check_metadata(query_start, lengths, table, slots, cache_blocks, active):
++    """Check the read/write contract, using at most one interval per live page."""
++    if not (
++        type(active) is int
++        and type(cache_blocks) is int
++        and cache_blocks > 0
++        and 0 < active <= len(lengths) == len(table)
++        and len(query_start) == len(lengths) + 1
++        and len(slots) >= active
++        and all(type(x) is int for x in (*query_start, *lengths, *slots))
++        and table
++        and table[0]
++        and all(len(row) == len(table[0]) for row in table)
++    ):
++        return "metadata_shape"
++    if query_start != list(range(active + 1)) + [active] * (len(lengths) - active):
++        return "not_packed_single_query"
++    if any(n <= 0 or n > PAGE * len(table[0]) for n in lengths[:active]):
++        return "invalid_length"
++    if any(lengths[active:]) or any(slot != -1 for slot in slots[active:]):
++        return "invalid_padding"
++
++    # Each readable page starts at offset zero, even when partially used, so
++    # any repeated physical page necessarily aliases a readable token.
++    used_pages = set()
++    for n, row, slot in zip(lengths[:active], table[:active], slots[:active]):
++        page_count = (n + PAGE - 1) // PAGE
++        for page in row[:page_count]:
++            if type(page) is not int or not 0 <= page < cache_blocks:
++                return "invalid_physical_page"
++            if page in used_pages:
++                return "shared_readable_page"
++            used_pages.add(page)
++        if slot != row[page_count - 1] * PAGE + (n - 1) % PAGE:
++            return "write_not_at_latest_token"
++    return None
++
++
++"""Bounded 4K admission policy shared by live execution and CPU checks."""
++PAGE = 16
++
++MIN_CONTEXT = 4097
++MAX_CONTEXT = 5119
++TABLE_COLUMNS = (MAX_CONTEXT + PAGE - 1) // PAGE
++BATCHES = {32: (32,), 64: (63, 64)}
++SEGMENTS = 16
++PROOF_LENGTHS = (4097, 4098, 4111, 4112, 4113, 5118, 5119)
++LAYERS = 42
++MIB = 1024**2
++GRAPH_HEADROOM = 768 * MIB
++SHADOW_CAP = 1024 * MIB
++
++
++def planned_bytes(segments=SEGMENTS):
++    return sum(BATCHES) * LAYERS * 16 * segments * (128 + 2) * 4
++
++
++def route_reason(cap, scheduled, lengths, computed, prompts, active):
++    if cap not in BATCHES or active not in BATCHES[cap] or len(scheduled) != active:
++        return "unsupported_batch"
++    if any(token != 1 for token in scheduled):
++        return "mixed_or_prefill"
++    if not len(lengths) == len(computed) == len(prompts) == active:
++        return "unbound_rows"
++    if any(
++        done < prompt or length != done + 1
++        for length, done, prompt in zip(lengths, computed, prompts)
++    ):
++        return "mixed_or_prefill"
++    if any(length < MIN_CONTEXT or length > MAX_CONTEXT for length in lengths):
++        return "context_bound"
++    return None
++
++
++def metadata_reason(host, cache_blocks, active):
++    if len(host["slots"]) != len(host["lengths"]) or any(
++        len(row) != TABLE_COLUMNS for row in host["table"]
++    ):
++        return "metadata_shape"
++    if any(any(row) for row in host["table"][active:]):
++        return "invalid_padding_table"
++    return check_metadata(
++        host["query_start"],
++        host["lengths"],
++        host["table"],
++        host["slots"],
++        cache_blocks,
++        active,
++    )
++
++
++def has_headroom(free, scratch, shadow=0):
++    return 0 <= shadow <= SHADOW_CAP and free >= scratch + shadow + GRAPH_HEADROOM
++
++
++def proof_targets(cap, active, lengths):
++    """A boundary is proved for every active row, not just min/max of a batch."""
++    if (
++        len(lengths) != active
++        or route_reason(
++            cap,
++            [1] * active,
++            lengths,
++            [n - 1 for n in lengths],
++            [4096] * active,
++            active,
++        )
++        is not None
++    ):
++        return set()
++    if len(set(lengths)) > 1:
++        return {(cap, active, "ragged")}
++    length = lengths[0]
++    return {(cap, active, str(length))} if length in PROOF_LENGTHS else set()
++
++
++def required_proofs():
++    return {
++        (cap, active, str(n))
++        for cap, batches in BATCHES.items()
++        for active in batches
++        for n in (*PROOF_LENGTHS, "ragged")
++    }
+diff --git a/vllm_fl/compilation/kv_decode/controller.py b/vllm_fl/compilation/kv_decode/controller.py
+new file mode 100644
+index 0000000..1b5df7f
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/controller.py
+@@ -0,0 +1,590 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Bounded source-owned fusion. Unsupported replay routes use native graphs."""
++
++from contextlib import contextmanager
++from .bindings import (
++    LAYERS,
++    META,
++    plain,
++    require,
++    shared_binding,
++    validate_independence,
++    view_key,
++    views,
++)
++from .contract import MIB, has_headroom
++from .profiles import FOUR_K, configured_profiles, select_profile
++
++
++@contextmanager
++def graph_entries(wrapper, entries, pool, restore_pool=None):
++    original_entries, original_pool = wrapper.concrete_graph_entries, wrapper.graph_pool
++    wrapper.concrete_graph_entries, wrapper.graph_pool = entries, pool
++    try:
++        yield
++    finally:
++        wrapper.concrete_graph_entries, wrapper.graph_pool = (
++            original_entries,
++            original_pool,
++        )
++        if restore_pool is not None:
++            restore_pool(wrapper)
++
++
++class KVDecodeController:
++    policy = FOUR_K
++
++    @property
++    def capacities(self):
++        return tuple(self.policy.BATCHES)
++
++    @property
++    def segments(self):
++        return self.policy.segments
++
++    plain = staticmethod(plain)
++
++    def __init__(self):
++        import torch
++        from flag_gems.runtime.backend._iluvatar.fused import kv_decode
++        from vllm.forward_context import (
++            get_forward_context,
++            is_forward_context_available,
++        )
++
++        self.torch, self.fused = torch, kv_decode
++        self.context, self.context_available = (
++            get_forward_context,
++            is_forward_context_available,
++        )
++        self.profiles = configured_profiles()
++        self.step = self.capture_owner = self.capture_runner = None
++        self.variant_capture = None
++        self.first_hits = set()
++
++    def event(self, reason, step=None, descriptor=None):
++        if (
++            reason.startswith("fused_active_")
++            and (self.policy.name, reason) not in self.first_hits
++        ):
++            from vllm.logger import init_logger
++
++            init_logger(__name__).info(
++                "FL KV-decode fusion entered %s %s, S%d",
++                self.policy.name,
++                reason,
++                self.segments,
++            )
++            self.first_hits.add((self.policy.name, reason))
++
++    def observe_replay(self, bundle, host, step, descriptor):
++        pass
++
++    def verify_mirrors(self, live, host):
++        # CPU/device source binding is checked on every replay. Full GPU mirror
++        # comparison is a separate untimed acceptance test, not hidden timing work.
++        return True
++
++    def layer_state(self, layer):
++        bundle = self.variant_capture
++        return bundle["layers"].get(layer.layer_name) if bundle else None
++
++    def supports_capture(self, runner, ctx, cap):
++        # Check model/backend compatibility before allocating or suppressing any
++        # native KV write. Other models and explicit attention backends stay native.
++        from .backend import TritonKVDecodeImpl
++
++        try:
++            p = runner.vllm_config.parallel_config
++            if (
++                p.decode_context_parallel_size != 1
++                or p.prefill_context_parallel_size != 1
++                or runner.vllm_config.kv_transfer_config is not None
++                or runner.speculative_config is not None
++                or runner.use_async_spec_decode
++            ):
++                return False
++            for name in LAYERS:
++                layer, meta = ctx.no_compile_layers[name], ctx.attn_metadata[name]
++                if not isinstance(layer.impl, TritonKVDecodeImpl):
++                    return False
++                self.plain(layer.impl, meta)
++                if (
++                    meta.max_query_len != 1
++                    or meta.num_par_softmax_segments != 16
++                    or meta.seq_threshold_3D < cap
++                    or layer.kv_sharing_target_layer_name is not None
++                    or layer.kv_cache.dtype != self.torch.bfloat16
++                    or tuple(layer.kv_cache.shape[1:]) != (2, 16, 2, 128)
++                ):
++                    return False
++            return True
++        except (
++            AttributeError,
++            KeyError,
++            IndexError,
++            TypeError,
++            ValueError,
++            RuntimeError,
++        ):
++            return False
++
++    def capture_write(self, state, key, value, cache, slot):
++        require(
++            state["write"] is None
++            and view_key(cache) == view_key(state["cache"])
++            and view_key(slot) == state["live_signature"][-1],
++            "capture writer binding",
++        )
++        state["write"] = view_key(key), view_key(value)
++
++    def capture_forward(
++        self,
++        state,
++        impl,
++        query,
++        key,
++        value,
++        cache,
++        metadata,
++        output,
++        output_scale,
++        output_block_scale,
++    ):
++        self.plain(impl, metadata)
++        cap = state["capacity"]
++        tensors = (
++            query,
++            key,
++            value,
++            output,
++            cache,
++            *state["staged"],
++            *state["scratch"],
++        )
++        pointers = [tensor.untyped_storage().data_ptr() for tensor in tensors]
++        require(
++            len(set(pointers[3:])) == len(pointers[3:])
++            and not set(pointers[:3]).intersection(pointers[3:]),
++            "capture output/cache alias",
++        )
++        require(
++            state["write"] == (view_key(key), view_key(value))
++            and not state["used"]
++            and view_key(cache) == view_key(state["cache"])
++            and output_scale is None
++            and output_block_scale is None
++            and tuple(query.shape) == tuple(output.shape) == (cap, 16, 128)
++            and tuple(key.shape) == tuple(value.shape) == (cap, 2, 128)
++            and tuple(value.stride()) == (2560, 128, 1)
++            and all(
++                x.dtype == self.torch.bfloat16 and x.device == cache.device
++                for x in (query, key, value, output)
++            )
++            and all(x.is_contiguous() for x in (query, key, output)),
++            "capture tensor contract",
++        )
++        self.launch(state, query, key, value, cache, output, impl.scale)
++        state["output"], state["used"] = output, True
++        return output
++
++    def admission(self, runner, schedule, ctx, bundle, args, kwargs):
++        active = runner.input_batch.num_reqs
++        cap = bundle["capacity"]
++        inputs = runner.input_batch
++        lengths = runner.optimistic_seq_lens_cpu[:cap].tolist()
++        reason = self.policy.route_reason(
++            cap,
++            schedule,
++            lengths[:active],
++            inputs.num_computed_tokens_cpu[:active],
++            inputs.num_prompt_tokens[:active],
++            active,
++        )
++        if reason is not None:
++            return reason
++        parallel = runner.vllm_config.parallel_config
++        if (
++            parallel.decode_context_parallel_size != 1
++            or parallel.prefill_context_parallel_size != 1
++            or runner.vllm_config.kv_transfer_config is not None
++            or (runner.speculative_config is not None)
++            or runner.use_async_spec_decode
++            or (self.inputs(args, kwargs) != bundle["inputs"])
++        ):
++            return "unsupported_runner_or_inputs"
++        if runner.num_scheduled_tokens.np[:active].tolist() != [1] * active:
++            return "runner_schedule_changed"
++        bound = shared_binding(runner, ctx, cap)
++        previous = bundle["binding"]
++        if (
++            bound["group"] != previous["group"]
++            or bound["signature"] != previous["signature"]
++            or len(bound["objects"]) != len(previous["objects"])
++            or any((a is not b for a, b in zip(bound["objects"], previous["objects"])))
++        ):
++            return "metadata_rebound"
++        for name, state in bundle["layers"].items():
++            layer = ctx.no_compile_layers[name]
++            meta = ctx.attn_metadata[name]
++            self.plain(layer.impl, meta)
++            require(
++                meta.max_query_len == 1
++                and meta.num_par_softmax_segments == 16
++                and (meta.seq_threshold_3D >= cap),
++                "Matched native S16 decode path changed",
++            )
++            live = views(meta, ctx.slot_mapping[name])
++            if (
++                view_key(layer.kv_cache) != view_key(state["cache"])
++                or tuple((view_key(live[key]) for key in META))
++                != state["live_signature"]
++            ):
++                return "layer_rebound"
++        table = inputs.block_table[bound["group"]]
++        if (
++            table.block_size != 16
++            or table.use_hybrid_blocks
++            or table.pcp_world_size != 1
++            or (table.dcp_world_size != 1)
++        ):
++            return "unsupported_block_table"
++        raw = table.get_cpu_tensor()
++        if str(raw.device) != "cpu" or raw.shape[1] < self.policy.TABLE_COLUMNS:
++            return "unbound_cpu_table"
++        rows = raw[:active, : self.policy.TABLE_COLUMNS].tolist() + [
++            [0] * self.policy.TABLE_COLUMNS for _ in range(cap - active)
++        ]
++        pages = [(length + 15) // 16 for length in lengths[:active]]
++        if any(
++            (int(n) < used for n, used in zip(table.num_blocks_per_row[:active], pages))
++        ):
++            return "unallocated_page"
++        slots = [
++            row[p - 1] * 16 + (n - 1) % 16
++            for n, row, p in zip(lengths[:active], rows, pages)
++        ]
++        host = dict(
++            query_start=runner.query_start_loc.np[: cap + 1].tolist(),
++            lengths=lengths,
++            table=rows,
++            slots=slots + [-1] * (cap - active),
++        )
++        reason = self.policy.metadata_reason(
++            host, bundle["layers"][LAYERS[0]]["cache"].shape[0], active
++        )
++        if reason:
++            return reason
++        return ({**live, "table": live["table"][:, : self.policy.TABLE_COLUMNS]}, host)
++
++    def launch(self, state, q, k, v, cache, out, scale):
++        kc, vc = cache.unbind(1)
++        cu, lengths, table, slots = state["staged"]
++        self.fused._fused_attention_internal(
++            q,
++            kc,
++            vc,
++            out,
++            cu,
++            1,
++            lengths,
++            self.policy.maximum,
++            float(scale),
++            True,
++            (-1, -1),
++            table,
++            0.0,
++            1.0,
++            1.0,
++            1.0,
++            seq_threshold_3D=state["capacity"],
++            num_par_softmax_segments=self.segments,
++            softmax_segm_output=state["scratch"][0],
++            softmax_segm_max=state["scratch"][1],
++            softmax_segm_expsum=state["scratch"][2],
++            _new_k=k,
++            _new_v=v,
++            _slot_mapping=slots,
++            _latest_tile_only=True,
++            _fixed_query_capacity=True,
++        )
++
++    def capture_states(self):
++        t, ctx = (self.torch, self.context())
++        cap = ctx.batch_descriptor.num_tokens
++        if cap not in self.policy.BATCHES:
++            return None
++        runner = self.capture_runner
++        binding = shared_binding(runner, ctx, cap)
++        first = ctx.no_compile_layers[LAYERS[0]].kv_cache
++        # Re-check each capture, including recapture after clear_graphs().
++        # An unsupported memory budget falls back before touching real KV.
++        free, _ = t.cuda.mem_get_info()
++        scratch_bytes = cap * len(LAYERS) * 16 * self.segments * (128 + 2) * 4
++        if not has_headroom(free, scratch_bytes):
++            return None
++        states, staged = ({}, None)
++        for name in LAYERS:
++            layer = ctx.no_compile_layers[name]
++            cache = layer.kv_cache
++            meta = ctx.attn_metadata[name]
++            live = views(meta, ctx.slot_mapping[name])
++            self.plain(layer.impl, meta)
++            require(
++                meta.num_par_softmax_segments == 16 and meta.seq_threshold_3D >= cap,
++                "Capture no longer matches native S16 3D attention",
++            )
++            require(
++                cache.ndim == 5
++                and tuple(cache.shape[1:]) == (2, 16, 2, 128)
++                and (cache.shape == first.shape)
++                and cache.is_contiguous()
++                and (cache.shape[0] >= cap)
++                and (cache.device == first.device)
++                and (cache.device.type != "cpu")
++                and (cache.dtype == t.bfloat16)
++                and (layer.kv_sharing_target_layer_name is None)
++                and (meta.max_query_len == 1)
++                and (not self.fused.is_batch_invariant),
++                "Long Graph cache or attention contract",
++            )
++            require(
++                tuple(live["query_start"].shape) == (cap + 1,)
++                and tuple(live["lengths"].shape) == (cap,)
++                and (tuple(live["slots"].shape) == (cap,))
++                and (live["table"].ndim == 2)
++                and (live["table"].shape[0] == cap)
++                and (live["table"].shape[1] >= self.policy.TABLE_COLUMNS)
++                and all(
++                    (
++                        x.is_contiguous()
++                        and x.device == cache.device
++                        and (x.dtype in (t.int32, t.int64))
++                        for x in live.values()
++                    )
++                ),
++                "Long Graph metadata contract",
++            )
++            if staged is None:
++                dummy = (
++                    list(range(cap + 1)),
++                    [1] * cap,
++                    [[i] + [0] * (self.policy.TABLE_COLUMNS - 1) for i in range(cap)],
++                    [i * 16 for i in range(cap)],
++                )
++                staged = tuple(
++                    (
++                        t.tensor(values, dtype=live[key].dtype, device=cache.device)
++                        for key, values in zip(META, dummy)
++                    )
++                )
++            scratch = tuple(
++                (
++                    t.empty(shape, device=cache.device, dtype=t.float32)
++                    for shape in (
++                        (cap, 16, self.segments, 128),
++                        (cap, 16, self.segments),
++                        (cap, 16, self.segments),
++                    )
++                )
++            )
++            state = dict(
++                cache=cache,
++                capacity=cap,
++                staged=staged,
++                scratch=scratch,
++                write=None,
++                used=False,
++                live_signature=tuple((view_key(live[key]) for key in META)),
++            )
++            states[name] = state
++        validate_independence(states, require_outputs=False)
++        cache_pointers = {
++            state["cache"].untyped_storage().data_ptr() for state in states.values()
++        }
++        require(
++            all(
++                (
++                    name in states
++                    or not hasattr(layer, "kv_cache")
++                    or layer.kv_cache.untyped_storage().data_ptr() not in cache_pointers
++                    for name, layer in ctx.no_compile_layers.items()
++                )
++            ),
++            "Unknown layer aliases a target cache",
++        )
++        first_state = states[LAYERS[0]]
++        private = t.empty_like(first[:cap])
++        q = t.zeros((cap, 16, 128), device=first.device, dtype=first.dtype)
++        k = t.zeros((cap, 2, 128), device=first.device, dtype=first.dtype)
++        v = t.empty_strided(
++            k.shape, (2560, 128, 1), device=first.device, dtype=first.dtype
++        ).zero_()
++        self.launch(
++            first_state,
++            q,
++            k,
++            v,
++            private,
++            t.empty_like(q),
++            ctx.no_compile_layers[LAYERS[0]].impl.scale,
++        )
++        t.cuda.synchronize()
++        staged[0].zero_()
++        staged[1].zero_()
++        staged[2].zero_()
++        staged[3].fill_(-1)
++        t.cuda.synchronize()
++        return dict(capacity=cap, layers=states, staged=staged, binding=binding)
++
++    def observe_capture(self, bundle):
++        free, _ = self.torch.cuda.mem_get_info()
++        require(free >= 256 * MIB, "Post-capture VRAM guard reached")
++
++    def inputs(self, args, kwargs):
++        def describe(value):
++            if isinstance(value, self.torch.Tensor):
++                return view_key(value)
++            if value is None:
++                return None
++            raise ValueError("Unexpected model input")
++
++        return tuple(map(describe, args)), tuple(
++            (k, describe(v)) for k, v in sorted(kwargs.items())
++        )
++
++    def restore_capture_pool(self, wrapper):
++        # The pinned wrapper changes a process-global collective allocator pool
++        # during capture as well as its own graph_pool attribute.
++        from vllm.distributed.device_communicators.pynccl_allocator import (
++            set_graph_pool_id,
++        )
++        from vllm.platforms import current_platform
++
++        set_graph_pool_id(
++            wrapper.graph_pool
++            if wrapper.graph_pool is not None
++            else current_platform.graph_pool_handle()
++        )
++
++    def call(self, wrapper, *args, **kwargs):
++        if not self.context_available():
++            return wrapper._call_native(*args, **kwargs)
++        ctx = self.context()
++        cap = getattr(ctx.batch_descriptor, "num_tokens", None)
++        if self.capture_runner is not None and wrapper is self.capture_runner.model:
++            policies = [p for p in self.profiles if cap in p.BATCHES]
++        elif self.step is not None and wrapper is self.step[0].model:
++            runner = self.step[0]
++            active = runner.input_batch.num_reqs
++            lengths = runner.optimistic_seq_lens_cpu[:active].tolist()
++            selected = select_profile(self.profiles, cap, active, lengths)
++            policies = [selected] if selected is not None else []
++        else:
++            policies = []
++        if not policies:
++            return wrapper._call_native(*args, **kwargs)
++        previous = self.policy
++        try:
++            for policy in policies:
++                self.policy = policy
++                result = self._call_profile(wrapper, *args, **kwargs)
++            return result
++        finally:
++            self.policy = previous
++
++    def _call_profile(self, wrapper, *args, **kwargs):
++        if not self.context_available():
++            return wrapper._call_native(*args, **kwargs)
++        ctx = self.context()
++        descriptor = ctx.batch_descriptor
++        runner = self.capture_runner
++        step = self.step
++        model_step = step is not None and wrapper is step[0].model and bool(step[1])
++        if (
++            getattr(ctx.cudagraph_runtime_mode, "name", "") != "FULL"
++            or wrapper.runtime_mode != ctx.cudagraph_runtime_mode
++        ) or getattr(descriptor, "num_tokens", None) not in self.capacities:
++            if model_step:
++                self.event("native_graph_mode_or_bucket", step, descriptor)
++            return wrapper._call_native(*args, **kwargs)
++        native = wrapper.concrete_graph_entries
++        variants = wrapper.kv_decode_variants.setdefault(self.policy.name, {})
++        if (
++            runner is not None
++            and wrapper is runner.model
++            and (descriptor not in variants)
++        ):
++            result = wrapper._call_native(*args, **kwargs)
++            entry = native.get(descriptor)
++            if entry is None or entry.graph is None:
++                return result
++            if not self.supports_capture(runner, ctx, descriptor.num_tokens):
++                return result
++            bundle = self.capture_states()
++            if bundle is None:
++                return result
++            bundle["inputs"] = self.inputs(args, kwargs)
++            entries, pool = ({}, self.torch.cuda.graph_pool_handle())
++            self.variant_capture = bundle
++            try:
++                with graph_entries(wrapper, entries, pool, self.restore_capture_pool):
++                    wrapper._call_native(*args, **kwargs)
++                require(
++                    all((state["used"] for state in bundle["layers"].values())),
++                    "incomplete fusion capture",
++                )
++                validate_independence(bundle["layers"], require_outputs=True)
++                require(
++                    entries[descriptor].graph is not entry.graph,
++                    "native and fused graph alias",
++                )
++                self.observe_capture(bundle)
++                variants[descriptor] = (entries, pool, bundle, entry)
++                self.event(f"captured_{bundle['capacity']}")
++            finally:
++                self.variant_capture = None
++            return result
++        variant = variants.get(descriptor)
++        if not model_step:
++            return wrapper._call_native(*args, **kwargs)
++        if variant is None:
++            self.event("native_no_candidate_graph", step, descriptor)
++            return wrapper._call_native(*args, **kwargs)
++        entries, pool, bundle, native_entry = variant
++        if native.get(descriptor) is not native_entry or native_entry.graph is None:
++            self.event("native_entry_replaced", step, descriptor)
++            return wrapper._call_native(*args, **kwargs)
++        candidate_entry = entries.get(descriptor)
++        if (
++            candidate_entry is None
++            or candidate_entry.graph is None
++            or candidate_entry.graph is native_entry.graph
++        ):
++            self.event("candidate_entry_invalid", step, descriptor)
++            return wrapper._call_native(*args, **kwargs)
++        try:
++            admission = self.admission(*step, ctx, bundle, args, kwargs)
++        except (
++            RuntimeError,
++            AttributeError,
++            KeyError,
++            IndexError,
++            TypeError,
++            ValueError,
++        ):
++            admission = "admission_rejected"
++        if isinstance(admission, str):
++            self.event(admission, step, descriptor)
++            return wrapper._call_native(*args, **kwargs)
++        live, host = admission
++        if not self.verify_mirrors(live, host):
++            self.event("mirror_mismatch", step, descriptor)
++            return wrapper._call_native(*args, **kwargs)
++        for destination, key in zip(bundle["staged"], META):
++            destination.copy_(live[key])
++        with graph_entries(wrapper, entries, pool):
++            result = wrapper._call_native(*args, **kwargs)
++        self.observe_replay(bundle, host, step, descriptor)
++        self.event(f"fused_active_{len(step[1])}", step, descriptor)
++        return result
+diff --git a/vllm_fl/compilation/kv_decode/profiles.py b/vllm_fl/compilation/kv_decode/profiles.py
+new file mode 100644
+index 0000000..57e320e
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/profiles.py
+@@ -0,0 +1,86 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Disjoint candidate domains; the long profile needs installed validation."""
++
++from dataclasses import dataclass
++import os
++from .contract import check_metadata
++
++
++@dataclass(frozen=True)
++class Profile:
++    name: str
++    minimum: int
++    maximum: int
++    segments: int
++    batches: tuple
++
++    @property
++    def BATCHES(self):
++        return dict(self.batches)
++
++    @property
++    def TABLE_COLUMNS(self):
++        return (self.maximum + 15) // 16
++
++    def route_reason(self, cap, scheduled, lengths, computed, prompts, active):
++        if (
++            cap not in self.BATCHES
++            or active not in self.BATCHES[cap]
++            or len(scheduled) != active
++        ):
++            return "unsupported_batch"
++        if any(n != 1 for n in scheduled):
++            return "mixed_or_prefill"
++        if not len(lengths) == len(computed) == len(prompts) == active:
++            return "unbound_rows"
++        if any(
++            done < prompt or length != done + 1
++            for length, done, prompt in zip(lengths, computed, prompts)
++        ):
++            return "mixed_or_prefill"
++        if any(n < self.minimum or n > self.maximum for n in lengths):
++            return "context_bound"
++        return None
++
++    def metadata_reason(self, host, blocks, active):
++        if len(host["slots"]) != len(host["lengths"]) or any(
++            len(row) != self.TABLE_COLUMNS for row in host["table"]
++        ):
++            return "metadata_shape"
++        if any(any(row) for row in host["table"][active:]):
++            return "invalid_padding_table"
++        return check_metadata(
++            host["query_start"],
++            host["lengths"],
++            host["table"],
++            host["slots"],
++            blocks,
++            active,
++        )
++
++
++FOUR_K = Profile("4k-s16", 4097, 5119, 16, ((32, (32,)), (64, (63, 64))))
++# KV16384 development point and official-shaped decode neighbourhood.
++# Padded B32 rows need per-row guards; this is not yet GPU-qualified.
++SIXTEEN_K = Profile(
++    "16k-s32", 16384, 17407, 32, ((1, (1,)), (32, tuple(range(17, 33))))
++)
++
++
++def configured_profiles():
++    mode = os.environ.get("VLLM_FL_KV_DECODE_PROFILE", "4k")
++    return {"4k": (FOUR_K,), "16k": (SIXTEEN_K,), "unified": (FOUR_K, SIXTEEN_K)}[mode]
++
++
++def select_profile(profiles, capacity, active, lengths):
++    if len(lengths) != active or active <= 0:
++        return None
++    matches = [
++        p
++        for p in profiles
++        if active in p.BATCHES.get(capacity, ())
++        and all(p.minimum <= n <= p.maximum for n in lengths)
++    ]
++    if len(matches) > 1:
++        raise RuntimeError("Overlapping fusion profiles")
++    return matches[0] if matches else None
+diff --git a/vllm_fl/compilation/kv_decode/proof.py b/vllm_fl/compilation/kv_decode/proof.py
+new file mode 100644
+index 0000000..f12c886
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/proof.py
+@@ -0,0 +1,164 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Explicit untimed all-layer observer; never enabled in performance runs."""
++
++import json
++import os
++from pathlib import Path
++
++from .bindings import LAYERS, META, require
++from .contract import GRAPH_HEADROOM, SHADOW_CAP
++from .controller import KVDecodeController
++
++
++class ProofController(KVDecodeController):
++    def __init__(self):
++        super().__init__()
++        self.output = Path(os.environ["VLLM_FL_KV_DECODE_PROOF_DIR"])
++        require(self.output.is_absolute(), "Proof output must be absolute")
++        self.output.mkdir(parents=True, exist_ok=True)
++        self.shadow = self.flags = None
++        self.proof_steps = []
++        self.captures = []
++
++    def save(self, name, value):
++        target = self.output / name
++        temporary = target.with_suffix(".tmp")
++        temporary.write_text(json.dumps(value, indent=2), encoding="utf-8")
++        temporary.replace(target)
++
++    def capture_states(self):
++        t = self.torch
++        first = self.context().no_compile_layers[LAYERS[0]].kv_cache
++        if self.shadow is None:
++            needed = first.numel() * 3
++            free, _ = t.cuda.mem_get_info()
++            require(
++                needed <= SHADOW_CAP and free >= needed + GRAPH_HEADROOM,
++                "Full physical KV observer memory budget",
++            )
++            self.shadow = t.empty_like(first)
++            self.flags = t.empty_like(first, dtype=t.bool)
++        require(first.shape == self.shadow.shape, "Observer cache binding changed")
++        bundle = super().capture_states()
++        if bundle is not None:
++            for state in bundle["layers"].values():
++                state["checks"] = t.empty(4, device=first.device, dtype=t.bool)
++                state["reference"] = t.empty(
++                    (state["capacity"], 16, 128), device=first.device, dtype=first.dtype
++                )
++        return bundle
++
++    def capture_forward(
++        self,
++        state,
++        impl,
++        query,
++        key,
++        value,
++        cache,
++        metadata,
++        output,
++        output_scale,
++        output_block_scale,
++    ):
++        from vllm.v1.attention.backends.triton_attn import TritonAttentionImpl
++
++        t = self.torch
++        layer = next(
++            self.context().no_compile_layers[name]
++            for name, item in self.variant_capture["layers"].items()
++            if item is state
++        )
++        reference = state["reference"]
++        reference.fill_(float("nan"))
++        self.shadow.copy_(cache)
++        TritonAttentionImpl.do_kv_cache_update(
++            impl,
++            layer,
++            key,
++            value,
++            self.shadow,
++            self.context().slot_mapping[layer.layer_name],
++        )
++        TritonAttentionImpl.forward(
++            impl, layer, query, key, value, self.shadow, metadata, reference, None, None
++        )
++        active = state["staged"][1] > 0
++        output.copy_(t.where(active[:, None, None], float("nan"), 123.0))
++        for scratch in state["scratch"]:
++            scratch.fill_(float("nan"))
++        result = super().capture_forward(
++            state,
++            impl,
++            query,
++            key,
++            value,
++            cache,
++            metadata,
++            output,
++            output_scale,
++            output_block_scale,
++        )
++        checks = state["checks"]
++        t.ne(cache.view(t.int16), self.shadow.view(t.int16), out=self.flags)
++        t.any(self.flags, out=checks[0])
++        got, want = output.float(), reference.float()
++        bad = (
++            (~t.isfinite(got))
++            | (~t.isfinite(want))
++            | ((got - want).abs() > 0.002 + 0.02 * want.abs())
++        )
++        t.any(bad & active[:, None, None], out=checks[1])
++        t.any((output != 123) & ~active[:, None, None], out=checks[2])
++        checks[3].zero_()
++        for scratch in state["scratch"]:
++            mask = (~active).view(-1, *([1] * (scratch.ndim - 1)))
++            checks[3].logical_or_(t.any((~t.isnan(scratch)) & mask))
++        return result
++
++    def verify_mirrors(self, live, host):
++        return all(live[key].detach().cpu().tolist() == host[key] for key in META)
++
++    def observe_capture(self, bundle):
++        super().observe_capture(bundle)
++        self.captures.append(
++            dict(
++                profile=self.policy.name,
++                capacity=bundle["capacity"],
++                segments=self.segments,
++                layers=len(bundle["layers"]),
++            )
++        )
++        self.save("captures.json", self.captures)
++
++    def observe_replay(self, bundle, host, step, descriptor):
++        checks = (
++            self.torch.stack([state["checks"] for state in bundle["layers"].values()])
++            .cpu()
++            .tolist()
++        )
++        bad = [name for name, flags in zip(LAYERS, checks) if any(flags)]
++        row = dict(
++            profile=self.policy.name,
++            capacity=bundle["capacity"],
++            active=len(step[1]),
++            lengths=host["lengths"][: len(step[1])],
++            segments=self.segments,
++            layers=list(LAYERS),
++            checks=checks,
++            passed=not bad,
++        )
++        require(len(self.proof_steps) < 4096, "Proof record budget exhausted")
++        self.proof_steps.append(row)
++        self.save(
++            "layer-proof.json",
++            dict(
++                scope="untimed installed model all-layer Graph diagnostic",
++                steps=self.proof_steps,
++                rtol=0.02,
++                atol=0.002,
++                full_physical_KV=True,
++                active_finite_coverage=True,
++            ),
++        )
++        require(not bad, "Native/full-KV/padding comparison failed: " + ",".join(bad))
+diff --git a/vllm_fl/compilation/kv_decode/runtime.py b/vllm_fl/compilation/kv_decode/runtime.py
+new file mode 100644
+index 0000000..1e438db
+--- /dev/null
++++ b/vllm_fl/compilation/kv_decode/runtime.py
+@@ -0,0 +1,96 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Explicit runner scopes. Importing this module never initializes CUDA."""
++
++from contextvars import ContextVar
++from functools import wraps
++from inspect import signature
++import os
++
++
++_active = ContextVar("fl_kv_decode_controller", default=None)
++
++
++def requested():
++    return os.environ.get("VLLM_FL_KV_DECODE_FUSION", "0") == "1"
++
++
++def target_device():
++    import torch
++    from vllm import envs
++
++    return (
++        torch.cuda.is_available()
++        and not envs.VLLM_BATCH_INVARIANT
++        and torch.cuda.get_device_name() == "Iluvatar BI-V150"
++    )
++
++
++def active_controller():
++    return _active.get()
++
++
++def controller_for(runner):
++    if not requested():
++        return None
++    if not hasattr(runner, "_fl_kv_decode_controller"):
++        if not target_device():
++            runner._fl_kv_decode_controller = None
++        else:
++            if os.environ.get("VLLM_FL_KV_DECODE_PROOF_DIR"):
++                from .proof import ProofController
++
++                runner._fl_kv_decode_controller = ProofController()
++            else:
++                from .controller import KVDecodeController
++
++                runner._fl_kv_decode_controller = KVDecodeController()
++    return runner._fl_kv_decode_controller
++
++
++def runner_scope(kind):
++    """Source-level runner decorator; never replaces an installed class method."""
++
++    def decorate(fn):
++        sig = signature(fn)
++
++        @wraps(fn)
++        def scoped(runner, *args, **kwargs):
++            controller = controller_for(runner)
++            if controller is None:
++                return fn(runner, *args, **kwargs)
++            previous = (
++                controller.step,
++                controller.capture_owner,
++                controller.capture_runner,
++            )
++            token = _active.set(controller)
++            try:
++                if kind == "execute":
++                    schedule = args[0] if args else kwargs["scheduler_output"]
++                    controller.step = (
++                        runner,
++                        tuple(map(int, schedule.num_scheduled_tokens.values())),
++                    )
++                elif kind == "capture":
++                    controller.capture_owner = runner
++                elif kind == "dummy":
++                    bound = sig.bind(runner, *args, **kwargs)
++                    if (
++                        controller.capture_owner is runner
++                        and bound.arguments.get("is_graph_capturing") is True
++                    ):
++                        controller.capture_runner = runner
++                else:
++                    raise ValueError("Unknown KV-decode runner scope")
++                return fn(runner, *args, **kwargs)
++            finally:
++                (
++                    controller.step,
++                    controller.capture_owner,
++                    controller.capture_runner,
++                ) = previous
++                _active.reset(token)
++
++        return scoped
++
++    return decorate
+diff --git a/vllm_fl/dispatch/backends/flaggems/flaggems.py b/vllm_fl/dispatch/backends/flaggems/flaggems.py
+index bc6077a..5c861f1 100644
+--- a/vllm_fl/dispatch/backends/flaggems/flaggems.py
++++ b/vllm_fl/dispatch/backends/flaggems/flaggems.py
+@@ -184,6 +184,12 @@ class FlagGemsBackend(Backend):
+             print("Using FlagGems attention backend.")
+             return "vllm_fl.dispatch.backends.flaggems.impl.attention.AttentionFLBackend"
+ 
++        # This executes only after the existing backend selector chose FlagGems.
++        # Vendor/reference order and the explicit FlagGems-attention option above
++        # remain authoritative.
++        from vllm_fl.compilation.kv_decode.runtime import requested, target_device
++        if requested() and target_device():
++            return "vllm_fl.compilation.kv_decode.backend.TritonKVDecodeBackend"
+         return AttentionBackendEnum.TRITON_ATTN.get_path()
+ 
+     def moe_align_block_size(
+diff --git a/vllm_fl/ops/iluvatar_linear.py b/vllm_fl/ops/iluvatar_linear.py
+new file mode 100644
+index 0000000..fe9dbd1
+--- /dev/null
++++ b/vllm_fl/ops/iluvatar_linear.py
+@@ -0,0 +1,133 @@
++# SPDX-License-Identifier: Apache-2.0
++"""Normal OOT layer registration with an opaque, public FlagGems mm boundary.
++
++Weight loading, TP communication, bias, quantization and batch-invariant fallback
++remain in the upstream layers/methods. No installed class method is reassigned.
++"""
++
++import torch
++from vllm.model_executor.custom_op import PluggableLayer, op_registry_oot
++from vllm.model_executor.layers.linear import (
++    ColumnParallelLinear,
++    MergedColumnParallelLinear,
++    QKVParallelLinear,
++    ReplicatedLinear,
++    RowParallelLinear,
++    UnquantizedLinearMethod,
++)
++from vllm.model_executor.layers.vocab_parallel_embedding import (
++    ParallelLMHead,
++    UnquantizedEmbeddingMethod,
++    VocabParallelEmbedding,
++)
++
++
++@torch.library.custom_op(
++    "vllm_fl::iluvatar_unquantized_mm", mutates_args=(), device_types="cuda"
++)
++def opaque_mm(x: torch.Tensor, weight: torch.Tensor) -> torch.Tensor:
++    import flag_gems
++
++    # Public selected backend, including its normal libentry/libtuner wrappers.
++    return flag_gems.mm(x, weight.T)
++
++
++@opaque_mm.register_fake
++def _fake_mm(x, weight):
++    return x.new_empty((x.shape[0], weight.shape[0]))
++
++
++def eligible(layer, x, bias):
++    from vllm import envs
++
++    w = layer.weight
++    return (
++        not envs.VLLM_BATCH_INVARIANT
++        and bias is None
++        and x.ndim == w.ndim == 2
++        and x.is_cuda
++        and x.dtype == w.dtype == torch.bfloat16
++        and x.device == w.device
++        and x.shape[1] == w.shape[1]
++        and x.numel() > 0
++        and w.numel() > 0
++    )
++
++
++class LinearMethod(UnquantizedLinearMethod):
++    def apply(self, layer, x, bias=None):
++        if eligible(layer, x, bias):
++            return opaque_mm(x, layer.weight)
++        return super().apply(layer, x, bias)
++
++
++class EmbeddingMethod(UnquantizedEmbeddingMethod):
++    def apply(self, layer, x, bias=None):
++        if eligible(layer, x, bias):
++            return opaque_mm(x, layer.weight)
++        return super().apply(layer, x, bias)
++
++
++class BoundaryLayer:
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        from vllm_fl.compilation.kv_decode.runtime import target_device
++        from vllm_fl.utils import use_flaggems_op
++
++        if not (target_device() and use_flaggems_op("mm")):
++            return
++        # Keep quantized/subclass methods intact. The original constructor and
++        # weight creation have run unchanged before selecting our derived method.
++        if type(self.quant_method) is UnquantizedLinearMethod:
++            self.quant_method = LinearMethod()
++        elif type(self.quant_method) is UnquantizedEmbeddingMethod:
++            self.quant_method = EmbeddingMethod()
++
++
++class ReplicatedLinearFL(BoundaryLayer, ReplicatedLinear):
++    pass
++
++
++class ColumnParallelLinearFL(BoundaryLayer, ColumnParallelLinear):
++    pass
++
++
++class MergedColumnParallelLinearFL(BoundaryLayer, MergedColumnParallelLinear):
++    pass
++
++
++class QKVParallelLinearFL(BoundaryLayer, QKVParallelLinear):
++    pass
++
++
++class RowParallelLinearFL(BoundaryLayer, RowParallelLinear):
++    pass
++
++
++class VocabParallelEmbeddingFL(BoundaryLayer, VocabParallelEmbedding):
++    pass
++
++
++class ParallelLMHeadFL(BoundaryLayer, ParallelLMHead):
++    pass
++
++
++def register_layers():
++    pairs = (
++        (ReplicatedLinear, ReplicatedLinearFL),
++        (ColumnParallelLinear, ColumnParallelLinearFL),
++        (MergedColumnParallelLinear, MergedColumnParallelLinearFL),
++        (QKVParallelLinear, QKVParallelLinearFL),
++        (RowParallelLinear, RowParallelLinearFL),
++        (VocabParallelEmbedding, VocabParallelEmbeddingFL),
++        (ParallelLMHead, ParallelLMHeadFL),
++    )
++    # Preflight the entire registration to avoid partially replacing another
++    # plugin's classes. Identical repeated general-plugin calls are harmless.
++    for original, replacement in pairs:
++        prior = op_registry_oot.get(original.__name__)
++        if prior is not None and prior is not replacement:
++            raise RuntimeError(f"Existing OOT owner for {original.__name__}")
++    for original, replacement in pairs:
++        if original.__name__ not in op_registry_oot:
++            PluggableLayer.register_oot(name=original.__name__)(replacement)
+diff --git a/vllm_fl/ops/rotary_embedding.py b/vllm_fl/ops/rotary_embedding.py
+index a554f24..ec6d979 100644
+--- a/vllm_fl/ops/rotary_embedding.py
++++ b/vllm_fl/ops/rotary_embedding.py
+@@ -1,6 +1,7 @@
+ # Copyright (c) 2025 BAAI. All rights reserved.
+ 
+ from typing import Optional
++import os
+ import torch
+ from vllm.model_executor.layers.rotary_embedding import RotaryEmbedding
+ from vllm_fl.dispatch import CachedOp
+@@ -22,6 +23,10 @@ class RotaryEmbeddingFL(RotaryEmbedding):
+             head_size, rotary_dim, max_position_embeddings, base,
+             is_neox_style, dtype
+         )
++        self._fl_outplace = False
++        if os.environ.get("VLLM_FL_ILUVATAR_OUTPLACE_ROPE", "0") == "1":
++            from vllm_fl.compilation.kv_decode.runtime import target_device
++            self._fl_outplace = target_device()
+ 
+     def forward_oot(
+         self,
+@@ -54,7 +59,7 @@ class RotaryEmbeddingFL(RotaryEmbedding):
+             sin,
+             positions,
+             not self.is_neox_style,  # rotary_interleaved
+-            True,  # inplace
++            not self._fl_outplace,  # explicit no-alias compatibility boundary
+         )
+ 
+         if self.rotary_dim < self.head_size:
+diff --git a/vllm_fl/worker/model_runner.py b/vllm_fl/worker/model_runner.py
+index 343dfdd..4d0874f 100644
+--- a/vllm_fl/worker/model_runner.py
++++ b/vllm_fl/worker/model_runner.py
+@@ -475,6 +475,9 @@ class ExecuteModelState(NamedTuple):
+     slot_mappings: dict[str, torch.Tensor] | list[dict[str, torch.Tensor]] | None
+ 
+ 
++from vllm_fl.compilation.kv_decode.runtime import runner_scope
++
++
+ class ModelRunnerFL(
+     LoRAModelRunnerMixin, KVConnectorModelRunnerMixin, ECConnectorModelRunnerMixin
+ ):
+@@ -4122,6 +4125,7 @@ class ModelRunnerFL(
+         return bool(self.discard_request_mask.np[:num_reqs].all())
+ 
+     @managed_inference_mode()
++    @runner_scope("execute")
+     def execute_model(
+         self,
+         scheduler_output: "SchedulerOutput",
+@@ -5751,6 +5755,7 @@ class ModelRunnerFL(
+         )
+ 
+     @managed_inference_mode()
++    @runner_scope("dummy")
+     def _dummy_run(
+         self,
+         num_tokens: int,
+@@ -6671,6 +6676,7 @@ class ModelRunnerFL(
+         return int(total_estimate)
+ 
+     @instrument(span_name="Capture model")
++    @runner_scope("capture")
+     def capture_model(self) -> int:
+         if self.compilation_config.cudagraph_mode == CUDAGraphMode.NONE:
+             logger.warning(

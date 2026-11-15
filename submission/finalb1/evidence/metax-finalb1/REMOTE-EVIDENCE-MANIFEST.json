@@ -1,0 +1,426 @@
+{
+  "files": {
+    "final_run.py": {
+      "bytes": 8559,
+      "sha256": "b1ce72615e0a23914856e0a314edb0ae181276d96e5a12f67d824ec70737bbb1"
+    },
+    "owned_processes.py": {
+      "bytes": 3784,
+      "sha256": "f072eb604b8c145ab92baca130a3477d8fc78b294285e16d15699f071efbf15d"
+    },
+    "official-benchmark.py": {
+      "bytes": 13284,
+      "sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565"
+    },
+    "diagnostic-response.json": {
+      "bytes": 766,
+      "sha256": "01c5e11ab292e7e3560ec9b5cf2e4f7bbd8597c9a3fddf93dccfdb4643df474e"
+    },
+    "installed-prefix-source.json": {
+      "bytes": 383,
+      "sha256": "a504ef005148c292113bd56b9590427bb26c35d619e02d6a517bd6ea0a188953"
+    },
+    "verify_install.py": {
+      "bytes": 1089,
+      "sha256": "ec1a1959fec1bfbc781f10cff481e44fac0d34cb934f39905793bfdb5ac9eb78"
+    },
+    "runtime-environment.json": {
+      "bytes": 25698,
+      "sha256": "0f7b63d8ca6054ea8476ec4fcc30f47752753c2ceb11f5a8600f0235f9947331"
+    },
+    "memory_guard.py": {
+      "bytes": 25654,
+      "sha256": "072d827407f9b9254f70ecc871e2d218ee7b720a248c2c273562648b5513d25a"
+    },
+    "launch.json": {
+      "bytes": 577,
+      "sha256": "6eafbce0777800211e8804e3b7554662a82894bf1a7f898d7e0c57a66c0fe538"
+    },
+    "hit-source.json": {
+      "bytes": 289,
+      "sha256": "47f9338a1a8e38124bff7a4a59b868119c7b8b4adb79b6287156b0509cb178f2"
+    },
+    "accuracy-client.log": {
+      "bytes": 25264,
+      "sha256": "79c43164547af7ab1b8039bd4858f91225f75226734a2419343fd79af28d5211"
+    },
+    "manifest.json": {
+      "bytes": 1162,
+      "sha256": "005088043cc4c535ca3239bfa4ea84329980b596cbc331820b19047365a6e50b"
+    },
+    "venv.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pin.json": {
+      "bytes": 363,
+      "sha256": "d1e55ac04e75edc54c1a267dec0576422f0eee85b4f40c20cda720f943840e2c"
+    },
+    "csv_validator.py": {
+      "bytes": 11889,
+      "sha256": "f0f3ff3c2969455b9d8271df2930f57e50698a7133a8cff90b067c435d9d9982"
+    },
+    "controller.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "hit_observer.py": {
+      "bytes": 1411,
+      "sha256": "0a5f9819439d7ea23b8d478ad1e91aa9b5fe1ffa856b585caa77af9b0d0fa889"
+    },
+    "status.json": {
+      "bytes": 10595,
+      "sha256": "3b734a5f0d81ee02316227205cd75a88af95553d2c922236887ac57dd29cd24f"
+    },
+    "prelaunch-processes.txt": {
+      "bytes": 11862,
+      "sha256": "872b2fb2801808d8ed515d4f65731b510ad801371c701a319485261c7250a22d"
+    },
+    "diagnostic-extra-request.json": {
+      "bytes": 1055,
+      "sha256": "58177e4c32db59d0942eef2d1fcb3084d39347fdf52a5623a67cacd1c26e84f4"
+    },
+    "environment-and-model.json": {
+      "bytes": 3673,
+      "sha256": "8bb7f0b1c1acd2aed5823b7e442ca091831332d3c48a70a0e1117d3c76d48b40"
+    },
+    "health.log": {
+      "bytes": 1944,
+      "sha256": "6e768e7cde6af432a47a87eb6b8b24930161690eafd93cb5d59179f69da887c6"
+    },
+    "formal-server.log": {
+      "bytes": 259047,
+      "sha256": "5ea0b2cc98a879bc7064fd2db2aea5dcf978b75918ad157fea0cf6bc24fe2246"
+    },
+    "installation-audit.log": {
+      "bytes": 329,
+      "sha256": "8fb4f62a9deb99e42e5c441cadb1dde1c6ba8d11dc8efaa075e3a6e0fb52c8a2"
+    },
+    "health.py": {
+      "bytes": 1286,
+      "sha256": "72d96902d07c860ef7b5a683a6a1f2e2d3a707d7c09fcae701a348abb89af1bc"
+    },
+    "installation-audit-formal.log": {
+      "bytes": 329,
+      "sha256": "8fb4f62a9deb99e42e5c441cadb1dde1c6ba8d11dc8efaa075e3a6e0fb52c8a2"
+    },
+    "install.log": {
+      "bytes": 956,
+      "sha256": "9d907266c8b5b34a9d6500406c9d33c2beae5716f2822914e315390f2520512b"
+    },
+    "installation-audit-after.log": {
+      "bytes": 329,
+      "sha256": "8fb4f62a9deb99e42e5c441cadb1dde1c6ba8d11dc8efaa075e3a6e0fb52c8a2"
+    },
+    "performance-client.log": {
+      "bytes": 136173,
+      "sha256": "d6c73f9cdfba4ac669c72b6368554a233043ac5beea5bb5a7e80be921e6a130d"
+    },
+    "accuracy-audit.json": {
+      "bytes": 491,
+      "sha256": "13e7d17bb16e5accc0c935bac3b9eaab3d06ed17d2a001dc97798877391e7b57"
+    },
+    "budget.json": {
+      "bytes": 231,
+      "sha256": "dfdd3fb8f3d7a63ba9a8180ea728cdd3e554180f6220add63aaaee7f87e30738"
+    },
+    "runner.py": {
+      "bytes": 4959,
+      "sha256": "6267f4af616f53d275b13a1ac1015f84c6835b781059a3b78b7e57c9a8c3473f"
+    },
+    "performance-audit.json": {
+      "bytes": 7813,
+      "sha256": "5dd053f77f614c09c67987a4bf78aac4768a319a386c5d6f2f54a0965f1def30"
+    },
+    "diagnostic-server.log": {
+      "bytes": 30521,
+      "sha256": "5957da54f1b796d7652547bab09f3b3d78b341c5edbc8c7fc3cda31ad93c58f2"
+    },
+    "accuracy_gate.py": {
+      "bytes": 3185,
+      "sha256": "88ded0d606142ea209be85b7143c7ff3e033c68efbe3c2c91edbd9f71c59f5b8"
+    },
+    "guardian/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guardian/receipt.json": {
+      "bytes": 12726,
+      "sha256": "871f19bea6964ef24896348b8b0725f16729b83454e4f51b0f292846a20f7c98"
+    },
+    "guardian/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guardian/memory/memory-guard.jsonl": {
+      "bytes": 4843342,
+      "sha256": "bb9846c689efdbcf00fe14e83fcc0ef203c7b885895df9470c13d2442bf3045b"
+    },
+    "guardian/memory/memory-guard-receipt.json": {
+      "bytes": 4439,
+      "sha256": "2ae8fdb3b94d110da150c2a7542705679cbef8e359e224b3f62a6e17f72154b9"
+    },
+    "performance/benchmark_results/summary_20261115_121145.csv": {
+      "bytes": 548,
+      "sha256": "932b21a31b4ed0ec750d903cdae511de9babce46da70da90428efeb3d2535bbc"
+    },
+    "performance/benchmark_results/raw_runs_20261115_121145.csv": {
+      "bytes": 1492,
+      "sha256": "a26dff4081d23fb293b07336fcd9d12810d06d4f7f7b52516623dd05e5536b6d"
+    },
+    "accuracy/20261115_115619/reports/report.html": {
+      "bytes": 84819,
+      "sha256": "eb3ce179f829d7a951e15b4f280be51305238bb1875940b5075339939bdc320b"
+    },
+    "accuracy/20261115_115619/configs/task_config.yaml": {
+      "bytes": 2267,
+      "sha256": "2aaf83c4428f8c715a1be39809b2000adbabfaf0ba51a554d1e6528ce5b6c1aa"
+    },
+    "accuracy/20261115_115619/logs/eval_log.log": {
+      "bytes": 8380,
+      "sha256": "edbba1dc56a3d84a00ac630c7444b6a7e37d18ba73001f7472e4c3ddb7b81a8c"
+    },
+    "accuracy/20261115_115619/reports/minicpm/math_500.json": {
+      "bytes": 8936,
+      "sha256": "2f19db7cdd897e420759569ed546e5653179ee3d9959baa07072a2cd908e13b5"
+    },
+    "accuracy/20261115_115619/predictions/minicpm/math_500_Level 3.jsonl": {
+      "bytes": 2474753,
+      "sha256": "28834b17868d941bb23ba5806c4e5eddc54f3c412e221c7ef534e06281fb6607"
+    },
+    "accuracy/20261115_115619/reviews/minicpm/math_500_Level 3.jsonl": {
+      "bytes": 1619310,
+      "sha256": "4c3d0b9ee93b8432a9bfaa76de76e4daa9f07b572823588fb029a9b301180400"
+    },
+    "diagnostic-failures/r1/final_run.py": {
+      "bytes": 7783,
+      "sha256": "1aec82929983a9a2a7e37dddf14fce7c88b3cdbf847991d8d00fec53de96650b"
+    },
+    "diagnostic-failures/r1/owned_processes.py": {
+      "bytes": 3784,
+      "sha256": "f072eb604b8c145ab92baca130a3477d8fc78b294285e16d15699f071efbf15d"
+    },
+    "diagnostic-failures/r1/official-benchmark.py": {
+      "bytes": 13284,
+      "sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565"
+    },
+    "diagnostic-failures/r1/diagnostic-response.json": {
+      "bytes": 766,
+      "sha256": "48d270479b3ce2968e724140a8341aa33f1b6537946a7399291cef8a2f8ef7b7"
+    },
+    "diagnostic-failures/r1/verify_install.py": {
+      "bytes": 1089,
+      "sha256": "ec1a1959fec1bfbc781f10cff481e44fac0d34cb934f39905793bfdb5ac9eb78"
+    },
+    "diagnostic-failures/r1/memory_guard.py": {
+      "bytes": 25654,
+      "sha256": "072d827407f9b9254f70ecc871e2d218ee7b720a248c2c273562648b5513d25a"
+    },
+    "diagnostic-failures/r1/launch.json": {
+      "bytes": 567,
+      "sha256": "314fbddb5639da74bcff17c5a52c6d70e6a8694faa788054775f9a655777393e"
+    },
+    "diagnostic-failures/r1/manifest.json": {
+      "bytes": 1162,
+      "sha256": "51158f56690ed76a4d3f66d56b19eed27f026d2d8f1bccf84b8ba08eefd1ea2d"
+    },
+    "diagnostic-failures/r1/venv.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diagnostic-failures/r1/pin.json": {
+      "bytes": 360,
+      "sha256": "e07b9299bb34d2c6be865983ec5d623faa24ed4a1a3c88805ecdf63920c9dc9b"
+    },
+    "diagnostic-failures/r1/csv_validator.py": {
+      "bytes": 11889,
+      "sha256": "f0f3ff3c2969455b9d8271df2930f57e50698a7133a8cff90b067c435d9d9982"
+    },
+    "diagnostic-failures/r1/controller.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diagnostic-failures/r1/hit_observer.py": {
+      "bytes": 1411,
+      "sha256": "0a5f9819439d7ea23b8d478ad1e91aa9b5fe1ffa856b585caa77af9b0d0fa889"
+    },
+    "diagnostic-failures/r1/status.json": {
+      "bytes": 568,
+      "sha256": "ff94d4d75872fe8d87ac9de5c87701605c922be53159d63a8cc61c069837bbff"
+    },
+    "diagnostic-failures/r1/prelaunch-processes.txt": {
+      "bytes": 10280,
+      "sha256": "4696dbf3aa25dc182cebe4bbc484def29a3359f103bd1928c3d163761058d7ed"
+    },
+    "diagnostic-failures/r1/health.log": {
+      "bytes": 1944,
+      "sha256": "a181e1d9470eced946363dc29b49deeb210deec4fc1594bb1a8c025eb2e3a2df"
+    },
+    "diagnostic-failures/r1/installation-audit.log": {
+      "bytes": 329,
+      "sha256": "8fb4f62a9deb99e42e5c441cadb1dde1c6ba8d11dc8efaa075e3a6e0fb52c8a2"
+    },
+    "diagnostic-failures/r1/health.py": {
+      "bytes": 1286,
+      "sha256": "72d96902d07c860ef7b5a683a6a1f2e2d3a707d7c09fcae701a348abb89af1bc"
+    },
+    "diagnostic-failures/r1/install.log": {
+      "bytes": 950,
+      "sha256": "77ba4e674d801b3a69593796215e33df9b10f93a548a9ddfd421b44f15058e6b"
+    },
+    "diagnostic-failures/r1/budget.json": {
+      "bytes": 231,
+      "sha256": "9918ceef92819ef00b38d8139757116459c709b073b0fe194891c7e180876d79"
+    },
+    "diagnostic-failures/r1/runner.py": {
+      "bytes": 4959,
+      "sha256": "6267f4af616f53d275b13a1ac1015f84c6835b781059a3b78b7e57c9a8c3473f"
+    },
+    "diagnostic-failures/r1/diagnostic-server.log": {
+      "bytes": 30304,
+      "sha256": "d9ce8db75f17be0e92cfb1f802f40b6f6d33eb30395964d83a8c340a6a9fe734"
+    },
+    "diagnostic-failures/r1/accuracy_gate.py": {
+      "bytes": 3185,
+      "sha256": "88ded0d606142ea209be85b7143c7ff3e033c68efbe3c2c91edbd9f71c59f5b8"
+    },
+    "diagnostic-failures/r1/guardian/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diagnostic-failures/r1/guardian/receipt.json": {
+      "bytes": 8167,
+      "sha256": "fc35136e975e7f8c61323ffbe39eefd7ef8b0c96d666db9dde7c63a228a5fbf2"
+    },
+    "diagnostic-failures/r1/guardian/stderr.log": {
+      "bytes": 340,
+      "sha256": "036160dc4801dfc2eef06a8fe04390f3263101c7bc35047ca88e2bb6eb24dcf5"
+    },
+    "diagnostic-failures/r1/guardian/memory/memory-guard.jsonl": {
+      "bytes": 283970,
+      "sha256": "b6c9955df6640f5f5f7b1f822099999ae659476523117bf337a90bfe0f47e093"
+    },
+    "diagnostic-failures/r1/guardian/memory/memory-guard-receipt.json": {
+      "bytes": 4421,
+      "sha256": "7bf9c953f112c353eda6ee1bf49f4e4096b50b558a46ea6d38ec6d1e758ae521"
+    },
+    "diagnostic-failures/r2/final_run.py": {
+      "bytes": 7783,
+      "sha256": "1aec82929983a9a2a7e37dddf14fce7c88b3cdbf847991d8d00fec53de96650b"
+    },
+    "diagnostic-failures/r2/owned_processes.py": {
+      "bytes": 3784,
+      "sha256": "f072eb604b8c145ab92baca130a3477d8fc78b294285e16d15699f071efbf15d"
+    },
+    "diagnostic-failures/r2/official-benchmark.py": {
+      "bytes": 13284,
+      "sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565"
+    },
+    "diagnostic-failures/r2/diagnostic-response.json": {
+      "bytes": 766,
+      "sha256": "6e5db02d9d847875dab5c2b07b51c150ac5aeef598fe7ab237f466ebdd3ba72f"
+    },
+    "diagnostic-failures/r2/verify_install.py": {
+      "bytes": 1089,
+      "sha256": "ec1a1959fec1bfbc781f10cff481e44fac0d34cb934f39905793bfdb5ac9eb78"
+    },
+    "diagnostic-failures/r2/memory_guard.py": {
+      "bytes": 25654,
+      "sha256": "072d827407f9b9254f70ecc871e2d218ee7b720a248c2c273562648b5513d25a"
+    },
+    "diagnostic-failures/r2/launch.json": {
+      "bytes": 579,
+      "sha256": "60177390dbaac461c591948abf3d11159d791728d82d4001bea332272f62a8c4"
+    },
+    "diagnostic-failures/r2/manifest.json": {
+      "bytes": 1162,
+      "sha256": "4e403328f11dd9ea11eaf2f284b7dfad207f985e9b5c9c78070a83c007675489"
+    },
+    "diagnostic-failures/r2/venv.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diagnostic-failures/r2/pin.json": {
+      "bytes": 363,
+      "sha256": "9fd64bec4ca08914da8a17790b20e14ae8dd20dc78816a7519f15f2940d8fcbd"
+    },
+    "diagnostic-failures/r2/csv_validator.py": {
+      "bytes": 11889,
+      "sha256": "f0f3ff3c2969455b9d8271df2930f57e50698a7133a8cff90b067c435d9d9982"
+    },
+    "diagnostic-failures/r2/controller.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diagnostic-failures/r2/hit_observer.py": {
+      "bytes": 1181,
+      "sha256": "f955e4116387132937613303b30c25980a86e5fb561883e9f4fb28ba59864f57"
+    },
+    "diagnostic-failures/r2/status.json": {
+      "bytes": 570,
+      "sha256": "6f3629479fd4f0029e1f4d901b2320c7e564dc78045b4fc6d47afd759e4d361d"
+    },
+    "diagnostic-failures/r2/prelaunch-processes.txt": {
+      "bytes": 16089,
+      "sha256": "7ef395278dbdf6bb5d669dff1353b88f4de7495c89aa64153f1b7c66c2274eb7"
+    },
+    "diagnostic-failures/r2/health.log": {
+      "bytes": 1944,
+      "sha256": "e717ac913ad44c8c0bd323f5ea50a5a4e037d516089efe69c37426f01ba6a16c"
+    },
+    "diagnostic-failures/r2/installation-audit.log": {
+      "bytes": 329,
+      "sha256": "8fb4f62a9deb99e42e5c441cadb1dde1c6ba8d11dc8efaa075e3a6e0fb52c8a2"
+    },
+    "diagnostic-failures/r2/health.py": {
+      "bytes": 1286,
+      "sha256": "72d96902d07c860ef7b5a683a6a1f2e2d3a707d7c09fcae701a348abb89af1bc"
+    },
+    "diagnostic-failures/r2/install.log": {
+      "bytes": 956,
+      "sha256": "f826f899ce990f5eb3e1e525dda1b9595fe0d11ee2a1b9429ce9316e247a14c8"
+    },
+    "diagnostic-failures/r2/budget.json": {
+      "bytes": 231,
+      "sha256": "eaac2938fb27f949b1a59a36b7e44e9702be53ddf64f6afa689f8572d4430873"
+    },
+    "diagnostic-failures/r2/runner.py": {
+      "bytes": 4959,
+      "sha256": "6267f4af616f53d275b13a1ac1015f84c6835b781059a3b78b7e57c9a8c3473f"
+    },
+    "diagnostic-failures/r2/diagnostic-server.log": {
+      "bytes": 33346,
+      "sha256": "9e50d1e6dba158d539109dddc6da518973989cd7ff26badc98b07353c049ef3f"
+    },
+    "diagnostic-failures/r2/accuracy_gate.py": {
+      "bytes": 3185,
+      "sha256": "88ded0d606142ea209be85b7143c7ff3e033c68efbe3c2c91edbd9f71c59f5b8"
+    },
+    "diagnostic-failures/r2/guardian/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "diagnostic-failures/r2/guardian/receipt.json": {
+      "bytes": 8331,
+      "sha256": "41acdddafec1a6c6664d852e9d356b7f47ac6a1c1555a2abac17a85131ea55db"
+    },
+    "diagnostic-failures/r2/guardian/stderr.log": {
+      "bytes": 346,
+      "sha256": "5d344d383afa47d3e81e249a08bdd0a4ddce1a77e834210f2bb7cd3ccb79ceb7"
+    },
+    "diagnostic-failures/r2/guardian/memory/memory-guard.jsonl": {
+      "bytes": 214165,
+      "sha256": "8b25b54e2147d4efba3a35acb729ffc7fd1e79404515db6f8fa19b00c3c16fae"
+    },
+    "diagnostic-failures/r2/guardian/memory/memory-guard-receipt.json": {
+      "bytes": 4441,
+      "sha256": "7fb5ccc73e7f3cd86012ce864041b440701c093c09bc6bb827129dd5c6e6ac43"
+    }
+  },
+  "excluded": [
+    "merged-env",
+    "wheels",
+    "__pycache__"
+  ],
+  "created_unix": 1794718752.7199192
+}

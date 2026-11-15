@@ -1,0 +1,63 @@
+{
+  "archive": "/data/competition-final-prefixb-20261115-v1-evidence.zip",
+  "bytes": 1342859,
+  "sha256": "9af84ffc5150b4eaa35e1d430c55f1c6f2ca8120c6d75944f5bef9a2e638fa33",
+  "files": 104,
+  "stage": "completed",
+  "cleanup_complete": true,
+  "accuracy": {
+    "passed": true,
+    "count": 105,
+    "correct": 102,
+    "accuracy": 0.9714285714285714,
+    "sha256": {
+      "20261115_115619/reports/minicpm/math_500.json": "2f19db7cdd897e420759569ed546e5653179ee3d9959baa07072a2cd908e13b5",
+      "20261115_115619/predictions/minicpm/math_500_Level 3.jsonl": "28834b17868d941bb23ba5806c4e5eddc54f3c412e221c7ef534e06281fb6607",
+      "20261115_115619/reviews/minicpm/math_500_Level 3.jsonl": "4c3d0b9ee93b8432a9bfaa76de76e4daa9f07b572823588fb029a9b301180400"
+    }
+  },
+  "performance_cases": [
+    {
+      "case": "4k",
+      "summary": {
+        "Benchmark Duration (s)": 260.53,
+        "Total Input Tokens": 1048576.0,
+        "Total Output Tokens": 262144.0,
+        "Req/s": 0.98,
+        "Output tok/s": 1007.47,
+        "Peak Output tok/s": 1408.0,
+        "Total tok/s": 5037.36,
+        "Mean TTFT (ms)": 3118.15,
+        "Median TTFT (ms)": 965.63,
+        "P99 TTFT (ms)": 17307.81,
+        "Mean TPOT (ms)": 60.26,
+        "Median TPOT (ms)": 59.08,
+        "P99 TPOT (ms)": 71.49,
+        "Mean ITL (ms)": 60.26,
+        "Median ITL (ms)": 47.02,
+        "P99 ITL (ms)": 162.28
+      }
+    },
+    {
+      "case": "16k",
+      "summary": {
+        "Benchmark Duration (s)": 303.37,
+        "Total Input Tokens": 2097152.0,
+        "Total Output Tokens": 131072.0,
+        "Req/s": 0.42,
+        "Output tok/s": 432.05,
+        "Peak Output tok/s": 960.0,
+        "Total tok/s": 7344.92,
+        "Mean TTFT (ms)": 26064.82,
+        "Median TTFT (ms)": 4384.6,
+        "P99 TTFT (ms)": 95885.79,
+        "Mean TPOT (ms)": 118.84,
+        "Median TPOT (ms)": 130.8,
+        "P99 TPOT (ms)": 141.23,
+        "Mean ITL (ms)": 118.84,
+        "Median ITL (ms)": 70.65,
+        "P99 ITL (ms)": 282.03
+      }
+    }
+  ]
+}

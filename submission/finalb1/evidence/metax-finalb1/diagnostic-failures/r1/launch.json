@@ -1,0 +1,23 @@
+{
+  "pid": 1591,
+  "argv": [
+    "/opt/conda/bin/python",
+    "-u",
+    "-B",
+    "/data/competition-final-prefixb-20261115-v1/runner.py",
+    "--pin",
+    "/data/competition-final-prefixb-20261115-v1/pin.json",
+    "--out",
+    "/data/competition-final-prefixb-20261115-v1/guardian",
+    "--seconds",
+    "10908",
+    "--memory-guard",
+    "/opt/conda/bin/python",
+    "-u",
+    "-B",
+    "/data/competition-final-prefixb-20261115-v1/final_run.py"
+  ],
+  "started_unix": 1794713884.2149165,
+  "hard_stop_unix": 1794724823.0,
+  "estimated_spent": 2.7315887032614814
+}

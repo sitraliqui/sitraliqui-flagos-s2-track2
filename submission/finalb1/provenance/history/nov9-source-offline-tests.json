@@ -1,0 +1,7 @@
+{
+  "tests": 12,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "scope": "CPU contract and lifecycle only; no installed GPU-stack validation"
+}

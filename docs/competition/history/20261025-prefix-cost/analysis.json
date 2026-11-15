@@ -1,0 +1,494 @@
+{
+  "scope": "constructed paged BF16 inputs, 42 distinct Q/K/V and KV sets; same installed impl; not actual model layers",
+  "boundary": "Complete installed Attention forward; per-layer prefix vs scope prepare, checks and close included. Fixture and code creation, KV reset, output validation excluded equally. No model, no Graph, no benchmark claim.",
+  "three_independent_processes": true,
+  "files_verified": 27,
+  "rows": [
+    {
+      "case": {
+        "name": "boundary",
+        "role": "boundary",
+        "decode_lengths": [],
+        "prefill_lengths": [
+          129
+        ],
+        "prefill_queries": [
+          129
+        ]
+      },
+      "processes": [
+        {
+          "index": 0,
+          "pid": 1046,
+          "median_wall_ms": {
+            "original": 6.474648,
+            "gpu_each": 5.2980355,
+            "scope_once": 3.6025755
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.17870837158314634,
+            "scope_once/original": 0.44426362088783433,
+            "scope_once/gpu_each": 0.31641977025155876
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.6886870583562048,
+              0.854037035726458
+            ],
+            "scope_once/original": [
+              0.4819118797719388,
+              0.5827540388421284
+            ],
+            "scope_once/gpu_each": [
+              0.6495766171278288,
+              0.7080740363018686
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "pid": 1412,
+          "median_wall_ms": {
+            "original": 6.488545,
+            "gpu_each": 5.4460235,
+            "scope_once": 3.6166715
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.16074232936876953,
+            "scope_once/original": 0.4444692826466533,
+            "scope_once/gpu_each": 0.3331916904311759
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.8101877215282185,
+              1.5499296447072692
+            ],
+            "scope_once/original": [
+              0.537976882490787,
+              0.5776357076650604
+            ],
+            "scope_once/gpu_each": [
+              0.347097614609722,
+              0.6955512856955337
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "pid": 1780,
+          "median_wall_ms": {
+            "original": 7.4872755,
+            "gpu_each": 6.0766835,
+            "scope_once": 3.9420235
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.19191056861911682,
+            "scope_once/original": 0.46730139732723375,
+            "scope_once/gpu_each": 0.3483926775109685
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.5558863880516003,
+              1.021514833024414
+            ],
+            "scope_once/original": [
+              0.38543479827303795,
+              1.0152483515461064
+            ],
+            "scope_once/gpu_each": [
+              0.6276244544910884,
+              0.9938655012382401
+            ]
+          }
+        }
+      ],
+      "median_process_wall_ms": {
+        "original": 6.488545,
+        "gpu_each": 5.4460235,
+        "scope_once": 3.6166715
+      },
+      "reduction_process_range": {
+        "gpu_each/original": [
+          0.16074232936876953,
+          0.19191056861911682
+        ],
+        "scope_once/original": [
+          0.44426362088783433,
+          0.46730139732723375
+        ],
+        "scope_once/gpu_each": [
+          0.31641977025155876,
+          0.3483926775109685
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "long_chunk",
+        "role": "development_geometry",
+        "decode_lengths": [],
+        "prefill_lengths": [
+          12290
+        ],
+        "prefill_queries": [
+          2048
+        ]
+      },
+      "processes": [
+        {
+          "index": 0,
+          "pid": 1046,
+          "median_wall_ms": {
+            "original": 91.015779,
+            "gpu_each": 82.569961,
+            "scope_once": 81.6628805
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.09236466401103804,
+            "scope_once/original": 0.10271590190438085,
+            "scope_once/gpu_each": 0.011265696500136757
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.9034004767585677,
+              0.910627737918051
+            ],
+            "scope_once/original": [
+              0.8949300136129079,
+              0.9008531302463181
+            ],
+            "scope_once/gpu_each": [
+              0.9854868562720406,
+              0.9918503718900032
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "pid": 1412,
+          "median_wall_ms": {
+            "original": 90.996675,
+            "gpu_each": 82.67132649999999,
+            "scope_once": 81.6612555
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.09220183792895731,
+            "scope_once/original": 0.10287361757756819,
+            "scope_once/gpu_each": 0.012355028035517912
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.888864479985926,
+              0.9427771653352643
+            ],
+            "scope_once/original": [
+              0.8774814866959679,
+              0.9306064581505116
+            ],
+            "scope_once/gpu_each": [
+              0.9837059054404556,
+              0.9907040084631684
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "pid": 1780,
+          "median_wall_ms": {
+            "original": 90.598179,
+            "gpu_each": 82.86659399999999,
+            "scope_once": 81.91632100000001
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.090784941186564,
+            "scope_once/original": 0.09874894248926469,
+            "scope_once/gpu_each": 0.013541029264746762
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.8877765240129089,
+              0.9351591529815301
+            ],
+            "scope_once/original": [
+              0.8831862399888291,
+              0.9210035362531281
+            ],
+            "scope_once/gpu_each": [
+              0.98349316725115,
+              0.9950442413526386
+            ]
+          }
+        }
+      ],
+      "median_process_wall_ms": {
+        "original": 90.996675,
+        "gpu_each": 82.67132649999999,
+        "scope_once": 81.6628805
+      },
+      "reduction_process_range": {
+        "gpu_each/original": [
+          0.090784941186564,
+          0.09236466401103804
+        ],
+        "scope_once/original": [
+          0.09874894248926469,
+          0.10287361757756819
+        ],
+        "scope_once/gpu_each": [
+          0.011265696500136757,
+          0.013541029264746762
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "mixed_chunk",
+        "role": "validation_geometry",
+        "decode_lengths": [
+          769,
+          2049,
+          4097
+        ],
+        "prefill_lengths": [
+          12290
+        ],
+        "prefill_queries": [
+          2045
+        ]
+      },
+      "processes": [
+        {
+          "index": 0,
+          "pid": 1046,
+          "median_wall_ms": {
+            "original": 90.2304365,
+            "gpu_each": 85.857248,
+            "scope_once": 84.809901
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.048474946410823505,
+            "scope_once/original": 0.05975457397201822,
+            "scope_once/gpu_each": 0.012297774810887896
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.9168768695980015,
+              0.955784308139227
+            ],
+            "scope_once/original": [
+              0.9059852088232977,
+              0.9433700201275164
+            ],
+            "scope_once/gpu_each": [
+              0.9843911083704092,
+              0.9893201905605006
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "pid": 1412,
+          "median_wall_ms": {
+            "original": 93.47707,
+            "gpu_each": 86.053025,
+            "scope_once": 84.9394755
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.07894885193120049,
+            "scope_once/original": 0.0913525152497312,
+            "scope_once/gpu_each": 0.012822061521090888
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.9188702581775849,
+              0.9237831005764486
+            ],
+            "scope_once/original": [
+              0.904778416077028,
+              0.9208199343706849
+            ],
+            "scope_once/gpu_each": [
+              0.98203914125541,
+              0.9997876805913345
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "pid": 1780,
+          "median_wall_ms": {
+            "original": 93.57370850000001,
+            "gpu_each": 85.884743,
+            "scope_once": 84.897523
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.08111497943706192,
+            "scope_once/original": 0.09227218103994117,
+            "scope_once/gpu_each": 0.01180993837257327
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.9053733505407676,
+              0.922418875360356
+            ],
+            "scope_once/original": [
+              0.8958388696472065,
+              0.9123428489556775
+            ],
+            "scope_once/gpu_each": [
+              0.9859695066798637,
+              0.9922574188656436
+            ]
+          }
+        }
+      ],
+      "median_process_wall_ms": {
+        "original": 93.47707,
+        "gpu_each": 85.884743,
+        "scope_once": 84.897523
+      },
+      "reduction_process_range": {
+        "gpu_each/original": [
+          0.048474946410823505,
+          0.08111497943706192
+        ],
+        "scope_once/original": [
+          0.05975457397201822,
+          0.09227218103994117
+        ],
+        "scope_once/gpu_each": [
+          0.01180993837257327,
+          0.012822061521090888
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "unseen_p2",
+        "role": "frozen_validation",
+        "decode_lengths": [],
+        "prefill_lengths": [
+          4097,
+          8193
+        ],
+        "prefill_queries": [
+          257,
+          385
+        ]
+      },
+      "processes": [
+        {
+          "index": 0,
+          "pid": 1046,
+          "median_wall_ms": {
+            "original": 36.537394500000005,
+            "gpu_each": 29.771126,
+            "scope_once": 28.778440500000002
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.18487474063490106,
+            "scope_once/original": 0.2123787623037121,
+            "scope_once/gpu_each": 0.03237096498698899
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.7775695273466399,
+              0.8246633841698232
+            ],
+            "scope_once/original": [
+              0.7530396056877102,
+              0.795837101740696
+            ],
+            "scope_once/gpu_each": [
+              0.9546655267147787,
+              0.9721379068836162
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "pid": 1412,
+          "median_wall_ms": {
+            "original": 36.664272499999996,
+            "gpu_each": 29.7278395,
+            "scope_once": 28.826915
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.18886942650422456,
+            "scope_once/original": 0.2132114975430679,
+            "scope_once/gpu_each": 0.03146806532761992
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.7599140067272719,
+              0.8173895970506538
+            ],
+            "scope_once/original": [
+              0.7358309626900675,
+              0.791850807624802
+            ],
+            "scope_once/gpu_each": [
+              0.9606021686581893,
+              0.9759011252516557
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "pid": 1780,
+          "median_wall_ms": {
+            "original": 36.307869499999995,
+            "gpu_each": 29.5513045,
+            "scope_once": 28.7186725
+          },
+          "paired_time_reduction": {
+            "gpu_each/original": 0.18542926104199275,
+            "scope_once/original": 0.20615329311231467,
+            "scope_once/gpu_each": 0.026849737369629034
+          },
+          "paired_ratio_range": {
+            "gpu_each/original": [
+              0.7695328443989976,
+              0.8348824012321823
+            ],
+            "scope_once/original": [
+              0.7522737679973784,
+              0.8047372810469265
+            ],
+            "scope_once/gpu_each": [
+              0.95749587842063,
+              0.9796415407107917
+            ]
+          }
+        }
+      ],
+      "median_process_wall_ms": {
+        "original": 36.537394500000005,
+        "gpu_each": 29.7278395,
+        "scope_once": 28.778440500000002
+      },
+      "reduction_process_range": {
+        "gpu_each/original": [
+          0.18487474063490106,
+          0.18886942650422456
+        ],
+        "scope_once/original": [
+          0.20615329311231467,
+          0.2132114975430679
+        ],
+        "scope_once/gpu_each": [
+          0.026849737369629034,
+          0.03237096498698899
+        ]
+      }
+    }
+  ],
+  "model_throughput_measured": false,
+  "limitations": [
+    "42 distinct constructed tensor/cache sets, same backend impl; not actual model layers.",
+    "Source-specific finite Epoch checks included; production model scope wrapper/locking not included.",
+    "Fixed input seed across processes; repeated timing is not data-distribution generalization.",
+    "CUDA event span includes host submission gaps, not sum of pure GPU kernel time.",
+    "No official accuracy or end-to-end benchmark, no statistical significance claim from pooled rounds."
+  ]
+}

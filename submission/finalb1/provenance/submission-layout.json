@@ -1,0 +1,13 @@
+{
+  "team_name": "sitraliqui",
+  "team_name_verified_from": "Authenticated official My participation / Team management UI, 2026-11-15",
+  "archive_name": "sitraliqui.zip",
+  "root_required_entries": [
+    "FlagGems",
+    "vllm-plugin-FL",
+    "readme.md",
+    "report.pdf"
+  ],
+  "uploaded": false,
+  "private_team_contact_not_copied": true
+}

@@ -1,0 +1,7 @@
+{
+  "exact_credential_scan_passed": true,
+  "private_key_scan_passed": true,
+  "entries_examined": 14880,
+  "nested_archives_included": true,
+  "credential_not_copied": true
+}

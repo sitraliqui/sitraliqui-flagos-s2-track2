@@ -2,3 +2,7 @@
 *.py text eol=lf
 *.json text eol=lf
 *.md text eol=lf
+
+# Preserve reviewed artifact hashes, including JSON and CSV line endings.
+submission/finalb1/** -text
+vllm_fl/** -text

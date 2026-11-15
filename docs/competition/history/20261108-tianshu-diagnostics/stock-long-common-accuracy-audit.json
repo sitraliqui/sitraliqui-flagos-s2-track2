@@ -1,0 +1,2931 @@
+{
+  "evaluations": [
+    {
+      "archive": "outputs\\competition-outcome-20261108\\v6-stock-accuracy-verified.zip",
+      "archive_sha256": "18b6e5cded8eac73049b5cfea78afed275fb50e48c795bd4e8debba144f78346",
+      "job_id": "v6-independent-stock-accuracy-20261108-a1",
+      "arm": "stock",
+      "count": 105,
+      "correct": 102,
+      "accuracy": 0.9714285714285714,
+      "official_threshold_passed": true,
+      "stop_reasons": {
+        "stop": 104,
+        "max_tokens": 1
+      },
+      "wrong_question_ids": [
+        "test/precalculus/1300.json",
+        "test/precalculus/625.json",
+        "test/geometry/477.json"
+      ],
+      "records": {
+        "test/number_theory/572.json": {
+          "correct": 1,
+          "input_identity_sha256": "4e3043f6b6c12a82382d75022eb82f236356d99d93879e2bf89fc310d35d2e0c",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 514,
+          "latency_seconds": 17.27165389340371
+        },
+        "test/algebra/2036.json": {
+          "correct": 1,
+          "input_identity_sha256": "7439b64ed9c7a5538c4259cc6d67ffa2c41e4c7e640f7333870363bf435cfe22",
+          "extracted_prediction": "3\\sqrt{13}",
+          "target": "3\\sqrt{13}",
+          "stop_reason": "stop",
+          "output_tokens": 788,
+          "latency_seconds": 25.73044523410499
+        },
+        "test/algebra/2584.json": {
+          "correct": 1,
+          "input_identity_sha256": "2f47d70f064885f2eeb8b7765a470c74ae0eabbf77308127161b325eb6133a10",
+          "extracted_prediction": "\\frac{14}{3}",
+          "target": "\\frac{14}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 837,
+          "latency_seconds": 29.124491228722036
+        },
+        "test/algebra/1098.json": {
+          "correct": 1,
+          "input_identity_sha256": "7f9a68396c312b41110cd4c6c4cbd0a533edbd2411787419bbcf953ef77d056b",
+          "extracted_prediction": "6+9i",
+          "target": "6+9i",
+          "stop_reason": "stop",
+          "output_tokens": 1023,
+          "latency_seconds": 34.59677254315466
+        },
+        "test/number_theory/864.json": {
+          "correct": 1,
+          "input_identity_sha256": "d1a057eac77b1a9db7f46af9353167b3cdfe93f49c33519876808a8c3badf6a1",
+          "extracted_prediction": "52_8",
+          "target": "52_8",
+          "stop_reason": "stop",
+          "output_tokens": 994,
+          "latency_seconds": 26.78256512619555
+        },
+        "test/number_theory/515.json": {
+          "correct": 1,
+          "input_identity_sha256": "abe9f28b678dd35892e8ec2e20c7c7ad985fcf0e4cf20ab497f8066b65673d78",
+          "extracted_prediction": "27",
+          "target": "27",
+          "stop_reason": "stop",
+          "output_tokens": 1757,
+          "latency_seconds": 51.89219761453569
+        },
+        "test/geometry/967.json": {
+          "correct": 1,
+          "input_identity_sha256": "9ca2fd8d2c915a0d69b9cf290763fce5de69e4d2cbb8076a93f570698c93dc36",
+          "extracted_prediction": "72",
+          "target": "72",
+          "stop_reason": "stop",
+          "output_tokens": 1387,
+          "latency_seconds": 36.00647308304906
+        },
+        "test/algebra/769.json": {
+          "correct": 1,
+          "input_identity_sha256": "843a51ecb19e0c525e211e249c25233bbb3106e73d54f1fe6197d7756f75ea78",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 745,
+          "latency_seconds": 22.25119640212506
+        },
+        "test/number_theory/45.json": {
+          "correct": 1,
+          "input_identity_sha256": "92c0a3f60f3de39c7e14077a37684ed610e72da0cd5f89c391c966aa4be23292",
+          "extracted_prediction": "23",
+          "target": "23",
+          "stop_reason": "stop",
+          "output_tokens": 1432,
+          "latency_seconds": 38.57350418437272
+        },
+        "test/geometry/178.json": {
+          "correct": 1,
+          "input_identity_sha256": "5feaefa759193a6642f84185112a79a5811eff49c8cdd90660eda33e3f74becc",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 1321,
+          "latency_seconds": 41.64909299556166
+        },
+        "test/number_theory/1032.json": {
+          "correct": 1,
+          "input_identity_sha256": "6601c24afa0851f941893e1e28b6ea1e7659047a7260e56bdbca821d0fdcad58",
+          "extracted_prediction": "2220",
+          "target": "2220",
+          "stop_reason": "stop",
+          "output_tokens": 3056,
+          "latency_seconds": 91.89076012466103
+        },
+        "test/prealgebra/1761.json": {
+          "correct": 1,
+          "input_identity_sha256": "be87a3788387489b4254d2df18beed6841d8debd238aaed87d2dee8441f7e8e4",
+          "extracted_prediction": "\\frac{3}{2}",
+          "target": "\\frac{3}{2}",
+          "stop_reason": "stop",
+          "output_tokens": 980,
+          "latency_seconds": 33.09800259862095
+        },
+        "test/algebra/1035.json": {
+          "correct": 1,
+          "input_identity_sha256": "4831e83edf635a7ad320c252db935439e01acbefa7f8227a68bafb84dc81ea16",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1312,
+          "latency_seconds": 42.41301186475903
+        },
+        "test/algebra/2023.json": {
+          "correct": 1,
+          "input_identity_sha256": "601aa30360fff98b203a310667fc1e088b2b748745e00ef585dee10d0d2d0d98",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1302,
+          "latency_seconds": 37.853042436763644
+        },
+        "test/algebra/2046.json": {
+          "correct": 1,
+          "input_identity_sha256": "781b42cb98ce6221bb5013a2b3a93af198e38f166d6eab0fb17e6531001eb60a",
+          "extracted_prediction": "x^{3}+3x-6",
+          "target": "x^3+3x-6",
+          "stop_reason": "stop",
+          "output_tokens": 1557,
+          "latency_seconds": 56.69570170994848
+        },
+        "test/prealgebra/1804.json": {
+          "correct": 1,
+          "input_identity_sha256": "2a40a11eb8bbce28e5a3928b27155764e970c8d08b765183fb290062dca908fc",
+          "extracted_prediction": "29",
+          "target": "29",
+          "stop_reason": "stop",
+          "output_tokens": 1225,
+          "latency_seconds": 33.41651015821844
+        },
+        "test/counting_and_probability/23957.json": {
+          "correct": 1,
+          "input_identity_sha256": "6772ce0ee1c7fa5bc5291b9fcd120f4078a29d1b7c08d5c940cb375671f51df4",
+          "extracted_prediction": "210",
+          "target": "210",
+          "stop_reason": "stop",
+          "output_tokens": 905,
+          "latency_seconds": 27.866924542933702
+        },
+        "test/intermediate_algebra/1898.json": {
+          "correct": 1,
+          "input_identity_sha256": "ea19e7ca0dfafe4d39108691628d3384511bf1817b674d61dd41561bd4a4e3ef",
+          "extracted_prediction": "-5",
+          "target": "-5",
+          "stop_reason": "stop",
+          "output_tokens": 1307,
+          "latency_seconds": 37.02474374324083
+        },
+        "test/precalculus/1300.json": {
+          "correct": 0,
+          "input_identity_sha256": "665ab88ab2d94541a16a4535847faed48405085f280b4726b333310a3d2ceee4",
+          "extracted_prediction": "\\begin{pmatrix}-\\frac{1}{3}\\\\[2pt]\\frac{2}{3}\\\\[2pt]\\frac{5}{3}\\end{pmatrix}",
+          "target": "\\begin{pmatrix} -1/3 \\\\ 2/3 \\\\ 5/3 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 2671,
+          "latency_seconds": 82.1853979183361
+        },
+        "test/algebra/1332.json": {
+          "correct": 1,
+          "input_identity_sha256": "25a7d2eede1e8feec1c8a7fed346c5cba4fff46675828225fce9624b55f264bc",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 1160,
+          "latency_seconds": 32.28995562624186
+        },
+        "test/number_theory/847.json": {
+          "correct": 1,
+          "input_identity_sha256": "5b29d929aec5a93a4fd4e071878d3767c196e1a67274b1911f6012c9dd4ce2fc",
+          "extracted_prediction": "4210_5",
+          "target": "4210_{5}",
+          "stop_reason": "stop",
+          "output_tokens": 1034,
+          "latency_seconds": 30.190231419168413
+        },
+        "test/intermediate_algebra/1000.json": {
+          "correct": 1,
+          "input_identity_sha256": "0b29da330f56f419f1fa3dc20c13d869638b15d52c2a02a3c7bcc7dde6c6c170",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 6786,
+          "latency_seconds": 203.48635299038142
+        },
+        "test/prealgebra/1686.json": {
+          "correct": 1,
+          "input_identity_sha256": "7b81df52f074fde19234fb37b9035d7975baa5488f2ab9a939d7bc02cd3a7f82",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 1033,
+          "latency_seconds": 35.21753367129713
+        },
+        "test/prealgebra/1807.json": {
+          "correct": 1,
+          "input_identity_sha256": "b3dfe125eceaf00ce595b20f4079f1c656391c49755bf80ad3514aca76418987",
+          "extracted_prediction": "120",
+          "target": "120",
+          "stop_reason": "stop",
+          "output_tokens": 1030,
+          "latency_seconds": 34.34158557280898
+        },
+        "test/algebra/1519.json": {
+          "correct": 1,
+          "input_identity_sha256": "02184e284ef04e8a025d993acfcad63d6f89c2c92dbf1f4544845606999c4875",
+          "extracted_prediction": "\\frac{\\sqrt{3}}{3}",
+          "target": "\\frac{\\sqrt{3}}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 835,
+          "latency_seconds": 22.73331779334694
+        },
+        "test/precalculus/477.json": {
+          "correct": 1,
+          "input_identity_sha256": "ecfdbdf4f584cc5e61ae534dd79745715d1e1470a49d6b1d61180e2d667234e2",
+          "extracted_prediction": "3\\sqrt{5}",
+          "target": "3 \\sqrt{5}",
+          "stop_reason": "stop",
+          "output_tokens": 1429,
+          "latency_seconds": 42.1577585618943
+        },
+        "test/algebra/351.json": {
+          "correct": 1,
+          "input_identity_sha256": "46e7d92d2616620b08e88a9501cbe802e6780594c5176320ede18996607096e4",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 1120,
+          "latency_seconds": 34.46476865746081
+        },
+        "test/intermediate_algebra/1247.json": {
+          "correct": 1,
+          "input_identity_sha256": "cd4a71a84fa4105a9fcd15f85aa2454ba3467422bcebc17c158cd44f66b004b6",
+          "extracted_prediction": "-256",
+          "target": "-256",
+          "stop_reason": "stop",
+          "output_tokens": 7998,
+          "latency_seconds": 254.4829999729991
+        },
+        "test/intermediate_algebra/1151.json": {
+          "correct": 1,
+          "input_identity_sha256": "267b97d7a06e1473b4c52c2ebf2b46b72136eb942473e9ad996440a8ceaabe89",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 3165,
+          "latency_seconds": 111.1823310283944
+        },
+        "test/prealgebra/1908.json": {
+          "correct": 1,
+          "input_identity_sha256": "a2b6779e519cd4e8d42c51d65fdd070a95b61da373cae62c80cec9509cb1b224",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1272,
+          "latency_seconds": 40.067333995364606
+        },
+        "test/intermediate_algebra/894.json": {
+          "correct": 1,
+          "input_identity_sha256": "5576a8d83edd5fc1d0012cc4c0c017b7ade5f0d3b4bc57dd2153ec9b1c663434",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 7686,
+          "latency_seconds": 249.35521635320038
+        },
+        "test/number_theory/598.json": {
+          "correct": 1,
+          "input_identity_sha256": "da1109f455d0177707a1ec75645f96b4313171505c3e1d72b1a32def3d92b58f",
+          "extracted_prediction": "0.0000672",
+          "target": ".0000672",
+          "stop_reason": "stop",
+          "output_tokens": 2534,
+          "latency_seconds": 95.70844084955752
+        },
+        "test/algebra/1275.json": {
+          "correct": 1,
+          "input_identity_sha256": "b2ed6a106ca48525c0e71e73bc4cca2f32ccb0a1593d59b95b524044e5fbbd0e",
+          "extracted_prediction": "\\frac{\\sqrt{3}}{3}",
+          "target": "\\frac{\\sqrt{3}}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 1755,
+          "latency_seconds": 67.8608141830191
+        },
+        "test/geometry/221.json": {
+          "correct": 1,
+          "input_identity_sha256": "81c2f9f52d83e72dbac8f04ed5b8a58654514117fd4e3613e524085607010903",
+          "extracted_prediction": "30",
+          "target": "30",
+          "stop_reason": "stop",
+          "output_tokens": 2301,
+          "latency_seconds": 85.81920256186277
+        },
+        "test/counting_and_probability/508.json": {
+          "correct": 1,
+          "input_identity_sha256": "9b335ef976659a9e9f2ba9baa162d6ebca5317c5cdf4b77570340e41381cf550",
+          "extracted_prediction": "10080",
+          "target": "10,\\!080",
+          "stop_reason": "stop",
+          "output_tokens": 1375,
+          "latency_seconds": 60.42873129528016
+        },
+        "test/intermediate_algebra/1555.json": {
+          "correct": 1,
+          "input_identity_sha256": "f7e42adc267c2f64a3208dfdaf5f94b3695ef8b3f3e3f19c1b89a9ba309e2c09",
+          "extracted_prediction": "12",
+          "target": "12",
+          "stop_reason": "stop",
+          "output_tokens": 1623,
+          "latency_seconds": 74.67844816297293
+        },
+        "test/intermediate_algebra/1422.json": {
+          "correct": 1,
+          "input_identity_sha256": "a73ae4aab6d4cb47ae1757cae38e1e22cea9240500cb34a1380a9ad6d85363a8",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 3354,
+          "latency_seconds": 139.8407134693116
+        },
+        "test/intermediate_algebra/607.json": {
+          "correct": 1,
+          "input_identity_sha256": "ddea1b9b8c83888f3ac625c9755ec8116eb6b28f868fe22101cbca8791f99b05",
+          "extracted_prediction": "13535",
+          "target": "13535",
+          "stop_reason": "stop",
+          "output_tokens": 15894,
+          "latency_seconds": 549.6682752575725
+        },
+        "test/algebra/2102.json": {
+          "correct": 1,
+          "input_identity_sha256": "74473564f6c40252185cdc2a86efa97cdb172eb8ccb1cb6e844d16978032e769",
+          "extracted_prediction": "56",
+          "target": "56",
+          "stop_reason": "stop",
+          "output_tokens": 992,
+          "latency_seconds": 43.084310026839375
+        },
+        "test/precalculus/117.json": {
+          "correct": 1,
+          "input_identity_sha256": "d74b97fdf37b5b03e3fac2fd04cb2fea9011a1ebdcd15179a3edf68f61fb74d1",
+          "extracted_prediction": "30",
+          "target": "30^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 8960,
+          "latency_seconds": 348.16056990623474
+        },
+        "test/algebra/661.json": {
+          "correct": 1,
+          "input_identity_sha256": "bd96c2ef4654f1fcb1093f20c66acfd4da7b1f71ccfe712283645c7142e078ef",
+          "extracted_prediction": "36",
+          "target": "36",
+          "stop_reason": "stop",
+          "output_tokens": 11637,
+          "latency_seconds": 432.63742320239544
+        },
+        "test/precalculus/263.json": {
+          "correct": 1,
+          "input_identity_sha256": "ec152250601ac580c11bb6e94c2ceb30b056c70bbaae164719aaf860c2a55def",
+          "extracted_prediction": "\\begin{pmatrix}-2\\-14\\-7\\end{pmatrix}",
+          "target": "\\begin{pmatrix} -2 \\\\ -14 \\\\ -7 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 3206,
+          "latency_seconds": 129.06214148458093
+        },
+        "test/number_theory/1201.json": {
+          "correct": 1,
+          "input_identity_sha256": "607373c43111d27b67102fcb6ace964fbdac3d02a867ceb99a40d0fb0debf4be",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 2644,
+          "latency_seconds": 103.7358693368733
+        },
+        "test/number_theory/89.json": {
+          "correct": 1,
+          "input_identity_sha256": "3003d8b3b4c4a5ab601412fe1740ab8a2126ca12e354cea93bc776df0c08a276",
+          "extracted_prediction": "900",
+          "target": "900",
+          "stop_reason": "stop",
+          "output_tokens": 2410,
+          "latency_seconds": 90.37661853246391
+        },
+        "test/precalculus/819.json": {
+          "correct": 1,
+          "input_identity_sha256": "648f1448356e8847977694ec0524648f9f9f2472b915e6073ab24d9a29021fd7",
+          "extracted_prediction": "C",
+          "target": "\\text{(C)}",
+          "stop_reason": "stop",
+          "output_tokens": 708,
+          "latency_seconds": 29.40125103574246
+        },
+        "test/geometry/65.json": {
+          "correct": 1,
+          "input_identity_sha256": "20f2dc353f298a64d0ea7fd1cbdbe9ee1d80c4e2cc2d6070cf459697fdcbeead",
+          "extracted_prediction": "30",
+          "target": "30^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 8568,
+          "latency_seconds": 337.18687792588025
+        },
+        "test/prealgebra/1458.json": {
+          "correct": 1,
+          "input_identity_sha256": "f1bd1d02c1c9f4dd1bf8364fce38bc9235eff678ef38aec3872d5b9ea26b1a18",
+          "extracted_prediction": "\\frac{1}{8}",
+          "target": "\\frac{1}{8}",
+          "stop_reason": "stop",
+          "output_tokens": 573,
+          "latency_seconds": 37.85322941374034
+        },
+        "test/prealgebra/1995.json": {
+          "correct": 1,
+          "input_identity_sha256": "6875281a429a92ac0771e5d67554acf911eb2ce8cf82cfbcb305bcc6692e9d94",
+          "extracted_prediction": "\\frac{8}{21}",
+          "target": "\\frac{8}{21}",
+          "stop_reason": "stop",
+          "output_tokens": 774,
+          "latency_seconds": 45.44314499758184
+        },
+        "test/algebra/2159.json": {
+          "correct": 1,
+          "input_identity_sha256": "480dad53d2c6e8ffe4cd35c7fee9e22c900fbda02ec5d1366382222561515d58",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 2862,
+          "latency_seconds": 123.06092770770192
+        },
+        "test/intermediate_algebra/1837.json": {
+          "correct": 1,
+          "input_identity_sha256": "c97940a6837e31a007724849e02f967345ff0e3060c5f5c1d658efa604aaddbb",
+          "extracted_prediction": "34",
+          "target": "34",
+          "stop_reason": "stop",
+          "output_tokens": 1986,
+          "latency_seconds": 91.54986065812409
+        },
+        "test/algebra/694.json": {
+          "correct": 1,
+          "input_identity_sha256": "9c02b42bd9f91d13385ded837dcfba39fba79aa93bf8ace9df03ab42720938ef",
+          "extracted_prediction": "16",
+          "target": "16",
+          "stop_reason": "stop",
+          "output_tokens": 1164,
+          "latency_seconds": 43.82018302381039
+        },
+        "test/counting_and_probability/71.json": {
+          "correct": 1,
+          "input_identity_sha256": "eebbe3b2ddb4d159fb1e99c8bb59255ae4c85427340c7c91cafb5de47f603176",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 3156,
+          "latency_seconds": 135.88100736681372
+        },
+        "test/precalculus/580.json": {
+          "correct": 1,
+          "input_identity_sha256": "f88e54ae0a3b673e71e39f0f17498b610447ef3f4b73db2d1278806c95d8d89c",
+          "extracted_prediction": "120",
+          "target": "120^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 1568,
+          "latency_seconds": 59.60278355330229
+        },
+        "test/geometry/347.json": {
+          "correct": 1,
+          "input_identity_sha256": "e33ccc5239bafdb520f7867164b265c61f64550e3e6469b5f2081d500124f5d1",
+          "extracted_prediction": "76",
+          "target": "76^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 879,
+          "latency_seconds": 36.02487849351019
+        },
+        "test/prealgebra/1742.json": {
+          "correct": 1,
+          "input_identity_sha256": "03c1b5d810813f6cc100675d74cccfe605469679b5da7d13ca41300bf4cb01e4",
+          "extracted_prediction": "\\frac{33}{100}",
+          "target": "\\dfrac{33}{100}",
+          "stop_reason": "stop",
+          "output_tokens": 955,
+          "latency_seconds": 50.435041959397495
+        },
+        "test/intermediate_algebra/1123.json": {
+          "correct": 1,
+          "input_identity_sha256": "14b180bd35f51c02b331234158b025de49b8acdb6fc9b687e37953832a561c46",
+          "extracted_prediction": "\\frac{10}{11}",
+          "target": "\\frac{10}{11}",
+          "stop_reason": "stop",
+          "output_tokens": 2896,
+          "latency_seconds": 140.76180111896247
+        },
+        "test/number_theory/183.json": {
+          "correct": 1,
+          "input_identity_sha256": "3f2ba9b5c8ee6c27a3387950cce9b81b5bf0bcc55c4a5ed5d3fc6b32f3b74700",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 5084,
+          "latency_seconds": 222.27676525432616
+        },
+        "test/counting_and_probability/913.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba24f983c94f9e3994f8040ede937ce5d547dab1a7ae441f2ecd4a788600ae9d",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 1399,
+          "latency_seconds": 67.06438834685832
+        },
+        "test/number_theory/691.json": {
+          "correct": 1,
+          "input_identity_sha256": "330f050c2d681b6d228a355bdbe5f390e5a957a8a08a038fd63872b270cb3e49",
+          "extracted_prediction": "255",
+          "target": "255",
+          "stop_reason": "stop",
+          "output_tokens": 924,
+          "latency_seconds": 49.44661705289036
+        },
+        "test/prealgebra/1787.json": {
+          "correct": 1,
+          "input_identity_sha256": "8cc9de33d9665168535be3db94e4046b25c3ac24defa95c924b0d3325ce55a9d",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1033,
+          "latency_seconds": 50.57383571192622
+        },
+        "test/prealgebra/1733.json": {
+          "correct": 1,
+          "input_identity_sha256": "876e4a9a533053990cca36eca7df0fdca7b5f16388a8e498b3df386b5eea69f9",
+          "extracted_prediction": "-9",
+          "target": "-9",
+          "stop_reason": "stop",
+          "output_tokens": 17295,
+          "latency_seconds": 669.0102708358318
+        },
+        "test/algebra/425.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba26e523c9b63cf8119b01892c62591d06f03c84092797afd14611a362056627",
+          "extracted_prediction": "-128",
+          "target": "-128",
+          "stop_reason": "stop",
+          "output_tokens": 555,
+          "latency_seconds": 14.29504728782922
+        },
+        "test/intermediate_algebra/1300.json": {
+          "correct": 1,
+          "input_identity_sha256": "38c7749096f96195a65d70dfd5d436acf8c44c4fafb7ce198fdf6ad67e63db73",
+          "extracted_prediction": "16",
+          "target": "16",
+          "stop_reason": "stop",
+          "output_tokens": 1334,
+          "latency_seconds": 55.60121764149517
+        },
+        "test/algebra/1936.json": {
+          "correct": 1,
+          "input_identity_sha256": "a6f466dedff2eba6a80f00558d25c4ed6e8c949caa55398953d434718af27b91",
+          "extracted_prediction": "-1",
+          "target": "-1",
+          "stop_reason": "stop",
+          "output_tokens": 623,
+          "latency_seconds": 11.549222394824028
+        },
+        "test/algebra/1457.json": {
+          "correct": 1,
+          "input_identity_sha256": "eb35a1e7e8945ab1b91200041bd96777903a084c654cfa496fdf06f88e1fa24d",
+          "extracted_prediction": "-120",
+          "target": "-120",
+          "stop_reason": "stop",
+          "output_tokens": 795,
+          "latency_seconds": 15.682232826016843
+        },
+        "test/algebra/634.json": {
+          "correct": 1,
+          "input_identity_sha256": "aef8a2d65c29033f32b932ca289b4fa9ae5d4105b7084c158e34942e03473f82",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 1732,
+          "latency_seconds": 51.17056136857718
+        },
+        "test/intermediate_algebra/446.json": {
+          "correct": 1,
+          "input_identity_sha256": "a6a8ffa38ec62f604f46236472dd8af82a3ab530b8a8d14b658ca39111f310b0",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 2117,
+          "latency_seconds": 59.32532394211739
+        },
+        "test/number_theory/368.json": {
+          "correct": 1,
+          "input_identity_sha256": "9a268701367c0387c0b12648963764764bfcf1f944e20d46548d4eaf1e0e439b",
+          "extracted_prediction": "4343_6",
+          "target": "4343_6",
+          "stop_reason": "stop",
+          "output_tokens": 1596,
+          "latency_seconds": 47.81796368584037
+        },
+        "test/prealgebra/1238.json": {
+          "correct": 1,
+          "input_identity_sha256": "2401bedd79bd6c7a66e16b1375e8fd1fb9d08ea615ae554f3d6ccc3d31d412d5",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 1257,
+          "latency_seconds": 40.131451189517975
+        },
+        "test/prealgebra/1730.json": {
+          "correct": 1,
+          "input_identity_sha256": "ee5c190b8cb6ba4092fd033d718cff2370d5ddbb937099cc79667dd61d3c9e06",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 2124,
+          "latency_seconds": 60.50177034270018
+        },
+        "test/algebra/1529.json": {
+          "correct": 1,
+          "input_identity_sha256": "34084ec308b5e637a5a72035b9ad49a148a63639b068c578e3222186732f7158",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 724,
+          "latency_seconds": 21.73122671432793
+        },
+        "test/algebra/1547.json": {
+          "correct": 1,
+          "input_identity_sha256": "39c0b662aade568f2896e0ba10506103c0f75c100dcc194e7d092dee901c8896",
+          "extracted_prediction": "6r^2-4r-24",
+          "target": "6r^2-4r-24",
+          "stop_reason": "stop",
+          "output_tokens": 2099,
+          "latency_seconds": 48.649696570821106
+        },
+        "test/intermediate_algebra/1566.json": {
+          "correct": 1,
+          "input_identity_sha256": "3a96071f89449019119d51d712436459edb0f0feb2c3748c46374935f4f9a930",
+          "extracted_prediction": "2k",
+          "target": "2k",
+          "stop_reason": "stop",
+          "output_tokens": 3675,
+          "latency_seconds": 111.83657786436379
+        },
+        "test/algebra/170.json": {
+          "correct": 1,
+          "input_identity_sha256": "92db165a9c7a65d26a77f8c5005c0f5481752c3ae458d30459c9130bc07daa34",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 1005,
+          "latency_seconds": 24.174070020206273
+        },
+        "test/prealgebra/1743.json": {
+          "correct": 1,
+          "input_identity_sha256": "056bb54d64114add71a3ec17b506dbd0a5f2ee77397a9dcd959bee5f45c7a54c",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1782,
+          "latency_seconds": 60.26242619100958
+        },
+        "test/number_theory/1185.json": {
+          "correct": 1,
+          "input_identity_sha256": "7fd367589760360d62fc83e30dabad8d703019fd5c60802a4df4b2798bad9dbe",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 3513,
+          "latency_seconds": 100.7373594045639
+        },
+        "test/precalculus/96.json": {
+          "correct": 1,
+          "input_identity_sha256": "635e60553214f7a30bc5966a9f211af6d9f8b0936f11cb29fb544c13103745ce",
+          "extracted_prediction": "\\frac{7}{4}",
+          "target": "\\frac{7}{4}",
+          "stop_reason": "stop",
+          "output_tokens": 4103,
+          "latency_seconds": 120.82493511866778
+        },
+        "test/algebra/518.json": {
+          "correct": 1,
+          "input_identity_sha256": "6e155391e112e6a60c4457376f03e2d82750f02187e34c4463cc9f119de23e85",
+          "extracted_prediction": "\\frac{3}{4}",
+          "target": "\\frac 34",
+          "stop_reason": "stop",
+          "output_tokens": 1370,
+          "latency_seconds": 42.68458657711744
+        },
+        "test/geometry/795.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba965623143a858e9219c5efe80c9cac692ed76af6111b5f4782d392c121814a",
+          "extracted_prediction": "\\frac{\\sqrt{21}}{5}",
+          "target": "\\frac{\\sqrt{21}}{5}",
+          "stop_reason": "stop",
+          "output_tokens": 2335,
+          "latency_seconds": 73.89039220008999
+        },
+        "test/prealgebra/1227.json": {
+          "correct": 1,
+          "input_identity_sha256": "97fa46fa015f3277fac234674321887105fb565e612892e9d5a83ee5d7fa7a98",
+          "extracted_prediction": "60",
+          "target": "60",
+          "stop_reason": "stop",
+          "output_tokens": 1061,
+          "latency_seconds": 36.59674767404795
+        },
+        "test/precalculus/1291.json": {
+          "correct": 1,
+          "input_identity_sha256": "476cdc2e089c90efb0c64e3637c01dc0bf46b74f79b1a39c280be176273a90d5",
+          "extracted_prediction": "1-12i",
+          "target": "1 - 12i",
+          "stop_reason": "stop",
+          "output_tokens": 1858,
+          "latency_seconds": 59.329932666383684
+        },
+        "test/geometry/843.json": {
+          "correct": 1,
+          "input_identity_sha256": "74092c216a8046dfc89f450b9e7cdb1015e0aa0bada18b5f1ecdd6836f0558e8",
+          "extracted_prediction": "6\\sqrt{2}",
+          "target": "6\\sqrt{2}",
+          "stop_reason": "stop",
+          "output_tokens": 857,
+          "latency_seconds": 29.724555992521346
+        },
+        "test/precalculus/625.json": {
+          "correct": 0,
+          "input_identity_sha256": "f38c95b96a9458a6077ea981517a5c2bf71a92fb6cbb076526977505a751c0af",
+          "extracted_prediction": "\\frac{8}{49}\\begin{pmatrix}2\\6\\3\\end{pmatrix}",
+          "target": "\\begin{pmatrix} 16/49 \\\\ 48/49 \\\\ 24/49 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 1215,
+          "latency_seconds": 41.50821333844215
+        },
+        "test/number_theory/203.json": {
+          "correct": 1,
+          "input_identity_sha256": "90394031029f1e64f971ab3a87332e7663a0f22353179d96521bbbd9267b02af",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 10161,
+          "latency_seconds": 308.1445762468502
+        },
+        "test/precalculus/681.json": {
+          "correct": 1,
+          "input_identity_sha256": "4ae6b0d599bb5315062c74661a561371b2a3cbff614b37b6ffafb1a821fb542c",
+          "extracted_prediction": "\\frac{1}{8}",
+          "target": "\\frac{1}{8}",
+          "stop_reason": "stop",
+          "output_tokens": 2993,
+          "latency_seconds": 102.05584715399891
+        },
+        "test/algebra/1553.json": {
+          "correct": 1,
+          "input_identity_sha256": "84f34a355acac10c51a988e7dd6aad9e37ec6a4ea03ab961bd108e3ffb32170d",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1833,
+          "latency_seconds": 61.9229407357052
+        },
+        "test/algebra/2080.json": {
+          "correct": 1,
+          "input_identity_sha256": "bf27ca2efd55f1460f022cf66b9257273734a83ee8b65f519c11bf50da9c9e97",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 859,
+          "latency_seconds": 31.0585211571306
+        },
+        "test/intermediate_algebra/1014.json": {
+          "correct": 1,
+          "input_identity_sha256": "1c89a21afa5393f7d4efcf512570b18bbc0924a3f74e6527649ef96eab6b6614",
+          "extracted_prediction": "50",
+          "target": "50",
+          "stop_reason": "stop",
+          "output_tokens": 2240,
+          "latency_seconds": 80.67697892989963
+        },
+        "test/precalculus/1201.json": {
+          "correct": 1,
+          "input_identity_sha256": "d28ae9fa29f534d4260270962bcbce0767e11108039ceb73553096bb9fa4d69d",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 13295,
+          "latency_seconds": 420.33951161056757
+        },
+        "test/algebra/435.json": {
+          "correct": 1,
+          "input_identity_sha256": "9a103cea31c99850ff4cefa4f0e8e51d433e778777597fcc5ca5b93990eca39e",
+          "extracted_prediction": "25",
+          "target": "25",
+          "stop_reason": "stop",
+          "output_tokens": 604,
+          "latency_seconds": 24.131729455664754
+        },
+        "test/precalculus/801.json": {
+          "correct": 1,
+          "input_identity_sha256": "68ec6ab731b49cfecc2cc9974c94a8834c08a3137cfb2619f6a546c07254e3c4",
+          "extracted_prediction": "55",
+          "target": "55^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 12873,
+          "latency_seconds": 423.6782205933705
+        },
+        "test/intermediate_algebra/834.json": {
+          "correct": 1,
+          "input_identity_sha256": "6e375814ddf5f3e7ad2dbc1b7650943d4284f3aab38d392ab2644e94cf9541e3",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 2266,
+          "latency_seconds": 85.45903928019106
+        },
+        "test/prealgebra/846.json": {
+          "correct": 1,
+          "input_identity_sha256": "7992d93b927d4527faa8206812c3a033be1c12d499c84c8d91e64dc3721e722b",
+          "extracted_prediction": "84",
+          "target": "84",
+          "stop_reason": "stop",
+          "output_tokens": 553,
+          "latency_seconds": 22.454125554300845
+        },
+        "test/number_theory/459.json": {
+          "correct": 1,
+          "input_identity_sha256": "15117acec68effa800c774dbd9e8c18d50463c3cc6ac3d87e8a39a0c2f73ece0",
+          "extracted_prediction": "\\frac{639}{40}",
+          "target": "\\frac{639}{40}",
+          "stop_reason": "stop",
+          "output_tokens": 2568,
+          "latency_seconds": 100.79004940576851
+        },
+        "test/intermediate_algebra/199.json": {
+          "correct": 1,
+          "input_identity_sha256": "2e580296983ba06cbab8df255879a8c0b52c5ab7a0aa9c7717d98dcabae964c8",
+          "extracted_prediction": "x^{8}+x^{7}+x^{6}+x^{5}+x^{4}+x^{3}+x^{2}+x+1",
+          "target": "x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1",
+          "stop_reason": "stop",
+          "output_tokens": 5542,
+          "latency_seconds": 202.04618852213025
+        },
+        "test/number_theory/22.json": {
+          "correct": 1,
+          "input_identity_sha256": "19c2b69a5be6d1d9aedb133cc7b348452b8c9392bf091d77586b35f0f461c2a7",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 2224,
+          "latency_seconds": 80.331581922248
+        },
+        "test/prealgebra/805.json": {
+          "correct": 1,
+          "input_identity_sha256": "f87b1b40b27fb6152fd867ede5ce61b0f597ce96d4562dfeb917667aec7bbc1c",
+          "extracted_prediction": "41",
+          "target": "41",
+          "stop_reason": "stop",
+          "output_tokens": 5673,
+          "latency_seconds": 231.19952179305255
+        },
+        "test/precalculus/356.json": {
+          "correct": 1,
+          "input_identity_sha256": "ce46f6dc9a1b64eb227a046777c7a6ff9738548a8686976f12dfb3e2a3eaeaaf",
+          "extracted_prediction": "-2x",
+          "target": "y = -2x",
+          "stop_reason": "stop",
+          "output_tokens": 1647,
+          "latency_seconds": 79.40824912674725
+        },
+        "test/intermediate_algebra/1232.json": {
+          "correct": 1,
+          "input_identity_sha256": "cf7967a7066f479bda66ba91b63e50274d3f232e1a59984691114cfa0c77d80a",
+          "extracted_prediction": "\\frac{5}{13}",
+          "target": "\\frac{5}{13}",
+          "stop_reason": "stop",
+          "output_tokens": 1281,
+          "latency_seconds": 48.90723441541195
+        },
+        "test/precalculus/826.json": {
+          "correct": 1,
+          "input_identity_sha256": "e658d4b8c4f0ad9411eda7b953d9479e9856d49081a9480df5191131119218b7",
+          "extracted_prediction": "\\frac{1}{16}",
+          "target": "\\frac{1}{16}",
+          "stop_reason": "stop",
+          "output_tokens": 16446,
+          "latency_seconds": 581.7652219673619
+        },
+        "test/precalculus/1082.json": {
+          "correct": 1,
+          "input_identity_sha256": "bbf7b4f1444b400e38847b06dfd536d1ca359e7e268d3dc1b92dca1110620d07",
+          "extracted_prediction": "\\frac{8}{15}",
+          "target": "\\frac{8}{15}",
+          "stop_reason": "stop",
+          "output_tokens": 5020,
+          "latency_seconds": 203.97018256224692
+        },
+        "test/intermediate_algebra/1365.json": {
+          "correct": 1,
+          "input_identity_sha256": "76e29e3cab85783d18a8489c4b7abc2ebbca9f153a7e298c20df2b09b955637d",
+          "extracted_prediction": "15",
+          "target": "15",
+          "stop_reason": "stop",
+          "output_tokens": 4235,
+          "latency_seconds": 169.4454616671428
+        },
+        "test/intermediate_algebra/101.json": {
+          "correct": 1,
+          "input_identity_sha256": "2aa018cf1a6965718c7aa1b60cce0dceec151dd209730c6f4ce05ee506b5e11b",
+          "extracted_prediction": "10",
+          "target": "10",
+          "stop_reason": "stop",
+          "output_tokens": 6101,
+          "latency_seconds": 232.64563745167106
+        },
+        "test/prealgebra/631.json": {
+          "correct": 1,
+          "input_identity_sha256": "3395ef3283cc422af0d9604959ae47913e27b3981a3ae25f52736b5b7d2b4aff",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 16547,
+          "latency_seconds": 573.3592397365719
+        },
+        "test/geometry/477.json": {
+          "correct": 0,
+          "input_identity_sha256": "5618a545c01969719334d53fda501a6287d591cb488bd88eee4f88399de9fbef",
+          "extracted_prediction": "54\\pi",
+          "target": "216",
+          "stop_reason": "max_tokens",
+          "output_tokens": 32768,
+          "latency_seconds": 962.3212168766186
+        }
+      },
+      "interpretation": "Official scores preserved. No manual rescoring; accuracy runtime is not throughput benchmark performance."
+    },
+    {
+      "archive": "outputs\\competition-outcome-20261108\\outcome-v1-accuracy-long-s16-verified.zip",
+      "archive_sha256": "c32d2fc926bef8aff28e2ea87b3d9f38d75382eb17477d915f57cacd0d272b9b",
+      "job_id": "outcome-v1-accuracy-long-s16",
+      "arm": "long-s16",
+      "count": 105,
+      "correct": 101,
+      "accuracy": 0.9619047619047619,
+      "official_threshold_passed": true,
+      "stop_reasons": {
+        "stop": 103,
+        "max_tokens": 2
+      },
+      "wrong_question_ids": [
+        "test/precalculus/1300.json",
+        "test/precalculus/625.json",
+        "test/algebra/1553.json",
+        "test/geometry/477.json"
+      ],
+      "records": {
+        "test/algebra/2036.json": {
+          "correct": 1,
+          "input_identity_sha256": "7439b64ed9c7a5538c4259cc6d67ffa2c41e4c7e640f7333870363bf435cfe22",
+          "extracted_prediction": "3\\sqrt{13}",
+          "target": "3\\sqrt{13}",
+          "stop_reason": "stop",
+          "output_tokens": 711,
+          "latency_seconds": 20.19723024778068
+        },
+        "test/algebra/1098.json": {
+          "correct": 1,
+          "input_identity_sha256": "7f9a68396c312b41110cd4c6c4cbd0a533edbd2411787419bbcf953ef77d056b",
+          "extracted_prediction": "6+9i",
+          "target": "6+9i",
+          "stop_reason": "stop",
+          "output_tokens": 808,
+          "latency_seconds": 25.903264327906072
+        },
+        "test/number_theory/572.json": {
+          "correct": 1,
+          "input_identity_sha256": "4e3043f6b6c12a82382d75022eb82f236356d99d93879e2bf89fc310d35d2e0c",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 846,
+          "latency_seconds": 29.09493418224156
+        },
+        "test/algebra/2584.json": {
+          "correct": 1,
+          "input_identity_sha256": "2f47d70f064885f2eeb8b7765a470c74ae0eabbf77308127161b325eb6133a10",
+          "extracted_prediction": "\\frac{14}{3}",
+          "target": "\\frac{14}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 1094,
+          "latency_seconds": 35.4989412445575
+        },
+        "test/number_theory/515.json": {
+          "correct": 1,
+          "input_identity_sha256": "abe9f28b678dd35892e8ec2e20c7c7ad985fcf0e4cf20ab497f8066b65673d78",
+          "extracted_prediction": "27",
+          "target": "27",
+          "stop_reason": "stop",
+          "output_tokens": 1461,
+          "latency_seconds": 44.0084688924253
+        },
+        "test/number_theory/864.json": {
+          "correct": 1,
+          "input_identity_sha256": "d1a057eac77b1a9db7f46af9353167b3cdfe93f49c33519876808a8c3badf6a1",
+          "extracted_prediction": "52_8",
+          "target": "52_8",
+          "stop_reason": "stop",
+          "output_tokens": 1149,
+          "latency_seconds": 31.95687815081328
+        },
+        "test/algebra/769.json": {
+          "correct": 1,
+          "input_identity_sha256": "843a51ecb19e0c525e211e249c25233bbb3106e73d54f1fe6197d7756f75ea78",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 718,
+          "latency_seconds": 18.515777446329594
+        },
+        "test/number_theory/45.json": {
+          "correct": 1,
+          "input_identity_sha256": "92c0a3f60f3de39c7e14077a37684ed610e72da0cd5f89c391c966aa4be23292",
+          "extracted_prediction": "23",
+          "target": "23",
+          "stop_reason": "stop",
+          "output_tokens": 1703,
+          "latency_seconds": 42.69814985990524
+        },
+        "test/geometry/178.json": {
+          "correct": 1,
+          "input_identity_sha256": "5feaefa759193a6642f84185112a79a5811eff49c8cdd90660eda33e3f74becc",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 2046,
+          "latency_seconds": 50.05941248871386
+        },
+        "test/geometry/967.json": {
+          "correct": 1,
+          "input_identity_sha256": "9ca2fd8d2c915a0d69b9cf290763fce5de69e4d2cbb8076a93f570698c93dc36",
+          "extracted_prediction": "72",
+          "target": "72",
+          "stop_reason": "stop",
+          "output_tokens": 2615,
+          "latency_seconds": 69.25100241508335
+        },
+        "test/algebra/2046.json": {
+          "correct": 1,
+          "input_identity_sha256": "781b42cb98ce6221bb5013a2b3a93af198e38f166d6eab0fb17e6531001eb60a",
+          "extracted_prediction": "x^3+3x-6",
+          "target": "x^3+3x-6",
+          "stop_reason": "stop",
+          "output_tokens": 1391,
+          "latency_seconds": 38.223756092600524
+        },
+        "test/intermediate_algebra/1000.json": {
+          "correct": 1,
+          "input_identity_sha256": "0b29da330f56f419f1fa3dc20c13d869638b15d52c2a02a3c7bcc7dde6c6c170",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 3810,
+          "latency_seconds": 109.74610813613981
+        },
+        "test/prealgebra/1761.json": {
+          "correct": 1,
+          "input_identity_sha256": "be87a3788387489b4254d2df18beed6841d8debd238aaed87d2dee8441f7e8e4",
+          "extracted_prediction": "\\frac{3}{2}",
+          "target": "\\frac{3}{2}",
+          "stop_reason": "stop",
+          "output_tokens": 842,
+          "latency_seconds": 30.18047313950956
+        },
+        "test/number_theory/1032.json": {
+          "correct": 1,
+          "input_identity_sha256": "6601c24afa0851f941893e1e28b6ea1e7659047a7260e56bdbca821d0fdcad58",
+          "extracted_prediction": "2220",
+          "target": "2220",
+          "stop_reason": "stop",
+          "output_tokens": 4161,
+          "latency_seconds": 121.80761958379298
+        },
+        "test/prealgebra/1804.json": {
+          "correct": 1,
+          "input_identity_sha256": "2a40a11eb8bbce28e5a3928b27155764e970c8d08b765183fb290062dca908fc",
+          "extracted_prediction": "29",
+          "target": "29",
+          "stop_reason": "stop",
+          "output_tokens": 606,
+          "latency_seconds": 21.862854053266346
+        },
+        "test/algebra/1035.json": {
+          "correct": 1,
+          "input_identity_sha256": "4831e83edf635a7ad320c252db935439e01acbefa7f8227a68bafb84dc81ea16",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1979,
+          "latency_seconds": 62.221669083461165
+        },
+        "test/algebra/2023.json": {
+          "correct": 1,
+          "input_identity_sha256": "601aa30360fff98b203a310667fc1e088b2b748745e00ef585dee10d0d2d0d98",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1222,
+          "latency_seconds": 46.27530124504119
+        },
+        "test/counting_and_probability/23957.json": {
+          "correct": 1,
+          "input_identity_sha256": "6772ce0ee1c7fa5bc5291b9fcd120f4078a29d1b7c08d5c940cb375671f51df4",
+          "extracted_prediction": "210",
+          "target": "210",
+          "stop_reason": "stop",
+          "output_tokens": 975,
+          "latency_seconds": 32.43511257041246
+        },
+        "test/algebra/1332.json": {
+          "correct": 1,
+          "input_identity_sha256": "25a7d2eede1e8feec1c8a7fed346c5cba4fff46675828225fce9624b55f264bc",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 790,
+          "latency_seconds": 24.449880307540298
+        },
+        "test/intermediate_algebra/1898.json": {
+          "correct": 1,
+          "input_identity_sha256": "ea19e7ca0dfafe4d39108691628d3384511bf1817b674d61dd41561bd4a4e3ef",
+          "extracted_prediction": "-5",
+          "target": "-5",
+          "stop_reason": "stop",
+          "output_tokens": 1196,
+          "latency_seconds": 38.17552947346121
+        },
+        "test/number_theory/847.json": {
+          "correct": 1,
+          "input_identity_sha256": "5b29d929aec5a93a4fd4e071878d3767c196e1a67274b1911f6012c9dd4ce2fc",
+          "extracted_prediction": "4210_{5}",
+          "target": "4210_{5}",
+          "stop_reason": "stop",
+          "output_tokens": 821,
+          "latency_seconds": 25.822259360924363
+        },
+        "test/intermediate_algebra/607.json": {
+          "correct": 1,
+          "input_identity_sha256": "ddea1b9b8c83888f3ac625c9755ec8116eb6b28f868fe22101cbca8791f99b05",
+          "extracted_prediction": "13535",
+          "target": "13535",
+          "stop_reason": "stop",
+          "output_tokens": 6123,
+          "latency_seconds": 183.80419748928398
+        },
+        "test/prealgebra/1686.json": {
+          "correct": 1,
+          "input_identity_sha256": "7b81df52f074fde19234fb37b9035d7975baa5488f2ab9a939d7bc02cd3a7f82",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 1058,
+          "latency_seconds": 28.697196426801383
+        },
+        "test/prealgebra/1807.json": {
+          "correct": 1,
+          "input_identity_sha256": "b3dfe125eceaf00ce595b20f4079f1c656391c49755bf80ad3514aca76418987",
+          "extracted_prediction": "120",
+          "target": "120",
+          "stop_reason": "stop",
+          "output_tokens": 1040,
+          "latency_seconds": 28.458813999779522
+        },
+        "test/precalculus/1300.json": {
+          "correct": 0,
+          "input_identity_sha256": "665ab88ab2d94541a16a4535847faed48405085f280b4726b333310a3d2ceee4",
+          "extracted_prediction": "\\begin{pmatrix}-\\frac{1}{3}\\\\[4pt]\\frac{2}{3}\\\\[4pt]\\frac{5}{3}\\end{pmatrix}",
+          "target": "\\begin{pmatrix} -1/3 \\\\ 2/3 \\\\ 5/3 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 3628,
+          "latency_seconds": 115.20924405939877
+        },
+        "test/algebra/1519.json": {
+          "correct": 1,
+          "input_identity_sha256": "02184e284ef04e8a025d993acfcad63d6f89c2c92dbf1f4544845606999c4875",
+          "extracted_prediction": "\\frac{\\sqrt{3}}{3}",
+          "target": "\\frac{\\sqrt{3}}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 476,
+          "latency_seconds": 19.148611905053258
+        },
+        "test/precalculus/477.json": {
+          "correct": 1,
+          "input_identity_sha256": "ecfdbdf4f584cc5e61ae534dd79745715d1e1470a49d6b1d61180e2d667234e2",
+          "extracted_prediction": "3\\sqrt{5}",
+          "target": "3 \\sqrt{5}",
+          "stop_reason": "stop",
+          "output_tokens": 1683,
+          "latency_seconds": 52.16991315316409
+        },
+        "test/intermediate_algebra/1247.json": {
+          "correct": 1,
+          "input_identity_sha256": "cd4a71a84fa4105a9fcd15f85aa2454ba3467422bcebc17c158cd44f66b004b6",
+          "extracted_prediction": "-256",
+          "target": "-256",
+          "stop_reason": "stop",
+          "output_tokens": 6597,
+          "latency_seconds": 199.79044469352812
+        },
+        "test/algebra/351.json": {
+          "correct": 1,
+          "input_identity_sha256": "46e7d92d2616620b08e88a9501cbe802e6780594c5176320ede18996607096e4",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 1150,
+          "latency_seconds": 51.57775318901986
+        },
+        "test/prealgebra/1908.json": {
+          "correct": 1,
+          "input_identity_sha256": "a2b6779e519cd4e8d42c51d65fdd070a95b61da373cae62c80cec9509cb1b224",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1287,
+          "latency_seconds": 32.02230149321258
+        },
+        "test/intermediate_algebra/894.json": {
+          "correct": 1,
+          "input_identity_sha256": "5576a8d83edd5fc1d0012cc4c0c017b7ade5f0d3b4bc57dd2153ec9b1c663434",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 5980,
+          "latency_seconds": 197.1394257089123
+        },
+        "test/intermediate_algebra/1151.json": {
+          "correct": 1,
+          "input_identity_sha256": "267b97d7a06e1473b4c52c2ebf2b46b72136eb942473e9ad996440a8ceaabe89",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 4039,
+          "latency_seconds": 146.67220679484308
+        },
+        "test/algebra/1275.json": {
+          "correct": 1,
+          "input_identity_sha256": "b2ed6a106ca48525c0e71e73bc4cca2f32ccb0a1593d59b95b524044e5fbbd0e",
+          "extracted_prediction": "\\frac{\\sqrt{3}}{3}",
+          "target": "\\frac{\\sqrt{3}}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 1332,
+          "latency_seconds": 54.29515173099935
+        },
+        "test/geometry/221.json": {
+          "correct": 1,
+          "input_identity_sha256": "81c2f9f52d83e72dbac8f04ed5b8a58654514117fd4e3613e524085607010903",
+          "extracted_prediction": "30",
+          "target": "30",
+          "stop_reason": "stop",
+          "output_tokens": 1877,
+          "latency_seconds": 68.13840281404555
+        },
+        "test/number_theory/598.json": {
+          "correct": 1,
+          "input_identity_sha256": "da1109f455d0177707a1ec75645f96b4313171505c3e1d72b1a32def3d92b58f",
+          "extracted_prediction": "0.0000672",
+          "target": ".0000672",
+          "stop_reason": "stop",
+          "output_tokens": 3798,
+          "latency_seconds": 142.21593476366252
+        },
+        "test/counting_and_probability/508.json": {
+          "correct": 1,
+          "input_identity_sha256": "9b335ef976659a9e9f2ba9baa162d6ebca5317c5cdf4b77570340e41381cf550",
+          "extracted_prediction": "10080",
+          "target": "10,\\!080",
+          "stop_reason": "stop",
+          "output_tokens": 1277,
+          "latency_seconds": 40.73462274391204
+        },
+        "test/intermediate_algebra/1555.json": {
+          "correct": 1,
+          "input_identity_sha256": "f7e42adc267c2f64a3208dfdaf5f94b3695ef8b3f3e3f19c1b89a9ba309e2c09",
+          "extracted_prediction": "12",
+          "target": "12",
+          "stop_reason": "stop",
+          "output_tokens": 1350,
+          "latency_seconds": 44.16952466033399
+        },
+        "test/intermediate_algebra/1422.json": {
+          "correct": 1,
+          "input_identity_sha256": "a73ae4aab6d4cb47ae1757cae38e1e22cea9240500cb34a1380a9ad6d85363a8",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 3252,
+          "latency_seconds": 103.87640401814133
+        },
+        "test/precalculus/263.json": {
+          "correct": 1,
+          "input_identity_sha256": "ec152250601ac580c11bb6e94c2ceb30b056c70bbaae164719aaf860c2a55def",
+          "extracted_prediction": "\\begin{pmatrix}-2\\-14\\-7\\end{pmatrix}",
+          "target": "\\begin{pmatrix} -2 \\\\ -14 \\\\ -7 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 1753,
+          "latency_seconds": 59.9552839435637
+        },
+        "test/precalculus/117.json": {
+          "correct": 1,
+          "input_identity_sha256": "d74b97fdf37b5b03e3fac2fd04cb2fea9011a1ebdcd15179a3edf68f61fb74d1",
+          "extracted_prediction": "30",
+          "target": "30^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 7215,
+          "latency_seconds": 253.23449294269085
+        },
+        "test/algebra/2102.json": {
+          "correct": 1,
+          "input_identity_sha256": "74473564f6c40252185cdc2a86efa97cdb172eb8ccb1cb6e844d16978032e769",
+          "extracted_prediction": "56",
+          "target": "56",
+          "stop_reason": "stop",
+          "output_tokens": 1350,
+          "latency_seconds": 47.70972160343081
+        },
+        "test/number_theory/1201.json": {
+          "correct": 1,
+          "input_identity_sha256": "607373c43111d27b67102fcb6ace964fbdac3d02a867ceb99a40d0fb0debf4be",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 2423,
+          "latency_seconds": 83.57355750538409
+        },
+        "test/number_theory/89.json": {
+          "correct": 1,
+          "input_identity_sha256": "3003d8b3b4c4a5ab601412fe1740ab8a2126ca12e354cea93bc776df0c08a276",
+          "extracted_prediction": "900",
+          "target": "900",
+          "stop_reason": "stop",
+          "output_tokens": 2431,
+          "latency_seconds": 86.99707041867077
+        },
+        "test/precalculus/819.json": {
+          "correct": 1,
+          "input_identity_sha256": "648f1448356e8847977694ec0524648f9f9f2472b915e6073ab24d9a29021fd7",
+          "extracted_prediction": "C",
+          "target": "\\text{(C)}",
+          "stop_reason": "stop",
+          "output_tokens": 694,
+          "latency_seconds": 26.21644365787506
+        },
+        "test/algebra/2159.json": {
+          "correct": 1,
+          "input_identity_sha256": "480dad53d2c6e8ffe4cd35c7fee9e22c900fbda02ec5d1366382222561515d58",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 2290,
+          "latency_seconds": 105.7232752982527
+        },
+        "test/prealgebra/1458.json": {
+          "correct": 1,
+          "input_identity_sha256": "f1bd1d02c1c9f4dd1bf8364fce38bc9235eff678ef38aec3872d5b9ea26b1a18",
+          "extracted_prediction": "\\frac{1}{8}",
+          "target": "\\frac{1}{8}",
+          "stop_reason": "stop",
+          "output_tokens": 637,
+          "latency_seconds": 26.25995326600969
+        },
+        "test/counting_and_probability/71.json": {
+          "correct": 1,
+          "input_identity_sha256": "eebbe3b2ddb4d159fb1e99c8bb59255ae4c85427340c7c91cafb5de47f603176",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 2912,
+          "latency_seconds": 132.41295814327896
+        },
+        "test/algebra/661.json": {
+          "correct": 1,
+          "input_identity_sha256": "bd96c2ef4654f1fcb1093f20c66acfd4da7b1f71ccfe712283645c7142e078ef",
+          "extracted_prediction": "36",
+          "target": "36",
+          "stop_reason": "stop",
+          "output_tokens": 12172,
+          "latency_seconds": 447.94105633348227
+        },
+        "test/intermediate_algebra/1123.json": {
+          "correct": 1,
+          "input_identity_sha256": "14b180bd35f51c02b331234158b025de49b8acdb6fc9b687e37953832a561c46",
+          "extracted_prediction": "\\frac{10}{11}",
+          "target": "\\frac{10}{11}",
+          "stop_reason": "stop",
+          "output_tokens": 1883,
+          "latency_seconds": 97.85255357064307
+        },
+        "test/geometry/65.json": {
+          "correct": 1,
+          "input_identity_sha256": "20f2dc353f298a64d0ea7fd1cbdbe9ee1d80c4e2cc2d6070cf459697fdcbeead",
+          "extracted_prediction": "30",
+          "target": "30^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 9567,
+          "latency_seconds": 374.9205178525299
+        },
+        "test/intermediate_algebra/1837.json": {
+          "correct": 1,
+          "input_identity_sha256": "c97940a6837e31a007724849e02f967345ff0e3060c5f5c1d658efa604aaddbb",
+          "extracted_prediction": "34",
+          "target": "34",
+          "stop_reason": "stop",
+          "output_tokens": 2334,
+          "latency_seconds": 111.4420189652592
+        },
+        "test/prealgebra/1995.json": {
+          "correct": 1,
+          "input_identity_sha256": "6875281a429a92ac0771e5d67554acf911eb2ce8cf82cfbcb305bcc6692e9d94",
+          "extracted_prediction": "\\frac{8}{21}",
+          "target": "\\frac{8}{21}",
+          "stop_reason": "stop",
+          "output_tokens": 1041,
+          "latency_seconds": 40.49839186202735
+        },
+        "test/prealgebra/1742.json": {
+          "correct": 1,
+          "input_identity_sha256": "03c1b5d810813f6cc100675d74cccfe605469679b5da7d13ca41300bf4cb01e4",
+          "extracted_prediction": "\\frac{33}{100}",
+          "target": "\\dfrac{33}{100}",
+          "stop_reason": "stop",
+          "output_tokens": 694,
+          "latency_seconds": 25.760296779684722
+        },
+        "test/geometry/347.json": {
+          "correct": 1,
+          "input_identity_sha256": "e33ccc5239bafdb520f7867164b265c61f64550e3e6469b5f2081d500124f5d1",
+          "extracted_prediction": "76",
+          "target": "76^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 1118,
+          "latency_seconds": 38.709755409508944
+        },
+        "test/algebra/694.json": {
+          "correct": 1,
+          "input_identity_sha256": "9c02b42bd9f91d13385ded837dcfba39fba79aa93bf8ace9df03ab42720938ef",
+          "extracted_prediction": "16",
+          "target": "16",
+          "stop_reason": "stop",
+          "output_tokens": 1581,
+          "latency_seconds": 61.28168634977192
+        },
+        "test/number_theory/691.json": {
+          "correct": 1,
+          "input_identity_sha256": "330f050c2d681b6d228a355bdbe5f390e5a957a8a08a038fd63872b270cb3e49",
+          "extracted_prediction": "255",
+          "target": "255",
+          "stop_reason": "stop",
+          "output_tokens": 695,
+          "latency_seconds": 26.87254048604518
+        },
+        "test/number_theory/183.json": {
+          "correct": 1,
+          "input_identity_sha256": "3f2ba9b5c8ee6c27a3387950cce9b81b5bf0bcc55c4a5ed5d3fc6b32f3b74700",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 5196,
+          "latency_seconds": 216.55487661249936
+        },
+        "test/counting_and_probability/913.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba24f983c94f9e3994f8040ede937ce5d547dab1a7ae441f2ecd4a788600ae9d",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 1296,
+          "latency_seconds": 69.95982237905264
+        },
+        "test/intermediate_algebra/1300.json": {
+          "correct": 1,
+          "input_identity_sha256": "38c7749096f96195a65d70dfd5d436acf8c44c4fafb7ce198fdf6ad67e63db73",
+          "extracted_prediction": "16",
+          "target": "16",
+          "stop_reason": "stop",
+          "output_tokens": 795,
+          "latency_seconds": 50.01059266552329
+        },
+        "test/precalculus/580.json": {
+          "correct": 1,
+          "input_identity_sha256": "f88e54ae0a3b673e71e39f0f17498b610447ef3f4b73db2d1278806c95d8d89c",
+          "extracted_prediction": "120",
+          "target": "120^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 2078,
+          "latency_seconds": 96.20436548348516
+        },
+        "test/prealgebra/1787.json": {
+          "correct": 1,
+          "input_identity_sha256": "8cc9de33d9665168535be3db94e4046b25c3ac24defa95c924b0d3325ce55a9d",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1386,
+          "latency_seconds": 68.14578988403082
+        },
+        "test/algebra/1936.json": {
+          "correct": 1,
+          "input_identity_sha256": "a6f466dedff2eba6a80f00558d25c4ed6e8c949caa55398953d434718af27b91",
+          "extracted_prediction": "-1",
+          "target": "-1",
+          "stop_reason": "stop",
+          "output_tokens": 548,
+          "latency_seconds": 16.959633965976536
+        },
+        "test/algebra/425.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba26e523c9b63cf8119b01892c62591d06f03c84092797afd14611a362056627",
+          "extracted_prediction": "-128",
+          "target": "-128",
+          "stop_reason": "stop",
+          "output_tokens": 709,
+          "latency_seconds": 22.082583662122488
+        },
+        "test/algebra/634.json": {
+          "correct": 1,
+          "input_identity_sha256": "aef8a2d65c29033f32b932ca289b4fa9ae5d4105b7084c158e34942e03473f82",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 1293,
+          "latency_seconds": 63.007167669944465
+        },
+        "test/algebra/1457.json": {
+          "correct": 1,
+          "input_identity_sha256": "eb35a1e7e8945ab1b91200041bd96777903a084c654cfa496fdf06f88e1fa24d",
+          "extracted_prediction": "-120",
+          "target": "-120",
+          "stop_reason": "stop",
+          "output_tokens": 697,
+          "latency_seconds": 25.279601087793708
+        },
+        "test/number_theory/368.json": {
+          "correct": 1,
+          "input_identity_sha256": "9a268701367c0387c0b12648963764764bfcf1f944e20d46548d4eaf1e0e439b",
+          "extracted_prediction": "4343_6",
+          "target": "4343_6",
+          "stop_reason": "stop",
+          "output_tokens": 972,
+          "latency_seconds": 37.88921918813139
+        },
+        "test/prealgebra/1730.json": {
+          "correct": 1,
+          "input_identity_sha256": "ee5c190b8cb6ba4092fd033d718cff2370d5ddbb937099cc79667dd61d3c9e06",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 1444,
+          "latency_seconds": 55.22379983589053
+        },
+        "test/intermediate_algebra/446.json": {
+          "correct": 1,
+          "input_identity_sha256": "a6a8ffa38ec62f604f46236472dd8af82a3ab530b8a8d14b658ca39111f310b0",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 2846,
+          "latency_seconds": 125.55090293381363
+        },
+        "test/prealgebra/1238.json": {
+          "correct": 1,
+          "input_identity_sha256": "2401bedd79bd6c7a66e16b1375e8fd1fb9d08ea615ae554f3d6ccc3d31d412d5",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 771,
+          "latency_seconds": 34.034776576794684
+        },
+        "test/algebra/1529.json": {
+          "correct": 1,
+          "input_identity_sha256": "34084ec308b5e637a5a72035b9ad49a148a63639b068c578e3222186732f7158",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 575,
+          "latency_seconds": 29.889862828888
+        },
+        "test/algebra/1547.json": {
+          "correct": 1,
+          "input_identity_sha256": "39c0b662aade568f2896e0ba10506103c0f75c100dcc194e7d092dee901c8896",
+          "extracted_prediction": "6r^2-4r-24",
+          "target": "6r^2-4r-24",
+          "stop_reason": "stop",
+          "output_tokens": 1059,
+          "latency_seconds": 51.07083384599537
+        },
+        "test/intermediate_algebra/1566.json": {
+          "correct": 1,
+          "input_identity_sha256": "3a96071f89449019119d51d712436459edb0f0feb2c3748c46374935f4f9a930",
+          "extracted_prediction": "2k",
+          "target": "2k",
+          "stop_reason": "stop",
+          "output_tokens": 3382,
+          "latency_seconds": 147.9172240048647
+        },
+        "test/precalculus/96.json": {
+          "correct": 1,
+          "input_identity_sha256": "635e60553214f7a30bc5966a9f211af6d9f8b0936f11cb29fb544c13103745ce",
+          "extracted_prediction": "\\frac{7}{4}",
+          "target": "\\frac{7}{4}",
+          "stop_reason": "stop",
+          "output_tokens": 2433,
+          "latency_seconds": 121.4858570061624
+        },
+        "test/prealgebra/1743.json": {
+          "correct": 1,
+          "input_identity_sha256": "056bb54d64114add71a3ec17b506dbd0a5f2ee77397a9dcd959bee5f45c7a54c",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1191,
+          "latency_seconds": 66.83040101733059
+        },
+        "test/prealgebra/1733.json": {
+          "correct": 1,
+          "input_identity_sha256": "876e4a9a533053990cca36eca7df0fdca7b5f16388a8e498b3df386b5eea69f9",
+          "extracted_prediction": "-9",
+          "target": "-9",
+          "stop_reason": "stop",
+          "output_tokens": 21017,
+          "latency_seconds": 841.0363236423582
+        },
+        "test/algebra/170.json": {
+          "correct": 1,
+          "input_identity_sha256": "92db165a9c7a65d26a77f8c5005c0f5481752c3ae458d30459c9130bc07daa34",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 967,
+          "latency_seconds": 46.376431591808796
+        },
+        "test/number_theory/1185.json": {
+          "correct": 1,
+          "input_identity_sha256": "7fd367589760360d62fc83e30dabad8d703019fd5c60802a4df4b2798bad9dbe",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 2976,
+          "latency_seconds": 144.90307346079499
+        },
+        "test/algebra/518.json": {
+          "correct": 1,
+          "input_identity_sha256": "6e155391e112e6a60c4457376f03e2d82750f02187e34c4463cc9f119de23e85",
+          "extracted_prediction": "\\frac{3}{4}",
+          "target": "\\frac 34",
+          "stop_reason": "stop",
+          "output_tokens": 1365,
+          "latency_seconds": 41.48470428492874
+        },
+        "test/geometry/795.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba965623143a858e9219c5efe80c9cac692ed76af6111b5f4782d392c121814a",
+          "extracted_prediction": "\\frac{\\sqrt{21}}{5}",
+          "target": "\\frac{\\sqrt{21}}{5}",
+          "stop_reason": "stop",
+          "output_tokens": 1898,
+          "latency_seconds": 70.80111403949559
+        },
+        "test/precalculus/1291.json": {
+          "correct": 1,
+          "input_identity_sha256": "476cdc2e089c90efb0c64e3637c01dc0bf46b74f79b1a39c280be176273a90d5",
+          "extracted_prediction": "1-12i",
+          "target": "1 - 12i",
+          "stop_reason": "stop",
+          "output_tokens": 1616,
+          "latency_seconds": 47.6745501216501
+        },
+        "test/prealgebra/1227.json": {
+          "correct": 1,
+          "input_identity_sha256": "97fa46fa015f3277fac234674321887105fb565e612892e9d5a83ee5d7fa7a98",
+          "extracted_prediction": "60",
+          "target": "60",
+          "stop_reason": "stop",
+          "output_tokens": 1185,
+          "latency_seconds": 37.04501072037965
+        },
+        "test/precalculus/625.json": {
+          "correct": 0,
+          "input_identity_sha256": "f38c95b96a9458a6077ea981517a5c2bf71a92fb6cbb076526977505a751c0af",
+          "extracted_prediction": "\\begin{pmatrix}\\frac{16}{49}\\\\[4pt]\\frac{48}{49}\\\\[4pt]\\frac{24}{49}\\end{pmatrix}",
+          "target": "\\begin{pmatrix} 16/49 \\\\ 48/49 \\\\ 24/49 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 1116,
+          "latency_seconds": 36.65670116432011
+        },
+        "test/precalculus/1201.json": {
+          "correct": 1,
+          "input_identity_sha256": "d28ae9fa29f534d4260270962bcbce0767e11108039ceb73553096bb9fa4d69d",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 9821,
+          "latency_seconds": 415.209979983978
+        },
+        "test/precalculus/681.json": {
+          "correct": 1,
+          "input_identity_sha256": "4ae6b0d599bb5315062c74661a561371b2a3cbff614b37b6ffafb1a821fb542c",
+          "extracted_prediction": "\\frac{1}{8}",
+          "target": "\\frac{1}{8}",
+          "stop_reason": "stop",
+          "output_tokens": 2009,
+          "latency_seconds": 65.22184384334832
+        },
+        "test/number_theory/203.json": {
+          "correct": 1,
+          "input_identity_sha256": "90394031029f1e64f971ab3a87332e7663a0f22353179d96521bbbd9267b02af",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 9748,
+          "latency_seconds": 390.14145849552006
+        },
+        "test/geometry/843.json": {
+          "correct": 1,
+          "input_identity_sha256": "74092c216a8046dfc89f450b9e7cdb1015e0aa0bada18b5f1ecdd6836f0558e8",
+          "extracted_prediction": "6\\sqrt{2}",
+          "target": "6\\sqrt{2}",
+          "stop_reason": "stop",
+          "output_tokens": 1131,
+          "latency_seconds": 39.83076626621187
+        },
+        "test/algebra/2080.json": {
+          "correct": 1,
+          "input_identity_sha256": "bf27ca2efd55f1460f022cf66b9257273734a83ee8b65f519c11bf50da9c9e97",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 1143,
+          "latency_seconds": 36.55795982759446
+        },
+        "test/intermediate_algebra/1014.json": {
+          "correct": 1,
+          "input_identity_sha256": "1c89a21afa5393f7d4efcf512570b18bbc0924a3f74e6527649ef96eab6b6614",
+          "extracted_prediction": "50",
+          "target": "50",
+          "stop_reason": "stop",
+          "output_tokens": 1547,
+          "latency_seconds": 54.072552791796625
+        },
+        "test/precalculus/826.json": {
+          "correct": 1,
+          "input_identity_sha256": "e658d4b8c4f0ad9411eda7b953d9479e9856d49081a9480df5191131119218b7",
+          "extracted_prediction": "\\frac{1}{16}",
+          "target": "\\frac{1}{16}",
+          "stop_reason": "stop",
+          "output_tokens": 8713,
+          "latency_seconds": 343.9042660165578
+        },
+        "test/algebra/435.json": {
+          "correct": 1,
+          "input_identity_sha256": "9a103cea31c99850ff4cefa4f0e8e51d433e778777597fcc5ca5b93990eca39e",
+          "extracted_prediction": "25",
+          "target": "25",
+          "stop_reason": "stop",
+          "output_tokens": 491,
+          "latency_seconds": 18.41320059541613
+        },
+        "test/number_theory/459.json": {
+          "correct": 1,
+          "input_identity_sha256": "15117acec68effa800c774dbd9e8c18d50463c3cc6ac3d87e8a39a0c2f73ece0",
+          "extracted_prediction": "\\frac{639}{40}",
+          "target": "\\frac{639}{40}",
+          "stop_reason": "stop",
+          "output_tokens": 2429,
+          "latency_seconds": 83.37311778217554
+        },
+        "test/prealgebra/846.json": {
+          "correct": 1,
+          "input_identity_sha256": "7992d93b927d4527faa8206812c3a033be1c12d499c84c8d91e64dc3721e722b",
+          "extracted_prediction": "84",
+          "target": "84",
+          "stop_reason": "stop",
+          "output_tokens": 584,
+          "latency_seconds": 19.681113675236702
+        },
+        "test/intermediate_algebra/834.json": {
+          "correct": 1,
+          "input_identity_sha256": "6e375814ddf5f3e7ad2dbc1b7650943d4284f3aab38d392ab2644e94cf9541e3",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 2568,
+          "latency_seconds": 88.73276845738292
+        },
+        "test/prealgebra/805.json": {
+          "correct": 1,
+          "input_identity_sha256": "f87b1b40b27fb6152fd867ede5ce61b0f597ce96d4562dfeb917667aec7bbc1c",
+          "extracted_prediction": "41",
+          "target": "41",
+          "stop_reason": "stop",
+          "output_tokens": 3238,
+          "latency_seconds": 115.40230261161923
+        },
+        "test/intermediate_algebra/199.json": {
+          "correct": 1,
+          "input_identity_sha256": "2e580296983ba06cbab8df255879a8c0b52c5ab7a0aa9c7717d98dcabae964c8",
+          "extracted_prediction": "x^8+x^7+x^6+x^5+x^4+x^3+x^2+x+1",
+          "target": "x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1",
+          "stop_reason": "stop",
+          "output_tokens": 4862,
+          "latency_seconds": 168.30360573902726
+        },
+        "test/number_theory/22.json": {
+          "correct": 1,
+          "input_identity_sha256": "19c2b69a5be6d1d9aedb133cc7b348452b8c9392bf091d77586b35f0f461c2a7",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 2585,
+          "latency_seconds": 93.1468745060265
+        },
+        "test/precalculus/356.json": {
+          "correct": 1,
+          "input_identity_sha256": "ce46f6dc9a1b64eb227a046777c7a6ff9738548a8686976f12dfb3e2a3eaeaaf",
+          "extracted_prediction": "-2x",
+          "target": "y = -2x",
+          "stop_reason": "stop",
+          "output_tokens": 1378,
+          "latency_seconds": 57.04574405029416
+        },
+        "test/intermediate_algebra/1232.json": {
+          "correct": 1,
+          "input_identity_sha256": "cf7967a7066f479bda66ba91b63e50274d3f232e1a59984691114cfa0c77d80a",
+          "extracted_prediction": "\\frac{5}{13}",
+          "target": "\\frac{5}{13}",
+          "stop_reason": "stop",
+          "output_tokens": 1043,
+          "latency_seconds": 43.86815885733813
+        },
+        "test/intermediate_algebra/1365.json": {
+          "correct": 1,
+          "input_identity_sha256": "76e29e3cab85783d18a8489c4b7abc2ebbca9f153a7e298c20df2b09b955637d",
+          "extracted_prediction": "15",
+          "target": "15",
+          "stop_reason": "stop",
+          "output_tokens": 3561,
+          "latency_seconds": 149.8522192798555
+        },
+        "test/precalculus/801.json": {
+          "correct": 1,
+          "input_identity_sha256": "68ec6ab731b49cfecc2cc9974c94a8834c08a3137cfb2619f6a546c07254e3c4",
+          "extracted_prediction": "55",
+          "target": "55^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 17112,
+          "latency_seconds": 679.6271617924795
+        },
+        "test/precalculus/1082.json": {
+          "correct": 1,
+          "input_identity_sha256": "bbf7b4f1444b400e38847b06dfd536d1ca359e7e268d3dc1b92dca1110620d07",
+          "extracted_prediction": "\\frac{8}{15}",
+          "target": "\\frac{8}{15}",
+          "stop_reason": "stop",
+          "output_tokens": 6337,
+          "latency_seconds": 253.9633591612801
+        },
+        "test/algebra/1553.json": {
+          "correct": 0,
+          "input_identity_sha256": "84f34a355acac10c51a988e7dd6aad9e37ec6a4ea03ab961bd108e3ffb32170d",
+          "extracted_prediction": "1or2",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 12825,
+          "latency_seconds": 449.0998763823882
+        },
+        "test/intermediate_algebra/101.json": {
+          "correct": 1,
+          "input_identity_sha256": "2aa018cf1a6965718c7aa1b60cce0dceec151dd209730c6f4ce05ee506b5e11b",
+          "extracted_prediction": "10",
+          "target": "10",
+          "stop_reason": "stop",
+          "output_tokens": 10539,
+          "latency_seconds": 361.1579388594255
+        },
+        "test/prealgebra/631.json": {
+          "correct": 1,
+          "input_identity_sha256": "3395ef3283cc422af0d9604959ae47913e27b3981a3ae25f52736b5b7d2b4aff",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "max_tokens",
+          "output_tokens": 32768,
+          "latency_seconds": 1116.760050448589
+        },
+        "test/geometry/477.json": {
+          "correct": 0,
+          "input_identity_sha256": "5618a545c01969719334d53fda501a6287d591cb488bd88eee4f88399de9fbef",
+          "extracted_prediction": "36",
+          "target": "216",
+          "stop_reason": "max_tokens",
+          "output_tokens": 32768,
+          "latency_seconds": 1119.551510871388
+        }
+      },
+      "interpretation": "Official scores preserved. No manual rescoring; accuracy runtime is not throughput benchmark performance."
+    },
+    {
+      "archive": "outputs\\competition-outcome-20261108\\outcome-v1-accuracy-common-s16-verified.zip",
+      "archive_sha256": "b9d562b13034962f9734f56c22bf4f2d655ab2f92738d3aa6e1cf3b5cd289c0a",
+      "job_id": "outcome-v1-accuracy-common-s16",
+      "arm": "common-s16",
+      "count": 105,
+      "correct": 102,
+      "accuracy": 0.9714285714285714,
+      "official_threshold_passed": true,
+      "stop_reasons": {
+        "stop": 105
+      },
+      "wrong_question_ids": [
+        "test/precalculus/1300.json",
+        "test/precalculus/625.json",
+        "test/algebra/1553.json"
+      ],
+      "records": {
+        "test/number_theory/572.json": {
+          "correct": 1,
+          "input_identity_sha256": "4e3043f6b6c12a82382d75022eb82f236356d99d93879e2bf89fc310d35d2e0c",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 742,
+          "latency_seconds": 21.018776316195726
+        },
+        "test/algebra/2036.json": {
+          "correct": 1,
+          "input_identity_sha256": "7439b64ed9c7a5538c4259cc6d67ffa2c41e4c7e640f7333870363bf435cfe22",
+          "extracted_prediction": "3\\sqrt{13}",
+          "target": "3\\sqrt{13}",
+          "stop_reason": "stop",
+          "output_tokens": 896,
+          "latency_seconds": 27.740243822336197
+        },
+        "test/algebra/1098.json": {
+          "correct": 1,
+          "input_identity_sha256": "7f9a68396c312b41110cd4c6c4cbd0a533edbd2411787419bbcf953ef77d056b",
+          "extracted_prediction": "6+9i",
+          "target": "6+9i",
+          "stop_reason": "stop",
+          "output_tokens": 938,
+          "latency_seconds": 31.088282899931073
+        },
+        "test/algebra/2584.json": {
+          "correct": 1,
+          "input_identity_sha256": "2f47d70f064885f2eeb8b7765a470c74ae0eabbf77308127161b325eb6133a10",
+          "extracted_prediction": "\\frac{14}{3}",
+          "target": "\\frac{14}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 1127,
+          "latency_seconds": 36.68608421366662
+        },
+        "test/number_theory/515.json": {
+          "correct": 1,
+          "input_identity_sha256": "abe9f28b678dd35892e8ec2e20c7c7ad985fcf0e4cf20ab497f8066b65673d78",
+          "extracted_prediction": "27",
+          "target": "27",
+          "stop_reason": "stop",
+          "output_tokens": 1459,
+          "latency_seconds": 44.76994048804045
+        },
+        "test/algebra/769.json": {
+          "correct": 1,
+          "input_identity_sha256": "843a51ecb19e0c525e211e249c25233bbb3106e73d54f1fe6197d7756f75ea78",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 636,
+          "latency_seconds": 13.413012942299247
+        },
+        "test/number_theory/864.json": {
+          "correct": 1,
+          "input_identity_sha256": "d1a057eac77b1a9db7f46af9353167b3cdfe93f49c33519876808a8c3badf6a1",
+          "extracted_prediction": "52_8",
+          "target": "52_8",
+          "stop_reason": "stop",
+          "output_tokens": 1446,
+          "latency_seconds": 41.41633478924632
+        },
+        "test/number_theory/45.json": {
+          "correct": 1,
+          "input_identity_sha256": "92c0a3f60f3de39c7e14077a37684ed610e72da0cd5f89c391c966aa4be23292",
+          "extracted_prediction": "23",
+          "target": "23",
+          "stop_reason": "stop",
+          "output_tokens": 1437,
+          "latency_seconds": 38.65387127548456
+        },
+        "test/geometry/178.json": {
+          "correct": 1,
+          "input_identity_sha256": "5feaefa759193a6642f84185112a79a5811eff49c8cdd90660eda33e3f74becc",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 1371,
+          "latency_seconds": 37.95031515136361
+        },
+        "test/geometry/967.json": {
+          "correct": 1,
+          "input_identity_sha256": "9ca2fd8d2c915a0d69b9cf290763fce5de69e4d2cbb8076a93f570698c93dc36",
+          "extracted_prediction": "72",
+          "target": "72",
+          "stop_reason": "stop",
+          "output_tokens": 1640,
+          "latency_seconds": 51.75033059902489
+        },
+        "test/algebra/2046.json": {
+          "correct": 1,
+          "input_identity_sha256": "781b42cb98ce6221bb5013a2b3a93af198e38f166d6eab0fb17e6531001eb60a",
+          "extracted_prediction": "x^3+3x-6",
+          "target": "x^3+3x-6",
+          "stop_reason": "stop",
+          "output_tokens": 1051,
+          "latency_seconds": 31.247018268331885
+        },
+        "test/prealgebra/1761.json": {
+          "correct": 1,
+          "input_identity_sha256": "be87a3788387489b4254d2df18beed6841d8debd238aaed87d2dee8441f7e8e4",
+          "extracted_prediction": "\\frac{3}{2}",
+          "target": "\\frac{3}{2}",
+          "stop_reason": "stop",
+          "output_tokens": 870,
+          "latency_seconds": 27.515751970000565
+        },
+        "test/number_theory/1032.json": {
+          "correct": 1,
+          "input_identity_sha256": "6601c24afa0851f941893e1e28b6ea1e7659047a7260e56bdbca821d0fdcad58",
+          "extracted_prediction": "2220",
+          "target": "2220",
+          "stop_reason": "stop",
+          "output_tokens": 3715,
+          "latency_seconds": 111.53837477136403
+        },
+        "test/algebra/2023.json": {
+          "correct": 1,
+          "input_identity_sha256": "601aa30360fff98b203a310667fc1e088b2b748745e00ef585dee10d0d2d0d98",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1229,
+          "latency_seconds": 35.934094990603626
+        },
+        "test/algebra/1035.json": {
+          "correct": 1,
+          "input_identity_sha256": "4831e83edf635a7ad320c252db935439e01acbefa7f8227a68bafb84dc81ea16",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1410,
+          "latency_seconds": 46.01169091183692
+        },
+        "test/counting_and_probability/23957.json": {
+          "correct": 1,
+          "input_identity_sha256": "6772ce0ee1c7fa5bc5291b9fcd120f4078a29d1b7c08d5c940cb375671f51df4",
+          "extracted_prediction": "210",
+          "target": "210",
+          "stop_reason": "stop",
+          "output_tokens": 921,
+          "latency_seconds": 43.24182757362723
+        },
+        "test/prealgebra/1804.json": {
+          "correct": 1,
+          "input_identity_sha256": "2a40a11eb8bbce28e5a3928b27155764e970c8d08b765183fb290062dca908fc",
+          "extracted_prediction": "29",
+          "target": "29",
+          "stop_reason": "stop",
+          "output_tokens": 1298,
+          "latency_seconds": 56.06439059879631
+        },
+        "test/intermediate_algebra/1898.json": {
+          "correct": 1,
+          "input_identity_sha256": "ea19e7ca0dfafe4d39108691628d3384511bf1817b674d61dd41561bd4a4e3ef",
+          "extracted_prediction": "-5",
+          "target": "-5",
+          "stop_reason": "stop",
+          "output_tokens": 1474,
+          "latency_seconds": 74.81633399333805
+        },
+        "test/precalculus/1300.json": {
+          "correct": 0,
+          "input_identity_sha256": "665ab88ab2d94541a16a4535847faed48405085f280b4726b333310a3d2ceee4",
+          "extracted_prediction": "\\displaystylev=\\begin{pmatrix}-\\frac{1}{3}\\\\[4pt]\\frac{2}{3}\\\\[4pt]\\frac{5}{3}\\end{pmatrix}",
+          "target": "\\begin{pmatrix} -1/3 \\\\ 2/3 \\\\ 5/3 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 2054,
+          "latency_seconds": 99.01722841244191
+        },
+        "test/algebra/1332.json": {
+          "correct": 1,
+          "input_identity_sha256": "25a7d2eede1e8feec1c8a7fed346c5cba4fff46675828225fce9624b55f264bc",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 933,
+          "latency_seconds": 43.29912546556443
+        },
+        "test/number_theory/847.json": {
+          "correct": 1,
+          "input_identity_sha256": "5b29d929aec5a93a4fd4e071878d3767c196e1a67274b1911f6012c9dd4ce2fc",
+          "extracted_prediction": "4210_5",
+          "target": "4210_{5}",
+          "stop_reason": "stop",
+          "output_tokens": 1046,
+          "latency_seconds": 30.733787608332932
+        },
+        "test/prealgebra/1686.json": {
+          "correct": 1,
+          "input_identity_sha256": "7b81df52f074fde19234fb37b9035d7975baa5488f2ab9a939d7bc02cd3a7f82",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 1341,
+          "latency_seconds": 36.59595044981688
+        },
+        "test/intermediate_algebra/607.json": {
+          "correct": 1,
+          "input_identity_sha256": "ddea1b9b8c83888f3ac625c9755ec8116eb6b28f868fe22101cbca8791f99b05",
+          "extracted_prediction": "13535",
+          "target": "13535",
+          "stop_reason": "stop",
+          "output_tokens": 7338,
+          "latency_seconds": 250.5048988778144
+        },
+        "test/prealgebra/1807.json": {
+          "correct": 1,
+          "input_identity_sha256": "b3dfe125eceaf00ce595b20f4079f1c656391c49755bf80ad3514aca76418987",
+          "extracted_prediction": "120",
+          "target": "120",
+          "stop_reason": "stop",
+          "output_tokens": 1237,
+          "latency_seconds": 40.29051549732685
+        },
+        "test/intermediate_algebra/1000.json": {
+          "correct": 1,
+          "input_identity_sha256": "0b29da330f56f419f1fa3dc20c13d869638b15d52c2a02a3c7bcc7dde6c6c170",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 7668,
+          "latency_seconds": 266.9375799894333
+        },
+        "test/algebra/1519.json": {
+          "correct": 1,
+          "input_identity_sha256": "02184e284ef04e8a025d993acfcad63d6f89c2c92dbf1f4544845606999c4875",
+          "extracted_prediction": "\\frac{\\sqrt{3}}{3}",
+          "target": "\\frac{\\sqrt{3}}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 526,
+          "latency_seconds": 19.83129064552486
+        },
+        "test/precalculus/477.json": {
+          "correct": 1,
+          "input_identity_sha256": "ecfdbdf4f584cc5e61ae534dd79745715d1e1470a49d6b1d61180e2d667234e2",
+          "extracted_prediction": "3\\sqrt{5}",
+          "target": "3 \\sqrt{5}",
+          "stop_reason": "stop",
+          "output_tokens": 1726,
+          "latency_seconds": 57.74882747139782
+        },
+        "test/algebra/351.json": {
+          "correct": 1,
+          "input_identity_sha256": "46e7d92d2616620b08e88a9501cbe802e6780594c5176320ede18996607096e4",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 1723,
+          "latency_seconds": 53.32072845567018
+        },
+        "test/intermediate_algebra/894.json": {
+          "correct": 1,
+          "input_identity_sha256": "5576a8d83edd5fc1d0012cc4c0c017b7ade5f0d3b4bc57dd2153ec9b1c663434",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 6350,
+          "latency_seconds": 233.0009923055768
+        },
+        "test/prealgebra/1908.json": {
+          "correct": 1,
+          "input_identity_sha256": "a2b6779e519cd4e8d42c51d65fdd070a95b61da373cae62c80cec9509cb1b224",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1278,
+          "latency_seconds": 39.58933815173805
+        },
+        "test/algebra/661.json": {
+          "correct": 1,
+          "input_identity_sha256": "bd96c2ef4654f1fcb1093f20c66acfd4da7b1f71ccfe712283645c7142e078ef",
+          "extracted_prediction": "36",
+          "target": "36",
+          "stop_reason": "stop",
+          "output_tokens": 6626,
+          "latency_seconds": 211.0757882045582
+        },
+        "test/algebra/1275.json": {
+          "correct": 1,
+          "input_identity_sha256": "b2ed6a106ca48525c0e71e73bc4cca2f32ccb0a1593d59b95b524044e5fbbd0e",
+          "extracted_prediction": "\\frac{\\sqrt{3}}{3}",
+          "target": "\\frac{\\sqrt{3}}{3}",
+          "stop_reason": "stop",
+          "output_tokens": 1585,
+          "latency_seconds": 55.48554422240704
+        },
+        "test/geometry/221.json": {
+          "correct": 1,
+          "input_identity_sha256": "81c2f9f52d83e72dbac8f04ed5b8a58654514117fd4e3613e524085607010903",
+          "extracted_prediction": "30",
+          "target": "30",
+          "stop_reason": "stop",
+          "output_tokens": 1600,
+          "latency_seconds": 57.899363204836845
+        },
+        "test/number_theory/598.json": {
+          "correct": 1,
+          "input_identity_sha256": "da1109f455d0177707a1ec75645f96b4313171505c3e1d72b1a32def3d92b58f",
+          "extracted_prediction": "0.0000672",
+          "target": ".0000672",
+          "stop_reason": "stop",
+          "output_tokens": 5501,
+          "latency_seconds": 190.29475204646587
+        },
+        "test/counting_and_probability/508.json": {
+          "correct": 1,
+          "input_identity_sha256": "9b335ef976659a9e9f2ba9baa162d6ebca5317c5cdf4b77570340e41381cf550",
+          "extracted_prediction": "10080",
+          "target": "10,\\!080",
+          "stop_reason": "stop",
+          "output_tokens": 2025,
+          "latency_seconds": 76.38329289108515
+        },
+        "test/intermediate_algebra/1151.json": {
+          "correct": 1,
+          "input_identity_sha256": "267b97d7a06e1473b4c52c2ebf2b46b72136eb942473e9ad996440a8ceaabe89",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 8799,
+          "latency_seconds": 317.1523830741644
+        },
+        "test/intermediate_algebra/1555.json": {
+          "correct": 1,
+          "input_identity_sha256": "f7e42adc267c2f64a3208dfdaf5f94b3695ef8b3f3e3f19c1b89a9ba309e2c09",
+          "extracted_prediction": "12",
+          "target": "12",
+          "stop_reason": "stop",
+          "output_tokens": 1763,
+          "latency_seconds": 74.09583919402212
+        },
+        "test/intermediate_algebra/1422.json": {
+          "correct": 1,
+          "input_identity_sha256": "a73ae4aab6d4cb47ae1757cae38e1e22cea9240500cb34a1380a9ad6d85363a8",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 3548,
+          "latency_seconds": 141.09289020020515
+        },
+        "test/intermediate_algebra/1247.json": {
+          "correct": 1,
+          "input_identity_sha256": "cd4a71a84fa4105a9fcd15f85aa2454ba3467422bcebc17c158cd44f66b004b6",
+          "extracted_prediction": "-256",
+          "target": "-256",
+          "stop_reason": "stop",
+          "output_tokens": 14574,
+          "latency_seconds": 531.3874027812853
+        },
+        "test/precalculus/263.json": {
+          "correct": 1,
+          "input_identity_sha256": "ec152250601ac580c11bb6e94c2ceb30b056c70bbaae164719aaf860c2a55def",
+          "extracted_prediction": "\\begin{pmatrix}-2\\-14\\-7\\end{pmatrix}",
+          "target": "\\begin{pmatrix} -2 \\\\ -14 \\\\ -7 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 1497,
+          "latency_seconds": 61.20319439470768
+        },
+        "test/algebra/2102.json": {
+          "correct": 1,
+          "input_identity_sha256": "74473564f6c40252185cdc2a86efa97cdb172eb8ccb1cb6e844d16978032e769",
+          "extracted_prediction": "56",
+          "target": "56",
+          "stop_reason": "stop",
+          "output_tokens": 945,
+          "latency_seconds": 34.011581488884985
+        },
+        "test/number_theory/1201.json": {
+          "correct": 1,
+          "input_identity_sha256": "607373c43111d27b67102fcb6ace964fbdac3d02a867ceb99a40d0fb0debf4be",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1551,
+          "latency_seconds": 53.646636811085045
+        },
+        "test/precalculus/117.json": {
+          "correct": 1,
+          "input_identity_sha256": "d74b97fdf37b5b03e3fac2fd04cb2fea9011a1ebdcd15179a3edf68f61fb74d1",
+          "extracted_prediction": "30",
+          "target": "30^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 10197,
+          "latency_seconds": 359.55192061141133
+        },
+        "test/number_theory/89.json": {
+          "correct": 1,
+          "input_identity_sha256": "3003d8b3b4c4a5ab601412fe1740ab8a2126ca12e354cea93bc776df0c08a276",
+          "extracted_prediction": "900",
+          "target": "900",
+          "stop_reason": "stop",
+          "output_tokens": 1672,
+          "latency_seconds": 56.65885893069208
+        },
+        "test/precalculus/819.json": {
+          "correct": 1,
+          "input_identity_sha256": "648f1448356e8847977694ec0524648f9f9f2472b915e6073ab24d9a29021fd7",
+          "extracted_prediction": "C",
+          "target": "\\text{(C)}",
+          "stop_reason": "stop",
+          "output_tokens": 816,
+          "latency_seconds": 30.87770260311663
+        },
+        "test/prealgebra/1458.json": {
+          "correct": 1,
+          "input_identity_sha256": "f1bd1d02c1c9f4dd1bf8364fce38bc9235eff678ef38aec3872d5b9ea26b1a18",
+          "extracted_prediction": "\\frac{1}{8}",
+          "target": "\\frac{1}{8}",
+          "stop_reason": "stop",
+          "output_tokens": 883,
+          "latency_seconds": 30.232322826981544
+        },
+        "test/algebra/2159.json": {
+          "correct": 1,
+          "input_identity_sha256": "480dad53d2c6e8ffe4cd35c7fee9e22c900fbda02ec5d1366382222561515d58",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 2353,
+          "latency_seconds": 82.80087539181113
+        },
+        "test/intermediate_algebra/1123.json": {
+          "correct": 1,
+          "input_identity_sha256": "14b180bd35f51c02b331234158b025de49b8acdb6fc9b687e37953832a561c46",
+          "extracted_prediction": "\\frac{10}{11}",
+          "target": "\\frac{10}{11}",
+          "stop_reason": "stop",
+          "output_tokens": 1462,
+          "latency_seconds": 55.47132740262896
+        },
+        "test/intermediate_algebra/1837.json": {
+          "correct": 1,
+          "input_identity_sha256": "c97940a6837e31a007724849e02f967345ff0e3060c5f5c1d658efa604aaddbb",
+          "extracted_prediction": "34",
+          "target": "34",
+          "stop_reason": "stop",
+          "output_tokens": 1862,
+          "latency_seconds": 72.43678925000131
+        },
+        "test/prealgebra/1995.json": {
+          "correct": 1,
+          "input_identity_sha256": "6875281a429a92ac0771e5d67554acf911eb2ce8cf82cfbcb305bcc6692e9d94",
+          "extracted_prediction": "\\frac{8}{21}",
+          "target": "\\frac{8}{21}",
+          "stop_reason": "stop",
+          "output_tokens": 1354,
+          "latency_seconds": 54.6365847280249
+        },
+        "test/counting_and_probability/71.json": {
+          "correct": 1,
+          "input_identity_sha256": "eebbe3b2ddb4d159fb1e99c8bb59255ae4c85427340c7c91cafb5de47f603176",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 3455,
+          "latency_seconds": 130.49202852882445
+        },
+        "test/algebra/694.json": {
+          "correct": 1,
+          "input_identity_sha256": "9c02b42bd9f91d13385ded837dcfba39fba79aa93bf8ace9df03ab42720938ef",
+          "extracted_prediction": "16",
+          "target": "16",
+          "stop_reason": "stop",
+          "output_tokens": 1362,
+          "latency_seconds": 64.81212849449366
+        },
+        "test/prealgebra/1742.json": {
+          "correct": 1,
+          "input_identity_sha256": "03c1b5d810813f6cc100675d74cccfe605469679b5da7d13ca41300bf4cb01e4",
+          "extracted_prediction": "\\frac{33}{100}",
+          "target": "\\dfrac{33}{100}",
+          "stop_reason": "stop",
+          "output_tokens": 491,
+          "latency_seconds": 29.183992639183998
+        },
+        "test/geometry/347.json": {
+          "correct": 1,
+          "input_identity_sha256": "e33ccc5239bafdb520f7867164b265c61f64550e3e6469b5f2081d500124f5d1",
+          "extracted_prediction": "76",
+          "target": "76^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 1660,
+          "latency_seconds": 71.7043477203697
+        },
+        "test/number_theory/691.json": {
+          "correct": 1,
+          "input_identity_sha256": "330f050c2d681b6d228a355bdbe5f390e5a957a8a08a038fd63872b270cb3e49",
+          "extracted_prediction": "255",
+          "target": "255",
+          "stop_reason": "stop",
+          "output_tokens": 800,
+          "latency_seconds": 31.920481233857572
+        },
+        "test/precalculus/580.json": {
+          "correct": 1,
+          "input_identity_sha256": "f88e54ae0a3b673e71e39f0f17498b610447ef3f4b73db2d1278806c95d8d89c",
+          "extracted_prediction": "120",
+          "target": "120^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 2214,
+          "latency_seconds": 98.1842727791518
+        },
+        "test/prealgebra/1787.json": {
+          "correct": 1,
+          "input_identity_sha256": "8cc9de33d9665168535be3db94e4046b25c3ac24defa95c924b0d3325ce55a9d",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 1119,
+          "latency_seconds": 45.30798328574747
+        },
+        "test/counting_and_probability/913.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba24f983c94f9e3994f8040ede937ce5d547dab1a7ae441f2ecd4a788600ae9d",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 1630,
+          "latency_seconds": 76.10061790887266
+        },
+        "test/number_theory/183.json": {
+          "correct": 1,
+          "input_identity_sha256": "3f2ba9b5c8ee6c27a3387950cce9b81b5bf0bcc55c4a5ed5d3fc6b32f3b74700",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 6419,
+          "latency_seconds": 250.47692215628922
+        },
+        "test/algebra/634.json": {
+          "correct": 1,
+          "input_identity_sha256": "aef8a2d65c29033f32b932ca289b4fa9ae5d4105b7084c158e34942e03473f82",
+          "extracted_prediction": "4",
+          "target": "4",
+          "stop_reason": "stop",
+          "output_tokens": 1470,
+          "latency_seconds": 58.669385785236955
+        },
+        "test/intermediate_algebra/1300.json": {
+          "correct": 1,
+          "input_identity_sha256": "38c7749096f96195a65d70dfd5d436acf8c44c4fafb7ce198fdf6ad67e63db73",
+          "extracted_prediction": "16",
+          "target": "16",
+          "stop_reason": "stop",
+          "output_tokens": 1867,
+          "latency_seconds": 75.04005221370608
+        },
+        "test/algebra/1936.json": {
+          "correct": 1,
+          "input_identity_sha256": "a6f466dedff2eba6a80f00558d25c4ed6e8c949caa55398953d434718af27b91",
+          "extracted_prediction": "-1",
+          "target": "-1",
+          "stop_reason": "stop",
+          "output_tokens": 541,
+          "latency_seconds": 19.867794518359005
+        },
+        "test/algebra/425.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba26e523c9b63cf8119b01892c62591d06f03c84092797afd14611a362056627",
+          "extracted_prediction": "-128",
+          "target": "-128",
+          "stop_reason": "stop",
+          "output_tokens": 640,
+          "latency_seconds": 23.885075519792736
+        },
+        "test/intermediate_algebra/446.json": {
+          "correct": 1,
+          "input_identity_sha256": "a6a8ffa38ec62f604f46236472dd8af82a3ab530b8a8d14b658ca39111f310b0",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 1620,
+          "latency_seconds": 60.6354603972286
+        },
+        "test/algebra/1457.json": {
+          "correct": 1,
+          "input_identity_sha256": "eb35a1e7e8945ab1b91200041bd96777903a084c654cfa496fdf06f88e1fa24d",
+          "extracted_prediction": "-120",
+          "target": "-120",
+          "stop_reason": "stop",
+          "output_tokens": 820,
+          "latency_seconds": 30.32936174981296
+        },
+        "test/geometry/65.json": {
+          "correct": 1,
+          "input_identity_sha256": "20f2dc353f298a64d0ea7fd1cbdbe9ee1d80c4e2cc2d6070cf459697fdcbeead",
+          "extracted_prediction": "30",
+          "target": "30^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 14753,
+          "latency_seconds": 563.3383501190692
+        },
+        "test/prealgebra/1733.json": {
+          "correct": 1,
+          "input_identity_sha256": "876e4a9a533053990cca36eca7df0fdca7b5f16388a8e498b3df386b5eea69f9",
+          "extracted_prediction": "-9",
+          "target": "-9",
+          "stop_reason": "stop",
+          "output_tokens": 20267,
+          "latency_seconds": 755.9313946254551
+        },
+        "test/number_theory/368.json": {
+          "correct": 1,
+          "input_identity_sha256": "9a268701367c0387c0b12648963764764bfcf1f944e20d46548d4eaf1e0e439b",
+          "extracted_prediction": "4343_6",
+          "target": "4343_6",
+          "stop_reason": "stop",
+          "output_tokens": 1253,
+          "latency_seconds": 53.32467865943909
+        },
+        "test/prealgebra/1238.json": {
+          "correct": 1,
+          "input_identity_sha256": "2401bedd79bd6c7a66e16b1375e8fd1fb9d08ea615ae554f3d6ccc3d31d412d5",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 960,
+          "latency_seconds": 29.221753150224686
+        },
+        "test/prealgebra/1730.json": {
+          "correct": 1,
+          "input_identity_sha256": "ee5c190b8cb6ba4092fd033d718cff2370d5ddbb937099cc79667dd61d3c9e06",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 2153,
+          "latency_seconds": 75.489815720357
+        },
+        "test/algebra/1529.json": {
+          "correct": 1,
+          "input_identity_sha256": "34084ec308b5e637a5a72035b9ad49a148a63639b068c578e3222186732f7158",
+          "extracted_prediction": "1",
+          "target": "1",
+          "stop_reason": "stop",
+          "output_tokens": 955,
+          "latency_seconds": 27.15039207134396
+        },
+        "test/algebra/1547.json": {
+          "correct": 1,
+          "input_identity_sha256": "39c0b662aade568f2896e0ba10506103c0f75c100dcc194e7d092dee901c8896",
+          "extracted_prediction": "6r^2-4r-24",
+          "target": "6r^2-4r-24",
+          "stop_reason": "stop",
+          "output_tokens": 954,
+          "latency_seconds": 35.062996193766594
+        },
+        "test/intermediate_algebra/1566.json": {
+          "correct": 1,
+          "input_identity_sha256": "3a96071f89449019119d51d712436459edb0f0feb2c3748c46374935f4f9a930",
+          "extracted_prediction": "2k",
+          "target": "2k",
+          "stop_reason": "stop",
+          "output_tokens": 3778,
+          "latency_seconds": 126.42297227866948
+        },
+        "test/prealgebra/1743.json": {
+          "correct": 1,
+          "input_identity_sha256": "056bb54d64114add71a3ec17b506dbd0a5f2ee77397a9dcd959bee5f45c7a54c",
+          "extracted_prediction": "3",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 1620,
+          "latency_seconds": 39.516501193866134
+        },
+        "test/precalculus/96.json": {
+          "correct": 1,
+          "input_identity_sha256": "635e60553214f7a30bc5966a9f211af6d9f8b0936f11cb29fb544c13103745ce",
+          "extracted_prediction": "\\frac{7}{4}",
+          "target": "\\frac{7}{4}",
+          "stop_reason": "stop",
+          "output_tokens": 2050,
+          "latency_seconds": 65.26185816153884
+        },
+        "test/number_theory/1185.json": {
+          "correct": 1,
+          "input_identity_sha256": "7fd367589760360d62fc83e30dabad8d703019fd5c60802a4df4b2798bad9dbe",
+          "extracted_prediction": "6",
+          "target": "6",
+          "stop_reason": "stop",
+          "output_tokens": 2290,
+          "latency_seconds": 71.66838210448623
+        },
+        "test/number_theory/203.json": {
+          "correct": 1,
+          "input_identity_sha256": "90394031029f1e64f971ab3a87332e7663a0f22353179d96521bbbd9267b02af",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 6228,
+          "latency_seconds": 211.23248656094074
+        },
+        "test/algebra/518.json": {
+          "correct": 1,
+          "input_identity_sha256": "6e155391e112e6a60c4457376f03e2d82750f02187e34c4463cc9f119de23e85",
+          "extracted_prediction": "\\frac{3}{4}",
+          "target": "\\frac 34",
+          "stop_reason": "stop",
+          "output_tokens": 1216,
+          "latency_seconds": 36.83983474597335
+        },
+        "test/algebra/170.json": {
+          "correct": 1,
+          "input_identity_sha256": "92db165a9c7a65d26a77f8c5005c0f5481752c3ae458d30459c9130bc07daa34",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 1632,
+          "latency_seconds": 52.45275312103331
+        },
+        "test/precalculus/826.json": {
+          "correct": 1,
+          "input_identity_sha256": "e658d4b8c4f0ad9411eda7b953d9479e9856d49081a9480df5191131119218b7",
+          "extracted_prediction": "\\frac{1}{16}",
+          "target": "\\frac{1}{16}",
+          "stop_reason": "stop",
+          "output_tokens": 4703,
+          "latency_seconds": 145.7096864245832
+        },
+        "test/geometry/795.json": {
+          "correct": 1,
+          "input_identity_sha256": "ba965623143a858e9219c5efe80c9cac692ed76af6111b5f4782d392c121814a",
+          "extracted_prediction": "\\frac{\\sqrt{21}}{5}",
+          "target": "\\frac{\\sqrt{21}}{5}",
+          "stop_reason": "stop",
+          "output_tokens": 2803,
+          "latency_seconds": 86.17551703564823
+        },
+        "test/precalculus/1291.json": {
+          "correct": 1,
+          "input_identity_sha256": "476cdc2e089c90efb0c64e3637c01dc0bf46b74f79b1a39c280be176273a90d5",
+          "extracted_prediction": "1-12i",
+          "target": "1 - 12i",
+          "stop_reason": "stop",
+          "output_tokens": 2473,
+          "latency_seconds": 75.68785511422902
+        },
+        "test/prealgebra/1227.json": {
+          "correct": 1,
+          "input_identity_sha256": "97fa46fa015f3277fac234674321887105fb565e612892e9d5a83ee5d7fa7a98",
+          "extracted_prediction": "60",
+          "target": "60",
+          "stop_reason": "stop",
+          "output_tokens": 1990,
+          "latency_seconds": 63.07541596889496
+        },
+        "test/precalculus/625.json": {
+          "correct": 0,
+          "input_identity_sha256": "f38c95b96a9458a6077ea981517a5c2bf71a92fb6cbb076526977505a751c0af",
+          "extracted_prediction": "\\begin{pmatrix}\\frac{16}{49}\\\\[4pt]\\frac{48}{49}\\\\[4pt]\\frac{24}{49}\\end{pmatrix}",
+          "target": "\\begin{pmatrix} 16/49 \\\\ 48/49 \\\\ 24/49 \\end{pmatrix}",
+          "stop_reason": "stop",
+          "output_tokens": 1032,
+          "latency_seconds": 36.61568696517497
+        },
+        "test/precalculus/681.json": {
+          "correct": 1,
+          "input_identity_sha256": "4ae6b0d599bb5315062c74661a561371b2a3cbff614b37b6ffafb1a821fb542c",
+          "extracted_prediction": "\\frac{1}{8}",
+          "target": "\\frac{1}{8}",
+          "stop_reason": "stop",
+          "output_tokens": 2327,
+          "latency_seconds": 73.85559249017388
+        },
+        "test/geometry/843.json": {
+          "correct": 1,
+          "input_identity_sha256": "74092c216a8046dfc89f450b9e7cdb1015e0aa0bada18b5f1ecdd6836f0558e8",
+          "extracted_prediction": "6\\sqrt{2}",
+          "target": "6\\sqrt{2}",
+          "stop_reason": "stop",
+          "output_tokens": 1062,
+          "latency_seconds": 38.001750795170665
+        },
+        "test/algebra/2080.json": {
+          "correct": 1,
+          "input_identity_sha256": "bf27ca2efd55f1460f022cf66b9257273734a83ee8b65f519c11bf50da9c9e97",
+          "extracted_prediction": "14",
+          "target": "14",
+          "stop_reason": "stop",
+          "output_tokens": 926,
+          "latency_seconds": 32.58502717316151
+        },
+        "test/intermediate_algebra/199.json": {
+          "correct": 1,
+          "input_identity_sha256": "2e580296983ba06cbab8df255879a8c0b52c5ab7a0aa9c7717d98dcabae964c8",
+          "extracted_prediction": "x^{8}+x^{7}+x^{6}+x^{5}+x^{4}+x^{3}+x^{2}+x+1",
+          "target": "x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1",
+          "stop_reason": "stop",
+          "output_tokens": 1565,
+          "latency_seconds": 56.34239404462278
+        },
+        "test/intermediate_algebra/1014.json": {
+          "correct": 1,
+          "input_identity_sha256": "1c89a21afa5393f7d4efcf512570b18bbc0924a3f74e6527649ef96eab6b6614",
+          "extracted_prediction": "50",
+          "target": "50",
+          "stop_reason": "stop",
+          "output_tokens": 2483,
+          "latency_seconds": 90.1382607826963
+        },
+        "test/precalculus/1201.json": {
+          "correct": 1,
+          "input_identity_sha256": "d28ae9fa29f534d4260270962bcbce0767e11108039ceb73553096bb9fa4d69d",
+          "extracted_prediction": "11",
+          "target": "11",
+          "stop_reason": "stop",
+          "output_tokens": 11988,
+          "latency_seconds": 411.94651659205556
+        },
+        "test/number_theory/459.json": {
+          "correct": 1,
+          "input_identity_sha256": "15117acec68effa800c774dbd9e8c18d50463c3cc6ac3d87e8a39a0c2f73ece0",
+          "extracted_prediction": "\\frac{639}{40}",
+          "target": "\\frac{639}{40}",
+          "stop_reason": "stop",
+          "output_tokens": 2486,
+          "latency_seconds": 90.67679022718221
+        },
+        "test/algebra/435.json": {
+          "correct": 1,
+          "input_identity_sha256": "9a103cea31c99850ff4cefa4f0e8e51d433e778777597fcc5ca5b93990eca39e",
+          "extracted_prediction": "25",
+          "target": "25",
+          "stop_reason": "stop",
+          "output_tokens": 534,
+          "latency_seconds": 19.341454033739865
+        },
+        "test/prealgebra/846.json": {
+          "correct": 1,
+          "input_identity_sha256": "7992d93b927d4527faa8206812c3a033be1c12d499c84c8d91e64dc3721e722b",
+          "extracted_prediction": "84",
+          "target": "84",
+          "stop_reason": "stop",
+          "output_tokens": 545,
+          "latency_seconds": 14.658017734065652
+        },
+        "test/intermediate_algebra/834.json": {
+          "correct": 1,
+          "input_identity_sha256": "6e375814ddf5f3e7ad2dbc1b7650943d4284f3aab38d392ab2644e94cf9541e3",
+          "extracted_prediction": "9",
+          "target": "9",
+          "stop_reason": "stop",
+          "output_tokens": 1723,
+          "latency_seconds": 56.68005486577749
+        },
+        "test/number_theory/22.json": {
+          "correct": 1,
+          "input_identity_sha256": "19c2b69a5be6d1d9aedb133cc7b348452b8c9392bf091d77586b35f0f461c2a7",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 2225,
+          "latency_seconds": 62.9746029349044
+        },
+        "test/prealgebra/805.json": {
+          "correct": 1,
+          "input_identity_sha256": "f87b1b40b27fb6152fd867ede5ce61b0f597ce96d4562dfeb917667aec7bbc1c",
+          "extracted_prediction": "41",
+          "target": "41",
+          "stop_reason": "stop",
+          "output_tokens": 4090,
+          "latency_seconds": 130.61170856282115
+        },
+        "test/precalculus/356.json": {
+          "correct": 1,
+          "input_identity_sha256": "ce46f6dc9a1b64eb227a046777c7a6ff9738548a8686976f12dfb3e2a3eaeaaf",
+          "extracted_prediction": "-2x",
+          "target": "y = -2x",
+          "stop_reason": "stop",
+          "output_tokens": 1358,
+          "latency_seconds": 49.2050971314311
+        },
+        "test/precalculus/1082.json": {
+          "correct": 1,
+          "input_identity_sha256": "bbf7b4f1444b400e38847b06dfd536d1ca359e7e268d3dc1b92dca1110620d07",
+          "extracted_prediction": "\\frac{8}{15}",
+          "target": "\\frac{8}{15}",
+          "stop_reason": "stop",
+          "output_tokens": 4288,
+          "latency_seconds": 137.86743628419936
+        },
+        "test/intermediate_algebra/1232.json": {
+          "correct": 1,
+          "input_identity_sha256": "cf7967a7066f479bda66ba91b63e50274d3f232e1a59984691114cfa0c77d80a",
+          "extracted_prediction": "\\frac{5}{13}",
+          "target": "\\frac{5}{13}",
+          "stop_reason": "stop",
+          "output_tokens": 1336,
+          "latency_seconds": 53.20312893111259
+        },
+        "test/intermediate_algebra/1365.json": {
+          "correct": 1,
+          "input_identity_sha256": "76e29e3cab85783d18a8489c4b7abc2ebbca9f153a7e298c20df2b09b955637d",
+          "extracted_prediction": "15",
+          "target": "15",
+          "stop_reason": "stop",
+          "output_tokens": 3374,
+          "latency_seconds": 128.1663330430165
+        },
+        "test/precalculus/801.json": {
+          "correct": 1,
+          "input_identity_sha256": "68ec6ab731b49cfecc2cc9974c94a8834c08a3137cfb2619f6a546c07254e3c4",
+          "extracted_prediction": "55",
+          "target": "55^\\circ",
+          "stop_reason": "stop",
+          "output_tokens": 16027,
+          "latency_seconds": 543.4397831531242
+        },
+        "test/intermediate_algebra/101.json": {
+          "correct": 1,
+          "input_identity_sha256": "2aa018cf1a6965718c7aa1b60cce0dceec151dd209730c6f4ce05ee506b5e11b",
+          "extracted_prediction": "10",
+          "target": "10",
+          "stop_reason": "stop",
+          "output_tokens": 5900,
+          "latency_seconds": 207.27518996968865
+        },
+        "test/algebra/1553.json": {
+          "correct": 0,
+          "input_identity_sha256": "84f34a355acac10c51a988e7dd6aad9e37ec6a4ea03ab961bd108e3ffb32170d",
+          "extracted_prediction": "\\square=1or2",
+          "target": "3",
+          "stop_reason": "stop",
+          "output_tokens": 12407,
+          "latency_seconds": 405.36626089084893
+        },
+        "test/geometry/477.json": {
+          "correct": 1,
+          "input_identity_sha256": "5618a545c01969719334d53fda501a6287d591cb488bd88eee4f88399de9fbef",
+          "extracted_prediction": "216",
+          "target": "216",
+          "stop_reason": "stop",
+          "output_tokens": 12629,
+          "latency_seconds": 383.96411494817585
+        },
+        "test/prealgebra/631.json": {
+          "correct": 1,
+          "input_identity_sha256": "3395ef3283cc422af0d9604959ae47913e27b3981a3ae25f52736b5b7d2b4aff",
+          "extracted_prediction": "2",
+          "target": "2",
+          "stop_reason": "stop",
+          "output_tokens": 26179,
+          "latency_seconds": 804.664229106158
+        }
+      },
+      "interpretation": "Official scores preserved. No manual rescoring; accuracy runtime is not throughput benchmark performance."
+    }
+  ],
+  "comparisons": [
+    {
+      "reference": "v6-independent-stock-accuracy-20261108-a1",
+      "candidate": "outcome-v1-accuracy-long-s16",
+      "same_105_inputs": true,
+      "correct_to_wrong": [
+        "test/algebra/1553.json"
+      ],
+      "wrong_to_correct": [],
+      "quality_improvement_claimed": false,
+      "reason": "Single stochastic official evaluation per service"
+    },
+    {
+      "reference": "v6-independent-stock-accuracy-20261108-a1",
+      "candidate": "outcome-v1-accuracy-common-s16",
+      "same_105_inputs": true,
+      "correct_to_wrong": [
+        "test/algebra/1553.json"
+      ],
+      "wrong_to_correct": [
+        "test/geometry/477.json"
+      ],
+      "quality_improvement_claimed": false,
+      "reason": "Single stochastic official evaluation per service"
+    }
+  ]
+}

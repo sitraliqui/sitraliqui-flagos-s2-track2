@@ -1,0 +1,59 @@
+{
+  "release": "R1 review candidate",
+  "official_script_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+  "tianshu_formal4": {
+    "date": "2026-11-09",
+    "accuracy": {
+      "correct": 103,
+      "count": 105,
+      "accuracy": 0.9809523809523809
+    },
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 1903.94,
+        "mean_ttft_ms": 12392.1,
+        "rounds": 4,
+        "requests_per_round": 256
+      },
+      "16k": {
+        "total_tokens_per_second": 875.37,
+        "mean_ttft_ms": 628893.33,
+        "rounds": 4,
+        "requests_per_round": 128
+      }
+    },
+    "acceptance": "Official workloads complete; route coverage unknown; below archived official performance reference."
+  },
+  "metax_historical_stock": {
+    "accuracy_date": "2026-10-11",
+    "performance_date": "2026-10-23",
+    "accuracy": {
+      "correct": 103,
+      "count": 105,
+      "accuracy": 0.9809523809523809
+    },
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 4830.18,
+        "mean_ttft_ms": 3320.32,
+        "rounds": 4,
+        "requests_per_round": 256
+      },
+      "16k": {
+        "total_tokens_per_second": 7035.67,
+        "mean_ttft_ms": 27221.96,
+        "rounds": 4,
+        "requests_per_round": 128
+      }
+    }
+  },
+  "metax_prefix_b": {
+    "short_path_calls": 5964,
+    "official_accuracy_and_performance_pending": true
+  },
+  "unified_wheel": {
+    "build_install_pass": true,
+    "formal_gpu_acceptance_pending": true
+  },
+  "submission_authorized": false
+}

@@ -1,0 +1,20 @@
+{
+  "checked_unix": 1792903529.3851037,
+  "passed": true,
+  "sources": {
+    "vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py": "f81fa552667b3ed98d1cf141d2dee33ba10476cda9a997744495bdbc36289ef2",
+    "flash_attn/flash_attn_interface.py": "a0ce682debda2e3b0457d3716e3c4bdc905d7d759238800494a5619f5a1d37c6",
+    "vllm_fl/worker/worker.py": "a8de1780d1b41bf4889c26f3d593e6ec54e91a5f61996ce64b4d79f2a97efa24",
+    "vllm_fl/worker/model_runner.py": "446f12c0653131c9a4f5ff7783e52e1a3882d2b20cdd50a6899d218a2dc0bd64",
+    "vllm_fl/dispatch/io_common.py": "6d8b4adf9ad75a5b79569e4ccc132c1ee69fd525198b3c4e25e2d6de6f3fff55",
+    "vllm/compilation/cuda_graph.py": "cbc474f9098386d2eef2e3ff61364c611fbc1338d9c259ad5a24439aa7f06412",
+    "vllm/v1/worker/gpu_model_runner.py": "d2b8ec101122749e1a2610383d2ab74c5a21605e9d7995eb68192bc769986694",
+    "vllm/forward_context.py": "1c6fa51e9a02a120fed5e7357afb1190516cbdfefd1c644dfcd860603f1527c5",
+    "flag_gems/utils/libentry.py": "67c3318ff94c602b01622fb0b5900e17e6ac449e61c1c6165265ecc6cf33622a",
+    "flag_gems/runtime/backend/_metax/ops/mm.py": "2d4f80658012c1442be3fc8beee0fd1aae6f0e3f65092160fe9a4db369d77cec",
+    "vllm_fl/compilation/graph.py": "ba78ed0a736bb21a4f2c307fc9775f15e3742b94533eff333b0c364eb8213fc2",
+    "vllm/compilation/breakable_cudagraph.py": "722683b44b4461ffd9a6498741da18945cbaac231c3bb01f0b0443dafe9e053e"
+  },
+  "CPU_check": "{\"status\": \"passed\", \"scope\": \"CPU source lock, AST, bounded epoch/fallback contract; no GPU correctness claim\"}\n",
+  "idle_gpu": "mx-smi  version: 2.3.1\n\n=================== MetaX System Management Interface Log ===================\nTimestamp                                         : Sun Oct 25 12:45:29 2026\n\nAttached GPUs                                     : 1\n+---------------------------------------------------------------------------------+\n| MX-SMI 2.3.1                       Kernel Mode Driver Version: 3.9.35           |\n| MACA Version: 3.7.0.38             BIOS Version: 1.35.6.0                       |\n|------------------+-----------------+---------------------+----------------------|\n| Board       Name | GPU   Persist-M | Bus-id              | GPU-Util      sGPU-M |\n| Pwr:Usage/Cap    | Temp       Perf | Memory-Usage        | GPU-State            |\n|==================+=================+=====================+======================|\n| 0     MetaX C500 | 0           Off | 0000:cc:00.0        | 0%          Disabled |\n| 37W / 350W       | 38C          P0 | 860/65536 MiB       | Available            |\n+------------------+-----------------+---------------------+----------------------+\n\n+---------------------------------------------------------------------------------+\n| Process:                                                                        |\n|  GPU                    PID         Process Name                 GPU Memory     |\n|                                                                  Usage(MiB)     |\n|=================================================================================|\n|  no process found                                                               |\n+---------------------------------------------------------------------------------+\n\nEnd of Log\n"
+}

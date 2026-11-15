@@ -1,0 +1,192 @@
+{
+  "official_script_sha256": "0813eba574e9d1eb50c297c515baa426da1bcb61ce8c78a398b482f246005565",
+  "tianshu_formal4": {
+    "date": "2026-11-09",
+    "accuracy": {
+      "correct": 103,
+      "count": 105,
+      "accuracy": 0.9809523809523809
+    },
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 1903.94,
+        "mean_ttft_ms": 12392.1,
+        "rounds": 4,
+        "requests_per_round": 256
+      },
+      "16k": {
+        "total_tokens_per_second": 875.37,
+        "mean_ttft_ms": 628893.33,
+        "rounds": 4,
+        "requests_per_round": 128
+      }
+    },
+    "acceptance": "Official workloads complete; route coverage unknown; below archived official performance reference."
+  },
+  "metax_historical_stock": {
+    "accuracy_date": "2026-10-11",
+    "performance_date": "2026-10-23",
+    "accuracy": {
+      "correct": 103,
+      "count": 105,
+      "accuracy": 0.9809523809523809
+    },
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 4830.18,
+        "mean_ttft_ms": 3320.32,
+        "rounds": 4,
+        "requests_per_round": 256
+      },
+      "16k": {
+        "total_tokens_per_second": 7035.67,
+        "mean_ttft_ms": 27221.96,
+        "rounds": 4,
+        "requests_per_round": 128
+      }
+    }
+  },
+  "release": "finalb1 merged submission review candidate",
+  "metax_merged": {
+    "stage": "completed",
+    "accuracy": {
+      "passed": true,
+      "count": 105,
+      "correct": 102,
+      "accuracy": 0.9714285714285714,
+      "sha256": {
+        "20261115_115619\\reports\\minicpm\\math_500.json": "2f19db7cdd897e420759569ed546e5653179ee3d9959baa07072a2cd908e13b5",
+        "20261115_115619\\predictions\\minicpm\\math_500_Level 3.jsonl": "28834b17868d941bb23ba5806c4e5eddc54f3c412e221c7ef534e06281fb6607",
+        "20261115_115619\\reviews\\minicpm\\math_500_Level 3.jsonl": "4c3d0b9ee93b8432a9bfaa76de76e4daa9f07b572823588fb029a9b301180400"
+      }
+    },
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 5037.36,
+        "mean_ttft_ms": 3118.15,
+        "rounds": 4,
+        "requests_per_round": 256
+      },
+      "16k": {
+        "total_tokens_per_second": 7344.92,
+        "mean_ttft_ms": 26064.82,
+        "rounds": 4,
+        "requests_per_round": 128
+      }
+    },
+    "installed_wheels_sha256": [
+      "7271142a9a1d0fec441a2b7e3d24cc0e44c8f8b2b21b41e865fa3cffbe6da0f6",
+      "307a615dba8a80edcbafa51cf168059b89d25a130b8d9caa3a795d281ed6f8be"
+    ],
+    "diagnostic_hit": true,
+    "diagnostic_instrumentation_removed_before_formal": true,
+    "formal_workloads_complete": true,
+    "cleanup_complete": true,
+    "installation_unchanged_after_run": true,
+    "public_reference_comparison": {
+      "4k": {
+        "throughput_change_percent": -1.0272818634698644,
+        "TTFT_change_percent": -2.5406048255395053,
+        "throughput_within_reference_tolerance": false,
+        "TTFT_within_reference_tolerance": true,
+        "not_a_same_machine_control": true
+      },
+      "16k": {
+        "throughput_change_percent": 4.48448896997371,
+        "TTFT_change_percent": -4.163361324639525,
+        "throughput_within_reference_tolerance": true,
+        "TTFT_within_reference_tolerance": true,
+        "not_a_same_machine_control": true
+      }
+    },
+    "prefix_source_sha256": "f96b3a72c52c281ef1983acda6dd14120857334a600dec4366f607aa7b5acf20"
+  },
+  "tianshu_merged": {
+    "formal_retested": false,
+    "ticket_balance": 2,
+    "access": "authenticated_after_reload",
+    "current_reservations": 0
+  },
+  "submission_authorized": false,
+  "metax_matched_default": {
+    "stage": "completed",
+    "accuracy": {
+      "passed": true,
+      "count": 105,
+      "correct": 103,
+      "accuracy": 0.9809523809523809,
+      "sha256": {
+        "20261115_130255\\reports\\minicpm\\math_500.json": "6d142c57ae1cb0a535b32a169cd5474fda6879cb2d54cd23c1686235cff84d50",
+        "20261115_130255\\predictions\\minicpm\\math_500_Level 3.jsonl": "f57d50357b57f4b4dc7a046492075a503cecbd3b535648390f60aefce5df04fe",
+        "20261115_130255\\reviews\\minicpm\\math_500_Level 3.jsonl": "02c493f857afb595ce19ace5eef779a7226fffe126afa0d6b24d84492fa3ee5f"
+      }
+    },
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 4232.81,
+        "mean_ttft_ms": 4809.81,
+        "rounds": 4,
+        "requests_per_round": 256
+      },
+      "16k": {
+        "total_tokens_per_second": 6298.45,
+        "mean_ttft_ms": 32197.37,
+        "rounds": 4,
+        "requests_per_round": 128
+      }
+    },
+    "variant": "Merged default-prefix control: only Prefix B source and version reverted; not a pure upstream checkout",
+    "wheel_sha256": "5913f58e8b08c65affe0237cf7acbc6d4d1f72aae425fdff6b55a9508e799821",
+    "cleanup_complete": true
+  },
+  "matched_comparison": {
+    "4k": {
+      "throughput_change_percent": 19.007467852325032,
+      "TTFT_change_percent": -35.17103586212345
+    },
+    "16k": {
+      "throughput_change_percent": 16.614722669863234,
+      "TTFT_change_percent": -19.046742016506315
+    }
+  },
+  "matched_comparison_limitations": "Sequential B then A then same-code B 4K only, not randomized repeated full-suite causal proof. Default control reverts only Prefix B and version in the merged framework.",
+  "metax_4k_verification": {
+    "stage": "completed",
+    "performance": {
+      "4k": {
+        "total_tokens_per_second": 5281.18,
+        "mean_ttft_ms": 3098.2,
+        "rounds": 4,
+        "requests_per_round": 256
+      }
+    },
+    "cleanup_complete": true,
+    "accuracy_reference": "metax_merged",
+    "new_accuracy_run": false,
+    "primary_result_replaced": false,
+    "variant_changes": "none",
+    "scope": "4K official four-round repeat only",
+    "accuracy_reference_receipt": {
+      "source": "/data/competition-final-prefixb-20261115-v1-r3/accuracy-audit.json",
+      "result": {
+        "passed": true,
+        "count": 105,
+        "correct": 102,
+        "accuracy": 0.9714285714285714,
+        "sha256": {
+          "20261115_115619/reports/minicpm/math_500.json": "2f19db7cdd897e420759569ed546e5653179ee3d9959baa07072a2cd908e13b5",
+          "20261115_115619/predictions/minicpm/math_500_Level 3.jsonl": "28834b17868d941bb23ba5806c4e5eddc54f3c412e221c7ef534e06281fb6607",
+          "20261115_115619/reviews/minicpm/math_500_Level 3.jsonl": "4c3d0b9ee93b8432a9bfaa76de76e4daa9f07b572823588fb029a9b301180400"
+        }
+      },
+      "new_accuracy_run": false
+    },
+    "public_reference_comparison": {
+      "throughput_change_percent": 3.7632290660743584,
+      "TTFT_change_percent": -3.164152420661781,
+      "throughput_within_reference_tolerance": true,
+      "TTFT_within_reference_tolerance": true,
+      "not_a_same_machine_control": true
+    }
+  }
+}

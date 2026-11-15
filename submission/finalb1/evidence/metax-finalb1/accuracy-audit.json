@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "count": 105,
+  "correct": 102,
+  "accuracy": 0.9714285714285714,
+  "sha256": {
+    "20261115_115619/reports/minicpm/math_500.json": "2f19db7cdd897e420759569ed546e5653179ee3d9959baa07072a2cd908e13b5",
+    "20261115_115619/predictions/minicpm/math_500_Level 3.jsonl": "28834b17868d941bb23ba5806c4e5eddc54f3c412e221c7ef534e06281fb6607",
+    "20261115_115619/reviews/minicpm/math_500_Level 3.jsonl": "4c3d0b9ee93b8432a9bfaa76de76e4daa9f07b572823588fb029a9b301180400"
+  }
+}

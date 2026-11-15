@@ -1,0 +1,18 @@
+{
+  "base_archive_sha256": "0ea21eb098614a5917161d976d338c1231ae266a7d379e699f28a3a481820fa0",
+  "merge_files": [
+    "vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py"
+  ],
+  "prefix_b_source_sha256": "f96b3a72c52c281ef1983acda6dd14120857334a600dec4366f607aa7b5acf20",
+  "unchanged_tianshu_source": true,
+  "gpu_tested": true,
+  "C_included": false,
+  "baseline_snapshots_preserved": true,
+  "gpu_tested_platforms": [
+    "metax"
+  ],
+  "tianshu_merged_formal_retest": false,
+  "metax_formal_workloads_complete": true,
+  "metax_accuracy_passed": true,
+  "metax_all_public_reference_gates_passed": false
+}

@@ -1,0 +1,34 @@
+{
+  "instance_id": "LAJNBONXYAKBAYPK",
+  "rate_CNY_per_hour": 8,
+  "phase_authorized_CNY": 29.04,
+  "phase_actual_CNY": 26.21,
+  "remaining_phase_CNY": 2.83,
+  "platform_state": "OFF",
+  "verified_utc": "2026-11-15T06:34:30Z",
+  "final_settlement_utc": "2026-11-15T06:34:07Z",
+  "settlements": [
+    {
+      "serial": "20261115120007-XURJI",
+      "CNY": 5.66
+    },
+    {
+      "serial": "20261115130007-A7U12",
+      "CNY": 8
+    },
+    {
+      "serial": "20261115140007-MQ7WR",
+      "CNY": 8
+    },
+    {
+      "serial": "20261115143407-K7H1X",
+      "CNY": 4.55
+    }
+  ],
+  "historical_recovery_already_deducted_CNY": 0.96,
+  "all_evidence_saved_and_verified": true,
+  "owned_GPU_processes_remaining": 0,
+  "instance_destroyed": false,
+  "new_instances_rented": false,
+  "source": "Authenticated platform OFF row and settled billing UI; operational screenshots retained outside public submission archive"
+}

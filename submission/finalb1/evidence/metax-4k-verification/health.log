@@ -1,0 +1,26 @@
+{"utc": "2026-11-15T06:07:35.318594+00:00", "step": "torch import begin"}
+{"utc": "2026-11-15T06:07:37.032619+00:00", "step": "torch import complete"}
+{"utc": "2026-11-15T06:07:37.032678+00:00", "step": "device enumerate begin"}
+{"utc": "2026-11-15T06:07:37.043348+00:00", "step": "device enumerate complete: 1"}
+{"utc": "2026-11-15T06:07:37.043392+00:00", "step": "properties begin"}
+{"utc": "2026-11-15T06:07:57.817027+00:00", "step": "properties complete"}
+{"utc": "2026-11-15T06:07:57.817226+00:00", "step": "device=MetaX C500 total_memory=68283269120 torch=2.8.0+metax3.7.0.7 cuda=11.6"}
+{"utc": "2026-11-15T06:07:57.817243+00:00", "step": "init begin"}
+{"utc": "2026-11-15T06:07:57.817260+00:00", "step": "init complete"}
+{"utc": "2026-11-15T06:07:57.817270+00:00", "step": "empty begin"}
+{"utc": "2026-11-15T06:07:57.817828+00:00", "step": "empty complete"}
+{"utc": "2026-11-15T06:07:57.817842+00:00", "step": "fill begin"}
+{"utc": "2026-11-15T06:07:57.822252+00:00", "step": "fill complete"}
+{"utc": "2026-11-15T06:07:57.822301+00:00", "step": "sync begin"}
+{"utc": "2026-11-15T06:07:57.823037+00:00", "step": "sync complete"}
+{"utc": "2026-11-15T06:07:57.823061+00:00", "step": "FP32 matrix begin"}
+{"utc": "2026-11-15T06:07:58.587435+00:00", "step": "FP32 matrix submitted"}
+{"utc": "2026-11-15T06:07:58.587521+00:00", "step": "FP32 sync begin"}
+{"utc": "2026-11-15T06:07:58.587633+00:00", "step": "FP32 sync complete"}
+{"utc": "2026-11-15T06:07:58.588354+00:00", "step": "FP32 numeric passed"}
+{"utc": "2026-11-15T06:07:58.588384+00:00", "step": "BF16 matrix begin"}
+{"utc": "2026-11-15T06:07:58.588592+00:00", "step": "BF16 matrix submitted"}
+{"utc": "2026-11-15T06:07:58.588610+00:00", "step": "BF16 sync begin"}
+{"utc": "2026-11-15T06:07:58.588673+00:00", "step": "BF16 sync complete"}
+{"utc": "2026-11-15T06:07:58.588831+00:00", "step": "BF16 numeric passed"}
+{"utc": "2026-11-15T06:07:58.588848+00:00", "step": "health passed"}

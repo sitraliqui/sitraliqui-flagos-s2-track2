@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-11-15T04:22Z",
+  "requested_url": "https://flagos.io/OnlineLab?tab=reservation",
+  "access": "authenticated_after_reload",
+  "total_tickets": 35,
+  "ticket_balance": 2,
+  "used": 33,
+  "current_reservations": 0,
+  "booked": false,
+  "recharged": false,
+  "merged_formal_retest": false,
+  "previous_login_redirect_preserved": true
+}

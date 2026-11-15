@@ -1,15 +1,18 @@
 # sitraliqui：FlagOS Season 2 Track 2
 
-队伍 sitraliqui（单人），比赛模型 MiniCPM5-2B。此仓库保留官方 vllm-plugin-FL 的 Git 来源与 LICENSE；比赛工作基于 flagos-2026-s2，不合入 main 的更新作为性能方案。
+MiniCPM5-2B在天数BI-V150与沐曦C500上的比赛复现、算子/执行路径优化及验收记录。**当前finalb1是待用户确认的提交候选，尚未上传比赛。**
 
-- [复现与实验规范](docs/reproducibility.md)
-- [任务与里程碑](docs/milestones.md)
-- [源代码版本锁定](source-lock.json)
-- 原始命令及准备检查见 scripts/；未实测结果模板见 results/manifest-template.json。
-- 已实测两平台环境与 Level3：天数 0.9714（102/105），沐曦 0.9810（103/105），均无评测错误。天数官方4K/16K总吞吐为1831.96/861.89 tokens/s，初次Profiling已采集并分析（Graph内部待展开）；沐曦在同一64GiB主机内存实例使用独立CPU HTTP客户端后，官方4K/16K四轮负载均已完成，详见最新记录；不是算子优化成果。详见[执行状态](docs/execution-status.md)。
-- [独立科研仓库](https://github.com/sitraliqui/sitraliqui-kernel-autotuning-research)：非比赛实验需独立环境，禁止混入本赛道。
+- [当前成绩、技术方案与剩余缺口](docs/competition/README.md)
+- [新版提交包与校验文件](https://github.com/sitraliqui/sitraliqui-flagos-s2-track2/releases/tag/competition-finalb1-20261115-report-r2)（report-r2）
+- [最新PDF技术报告](submission/finalb1/report.pdf) · [验收清单](submission/finalb1/ACCEPTANCE.md) · [安装与官方测试命令](submission/finalb1/readme.md)
+- [完整冻结源码、wheel与逐题/逐轮证据](submission/finalb1/)；本地执行`cd submission/finalb1`、`python -B tools/verify_bundle.py`重新核验。
+- [历史基线复现](docs/execution-status.md) · [阶段过程](docs/competition/history/) · [独立科研仓库](https://github.com/sitraliqui/sitraliqui-kernel-autotuning-research)
 
-以下保留上游 README；通用安装示例不替代赛事页面指定版本、模型与运行命令。
+沐曦合并包精度102/105，第一次完整4K/16K总吞吐5037.36/7344.92 tokens/s；同包4K复验5281.18 tokens/s。天数旧formal4为103/105、1903.94/875.37 tokens/s；**当前合并包天数未正式复测**。详见报告中的版本、顺序及参考门槛边界，不能把历史成绩或局部收益当作最终比赛成绩。
+
+保留沐曦Prefix B与天数formal4；不合入收益未证实的Prefix C或本轮暂停的新方向。完整上游Fork历史和LICENSE保留；以下上游通用说明不替代赛事锁定参数及版本。
+
+方案设计与实验分析：sitraliqui。部分实现、调试和自动验收由Codex协助。
 
 ---
 

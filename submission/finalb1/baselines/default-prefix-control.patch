@@ -1,0 +1,20 @@
+--- a/vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py
++++ b/vllm_fl/dispatch/backends/vendor/metax/impl/attention/flash_attn.py
+@@ -798,12 +798,11 @@
+                 # For handling prefill decode split
+                 num_decode_tokens = attn_metadata.num_decode_tokens
+                 if attn_metadata.num_prefills > 0:
+-                    cu_prefix_kv_lens = torch.cat(
+-                        (
+-                            attn_metadata.prefill_seq_lens.new_zeros((1,)),
+-                            attn_metadata.prefill_seq_lens,
+-                        )
+-                    ).cumsum(0, dtype=torch.int32)
++                    cu_prefix_kv_lens = torch.tensor(
++                        [0] + attn_metadata.prefill_seq_lens.tolist(),
++                        device=attn_metadata.prefill_seq_lens.device,
++                        dtype=torch.int32,
++                    ).cumsum(dim=0, dtype=torch.int32)
+                     output[num_decode_tokens:num_actual_tokens] = (
+                         flash_attn_varlen_func(
+                             q=query[num_decode_tokens:num_actual_tokens],

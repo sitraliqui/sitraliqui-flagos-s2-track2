@@ -1,0 +1,61 @@
+{
+  "unix": 1794714723.8779526,
+  "verified": [
+    {
+      "category": "model",
+      "path": "config.json",
+      "bytes": 704,
+      "sha256": "59613157e5357d62bcb121e04cb90f2170b43d789b142380c12c3d4277d95180"
+    },
+    {
+      "category": "model",
+      "path": "generation_config.json",
+      "bytes": 213,
+      "sha256": "9ac4f32e5f32358697a9f438a3ea89ef80e6ba786c72c49e932f9f21c122fdb1"
+    },
+    {
+      "category": "model",
+      "path": "model-00000-of-00001.safetensors",
+      "bytes": 5033557096,
+      "sha256": "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c"
+    },
+    {
+      "category": "model",
+      "path": "model.safetensors.index.json",
+      "bytes": 31378,
+      "sha256": "6d839cd76e8395de548a0e6cc310386f66d1ecbb2c75d198a8dfd3d70892b756"
+    },
+    {
+      "category": "model",
+      "path": "special_tokens_map.json",
+      "bytes": 551,
+      "sha256": "82d96d7a9e6ced037f12394b7ea6a5b02e6ca87e0d11edaa8d60d9be857ce7db"
+    },
+    {
+      "category": "model",
+      "path": "tokenizer.json",
+      "bytes": 9894271,
+      "sha256": "3e065a558a034185fe299917b398685c1facd0169a9eea1e629eb30c171fed81"
+    },
+    {
+      "category": "model",
+      "path": "tokenizer_config.json",
+      "bytes": 94391,
+      "sha256": "e9b1064649e771d7a8e15637c68b2d2749724877ba3648bd74a4ece31c26303b"
+    },
+    {
+      "category": "dataset",
+      "path": "test.jsonl",
+      "bytes": 446564,
+      "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+    }
+  ],
+  "packages": {
+    "torch": "2.8.0+metax3.7.0.7",
+    "vllm": "0.24.0+empty",
+    "triton": "3.0.0+metax3.7.0.7",
+    "evalscope": "1.11.1"
+  },
+  "device": "mx-smi  version: 2.3.1\n\n=================== MetaX System Management Interface Log ===================\nTimestamp                                         : Sun Nov 15 11:52:03 2026\n\nAttached GPUs                                     : 2\n+---------------------------------------------------------------------------------+\n| MX-SMI 2.3.1                       Kernel Mode Driver Version: 3.9.35           |\n| MACA Version: 3.7.0.38             BIOS Version: 1.35.4.0                       |\n|------------------+-----------------+---------------------+----------------------|\n| Board       Name | GPU   Persist-M | Bus-id              | GPU-Util      sGPU-M |\n| Pwr:Usage/Cap    | Temp       Perf | Memory-Usage        | GPU-State            |\n|==================+=================+=====================+======================|\n| 0     MetaX C500 | 0           Off | 0000:1f:00.0        | 0%          Disabled |\n| 55W / 350W       | 42C          P9 | 860/65536 MiB       | Available            |\n+------------------+-----------------+---------------------+----------------------+\n| 1     MetaX C500 | 1           Off | 0000:58:00.0        | 0%          Disabled |\n| 42W / 350W       | 41C          P0 | 860/65536 MiB       | Available            |\n+------------------+-----------------+---------------------+----------------------+\n\n+---------------------------------------------------------------------------------+\n| Process:                                                                        |\n|  GPU                    PID         Process Name                 GPU Memory     |\n|                                                                  Usage(MiB)     |\n|=================================================================================|\n|  no process found                                                               |\n+---------------------------------------------------------------------------------+\n\nEnd of Log\n",
+  "cgroup_limit": "103079215104"
+}

@@ -1,0 +1,26 @@
+{
+  "unix": 1794721011.9936223,
+  "server_pid": 12684,
+  "selected_environment": {
+    "VLLM_PLUGINS": "fl",
+    "CUDA_VISIBLE_DEVICES": "1",
+    "TORCHINDUCTOR_COMPILE_THREADS": "1",
+    "VLLM_FL_KV_DECODE_FUSION": null,
+    "VLLM_FL_KV_DECODE_PROFILE": null,
+    "VLLM_FL_ILUVATAR_STABLE_LINEAR": null,
+    "VLLM_FL_ILUVATAR_OUTPLACE_ROPE": null,
+    "FLAGGEMS_ILUVATAR_STABLE_SMALL_MM": null,
+    "VLLM_ATTENTION_BACKEND": null,
+    "VLLM_BATCH_INVARIANT": null,
+    "OMP_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null,
+    "USE_FLAGGEMS": null
+  },
+  "cpu_max": "2400000 100000",
+  "cpu_stat": "usage_usec 13306689409\nuser_usec 6674401635\nsystem_usec 6632287774\nnr_periods 68559\nnr_throttled 117\nthrottled_usec 415036689\n",
+  "host_loadavg": [
+    3.60107421875,
+    3.98681640625,
+    3.71728515625
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "state": "offline_build_install_pass_not_gpu_validation",
+  "created_utc": "2026-11-09T17:52:10.859050+00:00",
+  "builds": [
+    {
+      "project": "vllm-plugin-FL",
+      "version": "0.3.0rc0+g13eb9be69.r1rc1",
+      "wheel": "wheels/validated/vllm_plugin_fl-0.3.0rc0+g13eb9be69.r1rc1-py3-none-any.whl",
+      "sha256": "513e1f2f1e96aae30304096d979efddef2a1882bf7ad485ae990770133464df4",
+      "build_dependencies": {
+        "setuptools": "77.0.3",
+        "setuptools-scm": "8.3.1",
+        "wheel": "0.45.1",
+        "packaging": "25.0"
+      },
+      "package_members": 213,
+      "changed_package_members_vs_tested_formal4": [
+        "vllm_fl/_version.py",
+        "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json"
+      ],
+      "isolated_install_pass": true,
+      "runtime_or_gpu_verified": false,
+      "manifest_sha256": "e4b18609208788495f25a86fdc13363c29de78f9931abb5cc8186215a504c10a"
+    },
+    {
+      "project": "FlagGems",
+      "version": "5.3.5+g4df52d916.r1rc1",
+      "wheel": "wheels/validated/flag_gems-5.3.5+g4df52d916.r1rc1-py3-none-any.whl",
+      "sha256": "814ab63253d26981ac0d993fedf7324a18729c689d24dff03c0bd37c9ac074ae",
+      "build_dependencies": {
+        "setuptools": "76.1.0",
+        "setuptools-scm": "8.3.1",
+        "wheel": "0.46.2",
+        "packaging": "26.0"
+      },
+      "package_members": 2604,
+      "changed_package_members_vs_tested_formal4": [
+        "flag_gems/_version.py"
+      ],
+      "isolated_install_pass": true,
+      "runtime_or_gpu_verified": false,
+      "manifest_sha256": "be8e78aa508f599b854da646069479bcb484ce043cde53a7f982699fa544b41f"
+    }
+  ],
+  "packaging_fix": "Explicit package-data manifest for builds without git metadata",
+  "first_attempt": "Preserved build-vllm-plugin-FL.log and initial wheel; missing 3 data files rejected before install",
+  "network_used": false,
+  "gpu_used": false,
+  "submitted": false
+}

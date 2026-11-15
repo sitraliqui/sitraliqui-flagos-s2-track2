@@ -1,0 +1,39 @@
+{
+  "historical_B": "vllm_plugin_fl-0.3.0rc1.post1+g13eb9be69.metaxprefixb1-py3-none-any.whl",
+  "current_B": "vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1-py3-none-any.whl",
+  "changed_members": [
+    "vllm_fl/__init__.py",
+    "vllm_fl/_version.py",
+    "vllm_fl/compilation/graph.py",
+    "vllm_fl/compilation/kv_decode/__init__.py",
+    "vllm_fl/compilation/kv_decode/backend.py",
+    "vllm_fl/compilation/kv_decode/bindings.py",
+    "vllm_fl/compilation/kv_decode/contract.py",
+    "vllm_fl/compilation/kv_decode/controller.py",
+    "vllm_fl/compilation/kv_decode/profiles.py",
+    "vllm_fl/compilation/kv_decode/proof.py",
+    "vllm_fl/compilation/kv_decode/runtime.py",
+    "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json",
+    "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json",
+    "vllm_fl/dispatch/README.md",
+    "vllm_fl/dispatch/backends/flaggems/flaggems.py",
+    "vllm_fl/ops/iluvatar_linear.py",
+    "vllm_fl/ops/rotary_embedding.py",
+    "vllm_fl/worker/model_runner.py"
+  ],
+  "added_members": [
+    "vllm_fl/compilation/kv_decode/__init__.py",
+    "vllm_fl/compilation/kv_decode/backend.py",
+    "vllm_fl/compilation/kv_decode/bindings.py",
+    "vllm_fl/compilation/kv_decode/contract.py",
+    "vllm_fl/compilation/kv_decode/controller.py",
+    "vllm_fl/compilation/kv_decode/profiles.py",
+    "vllm_fl/compilation/kv_decode/proof.py",
+    "vllm_fl/compilation/kv_decode/runtime.py",
+    "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia,model=Qwen3.6-35B-A3B-H100.json",
+    "vllm_fl/configs/moe/E=256,N=512,device_name=nvidia.json",
+    "vllm_fl/dispatch/README.md",
+    "vllm_fl/ops/iluvatar_linear.py"
+  ],
+  "removed_members": []
+}

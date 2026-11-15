@@ -1,0 +1,12 @@
+Processing ./wheels/flag_gems-5.3.5+g4df52d916.finalb1-py3-none-any.whl
+Processing ./wheels/vllm_plugin_fl-0.3.0rc0+g13eb9be69.finalb1-py3-none-any.whl
+Installing collected packages: vllm-plugin-fl, flag-gems
+  Attempting uninstall: vllm-plugin-fl
+    Found existing installation: vllm-plugin-fl 0.3.0rc1.post1+g13eb9be69
+    Not uninstalling vllm-plugin-fl at /opt/conda/lib/python3.12/site-packages, outside environment /data/competition-final-prefixb-20261115-v1-r3/merged-env
+    Can't uninstall 'vllm-plugin-fl'. No files were found to uninstall.
+  Attempting uninstall: flag-gems
+    Found existing installation: flag_gems 5.3.5
+    Not uninstalling flag-gems at /opt/conda/lib/python3.12/site-packages, outside environment /data/competition-final-prefixb-20261115-v1-r3/merged-env
+    Can't uninstall 'flag_gems'. No files were found to uninstall.
+Successfully installed flag-gems-5.3.5+g4df52d916.finalb1 vllm-plugin-fl-0.3.0rc0+g13eb9be69.finalb1
