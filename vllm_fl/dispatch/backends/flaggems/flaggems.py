@@ -184,6 +184,12 @@ class FlagGemsBackend(Backend):
             print("Using FlagGems attention backend.")
             return "vllm_fl.dispatch.backends.flaggems.impl.attention.AttentionFLBackend"
 
+        # This executes only after the existing backend selector chose FlagGems.
+        # Vendor/reference order and the explicit FlagGems-attention option above
+        # remain authoritative.
+        from vllm_fl.compilation.kv_decode.runtime import requested, target_device
+        if requested() and target_device():
+            return "vllm_fl.compilation.kv_decode.backend.TritonKVDecodeBackend"
         return AttentionBackendEnum.TRITON_ATTN.get_path()
 
     def moe_align_block_size(

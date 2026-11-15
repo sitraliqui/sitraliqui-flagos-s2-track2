@@ -1,6 +1,7 @@
 # Copyright (c) 2025 BAAI. All rights reserved.
 
 from typing import Optional
+import os
 import torch
 from vllm.model_executor.layers.rotary_embedding import RotaryEmbedding
 from vllm_fl.dispatch import CachedOp
@@ -22,6 +23,10 @@ class RotaryEmbeddingFL(RotaryEmbedding):
             head_size, rotary_dim, max_position_embeddings, base,
             is_neox_style, dtype
         )
+        self._fl_outplace = False
+        if os.environ.get("VLLM_FL_ILUVATAR_OUTPLACE_ROPE", "0") == "1":
+            from vllm_fl.compilation.kv_decode.runtime import target_device
+            self._fl_outplace = target_device()
 
     def forward_oot(
         self,
@@ -54,7 +59,7 @@ class RotaryEmbeddingFL(RotaryEmbedding):
             sin,
             positions,
             not self.is_neox_style,  # rotary_interleaved
-            True,  # inplace
+            not self._fl_outplace,  # explicit no-alias compatibility boundary
         )
 
         if self.rotary_dim < self.head_size:

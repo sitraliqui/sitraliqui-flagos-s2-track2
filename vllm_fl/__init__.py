@@ -171,6 +171,11 @@ def register_model():
     register_quant_linear()
     register_router()
 
+    import os
+    if os.environ.get("VLLM_FL_ILUVATAR_STABLE_LINEAR", "0") == "1":
+        from vllm_fl.ops.iluvatar_linear import register_layers
+        register_layers()
+
     _register_gdn_packed_decode_patch()
 
     # Register GLM-5 (GlmMoeDsa) — config not yet upstream
